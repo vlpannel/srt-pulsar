@@ -1,0 +1,780 @@
+options:
+  parameters:
+    author: ''
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: no_gui
+    hier_block_src_path: '.:'
+    id: drf_pulsar_flow_graph
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: run
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: DRF Pulsar Processing (Folding)
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: channel_end
+  id: variable
+  parameters:
+    comment: ''
+    value: '1653602399999999'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [256, 16.0]
+    rotation: 0
+    state: true
+- name: channel_start
+  id: variable
+  parameters:
+    comment: ''
+    value: '1653595200000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [176, 16.0]
+    rotation: 0
+    state: true
+- name: integration
+  id: variable
+  parameters:
+    comment: ''
+    value: 10e3
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [656, 16.0]
+    rotation: 0
+    state: true
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '1000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [576, 16.0]
+    rotation: 0
+    state: enabled
+- name: samples
+  id: variable
+  parameters:
+    comment: ''
+    value: int(tlen*samp_rate)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 16.0]
+    rotation: 0
+    state: true
+- name: tlen
+  id: variable
+  parameters:
+    comment: ''
+    value: 1/29.7
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [496, 16.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [544, 100.0]
+    rotation: 0
+    state: enabled
+- name: blocks_complex_to_mag_squared_0_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [344, 516.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_meta_sink_0
+  id: blocks_file_meta_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: 'Works, creating .bin file
+
+      ... or any kind of file (text file)'
+    detached: 'False'
+    extra_dict: pmt.dict_add(pmt.make_dict(), pmt.intern('Initial'), pmt.from_long(3))
+    file: /Users/vivelpanel/Desktop/SRT Flowgraphs/drf_output_sub1
+    max_seg_size: '1000000'
+    rel_rate: '1'
+    samp_rate: samp_rate
+    type: float
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [680, 240.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_meta_sink_0_0
+  id: blocks_file_meta_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: 'Works, creating .bin file
+
+      ... or any kind of file (text file)'
+    detached: 'False'
+    extra_dict: pmt.dict_add(pmt.make_dict(), pmt.intern('Initial'), pmt.from_long(3))
+    file: /Users/vivelpanel/Desktop/SRT Flowgraphs/drf_output_sub2
+    max_seg_size: '1000000'
+    rel_rate: '1'
+    samp_rate: samp_rate
+    type: float
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [424, 624.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_0
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: Creates empty files?
+    file: /Users/vivelpanel/Desktop/SRT Flowgraphs/drf_output_1
+    type: float
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [680, 364.0]
+    rotation: 0
+    state: true
+- name: blocks_integrate_xx_0
+  id: blocks_integrate_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decim: '10'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [664, 100.0]
+    rotation: 0
+    state: enabled
+- name: blocks_integrate_xx_0_0
+  id: blocks_integrate_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decim: '10'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [472, 516.0]
+    rotation: 0
+    state: enabled
+- name: blocks_integrate_xx_1
+  id: blocks_integrate_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decim: '83'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: samples
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [456, 184.0]
+    rotation: 180
+    state: enabled
+- name: blocks_integrate_xx_1_0
+  id: blocks_integrate_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decim: '83'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '714520'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [232, 560.0]
+    rotation: 180
+    state: enabled
+- name: blocks_integrate_xx_2
+  id: blocks_integrate_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decim: '1000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [520, 268.0]
+    rotation: 0
+    state: enabled
+- name: blocks_integrate_xx_2_0
+  id: blocks_integrate_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decim: '1000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [296, 628.0]
+    rotation: 0
+    state: enabled
+- name: blocks_interleaved_short_to_complex_2
+  id: blocks_interleaved_short_to_complex
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale_factor: '32767.0'
+    swap: 'False'
+    vector_input: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [304, 96.0]
+    rotation: 0
+    state: enabled
+- name: blocks_interleaved_short_to_complex_2_0
+  id: blocks_interleaved_short_to_complex
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale_factor: '32767.0'
+    swap: 'False'
+    vector_input: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [136, 456.0]
+    rotation: 180
+    state: enabled
+- name: blocks_null_sink_0
+  id: blocks_null_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_sink: '[[0,],]'
+    comment: ''
+    num_inputs: '1'
+    type: short
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [360, 156.0]
+    rotation: 0
+    state: enabled
+- name: blocks_stream_to_vector_0
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [616, 188.0]
+    rotation: 180
+    state: enabled
+- name: blocks_stream_to_vector_0_0
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: '714520'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [424, 580.0]
+    rotation: 180
+    state: enabled
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [432, 100.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle_0_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [232, 516.0]
+    rotation: 0
+    state: enabled
+- name: blocks_vector_to_stream_1
+  id: blocks_vector_to_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [352, 268.0]
+    rotation: 0
+    state: enabled
+- name: blocks_vector_to_stream_1_0
+  id: blocks_vector_to_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: '714520'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [160, 628.0]
+    rotation: 0
+    state: enabled
+- name: blocks_vector_to_streams_0
+  id: blocks_vector_to_streams
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: 'This channel (misa-l2) has
+
+      two subchannels, so it outputs
+
+      vectors of both. The vector
+
+      must be split into separate
+
+      streams (one for each
+
+      subchannel).'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_streams: '2'
+    type: short
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [192, 148.0]
+    rotation: 0
+    state: enabled
+- name: gr_digital_rf_digital_rf_channel_source_0
+  id: gr_digital_rf_digital_rf_channel_source
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    dir: '''/Volumes/NO NAME/pulsar/2022-05-26/rf_data/misa-l2'''
+    end: ''
+    gapless: 'True'
+    hide_msg_port: 'True'
+    maxoutbuf: '0'
+    min_chunksize: '0'
+    minoutbuf: '0'
+    repeat: 'True'
+    start: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 212.0]
+    rotation: 0
+    state: disabled
+- name: gr_digital_rf_digital_rf_sink_0
+  id: gr_digital_rf_digital_rf_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    center_freqs: '[]'
+    channel0: ch0
+    channel1: ch1
+    channel10: ch10
+    channel11: ch11
+    channel12: ch12
+    channel13: ch13
+    channel14: ch14
+    channel15: ch15
+    channel16: ch16
+    channel17: ch17
+    channel18: ch18
+    channel19: ch19
+    channel2: ch2
+    channel20: ch20
+    channel21: ch21
+    channel22: ch22
+    channel23: ch23
+    channel24: ch24
+    channel25: ch25
+    channel26: ch26
+    channel27: ch27
+    channel28: ch28
+    channel29: ch29
+    channel3: ch3
+    channel30: ch30
+    channel31: ch31
+    channel4: ch4
+    channel5: ch5
+    channel6: ch6
+    channel7: ch7
+    channel8: ch8
+    channel9: ch9
+    checksum: 'False'
+    comment: ''
+    compression_level: '0'
+    debug: 'False'
+    file_cadence_ms: '1000'
+    ignore_tags: 'False'
+    input: f32
+    is_continuous: 'True'
+    marching_periods: 'True'
+    metadata: '{}'
+    min_chunksize: '0'
+    nchan: '1'
+    sample_rate_denominator: '1'
+    sample_rate_numerator: int(samp_rate)
+    start: ''
+    stop_on_skipped: 'False'
+    stop_on_time_tag: 'False'
+    subdir_cadence_s: '3600'
+    top_level_dir: ''
+    uuid: ''
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [536, 368.0]
+    rotation: 0
+    state: disabled
+- name: gr_digital_rf_digital_rf_source_0
+  id: gr_digital_rf_digital_rf_source
+  parameters:
+    affinity: ''
+    alias: ''
+    channel0: '''misa-l2'''
+    channel1: ch1
+    channel10: ch10
+    channel11: ch11
+    channel12: ch12
+    channel13: ch13
+    channel14: ch14
+    channel15: ch15
+    channel16: ch16
+    channel17: ch17
+    channel18: ch18
+    channel19: ch19
+    channel2: ch2
+    channel20: ch20
+    channel21: ch21
+    channel22: ch22
+    channel23: ch23
+    channel24: ch24
+    channel25: ch25
+    channel26: ch26
+    channel27: ch27
+    channel28: ch28
+    channel29: ch29
+    channel3: ch3
+    channel30: ch30
+    channel31: ch31
+    channel4: ch4
+    channel5: ch5
+    channel6: ch6
+    channel7: ch7
+    channel8: ch8
+    channel9: ch9
+    comment: 'Puts out either one-value
+
+      streams or a vector with as
+
+      many values as there are
+
+      subchannels.
+
+
+      Note: MUST put bounds
+
+      on these blocks (just letting
+
+      it default to a value doesn''t
+
+      cut it)'
+    end0: channel_end
+    end1: ''
+    end10: ''
+    end11: ''
+    end12: ''
+    end13: ''
+    end14: ''
+    end15: ''
+    end16: ''
+    end17: ''
+    end18: ''
+    end19: ''
+    end2: ''
+    end20: ''
+    end21: ''
+    end22: ''
+    end23: ''
+    end24: ''
+    end25: ''
+    end26: ''
+    end27: ''
+    end28: ''
+    end29: ''
+    end3: ''
+    end30: ''
+    end31: ''
+    end4: ''
+    end5: ''
+    end6: ''
+    end7: ''
+    end8: ''
+    end9: ''
+    gapless: 'False'
+    hide_msg_port: 'True'
+    maxoutbuf: '0'
+    min_chunksize: '0'
+    minoutbuf: '0'
+    nchan: '1'
+    repeat: 'True'
+    start0: channel_start
+    start1: ''
+    start10: ''
+    start11: ''
+    start12: ''
+    start13: ''
+    start14: ''
+    start15: ''
+    start16: ''
+    start17: ''
+    start18: ''
+    start19: ''
+    start2: ''
+    start20: ''
+    start21: ''
+    start22: ''
+    start23: ''
+    start24: ''
+    start25: ''
+    start26: ''
+    start27: ''
+    start28: ''
+    start29: ''
+    start3: ''
+    start30: ''
+    start31: ''
+    start4: ''
+    start5: ''
+    start6: ''
+    start7: ''
+    start8: ''
+    start9: ''
+    throttle: 'False'
+    top_level_dir: '''/Volumes/NO NAME/pulsar/2022-05-26/rf_data'''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [32, 92.0]
+    rotation: 0
+    state: enabled
+- name: import_0
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import pmt
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [728, 24.0]
+    rotation: 0
+    state: true
+- name: note_0
+  id: note
+  parameters:
+    alias: ''
+    comment: 'Same DSP, just for
+
+      other stream.'
+    note: duplicate DSP
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 432.0]
+    rotation: 0
+    state: true
+
+connections:
+- [blocks_complex_to_mag_squared_0, '0', blocks_integrate_xx_0, '0']
+- [blocks_complex_to_mag_squared_0_0, '0', blocks_integrate_xx_0_0, '0']
+- [blocks_integrate_xx_0, '0', blocks_stream_to_vector_0, '0']
+- [blocks_integrate_xx_0_0, '0', blocks_stream_to_vector_0_0, '0']
+- [blocks_integrate_xx_1, '0', blocks_vector_to_stream_1, '0']
+- [blocks_integrate_xx_1_0, '0', blocks_vector_to_stream_1_0, '0']
+- [blocks_integrate_xx_2, '0', blocks_file_meta_sink_0, '0']
+- [blocks_integrate_xx_2, '0', blocks_file_sink_0, '0']
+- [blocks_integrate_xx_2_0, '0', blocks_file_meta_sink_0_0, '0']
+- [blocks_interleaved_short_to_complex_2, '0', blocks_throttle_0, '0']
+- [blocks_interleaved_short_to_complex_2_0, '0', blocks_throttle_0_0, '0']
+- [blocks_stream_to_vector_0, '0', blocks_integrate_xx_1, '0']
+- [blocks_stream_to_vector_0_0, '0', blocks_integrate_xx_1_0, '0']
+- [blocks_throttle_0, '0', blocks_complex_to_mag_squared_0, '0']
+- [blocks_throttle_0_0, '0', blocks_complex_to_mag_squared_0_0, '0']
+- [blocks_vector_to_stream_1, '0', blocks_integrate_xx_2, '0']
+- [blocks_vector_to_stream_1_0, '0', blocks_integrate_xx_2_0, '0']
+- [blocks_vector_to_streams_0, '0', blocks_interleaved_short_to_complex_2, '0']
+- [blocks_vector_to_streams_0, '1', blocks_interleaved_short_to_complex_2_0, '0']
+- [blocks_vector_to_streams_0, '1', blocks_null_sink_0, '0']
+- [gr_digital_rf_digital_rf_channel_source_0, '0', blocks_vector_to_streams_0, '0']
+- [gr_digital_rf_digital_rf_source_0, '0', blocks_vector_to_streams_0, '0']
+
+metadata:
+  file_format: 1

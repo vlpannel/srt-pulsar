@@ -1,0 +1,291 @@
+options:
+  parameters:
+    author: vivelpanel
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: drf_intfloat
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Not titled yet
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '32000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: analog_sig_source_x_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    freq: '1000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [336, 240.0]
+    rotation: 0
+    state: disabled
+- name: blocks_null_sink_0
+  id: blocks_null_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_sink: '[[0,],]'
+    comment: ''
+    num_inputs: '1'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [504, 116.0]
+    rotation: 0
+    state: true
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [384, 116.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\n\nclass blk(gr.sync_block):  # other base classes\
+      \ are basic_block, decim_block, interp_block\n    \"\"\"Converts complex int\
+      \ (complex32) to complex float (complex64)\"\"\"\n\n    def __init__(self):\
+      \  # only default arguments here\n        \"\"\"arguments to this function show\
+      \ up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n         \
+      \   self,\n            name='Complex Int to Complex Float',   # will show up\
+      \ in GRC\n            in_sig=[np.int32],\n            out_sig=[np.complex64]\n\
+      \        )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        print('init\
+      \ is done!')\n\n    def work(self, input_items, output_items):\n        \"\"\
+      \"example: multiply with constant\"\"\"\n        print('starting work function')\n\
+      \        output_items[0][:] = input_items[0][:].astype(complex64)\n        print('items\
+      \ casted')\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('Complex Int to Complex Float', 'blk', [], [('0', 'int', 1)], [('0',
+      'complex', 1)], 'Converts complex int (complex32) to complex float (complex64)',
+      [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [208, 116.0]
+    rotation: 0
+    state: enabled
+- name: gr_digital_rf_digital_rf_channel_source_0
+  id: gr_digital_rf_digital_rf_channel_source
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    dir: '"/Volumes/NO NAME/pulsar/2022-05-26/rf_data/misa-l2"'
+    end: ''
+    gapless: 'False'
+    hide_msg_port: 'True'
+    maxoutbuf: '0'
+    min_chunksize: '0'
+    minoutbuf: '0'
+    repeat: 'False'
+    start: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [88, 232.0]
+    rotation: 0
+    state: disabled
+- name: gr_digital_rf_digital_rf_source_0
+  id: gr_digital_rf_digital_rf_source
+  parameters:
+    affinity: ''
+    alias: ''
+    channel0: misa-l2
+    channel1: ch1
+    channel10: ch10
+    channel11: ch11
+    channel12: ch12
+    channel13: ch13
+    channel14: ch14
+    channel15: ch15
+    channel16: ch16
+    channel17: ch17
+    channel18: ch18
+    channel19: ch19
+    channel2: ch2
+    channel20: ch20
+    channel21: ch21
+    channel22: ch22
+    channel23: ch23
+    channel24: ch24
+    channel25: ch25
+    channel26: ch26
+    channel27: ch27
+    channel28: ch28
+    channel29: ch29
+    channel3: ch3
+    channel30: ch30
+    channel31: ch31
+    channel4: ch4
+    channel5: ch5
+    channel6: ch6
+    channel7: ch7
+    channel8: ch8
+    channel9: ch9
+    comment: ''
+    end0: ''
+    end1: ''
+    end10: ''
+    end11: ''
+    end12: ''
+    end13: ''
+    end14: ''
+    end15: ''
+    end16: ''
+    end17: ''
+    end18: ''
+    end19: ''
+    end2: ''
+    end20: ''
+    end21: ''
+    end22: ''
+    end23: ''
+    end24: ''
+    end25: ''
+    end26: ''
+    end27: ''
+    end28: ''
+    end29: ''
+    end3: ''
+    end30: ''
+    end31: ''
+    end4: ''
+    end5: ''
+    end6: ''
+    end7: ''
+    end8: ''
+    end9: ''
+    gapless: 'True'
+    hide_msg_port: 'True'
+    maxoutbuf: '0'
+    min_chunksize: '0'
+    minoutbuf: '0'
+    nchan: '1'
+    repeat: 'False'
+    start0: ''
+    start1: ''
+    start10: ''
+    start11: ''
+    start12: ''
+    start13: ''
+    start14: ''
+    start15: ''
+    start16: ''
+    start17: ''
+    start18: ''
+    start19: ''
+    start2: ''
+    start20: ''
+    start21: ''
+    start22: ''
+    start23: ''
+    start24: ''
+    start25: ''
+    start26: ''
+    start27: ''
+    start28: ''
+    start29: ''
+    start3: ''
+    start30: ''
+    start31: ''
+    start4: ''
+    start5: ''
+    start6: ''
+    start7: ''
+    start8: ''
+    start9: ''
+    throttle: 'False'
+    top_level_dir: '"/Volumes/NO NAME/pulsar/2022-05-26/rf_data"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [32, 116.0]
+    rotation: 0
+    state: enabled
+
+connections:
+- [analog_sig_source_x_0, '0', blocks_null_sink_0, '0']
+- [analog_sig_source_x_0, '0', blocks_throttle_0, '0']
+- [blocks_throttle_0, '0', blocks_null_sink_0, '0']
+- [epy_block_0, '0', blocks_throttle_0, '0']
+- [gr_digital_rf_digital_rf_channel_source_0, '0', epy_block_0, '0']
+- [gr_digital_rf_digital_rf_source_0, '0', epy_block_0, '0']
+
+metadata:
+  file_format: 1
