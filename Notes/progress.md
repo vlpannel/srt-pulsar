@@ -19,3 +19,9 @@
 - Today rewrote basic binning Python script and then wrote shell debugging version.
 - See GitHub commits/log for more info on recent changes and developments.
 - See notes on personal tablet device for more notes and info.
+
+### 6/21/2022
+- Did a lot of reading about polyphase filterbanks; however, Kiyo was right that trying to understand all of the fundamentals can be unproductively "spinning one's wheels".
+- Talked to Kiyo about how PFBs work as well as the binning we will need to do for pulsar processing.
+- Made a few GRC flowcharts with PFB channelizer block.
+- Wrote an outline for how to create a spectrogram with just numpy and pyplot.
