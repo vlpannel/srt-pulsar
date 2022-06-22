@@ -82,7 +82,7 @@ blocks:
     bus_structure: null
     coordinate: [320, 212.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: blocks_file_sink_0
   id: blocks_file_sink
   parameters:
@@ -100,7 +100,29 @@ blocks:
     bus_structure: null
     coordinate: [320, 124.0]
     rotation: 0
-    state: true
+    state: enabled
+- name: blocks_file_source_0
+  id: blocks_file_source
+  parameters:
+    affinity: ''
+    alias: ''
+    begin_tag: pmt.PMT_NIL
+    comment: To test
+    file: /Users/vivelpanel/Desktop/SRT UROP 2022/SRT Flowgraphs/Testing Output Files/testbinary
+    length: '0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    repeat: 'True'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [528, 24.0]
+    rotation: 0
+    state: disabled
 - name: blocks_throttle_0
   id: blocks_throttle
   parameters:
@@ -141,7 +163,7 @@ blocks:
     bus_structure: null
     coordinate: [448, 192.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: note_0
   id: note
   parameters:
@@ -155,12 +177,72 @@ blocks:
     coordinate: [288, 16.0]
     rotation: 0
     state: true
+- name: qtgui_sink_x_0
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: samp_rate
+    comment: ''
+    fc: '0'
+    fftsize: '1024'
+    gui_hint: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '"Before Saving"'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'False'
+    showrf: 'False'
+    type: complex
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [392, 24.0]
+    rotation: 0
+    state: disabled
+- name: qtgui_sink_x_1
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: samp_rate
+    comment: ''
+    fc: '0'
+    fftsize: '1024'
+    gui_hint: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '"After Saving"'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'False'
+    showrf: 'False'
+    type: complex
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [696, 24.0]
+    rotation: 0
+    state: disabled
 
 connections:
 - [analog_sig_source_x_0, '0', blocks_throttle_0, '0']
 - [blocks_complex_to_real_0, '0', blocks_wavfile_sink_0, '0']
+- [blocks_file_source_0, '0', qtgui_sink_x_1, '0']
 - [blocks_throttle_0, '0', blocks_complex_to_real_0, '0']
 - [blocks_throttle_0, '0', blocks_file_sink_0, '0']
+- [blocks_throttle_0, '0', qtgui_sink_x_0, '0']
 
 metadata:
   file_format: 1

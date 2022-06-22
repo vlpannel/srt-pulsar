@@ -37,7 +37,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '32000'
+    value: '1000000'
   states:
     bus_sink: false
     bus_source: false
@@ -52,7 +52,7 @@ blocks:
     alias: ''
     amp: '1'
     comment: ''
-    freq: '1000'
+    freq: '600000'
     maxoutbuf: '0'
     minoutbuf: '0'
     offset: '0'
@@ -72,23 +72,23 @@ blocks:
   parameters:
     affinity: ''
     alias: ''
-    amp: '1.8'
+    amp: '1'
     comment: ''
-    freq: '3000'
+    freq: '100'
     maxoutbuf: '0'
     minoutbuf: '0'
     offset: '0'
     phase: '0'
     samp_rate: samp_rate
     type: complex
-    waveform: analog.GR_SQR_WAVE
+    waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
     coordinate: [40, 228.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: analog_sig_source_x_0_1
   id: analog_sig_source_x
   parameters:
@@ -96,43 +96,43 @@ blocks:
     alias: ''
     amp: '1'
     comment: ''
-    freq: '100'
+    freq: '1000'
     maxoutbuf: '0'
     minoutbuf: '0'
-    offset: '3.14'
+    offset: '0'
     phase: '0'
     samp_rate: samp_rate
     type: complex
-    waveform: analog.GR_SAW_WAVE
+    waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
     coordinate: [40, 316.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: analog_sig_source_x_0_2
   id: analog_sig_source_x
   parameters:
     affinity: ''
     alias: ''
-    amp: '.66667'
+    amp: '1'
     comment: ''
-    freq: '2500'
+    freq: '100000'
     maxoutbuf: '0'
     minoutbuf: '0'
-    offset: -.5
+    offset: '0'
     phase: '0'
     samp_rate: samp_rate
     type: complex
-    waveform: analog.GR_SIN_WAVE
+    waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
     coordinate: [40, 404.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: blocks_add_xx_0
   id: blocks_add_xx
   parameters:
@@ -148,9 +148,28 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 268.0]
+    coordinate: [304, 260.0]
     rotation: 0
-    state: disabled
+    state: enabled
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [384, 380.0]
+    rotation: 0
+    state: true
 - name: pfb_channelizer_ccf_0
   id: pfb_channelizer_ccf
   parameters:
@@ -253,7 +272,7 @@ blocks:
     bus_structure: null
     coordinate: [640, 12.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: qtgui_freq_sink_x_1
   id: qtgui_freq_sink_x
   parameters:
@@ -334,7 +353,7 @@ blocks:
     bus_structure: null
     coordinate: [640, 68.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: qtgui_freq_sink_x_2
   id: qtgui_freq_sink_x
   parameters:
@@ -415,7 +434,7 @@ blocks:
     bus_structure: null
     coordinate: [640, 124.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: qtgui_freq_sink_x_3
   id: qtgui_freq_sink_x
   parameters:
@@ -496,7 +515,7 @@ blocks:
     bus_structure: null
     coordinate: [640, 180.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: qtgui_freq_sink_x_4
   id: qtgui_freq_sink_x
   parameters:
@@ -575,7 +594,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [496, 364.0]
+    coordinate: [472, 368.0]
     rotation: 0
     state: disabled
 - name: qtgui_sink_x_0
@@ -587,10 +606,10 @@ blocks:
     comment: ''
     fc: '0'
     fftsize: '1024'
-    gui_hint: ''
+    gui_hint: (0,0,1,2)
     maxoutbuf: '0'
     minoutbuf: '0'
-    name: '""'
+    name: '"All"'
     plotconst: 'True'
     plotfreq: 'True'
     plottime: 'True'
@@ -604,9 +623,125 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [480, 296.0]
+    coordinate: [480, 280.0]
     rotation: 0
-    state: disabled
+    state: enabled
+- name: qtgui_sink_x_0_0
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: samp_rate
+    comment: ''
+    fc: '0'
+    fftsize: '1024'
+    gui_hint: (2, 1)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '"3"'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'False'
+    showrf: 'False'
+    type: complex
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 248.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_sink_x_0_1
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: samp_rate
+    comment: ''
+    fc: '0'
+    fftsize: '1024'
+    gui_hint: (1, 0)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '"0"'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'False'
+    showrf: 'False'
+    type: complex
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 8.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_sink_x_0_2
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: samp_rate
+    comment: ''
+    fc: '0'
+    fftsize: '1024'
+    gui_hint: (2, 0)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '"2"'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'False'
+    showrf: 'False'
+    type: complex
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 168.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_sink_x_0_3
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: samp_rate
+    comment: ''
+    fc: '0'
+    fftsize: '1024'
+    gui_hint: (1, 1)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '"1"'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'False'
+    showrf: 'False'
+    type: complex
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 88.0]
+    rotation: 0
+    state: enabled
 - name: qtgui_time_sink_x_0
   id: qtgui_time_sink_x
   parameters:
@@ -800,7 +935,7 @@ blocks:
     bus_structure: null
     coordinate: [744, 180.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: qtgui_time_sink_x_0_1
   id: qtgui_time_sink_x
   parameters:
@@ -897,7 +1032,7 @@ blocks:
     bus_structure: null
     coordinate: [744, 124.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: qtgui_time_sink_x_0_2
   id: qtgui_time_sink_x
   parameters:
@@ -994,7 +1129,7 @@ blocks:
     bus_structure: null
     coordinate: [744, 68.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: qtgui_time_sink_x_0_3
   id: qtgui_time_sink_x
   parameters:
@@ -1091,25 +1226,29 @@ blocks:
     bus_structure: null
     coordinate: [744, 12.0]
     rotation: 0
-    state: true
+    state: disabled
 
 connections:
 - [analog_sig_source_x_0, '0', blocks_add_xx_0, '0']
-- [analog_sig_source_x_0, '0', pfb_channelizer_ccf_0, '0']
 - [analog_sig_source_x_0_0, '0', blocks_add_xx_0, '1']
 - [analog_sig_source_x_0_1, '0', blocks_add_xx_0, '2']
 - [analog_sig_source_x_0_2, '0', blocks_add_xx_0, '3']
-- [blocks_add_xx_0, '0', pfb_channelizer_ccf_0, '0']
+- [blocks_add_xx_0, '0', blocks_throttle_0, '0']
 - [blocks_add_xx_0, '0', qtgui_freq_sink_x_4, '0']
-- [blocks_add_xx_0, '0', qtgui_sink_x_0, '0']
 - [blocks_add_xx_0, '0', qtgui_time_sink_x_0, '0']
+- [blocks_throttle_0, '0', pfb_channelizer_ccf_0, '0']
+- [blocks_throttle_0, '0', qtgui_sink_x_0, '0']
 - [pfb_channelizer_ccf_0, '0', qtgui_freq_sink_x_0, '0']
+- [pfb_channelizer_ccf_0, '0', qtgui_sink_x_0_1, '0']
 - [pfb_channelizer_ccf_0, '0', qtgui_time_sink_x_0_3, '0']
 - [pfb_channelizer_ccf_0, '1', qtgui_freq_sink_x_1, '0']
+- [pfb_channelizer_ccf_0, '1', qtgui_sink_x_0_3, '0']
 - [pfb_channelizer_ccf_0, '1', qtgui_time_sink_x_0_2, '0']
 - [pfb_channelizer_ccf_0, '2', qtgui_freq_sink_x_2, '0']
+- [pfb_channelizer_ccf_0, '2', qtgui_sink_x_0_2, '0']
 - [pfb_channelizer_ccf_0, '2', qtgui_time_sink_x_0_1, '0']
 - [pfb_channelizer_ccf_0, '3', qtgui_freq_sink_x_3, '0']
+- [pfb_channelizer_ccf_0, '3', qtgui_sink_x_0_0, '0']
 - [pfb_channelizer_ccf_0, '3', qtgui_time_sink_x_0_0, '0']
 
 metadata:
