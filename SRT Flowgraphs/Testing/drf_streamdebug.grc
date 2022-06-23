@@ -320,6 +320,19 @@ blocks:
     coordinate: [24, 140.0]
     rotation: 0
     state: true
+- name: note_0
+  id: note
+  parameters:
+    alias: ''
+    comment: New DRF file is empty (only has metadata)!
+    note: New DRF file is empty (only has metadata)!
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [448, 152.0]
+    rotation: 0
+    state: true
 
 connections:
 - [blocks_null_source_0, '0', blocks_throttle_0, '0']
