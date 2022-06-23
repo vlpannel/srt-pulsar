@@ -1,0 +1,330 @@
+options:
+  parameters:
+    author: vivelpanel
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: drf_stream
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Testing/Debugging DRF Streams
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: 1e6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: blocks_null_sink_0
+  id: blocks_null_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_sink: '[[0,],]'
+    comment: ''
+    num_inputs: '1'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [520, 68.0]
+    rotation: 0
+    state: true
+- name: blocks_null_sink_1
+  id: blocks_null_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_sink: '[[0,],]'
+    comment: ''
+    num_inputs: '1'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [432, 320.0]
+    rotation: 0
+    state: disabled
+- name: blocks_null_source_0
+  id: blocks_null_source
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_source: '[[0,],]'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_outputs: '1'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [280, 68.0]
+    rotation: 0
+    state: true
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [392, 68.0]
+    rotation: 0
+    state: enabled
+- name: blocks_vector_to_streams_0
+  id: blocks_vector_to_streams
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_streams: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [256, 272.0]
+    rotation: 0
+    state: disabled
+- name: gr_digital_rf_digital_rf_sink_0
+  id: gr_digital_rf_digital_rf_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    center_freqs: '[]'
+    channel0: ch0
+    channel1: ch1
+    channel10: ch10
+    channel11: ch11
+    channel12: ch12
+    channel13: ch13
+    channel14: ch14
+    channel15: ch15
+    channel16: ch16
+    channel17: ch17
+    channel18: ch18
+    channel19: ch19
+    channel2: ch2
+    channel20: ch20
+    channel21: ch21
+    channel22: ch22
+    channel23: ch23
+    channel24: ch24
+    channel25: ch25
+    channel26: ch26
+    channel27: ch27
+    channel28: ch28
+    channel29: ch29
+    channel3: ch3
+    channel30: ch30
+    channel31: ch31
+    channel4: ch4
+    channel5: ch5
+    channel6: ch6
+    channel7: ch7
+    channel8: ch8
+    channel9: ch9
+    checksum: 'False'
+    comment: ''
+    compression_level: '0'
+    debug: 'False'
+    file_cadence_ms: '1000'
+    ignore_tags: 'False'
+    input: sc16
+    is_continuous: 'True'
+    marching_periods: 'True'
+    metadata: '{}'
+    min_chunksize: '0'
+    nchan: '1'
+    sample_rate_denominator: '1'
+    sample_rate_numerator: int(samp_rate)
+    start: ''
+    stop_on_skipped: 'False'
+    stop_on_time_tag: 'False'
+    subdir_cadence_s: '3600'
+    top_level_dir: /Users/vivelpanel/Desktop/SRT UROP 2022/SRT Flowgraphs/Testing
+      Output Files/drf_sink_out
+    uuid: ''
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [288, 152.0]
+    rotation: 0
+    state: enabled
+- name: gr_digital_rf_digital_rf_source_0
+  id: gr_digital_rf_digital_rf_source
+  parameters:
+    affinity: ''
+    alias: ''
+    channel0: misa-l2
+    channel1: ch1
+    channel10: ch10
+    channel11: ch11
+    channel12: ch12
+    channel13: ch13
+    channel14: ch14
+    channel15: ch15
+    channel16: ch16
+    channel17: ch17
+    channel18: ch18
+    channel19: ch19
+    channel2: ch2
+    channel20: ch20
+    channel21: ch21
+    channel22: ch22
+    channel23: ch23
+    channel24: ch24
+    channel25: ch25
+    channel26: ch26
+    channel27: ch27
+    channel28: ch28
+    channel29: ch29
+    channel3: ch3
+    channel30: ch30
+    channel31: ch31
+    channel4: ch4
+    channel5: ch5
+    channel6: ch6
+    channel7: ch7
+    channel8: ch8
+    channel9: ch9
+    comment: ''
+    end0: '165360239999'
+    end1: ''
+    end10: ''
+    end11: ''
+    end12: ''
+    end13: ''
+    end14: ''
+    end15: ''
+    end16: ''
+    end17: ''
+    end18: ''
+    end19: ''
+    end2: ''
+    end20: ''
+    end21: ''
+    end22: ''
+    end23: ''
+    end24: ''
+    end25: ''
+    end26: ''
+    end27: ''
+    end28: ''
+    end29: ''
+    end3: ''
+    end30: ''
+    end31: ''
+    end4: ''
+    end5: ''
+    end6: ''
+    end7: ''
+    end8: ''
+    end9: ''
+    gapless: 'False'
+    hide_msg_port: 'True'
+    maxoutbuf: '0'
+    min_chunksize: '0'
+    minoutbuf: '0'
+    nchan: '1'
+    repeat: 'True'
+    start0: '165359520000'
+    start1: ''
+    start10: ''
+    start11: ''
+    start12: ''
+    start13: ''
+    start14: ''
+    start15: ''
+    start16: ''
+    start17: ''
+    start18: ''
+    start19: ''
+    start2: ''
+    start20: ''
+    start21: ''
+    start22: ''
+    start23: ''
+    start24: ''
+    start25: ''
+    start26: ''
+    start27: ''
+    start28: ''
+    start29: ''
+    start3: ''
+    start30: ''
+    start31: ''
+    start4: ''
+    start5: ''
+    start6: ''
+    start7: ''
+    start8: ''
+    start9: ''
+    throttle: 'True'
+    top_level_dir: '"/Volumes/NO Name/pulsar/2022-05-26/rf_data"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 140.0]
+    rotation: 0
+    state: true
+
+connections:
+- [blocks_null_source_0, '0', blocks_throttle_0, '0']
+- [blocks_throttle_0, '0', blocks_null_sink_0, '0']
+- [gr_digital_rf_digital_rf_source_0, '0', gr_digital_rf_digital_rf_sink_0, '0']
+
+metadata:
+  file_format: 1
