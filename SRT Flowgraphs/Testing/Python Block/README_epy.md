@@ -1,0 +1,3 @@
+# URGENT NOTE
+
+This doesn't work. Why? At this point, I have no clue. In fact no embedded python blocks work for me right now in GRC. They always end the code suddenly, with a return code -11 and nothing done. Need to figure this out...
