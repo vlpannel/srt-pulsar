@@ -37,7 +37,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '32000'
+    value: 1e6
   states:
     bus_sink: false
     bus_source: false
@@ -63,184 +63,55 @@ blocks:
     coordinate: [200, 8.0]
     rotation: 0
     state: true
-- name: blocks_file_sink_0
-  id: blocks_file_sink
+- name: blocks_complex_to_interleaved_short_0
+  id: blocks_complex_to_interleaved_short
   parameters:
     affinity: ''
     alias: ''
-    append: 'False'
     comment: ''
-    file: chan_name.name(0)
-    type: complex
-    unbuffered: 'False'
-    vlen: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale_factor: '1.0'
+    vector_output: 'False'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [32, 164.0]
+    coordinate: [248, 200.0]
     rotation: 180
     state: true
-- name: blocks_file_sink_0_0
-  id: blocks_file_sink
+- name: blocks_complex_to_interleaved_short_0_0
+  id: blocks_complex_to_interleaved_short
   parameters:
     affinity: ''
     alias: ''
-    append: 'False'
     comment: ''
-    file: chan_name.name(1)
-    type: complex
-    unbuffered: 'False'
-    vlen: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale_factor: '1.0'
+    vector_output: 'False'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [32, 212.0]
+    coordinate: [248, 320.0]
     rotation: 180
     state: true
-- name: blocks_file_sink_0_1
-  id: blocks_file_sink
+- name: blocks_complex_to_interleaved_short_0_1
+  id: blocks_complex_to_interleaved_short
   parameters:
     affinity: ''
     alias: ''
-    append: 'False'
     comment: ''
-    file: chan_name.name(2)
-    type: complex
-    unbuffered: 'False'
-    vlen: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale_factor: '1.0'
+    vector_output: 'False'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [32, 260.0]
-    rotation: 180
-    state: true
-- name: blocks_file_sink_0_2
-  id: blocks_file_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    append: 'False'
-    comment: ''
-    file: chan_name.name(3)
-    type: complex
-    unbuffered: 'False'
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [32, 308.0]
-    rotation: 180
-    state: true
-- name: blocks_file_sink_0_3
-  id: blocks_file_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    append: 'False'
-    comment: ''
-    file: chan_name.name(4)
-    type: complex
-    unbuffered: 'False'
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [32, 356.0]
-    rotation: 180
-    state: true
-- name: blocks_file_sink_0_4
-  id: blocks_file_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    append: 'False'
-    comment: ''
-    file: chan_name.name(5)
-    type: complex
-    unbuffered: 'False'
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [32, 404.0]
-    rotation: 180
-    state: true
-- name: blocks_file_sink_0_5
-  id: blocks_file_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    append: 'False'
-    comment: ''
-    file: chan_name.name(6)
-    type: complex
-    unbuffered: 'False'
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [32, 452.0]
-    rotation: 180
-    state: true
-- name: blocks_file_sink_0_6
-  id: blocks_file_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    append: 'False'
-    comment: ''
-    file: chan_name.name(7)
-    type: complex
-    unbuffered: 'False'
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [32, 500.0]
-    rotation: 180
-    state: true
-- name: blocks_file_sink_0_7
-  id: blocks_file_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    append: 'False'
-    comment: ''
-    file: chan_name.name(9)
-    type: complex
-    unbuffered: 'False'
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [32, 596.0]
-    rotation: 180
-    state: true
-- name: blocks_file_sink_0_8
-  id: blocks_file_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    append: 'False'
-    comment: ''
-    file: chan_name.name(8)
-    type: complex
-    unbuffered: 'False'
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [32, 548.0]
+    coordinate: [248, 256.0]
     rotation: 180
     state: true
 - name: blocks_interleaved_short_to_complex_0
@@ -277,7 +148,7 @@ blocks:
     bus_structure: null
     coordinate: [344, 156.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: blocks_throttle_0
   id: blocks_throttle
   parameters:
@@ -312,9 +183,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [176, 108.0]
+    coordinate: [184, 108.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: chan_name
   id: epy_module
   parameters:
@@ -337,11 +208,12 @@ blocks:
     coordinate: [288, 24.0]
     rotation: 0
     state: true
-- name: gr_digital_rf_digital_rf_source_0
-  id: gr_digital_rf_digital_rf_source
+- name: gr_digital_rf_digital_rf_sink_0
+  id: gr_digital_rf_digital_rf_sink
   parameters:
     affinity: ''
     alias: ''
+    center_freqs: '[]'
     channel0: ch0
     channel1: ch1
     channel10: ch10
@@ -374,8 +246,73 @@ blocks:
     channel7: ch7
     channel8: ch8
     channel9: ch9
+    checksum: 'False'
     comment: ''
-    end0: ''
+    compression_level: '0'
+    debug: 'False'
+    file_cadence_ms: '1000'
+    ignore_tags: 'False'
+    input: s16
+    is_continuous: 'True'
+    marching_periods: 'True'
+    metadata: '{}'
+    min_chunksize: '0'
+    nchan: '3'
+    sample_rate_denominator: '1'
+    sample_rate_numerator: int(samp_rate)
+    start: '1653595200000000'
+    stop_on_skipped: 'False'
+    stop_on_time_tag: 'False'
+    subdir_cadence_s: '3600'
+    top_level_dir: /Users/vivelpanel/Desktop/SRT UROP 2022/Spectrogram/drf_out
+    uuid: ''
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 204.0]
+    rotation: 180
+    state: true
+- name: gr_digital_rf_digital_rf_source_0
+  id: gr_digital_rf_digital_rf_source
+  parameters:
+    affinity: ''
+    alias: ''
+    channel0: misa-l2
+    channel1: ch1
+    channel10: ch10
+    channel11: ch11
+    channel12: ch12
+    channel13: ch13
+    channel14: ch14
+    channel15: ch15
+    channel16: ch16
+    channel17: ch17
+    channel18: ch18
+    channel19: ch19
+    channel2: ch2
+    channel20: ch20
+    channel21: ch21
+    channel22: ch22
+    channel23: ch23
+    channel24: ch24
+    channel25: ch25
+    channel26: ch26
+    channel27: ch27
+    channel28: ch28
+    channel29: ch29
+    channel3: ch3
+    channel30: ch30
+    channel31: ch31
+    channel4: ch4
+    channel5: ch5
+    channel6: ch6
+    channel7: ch7
+    channel8: ch8
+    channel9: ch9
+    comment: ''
+    end0: '1653602399999999'
     end1: ''
     end10: ''
     end11: ''
@@ -414,7 +351,7 @@ blocks:
     minoutbuf: '0'
     nchan: '1'
     repeat: 'False'
-    start0: ''
+    start0: '1653595200000000'
     start1: ''
     start10: ''
     start11: ''
@@ -447,12 +384,12 @@ blocks:
     start8: ''
     start9: ''
     throttle: 'False'
-    top_level_dir: ''
+    top_level_dir: '"/Volumes/NO Name/pulsar/2022-05-26/rf_data"'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [16, 84.0]
+    coordinate: [16, 76.0]
     rotation: 0
     state: true
 - name: pfb_channelizer_ccf_0
@@ -466,7 +403,7 @@ blocks:
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
-    nchans: '10'
+    nchans: '3'
     osr: '1.0'
     samp_delay: '0'
     taps: '[]'
@@ -474,26 +411,24 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [328, 220.0]
+    coordinate: [448, 220.0]
     rotation: 180
     state: true
 
 connections:
+- [blocks_complex_to_interleaved_short_0, '0', gr_digital_rf_digital_rf_sink_0, '0']
+- [blocks_complex_to_interleaved_short_0_0, '0', gr_digital_rf_digital_rf_sink_0,
+  '2']
+- [blocks_complex_to_interleaved_short_0_1, '0', gr_digital_rf_digital_rf_sink_0,
+  '1']
 - [blocks_interleaved_short_to_complex_0, '0', pfb_channelizer_ccf_0, '0']
 - [blocks_throttle_0, '0', blocks_interleaved_short_to_complex_0, '0']
 - [blocks_vector_to_streams_0, '0', blocks_throttle_0, '0']
 - [blocks_vector_to_streams_0, '1', blocks_null_sink_0, '0']
 - [gr_digital_rf_digital_rf_source_0, '0', blocks_vector_to_streams_0, '0']
-- [pfb_channelizer_ccf_0, '0', blocks_file_sink_0, '0']
-- [pfb_channelizer_ccf_0, '1', blocks_file_sink_0_0, '0']
-- [pfb_channelizer_ccf_0, '2', blocks_file_sink_0_1, '0']
-- [pfb_channelizer_ccf_0, '3', blocks_file_sink_0_2, '0']
-- [pfb_channelizer_ccf_0, '4', blocks_file_sink_0_3, '0']
-- [pfb_channelizer_ccf_0, '5', blocks_file_sink_0_4, '0']
-- [pfb_channelizer_ccf_0, '6', blocks_file_sink_0_5, '0']
-- [pfb_channelizer_ccf_0, '7', blocks_file_sink_0_6, '0']
-- [pfb_channelizer_ccf_0, '8', blocks_file_sink_0_8, '0']
-- [pfb_channelizer_ccf_0, '9', blocks_file_sink_0_7, '0']
+- [pfb_channelizer_ccf_0, '0', blocks_complex_to_interleaved_short_0, '0']
+- [pfb_channelizer_ccf_0, '1', blocks_complex_to_interleaved_short_0_1, '0']
+- [pfb_channelizer_ccf_0, '2', blocks_complex_to_interleaved_short_0_0, '0']
 
 metadata:
   file_format: 1

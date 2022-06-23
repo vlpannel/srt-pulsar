@@ -247,7 +247,7 @@ blocks:
     channel8: ch8
     channel9: ch9
     checksum: 'False'
-    comment: ''
+    comment: Both source and sink blocks work.
     compression_level: '0'
     debug: 'False'
     file_cadence_ms: '1000'
