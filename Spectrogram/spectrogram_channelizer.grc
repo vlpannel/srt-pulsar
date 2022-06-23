@@ -70,7 +70,7 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: ''
+    file: chan_name(0)
     type: complex
     unbuffered: 'False'
     vlen: '1'
@@ -88,7 +88,7 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: ''
+    file: chan_name(1)
     type: complex
     unbuffered: 'False'
     vlen: '1'
@@ -106,7 +106,7 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: ''
+    file: chan_name(2)
     type: complex
     unbuffered: 'False'
     vlen: '1'
@@ -124,7 +124,7 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: ''
+    file: chan_name(3)
     type: complex
     unbuffered: 'False'
     vlen: '1'
@@ -142,7 +142,7 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: ''
+    file: chan_name(4)
     type: complex
     unbuffered: 'False'
     vlen: '1'
@@ -160,7 +160,7 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: ''
+    file: chan_name(5)
     type: complex
     unbuffered: 'False'
     vlen: '1'
@@ -178,7 +178,7 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: ''
+    file: chan_name(6)
     type: complex
     unbuffered: 'False'
     vlen: '1'
@@ -196,7 +196,7 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: ''
+    file: chan_name(7)
     type: complex
     unbuffered: 'False'
     vlen: '1'
@@ -214,7 +214,7 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: ''
+    file: chan_name(9)
     type: complex
     unbuffered: 'False'
     vlen: '1'
@@ -232,7 +232,7 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: ''
+    file: chan_name(8)
     type: complex
     unbuffered: 'False'
     vlen: '1'
@@ -322,8 +322,8 @@ blocks:
     comment: ''
     source_code: "# this module will be imported in the into your flowgraph\n\n\"\"\
       \"\nThis code generates the names of the files that store each channel output.\n\
-      \"\"\"\n\nclass ChannelFile:\n    basename = 'created_channel_'\n    index =\
-      \ 0\n\n    def __init__(self):\n        self.filename = basename + str(index)\n\
+      \"\"\"\n\nclass ChannelFile:\n    basename = '/chan/created_channel_'\n    index\
+      \ = 0\n\n    def __init__(self):\n        self.filename = basename + str(index)\n\
       \        index += 1\n\n    def get_name(self):\n        return self.filename\n"
   states:
     bus_sink: false
@@ -448,6 +448,25 @@ blocks:
     bus_source: false
     bus_structure: null
     coordinate: [16, 84.0]
+    rotation: 0
+    state: true
+- name: note_0
+  id: note
+  parameters:
+    alias: ''
+    comment: 'DRF Source block is not filled
+
+      out and chan_name script is
+
+      not complete (doesn''t include
+
+      file path).'
+    note: Currently nonfunctional
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [384, 24.0]
     rotation: 0
     state: true
 - name: pfb_channelizer_ccf_0
