@@ -9,6 +9,7 @@ p = '/Users/vivelpanel/Desktop/SRT UROP 2022/Spectrogram/channels/'
 files = os.listdir(path = p)
 channel_data = []
 for f in files:
+	# unfortunately, the DEBUG #0 print statemtents show that all the saved arrays are empty-- EMPTY!
 	print(f"\n\n\nDEBUG #0:\n\tf = {f}\n\tp+f = {p + f}\n\tarray is {np.fromfile((p+f),dtype=np.complex64)}")
 	channel_data.append(np.fromfile((p + f), dtype = np.complex64))
 
