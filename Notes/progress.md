@@ -19,3 +19,8 @@
 - Today rewrote basic binning Python script and then wrote shell debugging version.
 - See GitHub commits/log for more info on recent changes and developments.
 - See notes on personal tablet device for more notes and info.
+
+### 6/23/2022
+- In past few days have created flowgraphs and Python scripts to channelize data and then read it (eventual goal is to create spectrogram).
+- Installed h5py through Anaconda.
+
