@@ -57,6 +57,17 @@ def pfb_spectrometer(x, n_taps, n_chan, n_int, window_fn="hamming"):
     
     return x_psd
 
+#############################################
+"""MY ORIGINAL CODE SNIPPET"""
+
+def get_data(filepath, channel, num_samp, samp_rate):
+	import digital_rf
+	d = digital_rf.DigitalRFReader(filepath)
+	sindex = d.get_bounds(channel)[0] + samp_rate	# start reading 1 sec after recording started (this is for simplicity-- to be fixed later)
+	return d.read_vector_c81d(sindex, num_samp, channel)
+
+#############################################
+
 if __name__ == "__main__":
     import pylab as plt
     
@@ -72,6 +83,10 @@ if __name__ == "__main__":
     amp     = 1
     cw_signal = amp * np.sin(samples * freq)
     data = noise + cw_signal
+    
+	# also hard-coded and to-be-fixed
+    f = '/Volumes/NO NAME/pulsar/2022-05-26/rf_data'
+    data = get_data(f, 'misa-l2', 33672, 1000000)
     
     X_psd = pfb_spectrometer(data, n_taps=M, n_chan=P, n_int=2, window_fn="hamming")
 

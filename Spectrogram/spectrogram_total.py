@@ -36,5 +36,5 @@ dvec = do.read_vector_c81d(s + (samp_rate * 300), nsamp, channel)
 
 # graph
 # This is using pyplot's specgram function to do all the work for me
-plt.specgram(dvec, Fs=samp_rate, Fc=center_freq)
+plt.specgram(dvec, Fs=samp_rate, Fc=center_freq, NFFT=32768, noverlap=1024)
 plt.show()
