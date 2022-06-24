@@ -34,6 +34,7 @@ from gnuradio import eng_notation
 from gnuradio.filter import pfb
 import gr_digital_rf
 import numpy as np; import gr_digital_rf
+import store_channels_bounds as bounds  # embedded python module
 import store_channels_chan_name as chan_name  # embedded python module
 
 
@@ -77,55 +78,53 @@ class store_channels(gr.top_block, Qt.QWidget):
         # Variables
         ##################################################
         self.subchannels = subchannels = 2
-        self.samp_rate = samp_rate = 1e6
+        self.samp_rate = samp_rate = 32000
 
         ##################################################
         # Blocks
         ##################################################
         self.pfb_channelizer_ccf_0 = pfb.channelizer_ccf(
-            3,
+            10,
             [],
             1.0,
             100)
         self.pfb_channelizer_ccf_0.set_channel_map([])
         self.pfb_channelizer_ccf_0.declare_sample_delay(0)
         self.gr_digital_rf_digital_rf_source_0 = gr_digital_rf.digital_rf_source(
-            "/Volumes/NO Name/pulsar/2022-05-26/rf_data",
+            bounds.source_filepath,
             channels=[
                 'misa-l2',
             ],
             start=[
-                1653595200000000,
+                bounds.sindex(0),
             ],
             end=[
-                1653602399999999,
+                bounds.eindex(100),
             ],
-            repeat=False,
+            repeat=True,
             throttle=False,
             gapless=False,
             min_chunksize=None,
         )
         self.gr_digital_rf_digital_rf_sink_0 = gr_digital_rf.digital_rf_sink(
-            '/Users/vivelpanel/Desktop/SRT UROP 2022/Spectrogram/drf_out',
+            bounds.sink_filepath,
             channels=[
                 'ch0',
-                'ch1',
-                'ch2',
             ],
-            dtype=np.int16,
+            dtype=np.complex64,
             subdir_cadence_secs=3600,
             file_cadence_millisecs=1000,
             sample_rate_numerator=int(samp_rate),
             sample_rate_denominator=1,
-            start=1653595200000000,
+            start=bounds.sindex(1000),
             ignore_tags=False,
-            is_complex=False,
-            num_subchannels=1,
-            uuid_str=None,
+            is_complex=True,
+            num_subchannels=10,
+            uuid_str='hopethisfirsttryworks',
             center_frequencies=(
                 None
             ),
-            metadata={},
+            metadata={'grc_generated': True, 'input_type': 'vector length10 cf64'},
             is_continuous=True,
             compression_level=0,
             checksum=False,
@@ -137,27 +136,30 @@ class store_channels(gr.top_block, Qt.QWidget):
         )
         self.blocks_vector_to_streams_0 = blocks.vector_to_streams(gr.sizeof_short*1, subchannels)
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_short*1, samp_rate,True)
+        self.blocks_streams_to_vector_0 = blocks.streams_to_vector(gr.sizeof_gr_complex*1, 10)
         self.blocks_null_sink_0 = blocks.null_sink(gr.sizeof_short*1)
         self.blocks_interleaved_short_to_complex_0 = blocks.interleaved_short_to_complex(False, False,1.0)
-        self.blocks_complex_to_interleaved_short_0_1 = blocks.complex_to_interleaved_short(False,1.0)
-        self.blocks_complex_to_interleaved_short_0_0 = blocks.complex_to_interleaved_short(False,1.0)
-        self.blocks_complex_to_interleaved_short_0 = blocks.complex_to_interleaved_short(False,1.0)
 
 
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.blocks_complex_to_interleaved_short_0, 0), (self.gr_digital_rf_digital_rf_sink_0, 0))
-        self.connect((self.blocks_complex_to_interleaved_short_0_0, 0), (self.gr_digital_rf_digital_rf_sink_0, 2))
-        self.connect((self.blocks_complex_to_interleaved_short_0_1, 0), (self.gr_digital_rf_digital_rf_sink_0, 1))
         self.connect((self.blocks_interleaved_short_to_complex_0, 0), (self.pfb_channelizer_ccf_0, 0))
+        self.connect((self.blocks_streams_to_vector_0, 0), (self.gr_digital_rf_digital_rf_sink_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.blocks_interleaved_short_to_complex_0, 0))
         self.connect((self.blocks_vector_to_streams_0, 1), (self.blocks_null_sink_0, 0))
         self.connect((self.blocks_vector_to_streams_0, 0), (self.blocks_throttle_0, 0))
         self.connect((self.gr_digital_rf_digital_rf_source_0, 0), (self.blocks_vector_to_streams_0, 0))
-        self.connect((self.pfb_channelizer_ccf_0, 0), (self.blocks_complex_to_interleaved_short_0, 0))
-        self.connect((self.pfb_channelizer_ccf_0, 2), (self.blocks_complex_to_interleaved_short_0_0, 0))
-        self.connect((self.pfb_channelizer_ccf_0, 1), (self.blocks_complex_to_interleaved_short_0_1, 0))
+        self.connect((self.pfb_channelizer_ccf_0, 7), (self.blocks_streams_to_vector_0, 7))
+        self.connect((self.pfb_channelizer_ccf_0, 2), (self.blocks_streams_to_vector_0, 2))
+        self.connect((self.pfb_channelizer_ccf_0, 8), (self.blocks_streams_to_vector_0, 8))
+        self.connect((self.pfb_channelizer_ccf_0, 5), (self.blocks_streams_to_vector_0, 5))
+        self.connect((self.pfb_channelizer_ccf_0, 9), (self.blocks_streams_to_vector_0, 9))
+        self.connect((self.pfb_channelizer_ccf_0, 6), (self.blocks_streams_to_vector_0, 6))
+        self.connect((self.pfb_channelizer_ccf_0, 0), (self.blocks_streams_to_vector_0, 0))
+        self.connect((self.pfb_channelizer_ccf_0, 4), (self.blocks_streams_to_vector_0, 4))
+        self.connect((self.pfb_channelizer_ccf_0, 3), (self.blocks_streams_to_vector_0, 3))
+        self.connect((self.pfb_channelizer_ccf_0, 1), (self.blocks_streams_to_vector_0, 1))
 
 
     def closeEvent(self, event):
