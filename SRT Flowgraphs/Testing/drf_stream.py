@@ -74,7 +74,7 @@ class drf_stream(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
-        self.samp_rate = samp_rate = 1e6
+        self.samp_rate = samp_rate = 100
 
         ##################################################
         # Blocks
@@ -88,10 +88,10 @@ class drf_stream(gr.top_block, Qt.QWidget):
                 1653595200000000,
             ],
             end=[
-                1653595200033671,
+                1653595299999999,
             ],
             repeat=True,
-            throttle=True,
+            throttle=False,
             gapless=False,
             min_chunksize=None,
         )
@@ -105,11 +105,11 @@ class drf_stream(gr.top_block, Qt.QWidget):
             file_cadence_millisecs=1000,
             sample_rate_numerator=int(samp_rate),
             sample_rate_denominator=1,
-            start=None,
+            start=0,
             ignore_tags=False,
             is_complex=True,
-            num_subchannels=1,
-            uuid_str=None,
+            num_subchannels=2,
+            uuid_str='lkjhlkjh',
             center_frequencies=(
                 None
             ),
@@ -123,9 +123,9 @@ class drf_stream(gr.top_block, Qt.QWidget):
             debug=False,
             min_chunksize=None,
         )
-        self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
-        self.blocks_null_source_0 = blocks.null_source(gr.sizeof_gr_complex*1)
-        self.blocks_null_sink_0 = blocks.null_sink(gr.sizeof_gr_complex*1)
+        self.blocks_throttle_0 = blocks.throttle(gr.sizeof_short*1, samp_rate,True)
+        self.blocks_null_source_0 = blocks.null_source(gr.sizeof_short*1)
+        self.blocks_null_sink_0 = blocks.null_sink(gr.sizeof_short*1)
 
 
         ##################################################
