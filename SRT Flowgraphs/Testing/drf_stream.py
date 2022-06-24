@@ -74,7 +74,7 @@ class drf_stream(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
-        self.samp_rate = samp_rate = 100
+        self.samp_rate = samp_rate = 32e3
 
         ##################################################
         # Blocks
@@ -100,12 +100,12 @@ class drf_stream(gr.top_block, Qt.QWidget):
             channels=[
                 'ch0',
             ],
-            dtype=np.dtype([("r", "i2"), ("i", "i2")]),
+            dtype=np.dtype([("r", "i1"), ("i", "i1")]),
             subdir_cadence_secs=3600,
             file_cadence_millisecs=1000,
             sample_rate_numerator=int(samp_rate),
             sample_rate_denominator=1,
-            start=0,
+            start=1653595200000000,
             ignore_tags=False,
             is_complex=True,
             num_subchannels=2,
@@ -123,9 +123,9 @@ class drf_stream(gr.top_block, Qt.QWidget):
             debug=False,
             min_chunksize=None,
         )
-        self.blocks_throttle_0 = blocks.throttle(gr.sizeof_short*1, samp_rate,True)
-        self.blocks_null_source_0 = blocks.null_source(gr.sizeof_short*1)
-        self.blocks_null_sink_0 = blocks.null_sink(gr.sizeof_short*1)
+        self.blocks_throttle_0 = blocks.throttle(gr.sizeof_char*1, samp_rate,True)
+        self.blocks_null_source_0 = blocks.null_source(gr.sizeof_char*1)
+        self.blocks_null_sink_0 = blocks.null_sink(gr.sizeof_char*1)
 
 
         ##################################################
