@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 
+"""
+THIS CODE IS OBSOLETE
+Does not split by frequency
+Uses hist2d instead of specgram
+Doesn't quite make sense
+"""
+
 import os
 import numpy as np
 from matplotlib import pyplot as plt
@@ -9,7 +16,6 @@ p = '/Users/vivelpanel/Desktop/SRT UROP 2022/Spectrogram/channels/'
 files = os.listdir(path = p)
 channel_data = []
 for f in files:
-	# unfortunately, the DEBUG #0 print statemtents show that all the saved arrays are empty-- EMPTY!
 	print(f"\n\n\nDEBUG #0:\n\tf = {f}\n\tp+f = {p + f}\n\tarray is {np.fromfile((p+f),dtype=np.complex64)}")
 	channel_data.append(np.fromfile((p + f), dtype = np.complex64))
 
