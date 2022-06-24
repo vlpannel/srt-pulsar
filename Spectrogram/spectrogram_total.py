@@ -8,10 +8,6 @@ from matplotlib import pyplot as plt
 import scipy
 from scipy import signal
 
-##############################################################
-# This code is copied from... 
-##############################################################
-
 # variables
 top_lvl = '/Volumes/NO NAME/pulsar/2022-05-26/rf_data'	# top-level filepath for RF data
 channel = 'misa-l2'	# channel to read from
@@ -29,7 +25,7 @@ s, e = do.get_bounds(channel)
 #nsamp = (e - s) / 2		# re-set number of samples based on bounds
 prop = do.get_properties(channel)
 samp_rate = prop['sample_rate_numerator'] / prop['sample_rate_denominator']
-nsamp = samp_rate * 10
+nsamp = samp_rate * 3
 dvec = do.read_vector_c81d(s + (samp_rate * 300), nsamp, channel)
 
 # split the data into channels by frequency (PFB)
