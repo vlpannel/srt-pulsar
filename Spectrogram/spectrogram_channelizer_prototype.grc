@@ -392,6 +392,21 @@ blocks:
     coordinate: [16, 76.0]
     rotation: 0
     state: true
+- name: note_0
+  id: note
+  parameters:
+    alias: ''
+    comment: 'Stored DRF file is empty... except
+
+      for metadata'
+    note: Stored DRF file is empty
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [368, 16.0]
+    rotation: 0
+    state: true
 - name: pfb_channelizer_ccf_0
   id: pfb_channelizer_ccf
   parameters:
