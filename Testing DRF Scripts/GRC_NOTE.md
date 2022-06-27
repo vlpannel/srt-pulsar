@@ -4,13 +4,13 @@
 
 There is a problem with my system's GRC and using the DigitalRF (DRF) GNU Radio blocks: using a DRF block causes the execution of a flowgraph to immediately end.
 
-## How I Know (The Experience)
+## How I Know Part I (The Experience)
 
 Already saw some oddities like how using blocks would cause the flowgraph to be finished executing immediately with return code -11. Also, when one flowgraph would contain both a QT GUI sink block (different types) and a DRF block, there would never appear any GUI.
 
 The same thing happens even with the default embedded Python block when inserted into a flow graph, so this must be a problem with my system rather than DRF. When I followed the Python Block tutorial on GNU Radio Wiki, it did not work and had this problem.
 
-## How I Know (The Sink Test)
+## How I Know Part II (The Sink Test)
 
 See: test_drf_sinkblock.grc
 
@@ -22,7 +22,7 @@ When just put into the QT GUI Sink and the File Sink (set to "overwrite" mode), 
 
 However, when the DRF Sink block is attached and enabled, the issue of the execution of the flowgraph being "instantaneously" completed with a return code of -11. No GUI appears, and the file to which the File Sink block stores data is empty.
 
-## How I Know Part II (The Source Test)
+## How I Know Part III (The Source Test)
 
 See: test_drf_sourceblock.grc
 
@@ -35,6 +35,12 @@ This is true with either treating the data as a stream of ints or as two vectors
 See: test_embeddedpythonblock.grc
 
 The exact same issue occurs when using a Python block. Why is this?
+
+## Update: OOT
+
+Also can't do OOT modules. As soon as I try to create one (`gr_modtool newmod testingOOT`), there is an error: `UnicodeDecodeError: 'utf-8' codec can't decode byte 0x99 in position 1088: invalid start byte` from `File "/Users/vivelpanel/anaconda3/envs/gnuradio/lib/python3.10/codecs.py", line 322, in decode (result, consumed) = self._buffer_decode(data, self.errors, final)`.
+
+This must be some issue with the way I installed GNU Radio or Anaconda.
 
 ## My System
 
