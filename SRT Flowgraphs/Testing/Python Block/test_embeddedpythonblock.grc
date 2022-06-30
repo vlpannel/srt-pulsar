@@ -22,7 +22,7 @@ options:
     run_options: prompt
     sizing_mode: fixed
     thread_safe_setters: ''
-    title: Not titled yet
+    title: Embedded Python Test
     window_size: (1000,1000)
   states:
     bus_sink: false
@@ -83,7 +83,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [200, 132.0]
+    coordinate: [208, 164.0]
     rotation: 0
     state: true
 - name: epy_block_0
@@ -118,16 +118,49 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [336, 196.0]
+    coordinate: [360, 212.0]
     rotation: 0
     state: enabled
+- name: note_0
+  id: note
+  parameters:
+    alias: ''
+    comment: 'I just made this flowgraph
+
+      for testing purposes.
+
+      Back when I was first going
+
+      through some GRC
+
+      tutorials, I read the pages
+
+      and followed the tutorial
+
+      on Python Blocks, but
+
+      somehow my Python
+
+      blocks have never worked.'
+    note: just for testing
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [312, 16.0]
+    rotation: 0
+    state: true
 - name: qtgui_sink_x_0
   id: qtgui_sink_x
   parameters:
     affinity: ''
     alias: ''
     bw: samp_rate
-    comment: ''
+    comment: 'Disabling the Python block and
+
+      connecting straight to the throttle
+
+      makes this flowgraph functional.'
     fc: '0'
     fftsize: '1024'
     gui_hint: ''
@@ -147,7 +180,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [488, 56.0]
+    coordinate: [536, 48.0]
     rotation: 0
     state: true
 
