@@ -74,13 +74,15 @@ class top_block(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
+        self.source_directory = source_directory = '/Volumes/NO NAME/pulsar/2022-05-26/rf_data'
         self.samp_rate = samp_rate = 32000
+        self.drfsink_directory = drfsink_directory = "/Users/vivelpanel/Desktop/SRT UROP 2022/Testing DRF Scripts/rtl-output/2xDrfout"
 
         ##################################################
         # Blocks
         ##################################################
         self.gr_digital_rf_digital_rf_source_0 = gr_digital_rf.digital_rf_source(
-            '/Volumes/NO NAME/pulsar/2022-05-26/rf_data',
+            source_directory,
             channels=[
                 'misa-l2',
             ],
@@ -88,7 +90,7 @@ class top_block(gr.top_block, Qt.QWidget):
                 int(1653595200000000),
             ],
             end=[
-                int(1653602399999999),
+                int(1653595299999999),
             ],
             repeat=True,
             throttle=False,
@@ -96,7 +98,7 @@ class top_block(gr.top_block, Qt.QWidget):
             min_chunksize=None,
         )
         self.gr_digital_rf_digital_rf_sink_0 = gr_digital_rf.digital_rf_sink(
-            '/Users/vivelpanel/Desktop/SRT UROP 2022/Testing DRF Scripts/rtl-output/2xDrfout',
+            drfsink_directory,
             channels=[
                 'ch0',
             ],
@@ -148,12 +150,24 @@ class top_block(gr.top_block, Qt.QWidget):
 
         event.accept()
 
+    def get_source_directory(self):
+        return self.source_directory
+
+    def set_source_directory(self, source_directory):
+        self.source_directory = source_directory
+
     def get_samp_rate(self):
         return self.samp_rate
 
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
         self.blocks_throttle_0_0.set_sample_rate(self.samp_rate)
+
+    def get_drfsink_directory(self):
+        return self.drfsink_directory
+
+    def set_drfsink_directory(self, drfsink_directory):
+        self.drfsink_directory = drfsink_directory
 
 
 

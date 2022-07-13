@@ -162,7 +162,26 @@ blocks:
 
       data from RTL-SDR into a Digital
 
-      RF file.'
+      RF file.
+
+
+      ... It does not. The resulting DRF
+
+      channel directory has no samples,
+
+      only metadata.
+
+
+      ... though maybe I should try using
+
+      THORosmo source block next.
+
+
+      Make sure to delete directory if it
+
+      already exists (otherwise raises an
+
+      error w/ return code 1).'
     compression_level: '0'
     debug: 'False'
     file_cadence_ms: '1000'

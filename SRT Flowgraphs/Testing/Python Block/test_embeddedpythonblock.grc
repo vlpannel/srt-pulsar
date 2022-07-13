@@ -107,7 +107,13 @@ blocks:
       \ input_items[0] * self.example_param\n        return len(output_items[0])\n"
     affinity: ''
     alias: ''
-    comment: ''
+    comment: 'Did not change this code at all.
+
+      Did look at it with IDLE. Input a
+
+      value for the parameter here,
+
+      in the block.'
     example_param: '1.0'
     maxoutbuf: '0'
     minoutbuf: '0'
