@@ -34,7 +34,7 @@ import signal
 from argparse import ArgumentParser
 from gnuradio.eng_arg import eng_float, intx
 from gnuradio import eng_notation
-#import emb_py2_epy_block_0 as epy_block_0  # embedded python block
+import emb_py2_epy_block_0 as epy_block_0  # embedded python block (this is not problematic)
 
 
 
@@ -99,7 +99,7 @@ class emb_py2(gr.top_block, Qt.QWidget):
         self.qtgui_sink_x_0.enable_rf_freq(False)
 
         self.top_layout.addWidget(self._qtgui_sink_x_0_win)
-        #self.epy_block_0 = epy_block_0.blk(example_param=1.0)
+        self.epy_block_0 = epy_block_0.blk(example_param=1.0) #initializing python block (not problematic)
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
         self.analog_sig_source_x_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, 1000, 1, 0, 0)
 
@@ -108,11 +108,15 @@ class emb_py2(gr.top_block, Qt.QWidget):
         # Connections
         ##################################################
         self.connect((self.analog_sig_source_x_0, 0), (self.blocks_throttle_0, 0))
-        #self.connect((self.blocks_throttle_0, 0), (self.epy_block_0, 0))
-        #self.connect((self.epy_block_0, 0), (self.qtgui_sink_x_0, 0))
-        self.connect((self.blocks_throttle_0, 0), (self.qtgui_sink_x_0, 0))
+        # see here: connection to python block is the problem (code works fine otherwise)
+
+        self.connect((self.blocks_throttle_0, 0), (self.epy_block_0, 0))
+        self.connect((self.epy_block_0, 0), (self.qtgui_sink_x_0, 0))
+
+        #self.connect((self.blocks_throttle_0, 0), (self.qtgui_sink_x_0, 0))
         print('Analog sig source is ' + str((self.analog_sig_source_x_0,0))) #debugging
 
+        # note: print statement still prints even with python block in flow
 
     def closeEvent(self, event):
         self.settings = Qt.QSettings("GNU Radio", "emb_py2")
@@ -141,10 +145,13 @@ def main(top_block_cls=emb_py2, options=None):
         Qt.QApplication.setGraphicsSystem(style)
     qapp = Qt.QApplication(sys.argv)
 
+    print('top block running...') # debugging
     tb = top_block_cls()
 
+    print('tb done; start running...') # debugging
     tb.start()
 
+    print('start done; show running...') # debugging
     tb.show()
 
     def sig_handler(sig=None, frame=None):
@@ -162,5 +169,16 @@ def main(top_block_cls=emb_py2, options=None):
 
     qapp.exec_()
 
+import sys
+
+def trace(frame, event, arg):
+    print("%s, %s:%d" % (event, frame.f_code.co_filename, frame.f_lineno))
+    return trace
+
+def test():
+    print("Line 8")
+    print("Line 9")
+
 if __name__ == '__main__':
+    sys.settrace(trace)
     main()
