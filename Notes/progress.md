@@ -39,3 +39,11 @@
 		- GRC works.
 		- Uh oh, embedded Python block is not working (same as before...). Still yields the same segmentation fault... (interestingly, though, it only shows me that it is a segfault when I directly run the flowgraph python code in the terminal-- otherwise, there is just a "return code -11".
 	- At this point, I'm quite fed up. Will continue this tomorrow, but may just rely on using a different computer if necessary. Will write code as if "by hand" (no checking until correct system available) now.
+
+### 7/14/2022
+- Okay, let's keep hacking at it.
+	- Played for a long time with other installers (homebrew, macports, fink), but no solution is really feasible enough to beat conda, so I guess I'll continue with that (oh gosh, that took a good hour of trying things...)
+	- Deciding to make things messier by using `conda upgrade --all` to make sure dependencies are installed (just upgraded sqlite) and then install digital\_rf and rtl-sdr.
+	- Still doesn't work, but saw a tip on GR Wiki to recompile gnuradio... nope, uninstalling and reinstalling gnuradio (reinstall via mamba b/c conda too slow) did not help.
+	- Stuck. I give up for now. I'll just write code here then test in on the library computer for now.
+- Current goal: make PFB phase flowgraph. (Next up: make folding flowgraph, then conversion to FITS files.)
