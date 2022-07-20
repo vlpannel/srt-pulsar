@@ -5,8 +5,7 @@
 # SPDX-License-Identifier: GPL-3.0
 #
 # GNU Radio Python Flow Graph
-# Title: DRF To File
-# Author: vivelpanel
+# Title: RTL-SDR to DRF
 # GNU Radio version: 3.9.5.0
 
 from distutils.version import StrictVersion
@@ -21,18 +20,23 @@ if __name__ == '__main__':
         except:
             print("Warning: failed to XInitThreads()")
 
+from PyQt5 import Qt
+from gnuradio import qtgui
+from gnuradio.filter import firdes
+import sip
 from gnuradio import blocks
 from gnuradio import gr
-from gnuradio.filter import firdes
 from gnuradio.fft import window
 import sys
 import signal
-from PyQt5 import Qt
 from argparse import ArgumentParser
 from gnuradio.eng_arg import eng_float, intx
 from gnuradio import eng_notation
-import gr_digital_rf
+from gnuradio.qtgui import Range, RangeWidget
+from PyQt5 import QtCore
 import numpy as np; import gr_digital_rf
+import osmosdr
+import time
 
 
 
@@ -41,9 +45,9 @@ from gnuradio import qtgui
 class top_block(gr.top_block, Qt.QWidget):
 
     def __init__(self):
-        gr.top_block.__init__(self, "DRF To File", catch_exceptions=True)
+        gr.top_block.__init__(self, "RTL-SDR to DRF", catch_exceptions=True)
         Qt.QWidget.__init__(self)
-        self.setWindowTitle("DRF To File")
+        self.setWindowTitle("RTL-SDR to DRF")
         qtgui.util.check_set_qss()
         try:
             self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))
@@ -74,31 +78,50 @@ class top_block(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
-        self.source_directory = source_directory = '/Volumes/NO NAME/pulsar/2022-05-26/rf_data'
-        self.samp_rate = samp_rate = 32000
-        self.drfsink_directory = drfsink_directory = "/Users/vivelpanel/Desktop/SRT UROP 2022/Testing DRF Scripts/rtl-output/2xDrfout"
+        self.samp_rate = samp_rate = 2.4e6
+        self.center_freq = center_freq = 100e6
 
         ##################################################
         # Blocks
         ##################################################
-        self.gr_digital_rf_digital_rf_source_0 = gr_digital_rf.digital_rf_source(
-            source_directory,
-            channels=[
-                'misa-l2',
-            ],
-            start=[
-                int(1653595200000000),
-            ],
-            end=[
-                int(1653595299999999),
-            ],
-            repeat=True,
-            throttle=False,
-            gapless=False,
-            min_chunksize=None,
+        self._center_freq_range = Range(25e6, 1750e6, 1, 100e6, 200)
+        self._center_freq_win = RangeWidget(self._center_freq_range, self.set_center_freq, "Center Frequency", "counter_slider", float, QtCore.Qt.Horizontal)
+        self.top_layout.addWidget(self._center_freq_win)
+        self.qtgui_sink_x_0 = qtgui.sink_c(
+            1024, #fftsize
+            window.WIN_BLACKMAN_hARRIS, #wintype
+            0, #fc
+            samp_rate, #bw
+            "", #name
+            True, #plotfreq
+            True, #plotwaterfall
+            True, #plottime
+            True, #plotconst
+            None # parent
         )
+        self.qtgui_sink_x_0.set_update_time(1.0/10)
+        self._qtgui_sink_x_0_win = sip.wrapinstance(self.qtgui_sink_x_0.qwidget(), Qt.QWidget)
+
+        self.qtgui_sink_x_0.enable_rf_freq(False)
+
+        self.top_layout.addWidget(self._qtgui_sink_x_0_win)
+        self.osmosdr_source_0 = osmosdr.source(
+            args="numchan=" + str(1) + " " + ''
+        )
+        self.osmosdr_source_0.set_time_unknown_pps(osmosdr.time_spec_t())
+        self.osmosdr_source_0.set_sample_rate(samp_rate)
+        self.osmosdr_source_0.set_center_freq(center_freq, 0)
+        self.osmosdr_source_0.set_freq_corr(0, 0)
+        self.osmosdr_source_0.set_dc_offset_mode(0, 0)
+        self.osmosdr_source_0.set_iq_balance_mode(0, 0)
+        self.osmosdr_source_0.set_gain_mode(False, 0)
+        self.osmosdr_source_0.set_gain(10, 0)
+        self.osmosdr_source_0.set_if_gain(20, 0)
+        self.osmosdr_source_0.set_bb_gain(20, 0)
+        self.osmosdr_source_0.set_antenna('', 0)
+        self.osmosdr_source_0.set_bandwidth(0, 0)
         self.gr_digital_rf_digital_rf_sink_0 = gr_digital_rf.digital_rf_sink(
-            drfsink_directory,
+            '/Users/vivelpanel/Desktop/SRT UROP 2022/Testing DRF Scripts/rtl-output/rtl-drf/',
             channels=[
                 'ch0',
             ],
@@ -107,13 +130,13 @@ class top_block(gr.top_block, Qt.QWidget):
             file_cadence_millisecs=1000,
             sample_rate_numerator=int(samp_rate),
             sample_rate_denominator=1,
-            start=0,
+            start="now",
             ignore_tags=False,
             is_complex=False,
             num_subchannels=1,
-            uuid_str='adsf',
+            uuid_str='rtl-sdr-sink-test',
             center_frequencies=(
-                None
+                [center_freq]
             ),
             metadata={},
             is_continuous=True,
@@ -125,21 +148,15 @@ class top_block(gr.top_block, Qt.QWidget):
             debug=False,
             min_chunksize=None,
         )
-        self.blocks_vector_to_streams_0 = blocks.vector_to_streams(gr.sizeof_short*1, 2)
-        self.blocks_throttle_0_0 = blocks.throttle(gr.sizeof_short*1, samp_rate,True)
-        self.blocks_null_sink_0 = blocks.null_sink(gr.sizeof_short*1)
-        self.blocks_file_sink_0_0 = blocks.file_sink(gr.sizeof_short*1, '/Users/vivelpanel/Desktop/SRT UROP 2022/Testing DRF Scripts/rtl-output/source_block_output', False)
-        self.blocks_file_sink_0_0.set_unbuffered(False)
+        self.blocks_complex_to_interleaved_short_0 = blocks.complex_to_interleaved_short(False,1.0)
 
 
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.blocks_throttle_0_0, 0), (self.blocks_file_sink_0_0, 0))
-        self.connect((self.blocks_throttle_0_0, 0), (self.gr_digital_rf_digital_rf_sink_0, 0))
-        self.connect((self.blocks_vector_to_streams_0, 1), (self.blocks_null_sink_0, 0))
-        self.connect((self.blocks_vector_to_streams_0, 0), (self.blocks_throttle_0_0, 0))
-        self.connect((self.gr_digital_rf_digital_rf_source_0, 0), (self.blocks_vector_to_streams_0, 0))
+        self.connect((self.blocks_complex_to_interleaved_short_0, 0), (self.gr_digital_rf_digital_rf_sink_0, 0))
+        self.connect((self.osmosdr_source_0, 0), (self.blocks_complex_to_interleaved_short_0, 0))
+        self.connect((self.osmosdr_source_0, 0), (self.qtgui_sink_x_0, 0))
 
 
     def closeEvent(self, event):
@@ -150,24 +167,20 @@ class top_block(gr.top_block, Qt.QWidget):
 
         event.accept()
 
-    def get_source_directory(self):
-        return self.source_directory
-
-    def set_source_directory(self, source_directory):
-        self.source_directory = source_directory
-
     def get_samp_rate(self):
         return self.samp_rate
 
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
-        self.blocks_throttle_0_0.set_sample_rate(self.samp_rate)
+        self.osmosdr_source_0.set_sample_rate(self.samp_rate)
+        self.qtgui_sink_x_0.set_frequency_range(0, self.samp_rate)
 
-    def get_drfsink_directory(self):
-        return self.drfsink_directory
+    def get_center_freq(self):
+        return self.center_freq
 
-    def set_drfsink_directory(self, drfsink_directory):
-        self.drfsink_directory = drfsink_directory
+    def set_center_freq(self, center_freq):
+        self.center_freq = center_freq
+        self.osmosdr_source_0.set_center_freq(self.center_freq, 0)
 
 
 

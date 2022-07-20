@@ -489,10 +489,10 @@ blocks:
     comment: 'Taps (coeffs) for
 
       Kaiser windowing'
-    source_code: "import sigprocpython.mitarspysigproc.filtertools as ft\nimport numpy\
-      \ as np\n\nx = 5 # FOR DEBUG\n\ndef taps(chans):\n    \"\"\"\n    Returns PFB\
-      \ taps for Kaiser windowing using filtertools.\n\n    Parameters\n    ----------\n\
-      \    chans : int\n        Number of channels that PFB will yield\n\n    Returns\n\
+    source_code: "import mitarspysigproc.filtertools as ft\nimport numpy as np\n\n\
+      x = 5 # FOR DEBUG\n\ndef taps(chans):\n    \"\"\"\n    Returns PFB taps for\
+      \ Kaiser windowing using filtertools.\n\n    Parameters\n    ----------\n  \
+      \  chans : int\n        Number of channels that PFB will yield\n\n    Returns\n\
       \    -------\n    taps : vector\n        Filter taps for PFB as a real vector\n\
       \    \"\"\"\n    taps = np.reshape(ft.kaiser_coeffs(chans), -1)\n    return\
       \ taps\n"
