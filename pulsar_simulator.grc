@@ -1,0 +1,693 @@
+options:
+  parameters:
+    author: vivelpanel
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: pulsar_simulator
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Not titled yet
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: center_freq
+  id: variable
+  parameters:
+    comment: ''
+    value: 440e6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [208, 108.0]
+    rotation: 0
+    state: enabled
+- name: f_off
+  id: variable
+  parameters:
+    comment: ''
+    value: .1e6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [200, 404.0]
+    rotation: 0
+    state: true
+- name: 'off'
+  id: variable
+  parameters:
+    comment: ''
+    value: '.01'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [200, 308.0]
+    rotation: 0
+    state: true
+- name: per
+  id: variable
+  parameters:
+    comment: ''
+    value: '.33'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 196.0]
+    rotation: 0
+    state: true
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: 1e6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [216, 12.0]
+    rotation: 0
+    state: enabled
+- name: time
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '.01'
+    stop: '1'
+    value: '0'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [32, 312.0]
+    rotation: 0
+    state: true
+- name: analog_fastnoise_source_x_0
+  id: analog_fastnoise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    samples: '8192'
+    seed: '234'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [40, 1012.0]
+    rotation: 0
+    state: true
+- name: analog_fastnoise_source_x_0_0
+  id: analog_fastnoise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '.77'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    samples: '8192'
+    seed: '3872'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [32, 1372.0]
+    rotation: 0
+    state: true
+- name: analog_fastnoise_source_x_0_1
+  id: analog_fastnoise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_UNIFORM
+    samples: '8192'
+    seed: '9'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [40, 1140.0]
+    rotation: 0
+    state: true
+- name: analog_fastnoise_source_x_0_2
+  id: analog_fastnoise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '.46'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    samples: '8192'
+    seed: '0'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [32, 1252.0]
+    rotation: 0
+    state: true
+- name: analog_noise_source_x_0
+  id: analog_noise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: Noise
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    seed: '55555'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [48, 1484.0]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: pulse.pulsar(per, 0, time)
+    comment: ''
+    freq: center_freq - (4*f_off)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [376, 4.0]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_0_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: pulse.pulsar(per, 4*off, time)
+    comment: Pulsar
+    freq: center_freq
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [376, 356.0]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_0_0_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: pulse.pulsar(per, 9*off, time)
+    comment: 'Pulsar
+
+
+      For SIMPLICITY''s sake,
+
+      estimating that dispersion
+
+      is linear and frequencies
+
+      are discrete (even though
+
+      this is known to be false).'
+    freq: center_freq + (5*f_off)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [376, 796.0]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_0_1
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: pulse.pulsar(per, 3*off, time)
+    comment: ''
+    freq: center_freq - f_off
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [376, 268.0]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_0_1_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: pulse.pulsar(per, 8*off, time)
+    comment: ''
+    freq: center_freq + (4*f_off)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [376, 708.0]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_0_2
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: pulse.pulsar(per, 2*off, time)
+    comment: ''
+    freq: center_freq - (2*f_off)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [376, 180.0]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_0_2_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: pulse.pulsar(per, 7*off, time)
+    comment: ''
+    freq: center_freq + (3*f_off)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [376, 620.0]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_0_3
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: pulse.pulsar(per, off, time)
+    comment: ''
+    freq: center_freq - (3*f_off)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [376, 92.0]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_0_3_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: pulse.pulsar(per, 6*off, time)
+    comment: ''
+    freq: center_freq + (2*f_off)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [376, 532.0]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_0_4
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: pulse.pulsar(per, 5*off, time)
+    comment: ''
+    freq: center_freq + f_off
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [376, 444.0]
+    rotation: 0
+    state: true
+- name: blocks_add_const_vxx_0
+  id: blocks_add_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: '0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [296, 1128.0]
+    rotation: 0
+    state: true
+- name: blocks_add_xx_0
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [920, 136.0]
+    rotation: 0
+    state: true
+- name: blocks_add_xx_1
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '5'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [552, 1088.0]
+    rotation: 0
+    state: true
+- name: blocks_add_xx_2
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '10'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [720, 120.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1080, 408.0]
+    rotation: 0
+    state: true
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1048, 224.0]
+    rotation: 0
+    state: true
+- name: gr_digital_rf_digital_rf_sink_0
+  id: gr_digital_rf_digital_rf_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    center_freqs: '[]'
+    channel0: ch0
+    channel1: ch1
+    channel10: ch10
+    channel11: ch11
+    channel12: ch12
+    channel13: ch13
+    channel14: ch14
+    channel15: ch15
+    channel16: ch16
+    channel17: ch17
+    channel18: ch18
+    channel19: ch19
+    channel2: ch2
+    channel20: ch20
+    channel21: ch21
+    channel22: ch22
+    channel23: ch23
+    channel24: ch24
+    channel25: ch25
+    channel26: ch26
+    channel27: ch27
+    channel28: ch28
+    channel29: ch29
+    channel3: ch3
+    channel30: ch30
+    channel31: ch31
+    channel4: ch4
+    channel5: ch5
+    channel6: ch6
+    channel7: ch7
+    channel8: ch8
+    channel9: ch9
+    checksum: 'False'
+    comment: ''
+    compression_level: '0'
+    debug: 'False'
+    file_cadence_ms: '1000'
+    ignore_tags: 'False'
+    input: fc32
+    is_continuous: 'True'
+    marching_periods: 'True'
+    metadata: '{}'
+    min_chunksize: '0'
+    nchan: '1'
+    sample_rate_denominator: '1'
+    sample_rate_numerator: int(samp_rate)
+    start: ''
+    stop_on_skipped: 'False'
+    stop_on_time_tag: 'False'
+    subdir_cadence_s: '3600'
+    top_level_dir: '"C:\\Users\\vlpannel\\Desktop\\SRT\\raw"'
+    uuid: ''
+    vlen: '2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1320, 380.0]
+    rotation: 0
+    state: true
+- name: pulse
+  id: epy_module
+  parameters:
+    alias: ''
+    comment: ''
+    source_code: "# this module will be imported in the into your flowgraph\n\ndef\
+      \ pulsar(period, offset, time):\n    return int((time - offset) % period <=\
+      \ .01) * .2\n"
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [40, 176.0]
+    rotation: 0
+    state: true
+- name: qtgui_sink_x_0
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: samp_rate
+    comment: ''
+    fc: center_freq
+    fftsize: '1024'
+    gui_hint: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'False'
+    showrf: 'False'
+    type: complex
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1280, 200.0]
+    rotation: 0
+    state: true
+
+connections:
+- [analog_fastnoise_source_x_0, '0', blocks_add_xx_1, '0']
+- [analog_fastnoise_source_x_0_0, '0', blocks_add_xx_1, '3']
+- [analog_fastnoise_source_x_0_1, '0', blocks_add_const_vxx_0, '0']
+- [analog_fastnoise_source_x_0_2, '0', blocks_add_xx_1, '2']
+- [analog_noise_source_x_0, '0', blocks_add_xx_1, '4']
+- [analog_sig_source_x_0, '0', blocks_add_xx_2, '0']
+- [analog_sig_source_x_0_0, '0', blocks_add_xx_2, '4']
+- [analog_sig_source_x_0_0_0, '0', blocks_add_xx_2, '9']
+- [analog_sig_source_x_0_1, '0', blocks_add_xx_2, '3']
+- [analog_sig_source_x_0_1_0, '0', blocks_add_xx_2, '8']
+- [analog_sig_source_x_0_2, '0', blocks_add_xx_2, '2']
+- [analog_sig_source_x_0_2_0, '0', blocks_add_xx_2, '7']
+- [analog_sig_source_x_0_3, '0', blocks_add_xx_2, '1']
+- [analog_sig_source_x_0_3_0, '0', blocks_add_xx_2, '6']
+- [analog_sig_source_x_0_4, '0', blocks_add_xx_2, '5']
+- [blocks_add_const_vxx_0, '0', blocks_add_xx_1, '1']
+- [blocks_add_xx_0, '0', blocks_throttle_0, '0']
+- [blocks_add_xx_1, '0', blocks_add_xx_0, '1']
+- [blocks_add_xx_2, '0', blocks_add_xx_0, '0']
+- [blocks_stream_to_vector_0, '0', gr_digital_rf_digital_rf_sink_0, '0']
+- [blocks_throttle_0, '0', blocks_stream_to_vector_0, '0']
+- [blocks_throttle_0, '0', qtgui_sink_x_0, '0']
+
+metadata:
+  file_format: 1
+  grc_version: 3.10.3.0
