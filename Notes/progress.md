@@ -47,3 +47,17 @@
 	- Still doesn't work, but saw a tip on GR Wiki to recompile gnuradio... nope, uninstalling and reinstalling gnuradio (reinstall via mamba b/c conda too slow) did not help.
 	- Stuck. I give up for now. I'll just write code here then test in on the library computer for now.
 - Current goal: make PFB phase flowgraph. (Next up: make folding flowgraph, then conversion to FITS files.)
+
+### 7/20/2022
+- Setting up Windows GNURadio:
+	- Just install conda
+	- Install digital\_rf, gnuradio-osmosdr, and pip
+	- Install psrdynspec and mitarspysigprocpython via pip
+- Had to change file paths for pip!
+- Figured nifty way to plot pulsars... (vector sink w/ const adds).
+
+### 7/21/2022
+- Goals for today:
+	- Test if psrdynspec will ever give NaNs (the way we're using it)
+	- Test GUI graphing
+	- Maybe apply to IS&T for a new computer
