@@ -1,0 +1,421 @@
+options:
+  parameters:
+    author: vivelpanel
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: part_test
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Testing Parts
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '32000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: analog_sig_source_x_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    freq: '1000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [88, 132.0]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_0_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '2'
+    comment: ''
+    freq: '2000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [88, 220.0]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_0_1
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '3'
+    comment: ''
+    freq: '3000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [88, 308.0]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_0_2
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '4'
+    comment: ''
+    freq: '4000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [88, 396.0]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_0_3
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '5'
+    comment: ''
+    freq: '5000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [88, 484.0]
+    rotation: 0
+    state: true
+- name: blocks_add_xx_0
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '5'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 196.0]
+    rotation: 0
+    state: true
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [512, 260.0]
+    rotation: 0
+    state: enabled
+- name: import_0
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: filter
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [520, 40.0]
+    rotation: 0
+    state: true
+- name: pfb_channelizer_ccf_0
+  id: pfb_channelizer_ccf
+  parameters:
+    affinity: ''
+    alias: ''
+    atten: '100'
+    bus_conns: '[[0,],]'
+    ch_map: '[]'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nchans: '5'
+    osr: '1.0'
+    samp_delay: '0'
+    taps: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [656, 196.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_sink_x_0
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: samp_rate
+    comment: ''
+    fc: '0'
+    fftsize: '1024'
+    gui_hint: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '"All Freqs"'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'False'
+    showrf: 'False'
+    type: complex
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [624, 416.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_sink_x_1
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: samp_rate
+    comment: ''
+    fc: '0'
+    fftsize: '1024'
+    gui_hint: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'False'
+    showrf: 'False'
+    type: complex
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [920, 40.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_sink_x_1_0
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: samp_rate
+    comment: ''
+    fc: '0'
+    fftsize: '1024'
+    gui_hint: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'False'
+    showrf: 'False'
+    type: complex
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [928, 112.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_sink_x_1_1
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: samp_rate
+    comment: ''
+    fc: '0'
+    fftsize: '1024'
+    gui_hint: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'False'
+    showrf: 'False'
+    type: complex
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [920, 208.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_sink_x_1_2
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: samp_rate
+    comment: ''
+    fc: '0'
+    fftsize: '1024'
+    gui_hint: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'False'
+    showrf: 'False'
+    type: complex
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [928, 312.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_sink_x_1_3
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: samp_rate
+    comment: ''
+    fc: '0'
+    fftsize: '1024'
+    gui_hint: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'False'
+    showrf: 'False'
+    type: complex
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [920, 408.0]
+    rotation: 0
+    state: enabled
+
+connections:
+- [analog_sig_source_x_0, '0', blocks_add_xx_0, '0']
+- [analog_sig_source_x_0_0, '0', blocks_add_xx_0, '1']
+- [analog_sig_source_x_0_1, '0', blocks_add_xx_0, '2']
+- [analog_sig_source_x_0_2, '0', blocks_add_xx_0, '3']
+- [analog_sig_source_x_0_3, '0', blocks_add_xx_0, '4']
+- [blocks_add_xx_0, '0', blocks_throttle_0, '0']
+- [blocks_throttle_0, '0', pfb_channelizer_ccf_0, '0']
+- [blocks_throttle_0, '0', qtgui_sink_x_0, '0']
+- [pfb_channelizer_ccf_0, '0', qtgui_sink_x_1, '0']
+- [pfb_channelizer_ccf_0, '1', qtgui_sink_x_1_0, '0']
+- [pfb_channelizer_ccf_0, '2', qtgui_sink_x_1_1, '0']
+- [pfb_channelizer_ccf_0, '3', qtgui_sink_x_1_2, '0']
+- [pfb_channelizer_ccf_0, '4', qtgui_sink_x_1_3, '0']
+
+metadata:
+  file_format: 1
