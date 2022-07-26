@@ -34,10 +34,17 @@ import signal
 from argparse import ArgumentParser
 from gnuradio.eng_arg import eng_float, intx
 from gnuradio import eng_notation
-from gnuradio.qtgui import Range, RangeWidget
-from PyQt5 import QtCore
 import numpy as np; import gr_digital_rf
-import pulsar_simulator_pulse as pulse  # embedded python module
+import pulsar_simulator_epy_block_0 as epy_block_0  # embedded python block
+import pulsar_simulator_epy_block_0_0 as epy_block_0_0  # embedded python block
+import pulsar_simulator_epy_block_0_1 as epy_block_0_1  # embedded python block
+import pulsar_simulator_epy_block_0_2 as epy_block_0_2  # embedded python block
+import pulsar_simulator_epy_block_0_3 as epy_block_0_3  # embedded python block
+import pulsar_simulator_epy_block_0_3_0 as epy_block_0_3_0  # embedded python block
+import pulsar_simulator_epy_block_0_3_1 as epy_block_0_3_1  # embedded python block
+import pulsar_simulator_epy_block_0_3_2 as epy_block_0_3_2  # embedded python block
+import pulsar_simulator_epy_block_0_3_3 as epy_block_0_3_3  # embedded python block
+import pulsar_simulator_epy_block_0_4 as epy_block_0_4  # embedded python block
 
 
 
@@ -79,7 +86,6 @@ class pulsar_simulator(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
-        self.time = time = 0
         self.samp_rate = samp_rate = 1e6
         self.per = per = .33
         self.off = off = .01
@@ -89,9 +95,6 @@ class pulsar_simulator(gr.top_block, Qt.QWidget):
         ##################################################
         # Blocks
         ##################################################
-        self._time_range = Range(0, 1, .01, 0, 200)
-        self._time_win = RangeWidget(self._time_range, self.set_time, "'time'", "counter_slider", float, QtCore.Qt.Horizontal)
-        self.top_layout.addWidget(self._time_win)
         self.qtgui_sink_x_0 = qtgui.sink_c(
             1024, #fftsize
             window.WIN_BLACKMAN_hARRIS, #wintype
@@ -111,9 +114,9 @@ class pulsar_simulator(gr.top_block, Qt.QWidget):
 
         self.top_layout.addWidget(self._qtgui_sink_x_0_win)
         self.gr_digital_rf_digital_rf_sink_0 = gr_digital_rf.digital_rf_sink(
-            "C:\\Users\vlpannel\Desktop\SRT\raw",
+            'C:\\\\Users\\\\vlpannel\\\\Desktop\\\\pulsar_sim',
             channels=[
-                'ch0',
+                'fake-misa',
             ],
             dtype=np.complex64,
             subdir_cadence_secs=3600,
@@ -123,7 +126,7 @@ class pulsar_simulator(gr.top_block, Qt.QWidget):
             start=None,
             ignore_tags=False,
             is_complex=True,
-            num_subchannels=2,
+            num_subchannels=1,
             uuid_str=None,
             center_frequencies=(
                 None
@@ -138,22 +141,30 @@ class pulsar_simulator(gr.top_block, Qt.QWidget):
             debug=False,
             min_chunksize=None,
         )
+        self.epy_block_0_4 = epy_block_0_4.blk(period=per, offset=.1)
+        self.epy_block_0_3_3 = epy_block_0_3_3.blk(period=per, offset=.9)
+        self.epy_block_0_3_2 = epy_block_0_3_2.blk(period=per, offset=.8)
+        self.epy_block_0_3_1 = epy_block_0_3_1.blk(period=per, offset=.7)
+        self.epy_block_0_3_0 = epy_block_0_3_0.blk(period=per, offset=.6)
+        self.epy_block_0_3 = epy_block_0_3.blk(period=per, offset=.5)
+        self.epy_block_0_2 = epy_block_0_2.blk(period=per, offset=.2)
+        self.epy_block_0_1 = epy_block_0_1.blk(period=per, offset=.3)
+        self.epy_block_0_0 = epy_block_0_0.blk(period=per, offset=.4)
+        self.epy_block_0 = epy_block_0.blk(period=per, offset=0)
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
-        self.blocks_stream_to_vector_0 = blocks.stream_to_vector(gr.sizeof_gr_complex*1, 2)
         self.blocks_add_xx_2 = blocks.add_vcc(1)
         self.blocks_add_xx_1 = blocks.add_vcc(1)
         self.blocks_add_xx_0 = blocks.add_vcc(1)
-        self.blocks_add_const_vxx_0 = blocks.add_const_cc(0)
-        self.analog_sig_source_x_0_4 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (center_freq + f_off), (pulse.pulsar(per, 5*off, time)), 0, 0)
-        self.analog_sig_source_x_0_3_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (center_freq + (2*f_off)), (pulse.pulsar(per, 6*off, time)), 0, 0)
-        self.analog_sig_source_x_0_3 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (center_freq - (3*f_off)), pulse.pulsar(per, off, time), 0, 0)
-        self.analog_sig_source_x_0_2_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (center_freq + (3*f_off)), (pulse.pulsar(per, 7*off, time)), 0, 0)
-        self.analog_sig_source_x_0_2 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (center_freq - (2*f_off)), (pulse.pulsar(per, 2*off, time)), 0, 0)
-        self.analog_sig_source_x_0_1_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (center_freq + (4*f_off)), (pulse.pulsar(per, 8*off, time)), 0, 0)
-        self.analog_sig_source_x_0_1 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (center_freq - f_off), (pulse.pulsar(per, 3*off, time)), 0, 0)
-        self.analog_sig_source_x_0_0_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (center_freq + (5*f_off)), (pulse.pulsar(per, 9*off, time)), 0, 0)
-        self.analog_sig_source_x_0_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, center_freq, (pulse.pulsar(per, 4*off, time)), 0, 0)
-        self.analog_sig_source_x_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (center_freq - (4*f_off)), pulse.pulsar(per, 0, time), 0, 0)
+        self.analog_sig_source_x_0_4 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (center_freq + f_off), 1, 0, 0)
+        self.analog_sig_source_x_0_3_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (center_freq + (2*f_off)), 1, 0, 0)
+        self.analog_sig_source_x_0_3 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (center_freq - (3*f_off)), 1, 0, 0)
+        self.analog_sig_source_x_0_2_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (center_freq + (3*f_off)), 1, 0, 0)
+        self.analog_sig_source_x_0_2 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (center_freq - (2*f_off)), 1, 0, 0)
+        self.analog_sig_source_x_0_1_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (center_freq + (4*f_off)), 1, 0, 0)
+        self.analog_sig_source_x_0_1 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (center_freq - f_off), 1, 0, 0)
+        self.analog_sig_source_x_0_0_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (center_freq + (5*f_off)), 1, 0, 0)
+        self.analog_sig_source_x_0_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, center_freq, 1, 0, 0)
+        self.analog_sig_source_x_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, (center_freq - (4*f_off)), 1, 0, 0)
         self.analog_noise_source_x_0 = analog.noise_source_c(analog.GR_GAUSSIAN, 1, 55555)
         self.analog_fastnoise_source_x_0_2 = analog.fastnoise_source_c(analog.GR_GAUSSIAN, .46, 0, 8192)
         self.analog_fastnoise_source_x_0_1 = analog.fastnoise_source_c(analog.GR_UNIFORM, 1, 9, 8192)
@@ -166,26 +177,34 @@ class pulsar_simulator(gr.top_block, Qt.QWidget):
         ##################################################
         self.connect((self.analog_fastnoise_source_x_0, 0), (self.blocks_add_xx_1, 0))
         self.connect((self.analog_fastnoise_source_x_0_0, 0), (self.blocks_add_xx_1, 3))
-        self.connect((self.analog_fastnoise_source_x_0_1, 0), (self.blocks_add_const_vxx_0, 0))
+        self.connect((self.analog_fastnoise_source_x_0_1, 0), (self.blocks_add_xx_1, 1))
         self.connect((self.analog_fastnoise_source_x_0_2, 0), (self.blocks_add_xx_1, 2))
         self.connect((self.analog_noise_source_x_0, 0), (self.blocks_add_xx_1, 4))
-        self.connect((self.analog_sig_source_x_0, 0), (self.blocks_add_xx_2, 0))
-        self.connect((self.analog_sig_source_x_0_0, 0), (self.blocks_add_xx_2, 4))
-        self.connect((self.analog_sig_source_x_0_0_0, 0), (self.blocks_add_xx_2, 9))
-        self.connect((self.analog_sig_source_x_0_1, 0), (self.blocks_add_xx_2, 3))
-        self.connect((self.analog_sig_source_x_0_1_0, 0), (self.blocks_add_xx_2, 8))
-        self.connect((self.analog_sig_source_x_0_2, 0), (self.blocks_add_xx_2, 2))
-        self.connect((self.analog_sig_source_x_0_2_0, 0), (self.blocks_add_xx_2, 7))
-        self.connect((self.analog_sig_source_x_0_3, 0), (self.blocks_add_xx_2, 1))
-        self.connect((self.analog_sig_source_x_0_3_0, 0), (self.blocks_add_xx_2, 6))
-        self.connect((self.analog_sig_source_x_0_4, 0), (self.blocks_add_xx_2, 5))
-        self.connect((self.blocks_add_const_vxx_0, 0), (self.blocks_add_xx_1, 1))
+        self.connect((self.analog_sig_source_x_0, 0), (self.epy_block_0, 0))
+        self.connect((self.analog_sig_source_x_0_0, 0), (self.epy_block_0_0, 0))
+        self.connect((self.analog_sig_source_x_0_0_0, 0), (self.epy_block_0_3_3, 0))
+        self.connect((self.analog_sig_source_x_0_1, 0), (self.epy_block_0_1, 0))
+        self.connect((self.analog_sig_source_x_0_1_0, 0), (self.epy_block_0_3_2, 0))
+        self.connect((self.analog_sig_source_x_0_2, 0), (self.epy_block_0_2, 0))
+        self.connect((self.analog_sig_source_x_0_2_0, 0), (self.epy_block_0_3_1, 0))
+        self.connect((self.analog_sig_source_x_0_3, 0), (self.epy_block_0_4, 0))
+        self.connect((self.analog_sig_source_x_0_3_0, 0), (self.epy_block_0_3_0, 0))
+        self.connect((self.analog_sig_source_x_0_4, 0), (self.epy_block_0_3, 0))
         self.connect((self.blocks_add_xx_0, 0), (self.blocks_throttle_0, 0))
         self.connect((self.blocks_add_xx_1, 0), (self.blocks_add_xx_0, 1))
         self.connect((self.blocks_add_xx_2, 0), (self.blocks_add_xx_0, 0))
-        self.connect((self.blocks_stream_to_vector_0, 0), (self.gr_digital_rf_digital_rf_sink_0, 0))
-        self.connect((self.blocks_throttle_0, 0), (self.blocks_stream_to_vector_0, 0))
+        self.connect((self.blocks_throttle_0, 0), (self.gr_digital_rf_digital_rf_sink_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.qtgui_sink_x_0, 0))
+        self.connect((self.epy_block_0, 0), (self.blocks_add_xx_2, 0))
+        self.connect((self.epy_block_0_0, 0), (self.blocks_add_xx_2, 4))
+        self.connect((self.epy_block_0_1, 0), (self.blocks_add_xx_2, 3))
+        self.connect((self.epy_block_0_2, 0), (self.blocks_add_xx_2, 2))
+        self.connect((self.epy_block_0_3, 0), (self.blocks_add_xx_2, 5))
+        self.connect((self.epy_block_0_3_0, 0), (self.blocks_add_xx_2, 6))
+        self.connect((self.epy_block_0_3_1, 0), (self.blocks_add_xx_2, 7))
+        self.connect((self.epy_block_0_3_2, 0), (self.blocks_add_xx_2, 8))
+        self.connect((self.epy_block_0_3_3, 0), (self.blocks_add_xx_2, 9))
+        self.connect((self.epy_block_0_4, 0), (self.blocks_add_xx_2, 1))
 
 
     def closeEvent(self, event):
@@ -195,22 +214,6 @@ class pulsar_simulator(gr.top_block, Qt.QWidget):
         self.wait()
 
         event.accept()
-
-    def get_time(self):
-        return self.time
-
-    def set_time(self, time):
-        self.time = time
-        self.analog_sig_source_x_0.set_amplitude(pulse.pulsar(self.per, 0, self.time))
-        self.analog_sig_source_x_0_0.set_amplitude((pulse.pulsar(self.per, 4*self.off, self.time)))
-        self.analog_sig_source_x_0_0_0.set_amplitude((pulse.pulsar(self.per, 9*self.off, self.time)))
-        self.analog_sig_source_x_0_1.set_amplitude((pulse.pulsar(self.per, 3*self.off, self.time)))
-        self.analog_sig_source_x_0_1_0.set_amplitude((pulse.pulsar(self.per, 8*self.off, self.time)))
-        self.analog_sig_source_x_0_2.set_amplitude((pulse.pulsar(self.per, 2*self.off, self.time)))
-        self.analog_sig_source_x_0_2_0.set_amplitude((pulse.pulsar(self.per, 7*self.off, self.time)))
-        self.analog_sig_source_x_0_3.set_amplitude(pulse.pulsar(self.per, self.off, self.time))
-        self.analog_sig_source_x_0_3_0.set_amplitude((pulse.pulsar(self.per, 6*self.off, self.time)))
-        self.analog_sig_source_x_0_4.set_amplitude((pulse.pulsar(self.per, 5*self.off, self.time)))
 
     def get_samp_rate(self):
         return self.samp_rate
@@ -235,31 +238,12 @@ class pulsar_simulator(gr.top_block, Qt.QWidget):
 
     def set_per(self, per):
         self.per = per
-        self.analog_sig_source_x_0.set_amplitude(pulse.pulsar(self.per, 0, self.time))
-        self.analog_sig_source_x_0_0.set_amplitude((pulse.pulsar(self.per, 4*self.off, self.time)))
-        self.analog_sig_source_x_0_0_0.set_amplitude((pulse.pulsar(self.per, 9*self.off, self.time)))
-        self.analog_sig_source_x_0_1.set_amplitude((pulse.pulsar(self.per, 3*self.off, self.time)))
-        self.analog_sig_source_x_0_1_0.set_amplitude((pulse.pulsar(self.per, 8*self.off, self.time)))
-        self.analog_sig_source_x_0_2.set_amplitude((pulse.pulsar(self.per, 2*self.off, self.time)))
-        self.analog_sig_source_x_0_2_0.set_amplitude((pulse.pulsar(self.per, 7*self.off, self.time)))
-        self.analog_sig_source_x_0_3.set_amplitude(pulse.pulsar(self.per, self.off, self.time))
-        self.analog_sig_source_x_0_3_0.set_amplitude((pulse.pulsar(self.per, 6*self.off, self.time)))
-        self.analog_sig_source_x_0_4.set_amplitude((pulse.pulsar(self.per, 5*self.off, self.time)))
 
     def get_off(self):
         return self.off
 
     def set_off(self, off):
         self.off = off
-        self.analog_sig_source_x_0_0.set_amplitude((pulse.pulsar(self.per, 4*self.off, self.time)))
-        self.analog_sig_source_x_0_0_0.set_amplitude((pulse.pulsar(self.per, 9*self.off, self.time)))
-        self.analog_sig_source_x_0_1.set_amplitude((pulse.pulsar(self.per, 3*self.off, self.time)))
-        self.analog_sig_source_x_0_1_0.set_amplitude((pulse.pulsar(self.per, 8*self.off, self.time)))
-        self.analog_sig_source_x_0_2.set_amplitude((pulse.pulsar(self.per, 2*self.off, self.time)))
-        self.analog_sig_source_x_0_2_0.set_amplitude((pulse.pulsar(self.per, 7*self.off, self.time)))
-        self.analog_sig_source_x_0_3.set_amplitude(pulse.pulsar(self.per, self.off, self.time))
-        self.analog_sig_source_x_0_3_0.set_amplitude((pulse.pulsar(self.per, 6*self.off, self.time)))
-        self.analog_sig_source_x_0_4.set_amplitude((pulse.pulsar(self.per, 5*self.off, self.time)))
 
     def get_f_off(self):
         return self.f_off

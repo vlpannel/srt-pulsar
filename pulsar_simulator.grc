@@ -42,7 +42,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [208, 108.0]
+    coordinate: [184, 80.0]
     rotation: 0
     state: enabled
 - name: f_off
@@ -54,7 +54,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [200, 404.0]
+    coordinate: [232, 312.0]
     rotation: 0
     state: true
 - name: 'off'
@@ -66,7 +66,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [200, 308.0]
+    coordinate: [240, 240.0]
     rotation: 0
     state: true
 - name: per
@@ -78,7 +78,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 196.0]
+    coordinate: [232, 168.0]
     rotation: 0
     state: true
 - name: samp_rate
@@ -90,30 +90,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [216, 12.0]
+    coordinate: [184, 12]
     rotation: 0
     state: enabled
-- name: time
-  id: variable_qtgui_range
-  parameters:
-    comment: ''
-    gui_hint: ''
-    label: ''
-    min_len: '200'
-    orient: QtCore.Qt.Horizontal
-    rangeType: float
-    start: '0'
-    step: '.01'
-    stop: '1'
-    value: '0'
-    widget: counter_slider
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [32, 312.0]
-    rotation: 0
-    state: true
 - name: analog_fastnoise_source_x_0
   id: analog_fastnoise_source_x
   parameters:
@@ -131,9 +110,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [40, 1012.0]
+    coordinate: [848, 904.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: analog_fastnoise_source_x_0_0
   id: analog_fastnoise_source_x
   parameters:
@@ -151,9 +130,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [32, 1372.0]
+    coordinate: [848, 1144.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: analog_fastnoise_source_x_0_1
   id: analog_fastnoise_source_x
   parameters:
@@ -171,9 +150,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [40, 1140.0]
+    coordinate: [848, 976.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: analog_fastnoise_source_x_0_2
   id: analog_fastnoise_source_x
   parameters:
@@ -191,9 +170,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [32, 1252.0]
+    coordinate: [848, 1048.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: analog_noise_source_x_0
   id: analog_noise_source_x
   parameters:
@@ -210,15 +189,15 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [48, 1484.0]
+    coordinate: [872, 1240.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: analog_sig_source_x_0
   id: analog_sig_source_x
   parameters:
     affinity: ''
     alias: ''
-    amp: pulse.pulsar(per, 0, time)
+    amp: '1'
     comment: ''
     freq: center_freq - (4*f_off)
     maxoutbuf: '0'
@@ -234,13 +213,13 @@ blocks:
     bus_structure: null
     coordinate: [376, 4.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: analog_sig_source_x_0_0
   id: analog_sig_source_x
   parameters:
     affinity: ''
     alias: ''
-    amp: pulse.pulsar(per, 4*off, time)
+    amp: '1'
     comment: Pulsar
     freq: center_freq
     maxoutbuf: '0'
@@ -254,15 +233,15 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 356.0]
+    coordinate: [376, 512.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: analog_sig_source_x_0_0_0
   id: analog_sig_source_x
   parameters:
     affinity: ''
     alias: ''
-    amp: pulse.pulsar(per, 9*off, time)
+    amp: '1'
     comment: 'Pulsar
 
 
@@ -287,15 +266,15 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 796.0]
+    coordinate: [376, 1152.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: analog_sig_source_x_0_1
   id: analog_sig_source_x
   parameters:
     affinity: ''
     alias: ''
-    amp: pulse.pulsar(per, 3*off, time)
+    amp: '1'
     comment: ''
     freq: center_freq - f_off
     maxoutbuf: '0'
@@ -309,15 +288,15 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 268.0]
+    coordinate: [376, 384.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: analog_sig_source_x_0_1_0
   id: analog_sig_source_x
   parameters:
     affinity: ''
     alias: ''
-    amp: pulse.pulsar(per, 8*off, time)
+    amp: '1'
     comment: ''
     freq: center_freq + (4*f_off)
     maxoutbuf: '0'
@@ -331,15 +310,15 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 708.0]
+    coordinate: [376, 1024.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: analog_sig_source_x_0_2
   id: analog_sig_source_x
   parameters:
     affinity: ''
     alias: ''
-    amp: pulse.pulsar(per, 2*off, time)
+    amp: '1'
     comment: ''
     freq: center_freq - (2*f_off)
     maxoutbuf: '0'
@@ -353,15 +332,15 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 180.0]
+    coordinate: [376, 256.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: analog_sig_source_x_0_2_0
   id: analog_sig_source_x
   parameters:
     affinity: ''
     alias: ''
-    amp: pulse.pulsar(per, 7*off, time)
+    amp: '1'
     comment: ''
     freq: center_freq + (3*f_off)
     maxoutbuf: '0'
@@ -375,15 +354,15 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 620.0]
+    coordinate: [376, 896.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: analog_sig_source_x_0_3
   id: analog_sig_source_x
   parameters:
     affinity: ''
     alias: ''
-    amp: pulse.pulsar(per, off, time)
+    amp: '1'
     comment: ''
     freq: center_freq - (3*f_off)
     maxoutbuf: '0'
@@ -397,15 +376,15 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 92.0]
+    coordinate: [376, 128.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: analog_sig_source_x_0_3_0
   id: analog_sig_source_x
   parameters:
     affinity: ''
     alias: ''
-    amp: pulse.pulsar(per, 6*off, time)
+    amp: '1'
     comment: ''
     freq: center_freq + (2*f_off)
     maxoutbuf: '0'
@@ -419,15 +398,15 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 532.0]
+    coordinate: [376, 768.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: analog_sig_source_x_0_4
   id: analog_sig_source_x
   parameters:
     affinity: ''
     alias: ''
-    amp: pulse.pulsar(per, 5*off, time)
+    amp: '1'
     comment: ''
     freq: center_freq + f_off
     maxoutbuf: '0'
@@ -441,27 +420,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 444.0]
+    coordinate: [376, 640.0]
     rotation: 0
-    state: true
-- name: blocks_add_const_vxx_0
-  id: blocks_add_const_vxx
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    const: '0'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    type: complex
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [296, 1128.0]
-    rotation: 0
-    state: true
+    state: enabled
 - name: blocks_add_xx_0
   id: blocks_add_xx
   parameters:
@@ -477,9 +438,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [920, 136.0]
+    coordinate: [1216, 240.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: blocks_add_xx_1
   id: blocks_add_xx
   parameters:
@@ -495,9 +456,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [552, 1088.0]
+    coordinate: [1312, 1000.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: blocks_add_xx_2
   id: blocks_add_xx
   parameters:
@@ -513,27 +474,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [720, 120.0]
+    coordinate: [1016, 104.0]
     rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: '2'
-    type: complex
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1080, 408.0]
-    rotation: 0
-    state: true
+    state: enabled
 - name: blocks_throttle_0
   id: blocks_throttle
   parameters:
@@ -550,7 +493,387 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1048, 224.0]
+    coordinate: [1320, 248.0]
+    rotation: 0
+    state: true
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport time\n\nclass blk(gr.sync_block):  # other base\
+      \ classes are basic_block, decim_block, interp_block\n    \"\"\"Embedded Python\
+      \ Block example - a simple multiply const\"\"\"\n\n    def __init__(self, period=.33,\
+      \ offset=0):  # only default arguments here\n        \"\"\"arguments to this\
+      \ function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Pulse',   # will show up in GRC\n    \
+      \        in_sig=[np.complex64],\n            out_sig=[np.complex64]\n      \
+      \  )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.per\
+      \ = period\n        self.off = offset\n        self.s = time.time()\n\n    def\
+      \ work(self, input_items, output_items):\n        \"\"\"example: multiply with\
+      \ constant\"\"\"\n        pulse_flag = ((time.time() - self.s - self.off) %\
+      \ self.per) <= .01\n        output_items[0][:] = input_items[0] * int(pulse_flag)\
+      \ * .5\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    period: per
+  states:
+    _io_cache: ('Pulse', 'blk', [('period', '0.33'), ('offset', '0')], [('0', 'complex',
+      1)], [('0', 'complex', 1)], 'Embedded Python Block example - a simple multiply
+      const', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [632, 8.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport time\n\nclass blk(gr.sync_block):  # other base\
+      \ classes are basic_block, decim_block, interp_block\n    \"\"\"Embedded Python\
+      \ Block example - a simple multiply const\"\"\"\n\n    def __init__(self, period=.33,\
+      \ offset=0):  # only default arguments here\n        \"\"\"arguments to this\
+      \ function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Pulse',   # will show up in GRC\n    \
+      \        in_sig=[np.complex64],\n            out_sig=[np.complex64]\n      \
+      \  )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.per\
+      \ = period\n        self.off = offset\n        self.s = time.time()\n\n    def\
+      \ work(self, input_items, output_items):\n        \"\"\"example: multiply with\
+      \ constant\"\"\"\n        pulse_flag = ((time.time() - self.s - self.off) %\
+      \ self.per) <= .01\n        output_items[0][:] = input_items[0] * int(pulse_flag)\
+      \ * .5\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '.4'
+    period: per
+  states:
+    _io_cache: ('Pulse', 'blk', [('period', '0.33'), ('offset', '0')], [('0', 'complex',
+      1)], [('0', 'complex', 1)], 'Embedded Python Block example - a simple multiply
+      const', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [632, 376.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_1
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport time\n\nclass blk(gr.sync_block):  # other base\
+      \ classes are basic_block, decim_block, interp_block\n    \"\"\"Embedded Python\
+      \ Block example - a simple multiply const\"\"\"\n\n    def __init__(self, period=.33,\
+      \ offset=0):  # only default arguments here\n        \"\"\"arguments to this\
+      \ function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Pulse',   # will show up in GRC\n    \
+      \        in_sig=[np.complex64],\n            out_sig=[np.complex64]\n      \
+      \  )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.per\
+      \ = period\n        self.off = offset\n        self.s = time.time()\n\n    def\
+      \ work(self, input_items, output_items):\n        \"\"\"example: multiply with\
+      \ constant\"\"\"\n        pulse_flag = ((time.time() - self.s - self.off) %\
+      \ self.per) <= .01\n        output_items[0][:] = input_items[0] * int(pulse_flag)\
+      \ * .5\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '.3'
+    period: per
+  states:
+    _io_cache: ('Pulse', 'blk', [('period', '0.33'), ('offset', '0')], [('0', 'complex',
+      1)], [('0', 'complex', 1)], 'Embedded Python Block example - a simple multiply
+      const', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [632, 280.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_2
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport time\n\nclass blk(gr.sync_block):  # other base\
+      \ classes are basic_block, decim_block, interp_block\n    \"\"\"Embedded Python\
+      \ Block example - a simple multiply const\"\"\"\n\n    def __init__(self, period=.33,\
+      \ offset=0):  # only default arguments here\n        \"\"\"arguments to this\
+      \ function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Pulse',   # will show up in GRC\n    \
+      \        in_sig=[np.complex64],\n            out_sig=[np.complex64]\n      \
+      \  )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.per\
+      \ = period\n        self.off = offset\n        self.s = time.time()\n\n    def\
+      \ work(self, input_items, output_items):\n        \"\"\"example: multiply with\
+      \ constant\"\"\"\n        pulse_flag = ((time.time() - self.s - self.off) %\
+      \ self.per) <= .01\n        output_items[0][:] = input_items[0] * int(pulse_flag)\
+      \ * .5\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '.2'
+    period: per
+  states:
+    _io_cache: ('Pulse', 'blk', [('period', '0.33'), ('offset', '0')], [('0', 'complex',
+      1)], [('0', 'complex', 1)], 'Embedded Python Block example - a simple multiply
+      const', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [632, 184.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_3
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport time\n\nclass blk(gr.sync_block):  # other base\
+      \ classes are basic_block, decim_block, interp_block\n    \"\"\"Embedded Python\
+      \ Block example - a simple multiply const\"\"\"\n\n    def __init__(self, period=.33,\
+      \ offset=0):  # only default arguments here\n        \"\"\"arguments to this\
+      \ function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Pulse',   # will show up in GRC\n    \
+      \        in_sig=[np.complex64],\n            out_sig=[np.complex64]\n      \
+      \  )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.per\
+      \ = period\n        self.off = offset\n        self.s = time.time()\n\n    def\
+      \ work(self, input_items, output_items):\n        \"\"\"example: multiply with\
+      \ constant\"\"\"\n        pulse_flag = ((time.time() - self.s - self.off) %\
+      \ self.per) <= .01\n        output_items[0][:] = input_items[0] * int(pulse_flag)\
+      \ * .5\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '.5'
+    period: per
+  states:
+    _io_cache: ('Pulse', 'blk', [('period', '0.33'), ('offset', '0')], [('0', 'complex',
+      1)], [('0', 'complex', 1)], 'Embedded Python Block example - a simple multiply
+      const', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [632, 480.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_3_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport time\n\nclass blk(gr.sync_block):  # other base\
+      \ classes are basic_block, decim_block, interp_block\n    \"\"\"Embedded Python\
+      \ Block example - a simple multiply const\"\"\"\n\n    def __init__(self, period=.33,\
+      \ offset=0):  # only default arguments here\n        \"\"\"arguments to this\
+      \ function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Pulse',   # will show up in GRC\n    \
+      \        in_sig=[np.complex64],\n            out_sig=[np.complex64]\n      \
+      \  )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.per\
+      \ = period\n        self.off = offset\n        self.s = time.time()\n\n    def\
+      \ work(self, input_items, output_items):\n        \"\"\"example: multiply with\
+      \ constant\"\"\"\n        pulse_flag = ((time.time() - self.s - self.off) %\
+      \ self.per) <= .01\n        output_items[0][:] = input_items[0] * int(pulse_flag)\
+      \ * .5\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '.6'
+    period: per
+  states:
+    _io_cache: ('Pulse', 'blk', [('period', '0.33'), ('offset', '0')], [('0', 'complex',
+      1)], [('0', 'complex', 1)], 'Embedded Python Block example - a simple multiply
+      const', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [632, 616.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_3_1
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport time\n\nclass blk(gr.sync_block):  # other base\
+      \ classes are basic_block, decim_block, interp_block\n    \"\"\"Embedded Python\
+      \ Block example - a simple multiply const\"\"\"\n\n    def __init__(self, period=.33,\
+      \ offset=0):  # only default arguments here\n        \"\"\"arguments to this\
+      \ function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Pulse',   # will show up in GRC\n    \
+      \        in_sig=[np.complex64],\n            out_sig=[np.complex64]\n      \
+      \  )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.per\
+      \ = period\n        self.off = offset\n        self.s = time.time()\n\n    def\
+      \ work(self, input_items, output_items):\n        \"\"\"example: multiply with\
+      \ constant\"\"\"\n        pulse_flag = ((time.time() - self.s - self.off) %\
+      \ self.per) <= .01\n        output_items[0][:] = input_items[0] * int(pulse_flag)\
+      \ * .5\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '.7'
+    period: per
+  states:
+    _io_cache: ('Pulse', 'blk', [('period', '0.33'), ('offset', '0')], [('0', 'complex',
+      1)], [('0', 'complex', 1)], 'Embedded Python Block example - a simple multiply
+      const', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [632, 752.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_3_2
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport time\n\nclass blk(gr.sync_block):  # other base\
+      \ classes are basic_block, decim_block, interp_block\n    \"\"\"Embedded Python\
+      \ Block example - a simple multiply const\"\"\"\n\n    def __init__(self, period=.33,\
+      \ offset=0):  # only default arguments here\n        \"\"\"arguments to this\
+      \ function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Pulse',   # will show up in GRC\n    \
+      \        in_sig=[np.complex64],\n            out_sig=[np.complex64]\n      \
+      \  )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.per\
+      \ = period\n        self.off = offset\n        self.s = time.time()\n\n    def\
+      \ work(self, input_items, output_items):\n        \"\"\"example: multiply with\
+      \ constant\"\"\"\n        pulse_flag = ((time.time() - self.s - self.off) %\
+      \ self.per) <= .01\n        output_items[0][:] = input_items[0] * int(pulse_flag)\
+      \ * .5\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '.8'
+    period: per
+  states:
+    _io_cache: ('Pulse', 'blk', [('period', '0.33'), ('offset', '0')], [('0', 'complex',
+      1)], [('0', 'complex', 1)], 'Embedded Python Block example - a simple multiply
+      const', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [632, 904.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_3_3
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport time\n\nclass blk(gr.sync_block):  # other base\
+      \ classes are basic_block, decim_block, interp_block\n    \"\"\"Embedded Python\
+      \ Block example - a simple multiply const\"\"\"\n\n    def __init__(self, period=.33,\
+      \ offset=0):  # only default arguments here\n        \"\"\"arguments to this\
+      \ function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Pulse',   # will show up in GRC\n    \
+      \        in_sig=[np.complex64],\n            out_sig=[np.complex64]\n      \
+      \  )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.per\
+      \ = period\n        self.off = offset\n        self.s = time.time()\n\n    def\
+      \ work(self, input_items, output_items):\n        \"\"\"example: multiply with\
+      \ constant\"\"\"\n        pulse_flag = ((time.time() - self.s - self.off) %\
+      \ self.per) <= .01\n        output_items[0][:] = input_items[0] * int(pulse_flag)\
+      \ * .5\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '.9'
+    period: per
+  states:
+    _io_cache: ('Pulse', 'blk', [('period', '0.33'), ('offset', '0')], [('0', 'complex',
+      1)], [('0', 'complex', 1)], 'Embedded Python Block example - a simple multiply
+      const', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [632, 1080.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_4
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport time\n\nclass blk(gr.sync_block):  # other base\
+      \ classes are basic_block, decim_block, interp_block\n    \"\"\"Embedded Python\
+      \ Block example - a simple multiply const\"\"\"\n\n    def __init__(self, period=.33,\
+      \ offset=0):  # only default arguments here\n        \"\"\"arguments to this\
+      \ function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Pulse',   # will show up in GRC\n    \
+      \        in_sig=[np.complex64],\n            out_sig=[np.complex64]\n      \
+      \  )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.per\
+      \ = period\n        self.off = offset\n        self.s = time.time()\n\n    def\
+      \ work(self, input_items, output_items):\n        \"\"\"example: multiply with\
+      \ constant\"\"\"\n        pulse_flag = ((time.time() - self.s - self.off) %\
+      \ self.per) <= .01\n        output_items[0][:] = input_items[0] * int(pulse_flag)\
+      \ * .5\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '.1'
+    period: per
+  states:
+    _io_cache: ('Pulse', 'blk', [('period', '0.33'), ('offset', '0')], [('0', 'complex',
+      1)], [('0', 'complex', 1)], 'Embedded Python Block example - a simple multiply
+      const', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [632, 96.0]
     rotation: 0
     state: true
 - name: gr_digital_rf_digital_rf_sink_0
@@ -559,7 +882,7 @@ blocks:
     affinity: ''
     alias: ''
     center_freqs: '[]'
-    channel0: ch0
+    channel0: fake-misa
     channel1: ch1
     channel10: ch10
     channel11: ch11
@@ -592,7 +915,11 @@ blocks:
     channel8: ch8
     channel9: ch9
     checksum: 'False'
-    comment: ''
+    comment: 'DON''T make time = ''now''
+
+      because that causes issues
+
+      when reading DRF data.'
     compression_level: '0'
     debug: 'False'
     file_cadence_ms: '1000'
@@ -609,29 +936,14 @@ blocks:
     stop_on_skipped: 'False'
     stop_on_time_tag: 'False'
     subdir_cadence_s: '3600'
-    top_level_dir: '"C:\\Users\\vlpannel\\Desktop\\SRT\\raw"'
+    top_level_dir: C:\\Users\\vlpannel\\Desktop\\pulsar_sim
     uuid: ''
-    vlen: '2'
+    vlen: '1'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1320, 380.0]
-    rotation: 0
-    state: true
-- name: pulse
-  id: epy_module
-  parameters:
-    alias: ''
-    comment: ''
-    source_code: "# this module will be imported in the into your flowgraph\n\ndef\
-      \ pulsar(period, offset, time):\n    return int((time - offset) % period <=\
-      \ .01) * .2\n"
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [40, 176.0]
+    coordinate: [1536, 352.0]
     rotation: 0
     state: true
 - name: qtgui_sink_x_0
@@ -660,33 +972,41 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1280, 200.0]
+    coordinate: [1536, 216.0]
     rotation: 0
     state: true
 
 connections:
 - [analog_fastnoise_source_x_0, '0', blocks_add_xx_1, '0']
 - [analog_fastnoise_source_x_0_0, '0', blocks_add_xx_1, '3']
-- [analog_fastnoise_source_x_0_1, '0', blocks_add_const_vxx_0, '0']
+- [analog_fastnoise_source_x_0_1, '0', blocks_add_xx_1, '1']
 - [analog_fastnoise_source_x_0_2, '0', blocks_add_xx_1, '2']
 - [analog_noise_source_x_0, '0', blocks_add_xx_1, '4']
-- [analog_sig_source_x_0, '0', blocks_add_xx_2, '0']
-- [analog_sig_source_x_0_0, '0', blocks_add_xx_2, '4']
-- [analog_sig_source_x_0_0_0, '0', blocks_add_xx_2, '9']
-- [analog_sig_source_x_0_1, '0', blocks_add_xx_2, '3']
-- [analog_sig_source_x_0_1_0, '0', blocks_add_xx_2, '8']
-- [analog_sig_source_x_0_2, '0', blocks_add_xx_2, '2']
-- [analog_sig_source_x_0_2_0, '0', blocks_add_xx_2, '7']
-- [analog_sig_source_x_0_3, '0', blocks_add_xx_2, '1']
-- [analog_sig_source_x_0_3_0, '0', blocks_add_xx_2, '6']
-- [analog_sig_source_x_0_4, '0', blocks_add_xx_2, '5']
-- [blocks_add_const_vxx_0, '0', blocks_add_xx_1, '1']
+- [analog_sig_source_x_0, '0', epy_block_0, '0']
+- [analog_sig_source_x_0_0, '0', epy_block_0_0, '0']
+- [analog_sig_source_x_0_0_0, '0', epy_block_0_3_3, '0']
+- [analog_sig_source_x_0_1, '0', epy_block_0_1, '0']
+- [analog_sig_source_x_0_1_0, '0', epy_block_0_3_2, '0']
+- [analog_sig_source_x_0_2, '0', epy_block_0_2, '0']
+- [analog_sig_source_x_0_2_0, '0', epy_block_0_3_1, '0']
+- [analog_sig_source_x_0_3, '0', epy_block_0_4, '0']
+- [analog_sig_source_x_0_3_0, '0', epy_block_0_3_0, '0']
+- [analog_sig_source_x_0_4, '0', epy_block_0_3, '0']
 - [blocks_add_xx_0, '0', blocks_throttle_0, '0']
 - [blocks_add_xx_1, '0', blocks_add_xx_0, '1']
 - [blocks_add_xx_2, '0', blocks_add_xx_0, '0']
-- [blocks_stream_to_vector_0, '0', gr_digital_rf_digital_rf_sink_0, '0']
-- [blocks_throttle_0, '0', blocks_stream_to_vector_0, '0']
+- [blocks_throttle_0, '0', gr_digital_rf_digital_rf_sink_0, '0']
 - [blocks_throttle_0, '0', qtgui_sink_x_0, '0']
+- [epy_block_0, '0', blocks_add_xx_2, '0']
+- [epy_block_0_0, '0', blocks_add_xx_2, '4']
+- [epy_block_0_1, '0', blocks_add_xx_2, '3']
+- [epy_block_0_2, '0', blocks_add_xx_2, '2']
+- [epy_block_0_3, '0', blocks_add_xx_2, '5']
+- [epy_block_0_3_0, '0', blocks_add_xx_2, '6']
+- [epy_block_0_3_1, '0', blocks_add_xx_2, '7']
+- [epy_block_0_3_2, '0', blocks_add_xx_2, '8']
+- [epy_block_0_3_3, '0', blocks_add_xx_2, '9']
+- [epy_block_0_4, '0', blocks_add_xx_2, '1']
 
 metadata:
   file_format: 1
