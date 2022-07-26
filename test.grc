@@ -1,0 +1,380 @@
+options:
+  parameters:
+    author: ''
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: test
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Not titled yet
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '1000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: analog_fastnoise_source_x_0
+  id: analog_fastnoise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    samples: '8192'
+    seed: '0'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [104, 360.0]
+    rotation: 0
+    state: disabled
+- name: analog_sig_source_x_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    freq: '1000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [96, 152.0]
+    rotation: 0
+    state: disabled
+- name: blocks_add_xx_0
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [384, 248.0]
+    rotation: 0
+    state: disabled
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [576, 184.0]
+    rotation: 0
+    state: enabled
+- name: gr_digital_rf_digital_rf_sink_0
+  id: gr_digital_rf_digital_rf_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    center_freqs: '[]'
+    channel0: chan
+    channel1: ch1
+    channel10: ch10
+    channel11: ch11
+    channel12: ch12
+    channel13: ch13
+    channel14: ch14
+    channel15: ch15
+    channel16: ch16
+    channel17: ch17
+    channel18: ch18
+    channel19: ch19
+    channel2: ch2
+    channel20: ch20
+    channel21: ch21
+    channel22: ch22
+    channel23: ch23
+    channel24: ch24
+    channel25: ch25
+    channel26: ch26
+    channel27: ch27
+    channel28: ch28
+    channel29: ch29
+    channel3: ch3
+    channel30: ch30
+    channel31: ch31
+    channel4: ch4
+    channel5: ch5
+    channel6: ch6
+    channel7: ch7
+    channel8: ch8
+    channel9: ch9
+    checksum: 'False'
+    comment: ''
+    compression_level: '0'
+    debug: 'False'
+    file_cadence_ms: '1000'
+    ignore_tags: 'False'
+    input: fc32
+    is_continuous: 'True'
+    marching_periods: 'True'
+    metadata: '{}'
+    min_chunksize: '0'
+    nchan: '1'
+    sample_rate_denominator: '1'
+    sample_rate_numerator: int(samp_rate)
+    start: ''
+    stop_on_skipped: 'False'
+    stop_on_time_tag: 'False'
+    subdir_cadence_s: '3600'
+    top_level_dir: C:\\Users\\vlpannel\\Desktop\\out_test
+    uuid: ''
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [760, 152.0]
+    rotation: 0
+    state: disabled
+- name: gr_digital_rf_digital_rf_source_0
+  id: gr_digital_rf_digital_rf_source
+  parameters:
+    affinity: ''
+    alias: ''
+    channel0: chan
+    channel1: ch1
+    channel10: ch10
+    channel11: ch11
+    channel12: ch12
+    channel13: ch13
+    channel14: ch14
+    channel15: ch15
+    channel16: ch16
+    channel17: ch17
+    channel18: ch18
+    channel19: ch19
+    channel2: ch2
+    channel20: ch20
+    channel21: ch21
+    channel22: ch22
+    channel23: ch23
+    channel24: ch24
+    channel25: ch25
+    channel26: ch26
+    channel27: ch27
+    channel28: ch28
+    channel29: ch29
+    channel3: ch3
+    channel30: ch30
+    channel31: ch31
+    channel4: ch4
+    channel5: ch5
+    channel6: ch6
+    channel7: ch7
+    channel8: ch8
+    channel9: ch9
+    comment: ''
+    end0: ''
+    end1: ''
+    end10: ''
+    end11: ''
+    end12: ''
+    end13: ''
+    end14: ''
+    end15: ''
+    end16: ''
+    end17: ''
+    end18: ''
+    end19: ''
+    end2: ''
+    end20: ''
+    end21: ''
+    end22: ''
+    end23: ''
+    end24: ''
+    end25: ''
+    end26: ''
+    end27: ''
+    end28: ''
+    end29: ''
+    end3: ''
+    end30: ''
+    end31: ''
+    end4: ''
+    end5: ''
+    end6: ''
+    end7: ''
+    end8: ''
+    end9: ''
+    gapless: 'False'
+    hide_msg_port: 'True'
+    maxoutbuf: '0'
+    min_chunksize: '0'
+    minoutbuf: '0'
+    nchan: '1'
+    repeat: 'False'
+    start0: ''
+    start1: ''
+    start10: ''
+    start11: ''
+    start12: ''
+    start13: ''
+    start14: ''
+    start15: ''
+    start16: ''
+    start17: ''
+    start18: ''
+    start19: ''
+    start2: ''
+    start20: ''
+    start21: ''
+    start22: ''
+    start23: ''
+    start24: ''
+    start25: ''
+    start26: ''
+    start27: ''
+    start28: ''
+    start29: ''
+    start3: ''
+    start30: ''
+    start31: ''
+    start4: ''
+    start5: ''
+    start6: ''
+    start7: ''
+    start8: ''
+    start9: ''
+    throttle: 'False'
+    top_level_dir: C:\\Users\\vlpannel\\Desktop\\out_test
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [480, 528.0]
+    rotation: 0
+    state: enabled
+- name: import_0
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import time
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [464, 56.0]
+    rotation: 0
+    state: enabled
+- name: note_0
+  id: note
+  parameters:
+    alias: ''
+    comment: "DRF works here!\nHowever, it takes\na really long time\nif a lot of\
+      \ data is\nsampled (make \nsure to use \nindices for more than\n5 sec of data).\
+      \ Also,\nrepeat playback\nalso works. DRF can\nsave and read\ndata samples in\n\
+      cf32."
+    note: drf
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1320, 32.0]
+    rotation: 0
+    state: true
+- name: qtgui_sink_x_0
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: samp_rate
+    comment: ''
+    fc: '0'
+    fftsize: '1024'
+    gui_hint: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'False'
+    showrf: 'False'
+    type: complex
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [760, 288.0]
+    rotation: 0
+    state: true
+
+connections:
+- [analog_fastnoise_source_x_0, '0', blocks_add_xx_0, '1']
+- [analog_sig_source_x_0, '0', blocks_add_xx_0, '0']
+- [blocks_add_xx_0, '0', blocks_throttle_0, '0']
+- [blocks_throttle_0, '0', gr_digital_rf_digital_rf_sink_0, '0']
+- [blocks_throttle_0, '0', qtgui_sink_x_0, '0']
+- [gr_digital_rf_digital_rf_source_0, '0', blocks_throttle_0, '0']
+
+metadata:
+  file_format: 1
+  grc_version: 3.10.3.0
