@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: GPL-3.0
 #
 # GNU Radio Python Flow Graph
-# Title: Testing Parts
+# Title: Not titled yet
 # Author: vivelpanel
 # GNU Radio version: 3.9.5.0
 
@@ -31,20 +31,17 @@ from PyQt5 import Qt
 from argparse import ArgumentParser
 from gnuradio.eng_arg import eng_float, intx
 from gnuradio import eng_notation
-import gnuradio.filter
-import mitarspysigproc.filtertools as ft
-import numpy as np
 
 
 
 from gnuradio import qtgui
 
-class part_test(gr.top_block, Qt.QWidget):
+class buffermemory_test(gr.top_block, Qt.QWidget):
 
     def __init__(self):
-        gr.top_block.__init__(self, "Testing Parts", catch_exceptions=True)
+        gr.top_block.__init__(self, "Not titled yet", catch_exceptions=True)
         Qt.QWidget.__init__(self)
-        self.setWindowTitle("Testing Parts")
+        self.setWindowTitle("Not titled yet")
         qtgui.util.check_set_qss()
         try:
             self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))
@@ -62,7 +59,7 @@ class part_test(gr.top_block, Qt.QWidget):
         self.top_grid_layout = Qt.QGridLayout()
         self.top_layout.addLayout(self.top_grid_layout)
 
-        self.settings = Qt.QSettings("GNU Radio", "part_test")
+        self.settings = Qt.QSettings("GNU Radio", "buffermemory_test")
 
         try:
             if StrictVersion(Qt.qVersion()) < StrictVersion("5.0.0"):
@@ -75,53 +72,51 @@ class part_test(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
-        self.samp_rate = samp_rate = 1000000
-        self.pfb_taps = pfb_taps = ft.kaiser_coeffs(5)
-        self.ctr = ctr = 25000
+        self.vec_len = vec_len = 24000000
+        self.samp_rate = samp_rate = 1e6
 
         ##################################################
         # Blocks
         ##################################################
+        self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
+        self.blocks_stream_to_vector_0 = blocks.stream_to_vector(gr.sizeof_gr_complex*1, vec_len)
         self.blocks_null_source_0 = blocks.null_source(gr.sizeof_gr_complex*1)
-        self.blocks_null_sink_0 = blocks.null_sink(gr.sizeof_gr_complex*1)
+        self.blocks_null_sink_0 = blocks.null_sink(gr.sizeof_gr_complex*vec_len)
 
 
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.blocks_null_source_0, 0), (self.blocks_null_sink_0, 0))
+        self.connect((self.blocks_null_source_0, 0), (self.blocks_throttle_0, 0))
+        self.connect((self.blocks_stream_to_vector_0, 0), (self.blocks_null_sink_0, 0))
+        self.connect((self.blocks_throttle_0, 0), (self.blocks_stream_to_vector_0, 0))
 
 
     def closeEvent(self, event):
-        self.settings = Qt.QSettings("GNU Radio", "part_test")
+        self.settings = Qt.QSettings("GNU Radio", "buffermemory_test")
         self.settings.setValue("geometry", self.saveGeometry())
         self.stop()
         self.wait()
 
         event.accept()
 
+    def get_vec_len(self):
+        return self.vec_len
+
+    def set_vec_len(self, vec_len):
+        self.vec_len = vec_len
+
     def get_samp_rate(self):
         return self.samp_rate
 
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
-
-    def get_pfb_taps(self):
-        return self.pfb_taps
-
-    def set_pfb_taps(self, pfb_taps):
-        self.pfb_taps = pfb_taps
-
-    def get_ctr(self):
-        return self.ctr
-
-    def set_ctr(self, ctr):
-        self.ctr = ctr
+        self.blocks_throttle_0.set_sample_rate(self.samp_rate)
 
 
 
 
-def main(top_block_cls=part_test, options=None):
+def main(top_block_cls=buffermemory_test, options=None):
 
     if StrictVersion("4.5.0") <= StrictVersion(Qt.qVersion()) < StrictVersion("5.0.0"):
         style = gr.prefs().get_string('qtgui', 'style', 'raster')

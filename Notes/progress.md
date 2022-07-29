@@ -61,3 +61,12 @@
 	- Test if psrdynspec will ever give NaNs (the way we're using it)
 	- Test GUI graphing
 	- Maybe apply to IS&T for a new computer
+
+### 7/28/2022
+- It's actually a good thing that I'm not updating this every day; saves time
+- Been prototyping the final GRC flowgraphs
+- Want to convert this flowgraph into a hier block
+	- Resamples and converts stream to vector
+	- Folds over vector
+	- Outputs a vector of floats (replacing NaNs in profile with zeroes), which is the folding profile (phase vs power/profile)
+- Playing with making a pulsar sim a bit more (a lot harder than I thought)

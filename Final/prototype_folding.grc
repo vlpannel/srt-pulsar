@@ -201,6 +201,23 @@ blocks:
     coordinate: [944, 20.0]
     rotation: 0
     state: true
+- name: blocks_null_sink_1
+  id: blocks_null_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_sink: '[[0,],]'
+    comment: ''
+    num_inputs: '7'
+    type: float
+    vlen: bins
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1256, 924.0]
+    rotation: 0
+    state: true
 - name: blocks_null_sink_2
   id: blocks_null_sink
   parameters:
@@ -1462,6 +1479,19 @@ connections:
 - [blocks_stream_to_vector_0_4, '0', blocks_null_sink_2, '8']
 - [blocks_throttle_0, '0', blocks_null_sink_0, '0']
 - [epy_block_0, '0', qtgui_vector_sink_f_0, '0']
+- [epy_block_0, '1', blocks_null_sink_1, '0']
+- [epy_block_0_0, '0', qtgui_vector_sink_f_0, '1']
+- [epy_block_0_0, '1', blocks_null_sink_1, '1']
+- [epy_block_0_0_0, '0', qtgui_vector_sink_f_0, '3']
+- [epy_block_0_0_0, '1', blocks_null_sink_1, '3']
+- [epy_block_0_0_0_0, '0', qtgui_vector_sink_f_0, '6']
+- [epy_block_0_0_0_0, '1', blocks_null_sink_1, '6']
+- [epy_block_0_0_1, '0', qtgui_vector_sink_f_0, '4']
+- [epy_block_0_0_1, '1', blocks_null_sink_1, '4']
+- [epy_block_0_1, '0', qtgui_vector_sink_f_0, '2']
+- [epy_block_0_1, '1', blocks_null_sink_1, '2']
+- [epy_block_0_1_0, '0', qtgui_vector_sink_f_0, '5']
+- [epy_block_0_1_0, '1', blocks_null_sink_1, '5']
 - [gr_digital_rf_digital_rf_source_0_0, '0', blocks_stream_to_vector_0, '0']
 - [gr_digital_rf_digital_rf_source_0_0, '1', blocks_stream_to_vector_0_0, '0']
 - [gr_digital_rf_digital_rf_source_0_0, '10', blocks_stream_to_vector_0_0_0_0, '0']
