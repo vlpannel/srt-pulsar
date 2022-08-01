@@ -42,9 +42,21 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 80.0]
+    coordinate: [200, 16.0]
     rotation: 0
     state: enabled
+- name: center_freq
+  id: variable
+  parameters:
+    comment: ''
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [200, 80.0]
+    rotation: 0
+    state: disabled
 - name: f_off
   id: variable
   parameters:
@@ -54,7 +66,28 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [176, 312.0]
+    coordinate: [1864, 552.0]
+    rotation: 0
+    state: disabled
+- name: noise
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Noise Level (V)
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '.1'
+    stop: '1000'
+    value: '15'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [352, 20.0]
     rotation: 0
     state: true
 - name: 'off'
@@ -66,9 +99,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 240.0]
+    coordinate: [1872, 480.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: per
   id: variable
   parameters:
@@ -78,7 +111,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [176, 168.0]
+    coordinate: [272, 16.0]
     rotation: 0
     state: true
 - name: samp_rate
@@ -90,9 +123,21 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 12]
+    coordinate: [136, 16.0]
     rotation: 0
     state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '10000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [128, 80.0]
+    rotation: 0
+    state: disabled
 - name: time
   id: variable_qtgui_range
   parameters:
@@ -111,9 +156,26 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [80, 224.0]
+    coordinate: [1768, 464.0]
     rotation: 0
-    state: true
+    state: disabled
+- name: analog_const_source_x_0
+  id: analog_const_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [288, 244.0]
+    rotation: 0
+    state: disabled
 - name: analog_fastnoise_source_x_0
   id: analog_fastnoise_source_x
   parameters:
@@ -131,9 +193,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [88, 912.0]
+    coordinate: [1856, 1088.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: analog_fastnoise_source_x_0_0
   id: analog_fastnoise_source_x
   parameters:
@@ -151,9 +213,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [88, 1128.0]
+    coordinate: [1856, 1304.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: analog_fastnoise_source_x_0_1
   id: analog_fastnoise_source_x
   parameters:
@@ -171,9 +233,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [88, 984.0]
+    coordinate: [1856, 1160.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: analog_fastnoise_source_x_0_2
   id: analog_fastnoise_source_x
   parameters:
@@ -191,7 +253,27 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [88, 1056.0]
+    coordinate: [1856, 1232.0]
+    rotation: 0
+    state: disabled
+- name: analog_fastnoise_source_x_1
+  id: analog_fastnoise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    samples: '8192'
+    seed: '0'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [520, 416.0]
     rotation: 0
     state: true
 - name: analog_noise_source_x_0
@@ -210,9 +292,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [96, 1204.0]
+    coordinate: [1864, 1380.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: analog_sig_source_x_0
   id: analog_sig_source_x
   parameters:
@@ -232,9 +314,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 4.0]
+    coordinate: [1560, 460.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: analog_sig_source_x_0_0
   id: analog_sig_source_x
   parameters:
@@ -254,9 +336,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 356.0]
+    coordinate: [1560, 812.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: analog_sig_source_x_0_0_0
   id: analog_sig_source_x
   parameters:
@@ -287,9 +369,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 796.0]
+    coordinate: [1560, 1252.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: analog_sig_source_x_0_1
   id: analog_sig_source_x
   parameters:
@@ -309,9 +391,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 268.0]
+    coordinate: [1560, 724.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: analog_sig_source_x_0_1_0
   id: analog_sig_source_x
   parameters:
@@ -331,9 +413,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 708.0]
+    coordinate: [1560, 1164.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: analog_sig_source_x_0_2
   id: analog_sig_source_x
   parameters:
@@ -353,9 +435,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 180.0]
+    coordinate: [1560, 636.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: analog_sig_source_x_0_2_0
   id: analog_sig_source_x
   parameters:
@@ -375,9 +457,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 620.0]
+    coordinate: [1560, 1076.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: analog_sig_source_x_0_3
   id: analog_sig_source_x
   parameters:
@@ -397,9 +479,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 92.0]
+    coordinate: [1560, 548.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: analog_sig_source_x_0_3_0
   id: analog_sig_source_x
   parameters:
@@ -419,9 +501,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 532.0]
+    coordinate: [1560, 988.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: analog_sig_source_x_0_4
   id: analog_sig_source_x
   parameters:
@@ -441,7 +523,29 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 444.0]
+    coordinate: [1560, 900.0]
+    rotation: 0
+    state: disabled
+- name: analog_sig_source_x_1
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    freq: 440e6
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_SIN_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [328, 468.0]
     rotation: 0
     state: true
 - name: blocks_add_const_vxx_0
@@ -459,9 +563,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [224, 996.0]
+    coordinate: [1992, 1172.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: blocks_add_xx_0
   id: blocks_add_xx
   parameters:
@@ -470,7 +574,7 @@ blocks:
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
-    num_inputs: '2'
+    num_inputs: '3'
     type: complex
     vlen: '1'
   states:
@@ -479,7 +583,7 @@ blocks:
     bus_structure: null
     coordinate: [800, 220.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: blocks_add_xx_1
   id: blocks_add_xx
   parameters:
@@ -495,9 +599,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [472, 948.0]
+    coordinate: [2240, 1124.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: blocks_add_xx_2
   id: blocks_add_xx
   parameters:
@@ -513,9 +617,92 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [592, 196.0]
+    coordinate: [1776, 652.0]
+    rotation: 0
+    state: disabled
+- name: blocks_add_xx_3
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [680, 492.0]
     rotation: 0
     state: true
+- name: blocks_float_to_complex_0
+  id: blocks_float_to_complex
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [392, 588.0]
+    rotation: 0
+    state: disabled
+- name: blocks_message_debug_0
+  id: blocks_message_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    en_uvec: 'True'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [952, 612.0]
+    rotation: 0
+    state: true
+- name: blocks_message_strobe_0
+  id: blocks_message_strobe
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    msg: pmt.intern("TEST")
+    period: '1000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [672, 632.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_xx_0
+  id: blocks_multiply_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [528, 516.0]
+    rotation: 0
+    state: disabled
 - name: blocks_throttle_0
   id: blocks_throttle
   parameters:
@@ -535,6 +722,167 @@ blocks:
     coordinate: [888, 236.0]
     rotation: 0
     state: true
+- name: blocks_vector_source_x_0
+  id: blocks_vector_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    repeat: 'True'
+    tags: '[]'
+    type: complex
+    vector: ([.01] * 10000) + ([2] * 100)
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [240, 580.0]
+    rotation: 0
+    state: disabled
+- name: blocks_vector_source_x_0_3
+  id: blocks_vector_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    repeat: 'True'
+    tags: '[]'
+    type: float
+    vector: np.arange(
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [264, 172.0]
+    rotation: 0
+    state: disabled
+- name: channels_channel_model2_0
+  id: channels_channel_model2
+  parameters:
+    affinity: ''
+    alias: ''
+    block_tags: 'False'
+    comment: ''
+    epsilon: '1.0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_voltage: noise
+    seed: int(random.random() * 10000)
+    taps: 1.0 + 1.0j
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [576, 148.0]
+    rotation: 0
+    state: disabled
+- name: channels_channel_model_0
+  id: channels_channel_model
+  parameters:
+    affinity: ''
+    alias: ''
+    block_tags: 'False'
+    comment: ''
+    epsilon: '1.0'
+    freq_offset: '0.0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_voltage: '0.0'
+    seed: '0'
+    taps: '[1, ]'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [504, 300.0]
+    rotation: 0
+    state: disabled
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\n\nclass blk(gr.sync_block):  # other base classes\
+      \ are basic_block, decim_block, interp_block\n    \"\"\"Embedded Python Block\
+      \ example - a simple multiply const\"\"\"\n\n    def __init__(self, sr=1000000,\
+      \ per=.033):  # only default arguments here\n        \"\"\"arguments to this\
+      \ function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Pulse',   # will show up in GRC\n    \
+      \        in_sig=[np.complex64],\n            out_sig=[np.complex64]\n      \
+      \  )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.sr\
+      \ = sr    # sample rate\n        self.per = per    # period of pulse\n     \
+      \   self.counter = 0    # counting how many\n        self.reset = (self.per\
+      \ + (.1 * self.sr))\n\n    def work(self, input_items, output_items):\n    \
+      \    \"\"\"example: multiply with constant\"\"\"\n        if self.counter >\
+      \ self.reset:\n            self.counter = 0\n        \n        if self.counter\
+      \ < self.per:\n            output_items[0][:] = 0\n        elif self.counter\
+      \ < reset:\n            output_items[0][:] = input_items\n        \n       \
+      \ self.counter += 1\n        \n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    per: per
+    sr: samp_rate
+  states:
+    _io_cache: ('Pulse', 'blk', [('sr', '1000000'), ('per', '0.033')], [('0', 'complex',
+      1)], [('0', 'complex', 1)], 'Embedded Python Block example - a simple multiply
+      const', ['per', 'sr'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [544, 604.0]
+    rotation: 0
+    state: true
+- name: import_0
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import random
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [464, 24.0]
+    rotation: 0
+    state: true
+- name: import_1
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import numpy as np
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [536, 24.0]
+    rotation: 0
+    state: true
+- name: note_0
+  id: note
+  parameters:
+    alias: ''
+    comment: older, cruder way of simulating pulsar (very inexact and problematic)
+    note: deprecated
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1560, 392.0]
+    rotation: 0
+    state: true
 - name: pulse
   id: epy_module
   parameters:
@@ -547,9 +895,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [80, 176.0]
+    coordinate: [1760, 568.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: qtgui_sink_x_0
   id: qtgui_sink_x
   parameters:
@@ -578,13 +926,15 @@ blocks:
     bus_structure: null
     coordinate: [1016, 216.0]
     rotation: 0
-    state: true
+    state: enabled
 
 connections:
+- [analog_const_source_x_0, '0', channels_channel_model2_0, '2']
 - [analog_fastnoise_source_x_0, '0', blocks_add_xx_1, '0']
 - [analog_fastnoise_source_x_0_0, '0', blocks_add_xx_1, '3']
 - [analog_fastnoise_source_x_0_1, '0', blocks_add_const_vxx_0, '0']
 - [analog_fastnoise_source_x_0_2, '0', blocks_add_xx_1, '2']
+- [analog_fastnoise_source_x_1, '0', blocks_add_xx_3, '0']
 - [analog_noise_source_x_0, '0', blocks_add_xx_1, '4']
 - [analog_sig_source_x_0, '0', blocks_add_xx_2, '0']
 - [analog_sig_source_x_0_0, '0', blocks_add_xx_2, '4']
@@ -596,11 +946,25 @@ connections:
 - [analog_sig_source_x_0_3, '0', blocks_add_xx_2, '1']
 - [analog_sig_source_x_0_3_0, '0', blocks_add_xx_2, '6']
 - [analog_sig_source_x_0_4, '0', blocks_add_xx_2, '5']
+- [analog_sig_source_x_1, '0', blocks_multiply_xx_0, '0']
+- [analog_sig_source_x_1, '0', channels_channel_model2_0, '0']
+- [analog_sig_source_x_1, '0', channels_channel_model_0, '0']
+- [analog_sig_source_x_1, '0', epy_block_0, '0']
 - [blocks_add_const_vxx_0, '0', blocks_add_xx_1, '1']
 - [blocks_add_xx_0, '0', blocks_throttle_0, '0']
 - [blocks_add_xx_1, '0', blocks_add_xx_0, '1']
 - [blocks_add_xx_2, '0', blocks_add_xx_0, '0']
+- [blocks_add_xx_3, '0', blocks_throttle_0, '0']
+- [blocks_float_to_complex_0, '0', blocks_multiply_xx_0, '1']
+- [blocks_multiply_xx_0, '0', blocks_add_xx_3, '1']
 - [blocks_throttle_0, '0', qtgui_sink_x_0, '0']
+- [blocks_vector_source_x_0, '0', blocks_float_to_complex_0, '0']
+- [blocks_vector_source_x_0, '0', blocks_multiply_xx_0, '1']
+- [blocks_vector_source_x_0_3, '0', channels_channel_model2_0, '1']
+- [channels_channel_model2_0, '0', blocks_add_xx_0, '0']
+- [channels_channel_model2_0, '0', blocks_throttle_0, '0']
+- [channels_channel_model_0, '0', blocks_throttle_0, '0']
+- [epy_block_0, '0', blocks_add_xx_3, '1']
 
 metadata:
   file_format: 1
