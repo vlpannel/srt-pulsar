@@ -37,7 +37,7 @@ blocks:
   id: variable
   parameters:
     comment: Points to fold
-    value: int(10e6)
+    value: int(per * 5 * samp_rate)
   states:
     bus_sink: false
     bus_source: false
@@ -113,9 +113,9 @@ blocks:
       \ passed in\n\n    samp_rate : float\n        Sample rate of data (taken from\
       \ metadata)\n\n    Nbins : int\n        Number of phase bins in which to sort\
       \ samples\n\n    pfold : float\n        Folding period (should be same or similar\
-      \ to period of pulsar)\n    \"\"\"\n\n    def __init__(self, samp_rate=1e6,\
-      \ Nbins=1024, pfold=33.5028583*1e-3):\n\n        samps = 10000000  # number\
-      \ of \"samples\" (resampled) that ultimately get processed\n        self.nsamps\
+      \ to period of pulsar)\n    \"\"\"\n\n    def __init__(self, samp_rate=1000000,\
+      \ Nbins=1024, pfold=33.5028583*1e-3):\n\n        samps = 167514  # number of\
+      \ \"samples\" (resampled) that ultimately get processed\n        self.nsamps\
       \ = samps\n\n        gr.sync_block.__init__(\n            self,\n          \
       \  name='Folding',   # will show up in GRC\n            in_sig=[(np.float32,\
       \ samps)],\n            out_sig=[(np.float32, Nbins)]\n        )\n        '''\n\
@@ -155,8 +155,8 @@ blocks:
     pfold: per
     samp_rate: samp_rate
   states:
-    _io_cache: '(''Folding'', ''blk'', [(''samp_rate'', ''1000000.0''), (''Nbins'',
-      ''1024''), (''pfold'', ''0.0335028583'')], [(''0'', ''float'', 10000000)], [(''0'',
+    _io_cache: '(''Folding'', ''blk'', [(''samp_rate'', ''1000000''), (''Nbins'',
+      ''1024''), (''pfold'', ''0.0335028583'')], [(''0'', ''float'', 167514)], [(''0'',
       ''float'', 1024)], ''\n    Pulsar folding block - takes in time series of a
       single channel and folds it over the pulsar period.\n\n    Outputs a vector
       of length Nbins which is the number of counts per phase bin (this can be used
