@@ -1,0 +1,168 @@
+options:
+  parameters:
+    author: vivelpanel
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: graphing_utilities
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Not titled yet
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '32000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport matplotlib.pyplot as plt\n\nclass blk(gr.sync_block):\n\
+      \    \"\"\"Embedded Python Block example - a simple multiply const\"\"\"\n\n\
+      \    def __init__(self, filepath='/Users/vivelpanel/Desktop/specgram'):\n  \
+      \      \"\"\"arguments to this function show up as parameters in GRC\"\"\"\n\
+      \        gr.sync_block.__init__(\n            self,\n            name='31-Channel\
+      \ Spectrogram Sink',\n            in_sig=([np.complex64] * 31),   # PFB channel\
+      \ inputs: make sure to put them in order of frequency (not in PFB mapping order)\n\
+      \            out_sig=[]\n        )\n        self.filepath = filepath\n     \
+      \   self.data = [[]] * 31   # 31 empty slots for 31 channels\n\n    def work(self,\
+      \ input_items, output_items):\n        \"\"\"build spectrogram of data\"\"\"\
+      \n\n        for n in range(31):\n            self.data[n] = self.data[n] + list(input_items[n])\n\
+      \        plt.imshow(np.array(self.data), aspect='auto')\n        plt.savefig(filepath)\n\
+      \        plt.close()\n        \n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    filepath: '''/Users/vivelpanel/Desktop/specgram'''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('31-Channel Spectrogram Sink', 'blk', [('filepath', "'/Users/vivelpanel/Desktop/specgram'")],
+      [('0', 'complex', 1), ('1', 'complex', 1), ('2', 'complex', 1), ('3', 'complex',
+      1), ('4', 'complex', 1), ('5', 'complex', 1), ('6', 'complex', 1), ('7', 'complex',
+      1), ('8', 'complex', 1), ('9', 'complex', 1), ('10', 'complex', 1), ('11', 'complex',
+      1), ('12', 'complex', 1), ('13', 'complex', 1), ('14', 'complex', 1), ('15',
+      'complex', 1), ('16', 'complex', 1), ('17', 'complex', 1), ('18', 'complex',
+      1), ('19', 'complex', 1), ('20', 'complex', 1), ('21', 'complex', 1), ('22',
+      'complex', 1), ('23', 'complex', 1), ('24', 'complex', 1), ('25', 'complex',
+      1), ('26', 'complex', 1), ('27', 'complex', 1), ('28', 'complex', 1), ('29',
+      'complex', 1), ('30', 'complex', 1)], [], 'Embedded Python Block example - a
+      simple multiply const', ['filepath'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [80, 92.0]
+    rotation: 0
+    state: true
+- name: epy_block_1
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\n\nclass blk(gr.sync_block):\n    \"\"\"Embedded Python\
+      \ Block example - a simple multiply const\"\"\"\n\n    def __init__(self, filepath='/Users/vivelpanel/Desktop/dispersion'):\n\
+      \        \"\"\"arguments to this function show up as parameters in GRC\"\"\"\
+      \n        gr.sync_block.__init__(\n            self,\n            name='Dwingeloo\
+      \ Copy Sink',\n            in_sig=[np.float32] * 31,\n            out_sig=[]\n\
+      \        )\n        self.filepath = filepath\n        self.data = [[]] * 31\
+      \    # lists are mutable\n\n    def work(self, input_items, output_items):\n\
+      \        \"\"\"Graph all power profiles\"\"\"\n        # FIX ME (see Dwingeloo\
+      \ presentation)\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    filepath: '''/Users/vivelpanel/Desktop/dispersion'''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('Dwingeloo Copy Sink', 'blk', [('filepath', "'/Users/vivelpanel/Desktop/dispersion'")],
+      [('0', 'float', 1), ('1', 'float', 1), ('2', 'float', 1), ('3', 'float', 1),
+      ('4', 'float', 1), ('5', 'float', 1), ('6', 'float', 1), ('7', 'float', 1),
+      ('8', 'float', 1), ('9', 'float', 1), ('10', 'float', 1), ('11', 'float', 1),
+      ('12', 'float', 1), ('13', 'float', 1), ('14', 'float', 1), ('15', 'float',
+      1), ('16', 'float', 1), ('17', 'float', 1), ('18', 'float', 1), ('19', 'float',
+      1), ('20', 'float', 1), ('21', 'float', 1), ('22', 'float', 1), ('23', 'float',
+      1), ('24', 'float', 1), ('25', 'float', 1), ('26', 'float', 1), ('27', 'float',
+      1), ('28', 'float', 1), ('29', 'float', 1), ('30', 'float', 1)], [], 'Embedded
+      Python Block example - a simple multiply const', ['filepath'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 96.0]
+    rotation: 0
+    state: true
+- name: epy_block_2
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport matplotlib.pyplot as plt\n\nclass blk(gr.sync_block):\n\
+      \    \"\"\"Embedded Python Block example - a simple multiply const\"\"\"\n\n\
+      \    def __init__(self, filepath='/Users/vivelpanel/Desktop/chanprofile'):\n\
+      \        \"\"\"arguments to this function show up as parameters in GRC\"\"\"\
+      \n        gr.sync_block.__init__(\n            self,\n            name='Channel\
+      \ Pulsar Profile Sink',\n            in_sig=[np.float32],\n            out_sig=[]\n\
+      \        )\n        self.filepath = filepath\n        self.data = np.array([],\
+      \ dtype=np.float32)\n\n    def work(self, input_items, output_items):\n    \
+      \    \"\"\"create profile graph\"\"\"\n        self.data = np.append(self.data,\
+      \ input_items[0])\n        plt.plot(self.data)\n        plt.savefig(self.filepath)\n\
+      \        plt.close()\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    filepath: '''/Users/vivelpanel/Desktop/chanprofile'''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('Channel Pulsar Profile Sink', 'blk', [('filepath', "'/Users/vivelpanel/Desktop/chanprofile'")],
+      [('0', 'float', 1)], [], 'Embedded Python Block example - a simple multiply
+      const', ['filepath'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [288, 276.0]
+    rotation: 0
+    state: true
+connections: []
+
+metadata:
+  file_format: 1
