@@ -1,0 +1,236 @@
+options:
+  parameters:
+    author: vivelpanel
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: testjankdrf
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Not titled yet
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '32000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [360, 192.0]
+    rotation: 0
+    state: true
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nfrom __future__ import\
+      \ absolute_import, division, print_function\n\nimport os\nimport traceback\n\
+      \nimport gnuradio.blocks\nimport h5py\nimport pmt\nimport six\n\n\nimport numpy\
+      \ as np\nfrom gnuradio import gr\nimport digital_rf as drf\nfrom digital_rf\
+      \ import DigitalRFReader, util\n\n\nclass blk(gr.sync_block):  # other base\
+      \ classes are basic_block, decim_block, interp_block\n    \"\"\"Modified version\
+      \ of DRF Source\"\"\"\n\n    def __init__(self, data_dir='/Volumes/NO NAME/pulsar/2022-05-26/usrp-rx0-r_20220526T200000_20220526T210800/rf_data',\
+      \ chan='misa-l2', repeat=False):  # only default arguments here\n        \"\"\
+      \"arguments to this function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Modified DRF Source',\n            in_sig=[],\n\
+      \            out_sig=[np.complex64]\n        )\n        self.data_dir = data_dir\n\
+      \        self.chan = chan\n        self.repeat = repeat    # repeat flag: currently\
+      \ nonfunctional, but may be useful later\n        \n        self.do = drf.DigitalRFReader(self.data_dir)\n\
+      \        self.bounds = self.do.get_bounds(self.chan)\n        self.prop = self.do.get_properties(self.chan)\n\
+      \        \n        self.index = self.bounds[0]# + (16 * 1000000)     # start\
+      \ at first sample\n        self.result = 0\n        \n    def work(self, input_items,\
+      \ output_items):\n        out = output_items[0]\n        nsamples = len(out)\n\
+      \        data = self.do.read_vector(self.index, nsamples, self.chan)\n     \
+      \   self.index += nsamples\n        \n        output_items[0][:] = data\n  \
+      \      \n        return len(output_items[0])\n    '''\n    def work(self, input_items,\
+      \ output_items):\n        #ADDED CONTENT\n        self._start_sample = util.parse_identifier_to_sample(\n\
+      \            None, self.prop[\"samples_per_second\"], self.bounds[0]\n     \
+      \   )\n        self._end_sample = util.parse_identifier_to_sample(\n       \
+      \     None, self.prop[\"samples_per_second\"], self.bounds[0]\n        )\n \
+      \       self._gapless = True\n        if self._start_sample is None:\n     \
+      \       self._read_start_sample = self.bounds[0]\n        else:\n          \
+      \  self._read_start_sample = self._start_sample\n        \n        out = output_items[0]\n\
+      \        nsamples = len(out)\n        next_index = 0\n        # repeat reading\
+      \ until we succeed or return\n        while next_index < nsamples:\n       \
+      \     read_start = self._read_start_sample\n            # read_end is inclusive,\
+      \ hence the -1\n            read_end = self._read_start_sample + (nsamples -\
+      \ next_index) - 1\n            # creating a read function that has an output\
+      \ argument so data can\n            # be copied directly would be nice\n   \
+      \         # also should move EOFError checking into reader once watchdog\n \
+      \           # bounds functionality is implemented\n            try:\n      \
+      \          if self._end_sample is None:\n                    if read_end > self.bounds[1]:\n\
+      \                        self.bounds = self._Reader.get_bounds(self.chan)\n\
+      \                        read_end = min(read_end, self.bounds[1])\n        \
+      \        else:\n                    if read_end > self._end_sample:\n      \
+      \                  read_end = self._end_sample\n                if read_start\
+      \ > read_end:\n                    raise EOFError\n                # read data\n\
+      \                data_dict = self.do.read(read_start, read_end, self.chan)\n\
+      \                # handled all samples through read_end regardless of whether\n\
+      \                # they were written to the output vector\n                self._read_start_sample\
+      \ = read_end + 1\n                # early escape for no data\n             \
+      \   if not data_dict:\n                    if self._gapless:\n             \
+      \           # output empty samples if no data and gapless output\n         \
+      \               stop_index = next_index + read_end + 1 - read_start\n      \
+      \                  out[next_index:stop_index] = self._fillvalue\n          \
+      \              next_index = stop_index\n                    else:\n        \
+      \                # clear any existing tags\n                        self._tag_queue.clear()\n\
+      \                        # add tag at next potential sample to indicate skip\n\
+      \                        self._queue_tags(self._read_start_sample, {})\n   \
+      \                 continue\n                # read corresponding metadata\n\
+      \                if self._DMDReader is not None:\n                    meta_dict\
+      \ = self._DMDReader.read(read_start, read_end)\n                    for sample,\
+      \ meta in meta_dict.items():\n                        # add tags from Digital\
+      \ Metadata\n                        # (in addition to default time and rate\
+      \ tags)\n                        # eliminate sample_rate_* tags with duplicate\
+      \ info\n                        meta.pop(\"sample_rate_denominator\", None)\n\
+      \                        meta.pop(\"sample_rate_numerator\", None)\n       \
+      \                 # get center frequencies for rx_freq tag, squeeze()[()]\n\
+      \                        # to get single value if possible else pass as an array\n\
+      \                        cf = meta.pop(\"center_frequencies\", None)\n     \
+      \                   if cf is not None:\n                            cf = cf.ravel().squeeze()[()]\n\
+      \                        tags = dict(\n                            rx_freq=cf,\n\
+      \                            # all other metadata goes in metadata tag\n   \
+      \                         metadata=meta,\n                        )\n      \
+      \                  self._queue_tags(sample, tags)\n                # add data\
+      \ and tags to output\n                next_continuous_sample = read_start\n\
+      \                for sample, data in data_dict.items():\n                  \
+      \  # detect data skip\n                    if sample > next_continuous_sample:\n\
+      \                        if self._gapless:\n                            # advance\
+      \ output by skipped number of samples\n                            nskipped\
+      \ = sample - next_continuous_sample\n                            sample_index\
+      \ = next_index + nskipped\n                            out[next_index:sample_index]\
+      \ = self._fillvalue\n                            next_index = sample_index\n\
+      \                        else:\n                            # emit new time\
+      \ tag at sample to indicate skip\n                            self._queue_tags(sample,\
+      \ {})\n                    # output data\n                    n = data.shape[0]\n\
+      \                    stop_index = next_index + n\n                    end_sample\
+      \ = sample + n\n                    out_dest = out[next_index:stop_index]\n\
+      \                    data_arr = data.squeeze()\n                    out_dest[:]\
+      \ = data_arr\n                    # overwrite missing values with fill values\n\
+      \                    missing_val_idx = self._ismissing(data_arr)\n         \
+      \           out_dest[missing_val_idx] = self._fillvalue\n                  \
+      \  # output tags\n                    for tag_sample in sorted(self._tag_queue.keys()):\n\
+      \                        if tag_sample < sample:\n                         \
+      \   # drop tags from before current data block\n                           \
+      \ del self._tag_queue[tag_sample]\n                            continue\n  \
+      \                      elif tag_sample >= end_sample:\n                    \
+      \        # wait to output tags from after current data block\n             \
+      \               break\n                        offset = (\n                \
+      \            self.nitems_written(0)  # offset @ start of work\n            \
+      \                + next_index  # additional offset of data block\n         \
+      \                   + (tag_sample - sample)\n                        )\n   \
+      \                     tag_dict = self._tag_queue.pop(tag_sample)\n         \
+      \               for name, val in tag_dict.items():\n                       \
+      \     self.add_item_tag(\n                                0, offset, pmt.intern(name),\
+      \ val, self._id\n                            )\n                    # advance\
+      \ next output index and continuous sample\n                    next_index =\
+      \ stop_index  # <=== next_index += n\n                    next_continuous_sample\
+      \ = end_sample\n            except EOFError:\n                if self._repeat:\n\
+      \                    if self._start_sample is None:\n                      \
+      \  self._read_start_sample = self.bounds[0]\n                    else:\n   \
+      \                     self._read_start_sample = self._start_sample\n       \
+      \             self._queue_tags(self._read_start_sample, {})\n              \
+      \      continue\n                else:\n                    break\n        if\
+      \ next_index == 0:\n            # return WORK_DONE\n            return -1\n\
+      \        return next_index\n        '''\n"
+    affinity: ''
+    alias: ''
+    chan: '''misa-l2'''
+    comment: ''
+    data_dir: '''/Volumes/NO NAME/pulsar/2022-05-26/usrp-rx0-r_20220526T200000_20220526T210800/rf_data'''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    repeat: 'False'
+  states:
+    _io_cache: ('Modified DRF Source', 'blk', [('data_dir', "'/Volumes/NO NAME/pulsar/2022-05-26/usrp-rx0-r_20220526T200000_20220526T210800/rf_data'"),
+      ('chan', "'misa-l2'"), ('repeat', 'False')], [], [('0', 'complex', 1)], 'Modified
+      version of DRF Source', ['chan', 'data_dir', 'repeat'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [136, 172.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_sink_x_0
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: samp_rate
+    comment: ''
+    fc: '0'
+    fftsize: '1024'
+    gui_hint: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'False'
+    showrf: 'False'
+    type: complex
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [552, 160.0]
+    rotation: 0
+    state: true
+
+connections:
+- [blocks_throttle_0, '0', qtgui_sink_x_0, '0']
+- [epy_block_0, '0', blocks_throttle_0, '0']
+
+metadata:
+  file_format: 1
