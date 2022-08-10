@@ -1,0 +1,1362 @@
+options:
+  parameters:
+    author: vlpannel
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: final
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Not titled yet
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '1000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: blocks_complex_to_mag_squared_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: Get power
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: channels - 2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1072, 576.0]
+    rotation: 0
+    state: true
+- name: blocks_msgpair_to_var_0
+  id: blocks_msgpair_to_var
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: 'Not sure exactly how to
+
+      pass on DRF metadata'
+    target: metadata
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [304, 608.0]
+    rotation: 0
+    state: true
+- name: blocks_null_sink_0
+  id: blocks_null_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_sink: '[[0,],]'
+    comment: 'Throw away
+
+      frequencies
+
+      at edge of
+
+      bandwidth'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [800, 516.0]
+    rotation: 0
+    state: true
+- name: blocks_null_sink_1
+  id: blocks_null_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_sink: '[[0,],]'
+    comment: ''
+    num_inputs: '1'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [272, 508.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 108.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_10
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 908.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_11
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 868.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_12
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 828.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_13
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 788.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_14
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 748.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_15
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 708.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_16
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 668.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_17
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 628.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_18
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 588.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_19
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 548.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_2
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: 'Give folding block
+
+      chunks of data to
+
+      fold over'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 1228.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_20
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 508.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_21
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 468.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_22
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 436.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_23
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 396.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_24
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 364.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_25
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 324.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_26
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 292.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_27
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 252.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_28
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 220.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_29
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 180.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_3
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 1188.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_30
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 148.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_4
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 1148.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_5
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 1108.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_6
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 1068.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_7
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 1028.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_8
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 988.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0_9
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: num_samples
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1424, 948.0]
+    rotation: 0
+    state: true
+- name: blocks_streams_to_vector_0
+  id: blocks_streams_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_streams: channels - 2
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [920, 72.0]
+    rotation: 0
+    state: true
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [352, 540.0]
+    rotation: 0
+    state: true
+- name: blocks_vector_to_streams_0
+  id: blocks_vector_to_streams
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_streams: channels - 2
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1208, 188.0]
+    rotation: 0
+    state: true
+- name: channels
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: ''
+    short_id: ''
+    type: intx
+    value: '32'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [528, 376.0]
+    rotation: 0
+    state: true
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_block(gr.sync_block):\n    \"\"\"\n\
+      \    Fold a timeseries of power over a period.\n\n    Parameters\n    ----------\n\
+      \n    num_inputs : int\n        Number of channels of data to fold.\n    \n\
+      \    samp_rate : float\n        Original sample rate of data.\n        \n  \
+      \  num_channels : int\n        Number of channels that data is split into.\n\
+      \        \n    nsamps : int\n        Number of samples (length of vector) passed\
+      \ in.\n        \n    period : float\n        Period to fold over.\n        \n\
+      \    nbins : int\n        Number of bins to use when folding.\n        \n  \
+      \  save_external : bool\n        Flag stating whether or not to save overall\
+      \ profile. If true, overall profile (sum of all profiles generated) will be\
+      \ saved to savefile.\n        \n    savefile : list of str      # probably want\
+      \ to fix this to include filepath\n        Files to save all profiles to (if\
+      \ save_external is True). Must be of length greater than or equal to num_inputs.\n\
+      \n    \n    Outputs the profile resultant of the latest vector passed in.\n\
+      \    \"\"\"\n\n    def __init__(self, num_inputs=30, samp_rate=1000000., num_channels=32,\
+      \ nsamps=2048, period=.0335, nbins=1024, save_external=True, savefile=['']*1000):\
+      \  # only default arguments here\n        gr.sync_block.__init__(\n        \
+      \    self,\n            name='Folding',\n            in_sig=[(np.float32, nsamps)]\
+      \ * num_inputs,\n            out_sig=[(np.float32, nbins)] * num_inputs\n  \
+      \      )\n        self.samp_rate = samp_rate  # original sample rate\n     \
+      \   self.num_channels = num_channels    # number of channels in PFB\n      \
+      \  self.nsamps = nsamps    # length of vector passed in (number of samples)\n\
+      \        self.period = period\n        self.nbins = nbins\n        self.save_external\
+      \ = save_external  # flag for whether or not to save total profile in its own\
+      \ binary file\n        self.savefile = savefile\n        \n        self.ts =\
+      \ np.zeros(nsamps)\n        self.start_time = 0.\n        self.times = np.arange(nsamps)\
+      \ * (1 / (self.samp_rate/self.num_channels))\n        self.counting = True\n\
+      \n        self.profile = np.zeros(nbins)\n        self.phibin_centers = np.zeros(nbins\
+      \ + 1)\n        self.counts = np.zeros(nbins)\n        self.folded = None\n\n\
+      \    def work(self, input_items, output_items):\n        \"\"\"example: multiply\
+      \ with constant\"\"\"\n        for i in range(num_inputs):\n            # re-set\
+      \ time series and times\n            self.ts = np.array(input_items[i])\n  \
+      \          self.times += self.start_time\n            self.start_time += (self.times[1]\
+      \ + self.times[-1])\n\n            # fold and get results of folding\n     \
+      \       self.folded = fold.fold_ts(self.ts, self.times, self.period, self.nbins,\
+      \ return_counts=self.counting)\n            self.profile += self.folded[0]\n\
+      \            self.phibin_centers = self.folded[1]\n            if self.counting:\n\
+      \                self.counts += self.folded[2]\n\n            # save overall\
+      \ profile by overwriting save file\n            if self.save_external:\n   \
+      \             np.save(self.profile[i])   # read this by calling np.load(filename)\n\
+      \n            # output latest folding profile\n            output_items[i][:]\
+      \ = self.folded[0]\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: 'Fold
+
+
+      Takes in a vector
+
+      of samples and
+
+      uses that as a time
+
+      series, outputs
+
+      resulting profile
+
+      of folded time series
+
+
+      May save overall
+
+      profile (though this
+
+      still needs to be
+
+      fixed)'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nbins: '1024'
+    nsamps: num_samples
+    num_channels: channels
+    num_inputs: channels - 2
+    period: '0.0335'
+    samp_rate: '1000000.0'
+    save_external: 'True'
+    savefile: ''''''
+  states:
+    _io_cache: '(''Folding'', ''fold_block'', [(''num_inputs'', ''30''), (''samp_rate'',
+      ''1000000.0''), (''num_channels'', ''32''), (''nsamps'', ''2048''), (''period'',
+      ''0.0335''), (''nbins'', ''1024''), (''save_external'', ''True''), (''savefile'',
+      "['''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
+      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''']")],
+      [(''0'', ''float'', 2048), (''1'', ''float'', 2048), (''2'', ''float'', 2048),
+      (''3'', ''float'', 2048), (''4'', ''float'', 2048), (''5'', ''float'', 2048),
+      (''6'', ''float'', 2048), (''7'', ''float'', 2048), (''8'', ''float'', 2048),
+      (''9'', ''float'', 2048), (''10'', ''float'', 2048), (''11'', ''float'', 2048),
+      (''12'', ''float'', 2048), (''13'', ''float'', 2048), (''14'', ''float'', 2048),
+      (''15'', ''float'', 2048), (''16'', ''float'', 2048), (''17'', ''float'', 2048),
+      (''18'', ''float'', 2048), (''19'', ''float'', 2048), (''20'', ''float'', 2048),
+      (''21'', ''float'', 2048), (''22'', ''float'', 2048), (''23'', ''float'', 2048),
+      (''24'', ''float'', 2048), (''25'', ''float'', 2048), (''26'', ''float'', 2048),
+      (''27'', ''float'', 2048), (''28'', ''float'', 2048), (''29'', ''float'', 2048)],
+      [(''0'', ''float'', 1024), (''1'', ''float'', 1024), (''2'', ''float'', 1024),
+      (''3'', ''float'', 1024), (''4'', ''float'', 1024), (''5'', ''float'', 1024),
+      (''6'', ''float'', 1024), (''7'', ''float'', 1024), (''8'', ''float'', 1024),
+      (''9'', ''float'', 1024), (''10'', ''float'', 1024), (''11'', ''float'', 1024),
+      (''12'', ''float'', 1024), (''13'', ''float'', 1024), (''14'', ''float'', 1024),
+      (''15'', ''float'', 1024), (''16'', ''float'', 1024), (''17'', ''float'', 1024),
+      (''18'', ''float'', 1024), (''19'', ''float'', 1024), (''20'', ''float'', 1024),
+      (''21'', ''float'', 1024), (''22'', ''float'', 1024), (''23'', ''float'', 1024),
+      (''24'', ''float'', 1024), (''25'', ''float'', 1024), (''26'', ''float'', 1024),
+      (''27'', ''float'', 1024), (''28'', ''float'', 1024), (''29'', ''float'', 1024)],
+      ''\n    Fold a timeseries of power over a period.\n\n    Parameters\n    ----------\n\n    num_inputs
+      : int\n        Number of channels of data to fold.\n    \n    samp_rate : float\n        Original
+      sample rate of data.\n        \n    num_channels : int\n        Number of channels
+      that data is split into.\n        \n    nsamps : int\n        Number of samples
+      (length of vector) passed in.\n        \n    period : float\n        Period
+      to fold over.\n        \n    nbins : int\n        Number of bins to use when
+      folding.\n        \n    save_external : bool\n        Flag stating whether or
+      not to save overall profile. If true, overall profile (sum of all profiles generated)
+      will be saved to savefile.\n        \n    savefile : list of str      # probably
+      want to fix this to include filepath\n        Files to save all profiles to
+      (if save_external is True). Must be of length greater than or equal to num_inputs.\n\n    \n    Outputs
+      the profile resultant of the latest vector passed in.\n    '', [''nbins'', ''nsamps'',
+      ''num_channels'', ''period'', ''samp_rate'', ''save_external'', ''savefile''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1600, 180.0]
+    rotation: 0
+    state: true
+- name: gr_digital_rf_digital_rf_sink_1
+  id: gr_digital_rf_digital_rf_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    center_freqs: '[]'
+    channel0: ch0
+    channel1: ch1
+    channel10: ch10
+    channel11: ch11
+    channel12: ch12
+    channel13: ch13
+    channel14: ch14
+    channel15: ch15
+    channel16: ch16
+    channel17: ch17
+    channel18: ch18
+    channel19: ch19
+    channel2: ch2
+    channel20: ch20
+    channel21: ch21
+    channel22: ch22
+    channel23: ch23
+    channel24: ch24
+    channel25: ch25
+    channel26: ch26
+    channel27: ch27
+    channel28: ch28
+    channel29: ch29
+    channel3: ch3
+    channel30: ch30
+    channel31: ch31
+    channel4: ch4
+    channel5: ch5
+    channel6: ch6
+    channel7: ch7
+    channel8: ch8
+    channel9: ch9
+    checksum: 'False'
+    comment: Write/save data
+    compression_level: '0'
+    debug: 'False'
+    file_cadence_ms: '1000'
+    ignore_tags: 'False'
+    input: f32
+    is_continuous: 'True'
+    marching_periods: 'True'
+    metadata: '{}'
+    min_chunksize: '0'
+    nchan: '30'
+    sample_rate_denominator: '1'
+    sample_rate_numerator: int(samp_rate)
+    start: ''
+    stop_on_skipped: 'False'
+    stop_on_time_tag: 'False'
+    subdir_cadence_s: '3600'
+    top_level_dir: save_dir
+    uuid: ''
+    vlen: '1024'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1760, 180.0]
+    rotation: 0
+    state: true
+- name: gr_digital_rf_digital_rf_source_0
+  id: gr_digital_rf_digital_rf_source
+  parameters:
+    affinity: ''
+    alias: ''
+    channel0: '''misa-l'''
+    channel1: '''misa-l2'''
+    channel10: ch10
+    channel11: ch11
+    channel12: ch12
+    channel13: ch13
+    channel14: ch14
+    channel15: ch15
+    channel16: ch16
+    channel17: ch17
+    channel18: ch18
+    channel19: ch19
+    channel2: ch2
+    channel20: ch20
+    channel21: ch21
+    channel22: ch22
+    channel23: ch23
+    channel24: ch24
+    channel25: ch25
+    channel26: ch26
+    channel27: ch27
+    channel28: ch28
+    channel29: ch29
+    channel3: ch3
+    channel30: ch30
+    channel31: ch31
+    channel4: ch4
+    channel5: ch5
+    channel6: ch6
+    channel7: ch7
+    channel8: ch8
+    channel9: ch9
+    comment: Read data
+    end0: ''
+    end1: ''
+    end10: ''
+    end11: ''
+    end12: ''
+    end13: ''
+    end14: ''
+    end15: ''
+    end16: ''
+    end17: ''
+    end18: ''
+    end19: ''
+    end2: ''
+    end20: ''
+    end21: ''
+    end22: ''
+    end23: ''
+    end24: ''
+    end25: ''
+    end26: ''
+    end27: ''
+    end28: ''
+    end29: ''
+    end3: ''
+    end30: ''
+    end31: ''
+    end4: ''
+    end5: ''
+    end6: ''
+    end7: ''
+    end8: ''
+    end9: ''
+    gapless: 'False'
+    hide_msg_port: 'True'
+    maxoutbuf: '0'
+    min_chunksize: '0'
+    minoutbuf: '0'
+    nchan: '2'
+    repeat: 'False'
+    start0: ''
+    start1: ''
+    start10: ''
+    start11: ''
+    start12: ''
+    start13: ''
+    start14: ''
+    start15: ''
+    start16: ''
+    start17: ''
+    start18: ''
+    start19: ''
+    start2: ''
+    start20: ''
+    start21: ''
+    start22: ''
+    start23: ''
+    start24: ''
+    start25: ''
+    start26: ''
+    start27: ''
+    start28: ''
+    start29: ''
+    start3: ''
+    start30: ''
+    start31: ''
+    start4: ''
+    start5: ''
+    start6: ''
+    start7: ''
+    start8: ''
+    start9: ''
+    throttle: 'False'
+    top_level_dir: source_dir
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [96, 508.0]
+    rotation: 0
+    state: true
+- name: import_0
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import mitarspysigproc.filtertools as filter
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [536, 496.0]
+    rotation: 0
+    state: true
+- name: note_0
+  id: note
+  parameters:
+    alias: ''
+    comment: 'This flowgraph''s
+
+      configuration is
+
+      specific to MISA
+
+      data'
+    note: specific
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [88, 408.0]
+    rotation: 0
+    state: true
+- name: num_samples
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: ''
+    short_id: ''
+    type: intx
+    value: '2048'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1544, 80.0]
+    rotation: 0
+    state: true
+- name: pfb_channelizer_ccf_0
+  id: pfb_channelizer_ccf
+  parameters:
+    affinity: ''
+    alias: ''
+    atten: '100'
+    bus_conns: '[[0,],]'
+    ch_map: '[]'
+    comment: PFB
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nchans: channels
+    osr: '1.0'
+    samp_delay: '0'
+    taps: filter.kaiser_coeffs(channels)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [600, 40.0]
+    rotation: 0
+    state: true
+- name: save_dir
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: ''
+    short_id: ''
+    type: str
+    value: /path/to/save/data
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1888, 428.0]
+    rotation: 0
+    state: true
+- name: source_dir
+  id: parameter
+  parameters:
+    alias: ''
+    comment: 'Top-level directory
+
+      where Digital RF
+
+      data is stored'
+    hide: none
+    label: /path/to/source/data
+    short_id: ''
+    type: str
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [160, 404.0]
+    rotation: 0
+    state: true
+
+connections:
+- [blocks_complex_to_mag_squared_0, '0', blocks_vector_to_streams_0, '0']
+- [blocks_stream_to_vector_0, '0', epy_block_0, '0']
+- [blocks_stream_to_vector_0_10, '0', epy_block_0, '21']
+- [blocks_stream_to_vector_0_11, '0', epy_block_0, '20']
+- [blocks_stream_to_vector_0_12, '0', epy_block_0, '19']
+- [blocks_stream_to_vector_0_13, '0', epy_block_0, '18']
+- [blocks_stream_to_vector_0_14, '0', epy_block_0, '17']
+- [blocks_stream_to_vector_0_15, '0', epy_block_0, '16']
+- [blocks_stream_to_vector_0_16, '0', epy_block_0, '15']
+- [blocks_stream_to_vector_0_17, '0', epy_block_0, '14']
+- [blocks_stream_to_vector_0_18, '0', epy_block_0, '13']
+- [blocks_stream_to_vector_0_19, '0', epy_block_0, '12']
+- [blocks_stream_to_vector_0_2, '0', epy_block_0, '29']
+- [blocks_stream_to_vector_0_20, '0', epy_block_0, '11']
+- [blocks_stream_to_vector_0_21, '0', epy_block_0, '10']
+- [blocks_stream_to_vector_0_22, '0', epy_block_0, '9']
+- [blocks_stream_to_vector_0_23, '0', epy_block_0, '8']
+- [blocks_stream_to_vector_0_24, '0', epy_block_0, '7']
+- [blocks_stream_to_vector_0_25, '0', epy_block_0, '6']
+- [blocks_stream_to_vector_0_26, '0', epy_block_0, '5']
+- [blocks_stream_to_vector_0_27, '0', epy_block_0, '4']
+- [blocks_stream_to_vector_0_28, '0', epy_block_0, '3']
+- [blocks_stream_to_vector_0_29, '0', epy_block_0, '2']
+- [blocks_stream_to_vector_0_3, '0', epy_block_0, '28']
+- [blocks_stream_to_vector_0_30, '0', epy_block_0, '1']
+- [blocks_stream_to_vector_0_4, '0', epy_block_0, '27']
+- [blocks_stream_to_vector_0_5, '0', epy_block_0, '26']
+- [blocks_stream_to_vector_0_6, '0', epy_block_0, '25']
+- [blocks_stream_to_vector_0_7, '0', epy_block_0, '24']
+- [blocks_stream_to_vector_0_8, '0', epy_block_0, '23']
+- [blocks_stream_to_vector_0_9, '0', epy_block_0, '22']
+- [blocks_streams_to_vector_0, '0', blocks_complex_to_mag_squared_0, '0']
+- [blocks_throttle_0, '0', pfb_channelizer_ccf_0, '0']
+- [blocks_vector_to_streams_0, '0', blocks_stream_to_vector_0, '0']
+- [blocks_vector_to_streams_0, '1', blocks_stream_to_vector_0_30, '0']
+- [blocks_vector_to_streams_0, '10', blocks_stream_to_vector_0_21, '0']
+- [blocks_vector_to_streams_0, '11', blocks_stream_to_vector_0_20, '0']
+- [blocks_vector_to_streams_0, '12', blocks_stream_to_vector_0_19, '0']
+- [blocks_vector_to_streams_0, '13', blocks_stream_to_vector_0_18, '0']
+- [blocks_vector_to_streams_0, '14', blocks_stream_to_vector_0_17, '0']
+- [blocks_vector_to_streams_0, '15', blocks_stream_to_vector_0_16, '0']
+- [blocks_vector_to_streams_0, '16', blocks_stream_to_vector_0_15, '0']
+- [blocks_vector_to_streams_0, '17', blocks_stream_to_vector_0_14, '0']
+- [blocks_vector_to_streams_0, '18', blocks_stream_to_vector_0_13, '0']
+- [blocks_vector_to_streams_0, '19', blocks_stream_to_vector_0_12, '0']
+- [blocks_vector_to_streams_0, '2', blocks_stream_to_vector_0_29, '0']
+- [blocks_vector_to_streams_0, '20', blocks_stream_to_vector_0_11, '0']
+- [blocks_vector_to_streams_0, '21', blocks_stream_to_vector_0_10, '0']
+- [blocks_vector_to_streams_0, '22', blocks_stream_to_vector_0_9, '0']
+- [blocks_vector_to_streams_0, '23', blocks_stream_to_vector_0_8, '0']
+- [blocks_vector_to_streams_0, '24', blocks_stream_to_vector_0_7, '0']
+- [blocks_vector_to_streams_0, '25', blocks_stream_to_vector_0_6, '0']
+- [blocks_vector_to_streams_0, '26', blocks_stream_to_vector_0_5, '0']
+- [blocks_vector_to_streams_0, '27', blocks_stream_to_vector_0_4, '0']
+- [blocks_vector_to_streams_0, '28', blocks_stream_to_vector_0_3, '0']
+- [blocks_vector_to_streams_0, '29', blocks_stream_to_vector_0_2, '0']
+- [blocks_vector_to_streams_0, '3', blocks_stream_to_vector_0_28, '0']
+- [blocks_vector_to_streams_0, '4', blocks_stream_to_vector_0_27, '0']
+- [blocks_vector_to_streams_0, '5', blocks_stream_to_vector_0_26, '0']
+- [blocks_vector_to_streams_0, '6', blocks_stream_to_vector_0_25, '0']
+- [blocks_vector_to_streams_0, '7', blocks_stream_to_vector_0_24, '0']
+- [blocks_vector_to_streams_0, '8', blocks_stream_to_vector_0_23, '0']
+- [blocks_vector_to_streams_0, '9', blocks_stream_to_vector_0_22, '0']
+- [epy_block_0, '0', gr_digital_rf_digital_rf_sink_1, '0']
+- [epy_block_0, '1', gr_digital_rf_digital_rf_sink_1, '1']
+- [epy_block_0, '10', gr_digital_rf_digital_rf_sink_1, '10']
+- [epy_block_0, '11', gr_digital_rf_digital_rf_sink_1, '11']
+- [epy_block_0, '12', gr_digital_rf_digital_rf_sink_1, '12']
+- [epy_block_0, '13', gr_digital_rf_digital_rf_sink_1, '13']
+- [epy_block_0, '14', gr_digital_rf_digital_rf_sink_1, '14']
+- [epy_block_0, '15', gr_digital_rf_digital_rf_sink_1, '15']
+- [epy_block_0, '16', gr_digital_rf_digital_rf_sink_1, '16']
+- [epy_block_0, '17', gr_digital_rf_digital_rf_sink_1, '17']
+- [epy_block_0, '18', gr_digital_rf_digital_rf_sink_1, '18']
+- [epy_block_0, '19', gr_digital_rf_digital_rf_sink_1, '19']
+- [epy_block_0, '2', gr_digital_rf_digital_rf_sink_1, '2']
+- [epy_block_0, '20', gr_digital_rf_digital_rf_sink_1, '20']
+- [epy_block_0, '21', gr_digital_rf_digital_rf_sink_1, '21']
+- [epy_block_0, '22', gr_digital_rf_digital_rf_sink_1, '22']
+- [epy_block_0, '23', gr_digital_rf_digital_rf_sink_1, '23']
+- [epy_block_0, '24', gr_digital_rf_digital_rf_sink_1, '24']
+- [epy_block_0, '25', gr_digital_rf_digital_rf_sink_1, '25']
+- [epy_block_0, '26', gr_digital_rf_digital_rf_sink_1, '26']
+- [epy_block_0, '27', gr_digital_rf_digital_rf_sink_1, '27']
+- [epy_block_0, '28', gr_digital_rf_digital_rf_sink_1, '28']
+- [epy_block_0, '29', gr_digital_rf_digital_rf_sink_1, '29']
+- [epy_block_0, '3', gr_digital_rf_digital_rf_sink_1, '3']
+- [epy_block_0, '4', gr_digital_rf_digital_rf_sink_1, '4']
+- [epy_block_0, '5', gr_digital_rf_digital_rf_sink_1, '5']
+- [epy_block_0, '6', gr_digital_rf_digital_rf_sink_1, '6']
+- [epy_block_0, '7', gr_digital_rf_digital_rf_sink_1, '7']
+- [epy_block_0, '8', gr_digital_rf_digital_rf_sink_1, '8']
+- [epy_block_0, '9', gr_digital_rf_digital_rf_sink_1, '9']
+- [gr_digital_rf_digital_rf_source_0, '0', blocks_null_sink_1, '0']
+- [gr_digital_rf_digital_rf_source_0, '1', blocks_throttle_0, '0']
+- [gr_digital_rf_digital_rf_source_0, properties, blocks_msgpair_to_var_0, inpair]
+- [pfb_channelizer_ccf_0, '0', blocks_streams_to_vector_0, '0']
+- [pfb_channelizer_ccf_0, '1', blocks_streams_to_vector_0, '1']
+- [pfb_channelizer_ccf_0, '10', blocks_streams_to_vector_0, '10']
+- [pfb_channelizer_ccf_0, '11', blocks_streams_to_vector_0, '11']
+- [pfb_channelizer_ccf_0, '12', blocks_streams_to_vector_0, '12']
+- [pfb_channelizer_ccf_0, '13', blocks_streams_to_vector_0, '13']
+- [pfb_channelizer_ccf_0, '14', blocks_streams_to_vector_0, '14']
+- [pfb_channelizer_ccf_0, '15', blocks_null_sink_0, '0']
+- [pfb_channelizer_ccf_0, '16', blocks_null_sink_0, '1']
+- [pfb_channelizer_ccf_0, '17', blocks_streams_to_vector_0, '15']
+- [pfb_channelizer_ccf_0, '18', blocks_streams_to_vector_0, '16']
+- [pfb_channelizer_ccf_0, '19', blocks_streams_to_vector_0, '17']
+- [pfb_channelizer_ccf_0, '2', blocks_streams_to_vector_0, '2']
+- [pfb_channelizer_ccf_0, '20', blocks_streams_to_vector_0, '18']
+- [pfb_channelizer_ccf_0, '21', blocks_streams_to_vector_0, '19']
+- [pfb_channelizer_ccf_0, '22', blocks_streams_to_vector_0, '20']
+- [pfb_channelizer_ccf_0, '23', blocks_streams_to_vector_0, '21']
+- [pfb_channelizer_ccf_0, '24', blocks_streams_to_vector_0, '22']
+- [pfb_channelizer_ccf_0, '25', blocks_streams_to_vector_0, '23']
+- [pfb_channelizer_ccf_0, '26', blocks_streams_to_vector_0, '24']
+- [pfb_channelizer_ccf_0, '27', blocks_streams_to_vector_0, '25']
+- [pfb_channelizer_ccf_0, '28', blocks_streams_to_vector_0, '26']
+- [pfb_channelizer_ccf_0, '29', blocks_streams_to_vector_0, '27']
+- [pfb_channelizer_ccf_0, '3', blocks_streams_to_vector_0, '3']
+- [pfb_channelizer_ccf_0, '30', blocks_streams_to_vector_0, '28']
+- [pfb_channelizer_ccf_0, '31', blocks_streams_to_vector_0, '29']
+- [pfb_channelizer_ccf_0, '4', blocks_streams_to_vector_0, '4']
+- [pfb_channelizer_ccf_0, '5', blocks_streams_to_vector_0, '5']
+- [pfb_channelizer_ccf_0, '6', blocks_streams_to_vector_0, '6']
+- [pfb_channelizer_ccf_0, '7', blocks_streams_to_vector_0, '7']
+- [pfb_channelizer_ccf_0, '8', blocks_streams_to_vector_0, '8']
+- [pfb_channelizer_ccf_0, '9', blocks_streams_to_vector_0, '9']
+
+metadata:
+  file_format: 1
