@@ -11,7 +11,7 @@ options:
     gen_linking: dynamic
     generate_options: qt_gui
     hier_block_src_path: '.:'
-    id: just_fft
+    id: store_channels
     max_nouts: '0'
     output_language: python
     placement: (0,0)
@@ -22,7 +22,7 @@ options:
     run_options: prompt
     sizing_mode: fixed
     thread_safe_setters: ''
-    title: Just FFT (for Pulsar DSP)
+    title: Channelize DRF Data
     window_size: (1000,1000)
   states:
     bus_sink: false
@@ -33,91 +33,88 @@ options:
     state: enabled
 
 blocks:
-- name: channel_end
-  id: variable
-  parameters:
-    comment: ''
-    value: '1653602399999999'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [352, 16.0]
-    rotation: 0
-    state: true
-- name: channel_start
-  id: variable
-  parameters:
-    comment: ''
-    value: '1653595200000000'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [272, 16.0]
-    rotation: 0
-    state: true
-- name: integration
-  id: variable
-  parameters:
-    comment: ''
-    value: 10e3
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [560, 152.0]
-    rotation: 0
-    state: true
 - name: samp_rate
   id: variable
   parameters:
     comment: ''
-    value: '32000'
+    value: 1e6
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 12]
+    coordinate: [128, 8.0]
     rotation: 0
     state: enabled
-- name: samp_rate_0
+- name: subchannels
   id: variable
   parameters:
-    comment: ''
-    value: '1000000'
+    comment: 'The number of
+
+      subchannels a
+
+      channel being
+
+      read has.'
+    value: '2'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [552, 104.0]
-    rotation: 0
-    state: enabled
-- name: samples
-  id: variable
-  parameters:
-    comment: ''
-    value: int(tlen*samp_rate)
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [552, 8.0]
+    coordinate: [200, 8.0]
     rotation: 0
     state: true
-- name: tlen
-  id: variable
+- name: blocks_complex_to_interleaved_short_0
+  id: blocks_complex_to_interleaved_short
   parameters:
+    affinity: ''
+    alias: ''
     comment: ''
-    value: 1/29.7
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale_factor: '1.0'
+    vector_output: 'False'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [552, 56.0]
-    rotation: 0
+    coordinate: [248, 200.0]
+    rotation: 180
     state: true
-- name: blocks_interleaved_short_to_complex_2
+- name: blocks_complex_to_interleaved_short_0_0
+  id: blocks_complex_to_interleaved_short
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale_factor: '1.0'
+    vector_output: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [248, 320.0]
+    rotation: 180
+    state: true
+- name: blocks_complex_to_interleaved_short_0_1
+  id: blocks_complex_to_interleaved_short
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale_factor: '1.0'
+    vector_output: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [248, 256.0]
+    rotation: 180
+    state: true
+- name: blocks_interleaved_short_to_complex_0
   id: blocks_interleaved_short_to_complex
   parameters:
     affinity: ''
@@ -132,9 +129,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [320, 88.0]
+    coordinate: [432, 104.0]
     rotation: 0
-    state: disabled
+    state: true
 - name: blocks_null_sink_0
   id: blocks_null_sink
   parameters:
@@ -149,9 +146,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [264, 156.0]
+    coordinate: [344, 156.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: blocks_throttle_0
   id: blocks_throttle
   parameters:
@@ -162,32 +159,13 @@ blocks:
     maxoutbuf: '0'
     minoutbuf: '0'
     samples_per_second: samp_rate
-    type: complex
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [224, 188.0]
-    rotation: 180
-    state: disabled
-- name: blocks_throttle_1
-  id: blocks_throttle
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    ignoretag: 'True'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    samples_per_second: samp_rate
     type: short
     vlen: '1'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [360, 220.0]
+    coordinate: [312, 108.0]
     rotation: 0
     state: true
 - name: blocks_vector_to_streams_0
@@ -198,16 +176,38 @@ blocks:
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
-    num_streams: '2'
+    num_streams: subchannels
     type: short
     vlen: '1'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [192, 76.0]
+    coordinate: [184, 108.0]
     rotation: 0
     state: enabled
+- name: chan_name
+  id: epy_module
+  parameters:
+    alias: ''
+    comment: ''
+    source_code: "# this module will be imported in the into your flowgraph\n\n\"\"\
+      \"\nThis code generates the names of the files that store each channel output.\n\
+      \"\"\"\n\ndef name(num):\n    return '/Users/vivelpanel/Desktop/SRT UROP 2022/Spectrogram/channels/created_channel_'\
+      \ + str(num)\n\n# will finish below code later--for now it is much more complicated\n\
+      # than necessary, so I use the simpler scheme above\n\"\"\"\nclass ChannelFile:\n\
+      \    filepath = '/Users/vivelpanel/Desktop/SRT UROP 2022/Spectrogram/channels/'\n\
+      \    basename = 'created_channel_'\n    index = 0\n\n    def __init__(self,\
+      \ num=index):\n        self.filename = filepath + basename + str(num)\n    \
+      \    if num == index:\n            index += 1\n\n    def get_name(self, num):\n\
+      \        if \n        return self.filename\n\"\"\"\n"
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [288, 24.0]
+    rotation: 0
+    state: true
 - name: gr_digital_rf_digital_rf_sink_0
   id: gr_digital_rf_digital_rf_sink
   parameters:
@@ -247,7 +247,7 @@ blocks:
     channel8: ch8
     channel9: ch9
     checksum: 'False'
-    comment: Both source and sink blocks work.
+    comment: ''
     compression_level: '0'
     debug: 'False'
     file_cadence_ms: '1000'
@@ -257,29 +257,29 @@ blocks:
     marching_periods: 'True'
     metadata: '{}'
     min_chunksize: '0'
-    nchan: '1'
+    nchan: '3'
     sample_rate_denominator: '1'
     sample_rate_numerator: int(samp_rate)
-    start: ''
+    start: '1653595200000000'
     stop_on_skipped: 'False'
     stop_on_time_tag: 'False'
     subdir_cadence_s: '3600'
-    top_level_dir: /Users/vivelpanel/Destkop/Downloads/testdrf
+    top_level_dir: /Users/vivelpanel/Desktop/SRT UROP 2022/Spectrogram/drf_out
     uuid: ''
     vlen: '1'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [496, 248.0]
-    rotation: 0
+    coordinate: [24, 204.0]
+    rotation: 180
     state: true
-- name: gr_digital_rf_digital_rf_source_0_0
+- name: gr_digital_rf_digital_rf_source_0
   id: gr_digital_rf_digital_rf_source
   parameters:
     affinity: ''
     alias: ''
-    channel0: '''misa-l2'''
+    channel0: misa-l2
     channel1: ch1
     channel10: ch10
     channel11: ch11
@@ -312,7 +312,7 @@ blocks:
     channel8: ch8
     channel9: ch9
     comment: ''
-    end0: channel_end
+    end0: '1653602399999999'
     end1: ''
     end10: ''
     end11: ''
@@ -350,8 +350,8 @@ blocks:
     min_chunksize: '0'
     minoutbuf: '0'
     nchan: '1'
-    repeat: 'True'
-    start0: channel_start
+    repeat: 'False'
+    start0: '1653595200000000'
     start1: ''
     start10: ''
     start11: ''
@@ -384,169 +384,66 @@ blocks:
     start8: ''
     start9: ''
     throttle: 'False'
-    top_level_dir: '''/Volumes/NO NAME/pulsar/2022-05-26/rf_data'''
+    top_level_dir: '"/Volumes/NO Name/pulsar/2022-05-26/rf_data"'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [16, 92.0]
-    rotation: 0
-    state: enabled
-- name: import_0
-  id: import
-  parameters:
-    alias: ''
-    comment: ''
-    imports: import pmt
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [464, 16.0]
+    coordinate: [16, 76.0]
     rotation: 0
     state: true
-- name: qtgui_freq_sink_x_0
-  id: qtgui_freq_sink_x
+- name: note_0
+  id: note
   parameters:
-    affinity: ''
     alias: ''
-    alpha1: '1.0'
-    alpha10: '1.0'
-    alpha2: '1.0'
-    alpha3: '1.0'
-    alpha4: '1.0'
-    alpha5: '1.0'
-    alpha6: '1.0'
-    alpha7: '1.0'
-    alpha8: '1.0'
-    alpha9: '1.0'
-    autoscale: 'False'
-    average: '1.0'
-    axislabels: 'True'
-    bw: samp_rate
-    color1: '"blue"'
-    color10: '"dark blue"'
-    color2: '"red"'
-    color3: '"green"'
-    color4: '"black"'
-    color5: '"cyan"'
-    color6: '"magenta"'
-    color7: '"yellow"'
-    color8: '"dark red"'
-    color9: '"dark green"'
-    comment: ''
-    ctrlpanel: 'False'
-    fc: '0'
-    fftsize: '4096'
-    freqhalf: 'True'
-    grid: 'False'
-    gui_hint: ''
-    label: Relative Gain
-    label1: ''
-    label10: ''''''
-    label2: ''''''
-    label3: ''''''
-    label4: ''''''
-    label5: ''''''
-    label6: ''''''
-    label7: ''''''
-    label8: ''''''
-    label9: ''''''
-    legend: 'True'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    name: '""'
-    nconnections: '1'
-    norm_window: 'False'
-    showports: 'False'
-    tr_chan: '0'
-    tr_level: '0.0'
-    tr_mode: qtgui.TRIG_MODE_FREE
-    tr_tag: '""'
-    type: complex
-    units: dB
-    update_time: '0.10'
-    width1: '1'
-    width10: '1'
-    width2: '1'
-    width3: '1'
-    width4: '1'
-    width5: '1'
-    width6: '1'
-    width7: '1'
-    width8: '1'
-    width9: '1'
-    wintype: window.WIN_BLACKMAN_hARRIS
-    ymax: '10'
-    ymin: '-140'
+    comment: 'Stored DRF file is empty... except
+
+      for metadata'
+    note: Stored DRF file is empty
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [48, 196.0]
-    rotation: 180
-    state: disabled
-- name: qtgui_sink_x_0
-  id: qtgui_sink_x
+    coordinate: [368, 16.0]
+    rotation: 0
+    state: true
+- name: pfb_channelizer_ccf_0
+  id: pfb_channelizer_ccf
   parameters:
     affinity: ''
     alias: ''
-    bw: samp_rate
+    atten: '100'
+    bus_conns: '[[0,],]'
+    ch_map: '[]'
     comment: ''
-    fc: '0'
-    fftsize: '1024'
-    gui_hint: ''
     maxoutbuf: '0'
     minoutbuf: '0'
-    name: '""'
-    plotconst: 'True'
-    plotfreq: 'True'
-    plottime: 'True'
-    plotwaterfall: 'True'
-    rate: '10'
-    showports: 'False'
-    showrf: 'False'
-    type: complex
-    wintype: window.WIN_BLACKMAN_hARRIS
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [48, 256.0]
-    rotation: 180
-    state: disabled
-- name: rational_resampler_xxx_0
-  id: rational_resampler_xxx
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    decim: '10000'
-    fbw: '0'
-    interp: '1'
-    maxoutbuf: '0'
-    minoutbuf: '0'
+    nchans: '3'
+    osr: '1.0'
+    samp_delay: '0'
     taps: '[]'
-    type: ccc
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [384, 152.0]
+    coordinate: [448, 220.0]
     rotation: 180
-    state: disabled
+    state: true
 
 connections:
-- [blocks_interleaved_short_to_complex_2, '0', blocks_throttle_0, '0']
-- [blocks_interleaved_short_to_complex_2, '0', rational_resampler_xxx_0, '0']
-- [blocks_throttle_0, '0', qtgui_freq_sink_x_0, '0']
-- [blocks_throttle_0, '0', qtgui_sink_x_0, '0']
-- [blocks_throttle_1, '0', gr_digital_rf_digital_rf_sink_0, '0']
-- [blocks_vector_to_streams_0, '0', blocks_interleaved_short_to_complex_2, '0']
-- [blocks_vector_to_streams_0, '0', blocks_throttle_1, '0']
+- [blocks_complex_to_interleaved_short_0, '0', gr_digital_rf_digital_rf_sink_0, '0']
+- [blocks_complex_to_interleaved_short_0_0, '0', gr_digital_rf_digital_rf_sink_0,
+  '2']
+- [blocks_complex_to_interleaved_short_0_1, '0', gr_digital_rf_digital_rf_sink_0,
+  '1']
+- [blocks_interleaved_short_to_complex_0, '0', pfb_channelizer_ccf_0, '0']
+- [blocks_throttle_0, '0', blocks_interleaved_short_to_complex_0, '0']
+- [blocks_vector_to_streams_0, '0', blocks_throttle_0, '0']
 - [blocks_vector_to_streams_0, '1', blocks_null_sink_0, '0']
-- [gr_digital_rf_digital_rf_source_0_0, '0', blocks_vector_to_streams_0, '0']
-- [rational_resampler_xxx_0, '0', blocks_throttle_0, '0']
+- [gr_digital_rf_digital_rf_source_0, '0', blocks_vector_to_streams_0, '0']
+- [pfb_channelizer_ccf_0, '0', blocks_complex_to_interleaved_short_0, '0']
+- [pfb_channelizer_ccf_0, '1', blocks_complex_to_interleaved_short_0_1, '0']
+- [pfb_channelizer_ccf_0, '2', blocks_complex_to_interleaved_short_0_0, '0']
 
 metadata:
   file_format: 1

@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: GPL-3.0
 #
 # GNU Radio Python Flow Graph
-# Title: Just FFT (for Pulsar DSP)
+# Title: Channelize DRF Data
 # Author: vivelpanel
 # GNU Radio version: 3.9.5.0
 
@@ -31,20 +31,22 @@ from PyQt5 import Qt
 from argparse import ArgumentParser
 from gnuradio.eng_arg import eng_float, intx
 from gnuradio import eng_notation
+from gnuradio.filter import pfb
 import gr_digital_rf
 import numpy as np; import gr_digital_rf
-import pmt
+import store_channels_bounds as bounds  # embedded python module
+import store_channels_chan_name as chan_name  # embedded python module
 
 
 
 from gnuradio import qtgui
 
-class just_fft(gr.top_block, Qt.QWidget):
+class store_channels(gr.top_block, Qt.QWidget):
 
     def __init__(self):
-        gr.top_block.__init__(self, "Just FFT (for Pulsar DSP)", catch_exceptions=True)
+        gr.top_block.__init__(self, "Channelize DRF Data", catch_exceptions=True)
         Qt.QWidget.__init__(self)
-        self.setWindowTitle("Just FFT (for Pulsar DSP)")
+        self.setWindowTitle("Channelize DRF Data")
         qtgui.util.check_set_qss()
         try:
             self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))
@@ -62,7 +64,7 @@ class just_fft(gr.top_block, Qt.QWidget):
         self.top_grid_layout = Qt.QGridLayout()
         self.top_layout.addLayout(self.top_grid_layout)
 
-        self.settings = Qt.QSettings("GNU Radio", "just_fft")
+        self.settings = Qt.QSettings("GNU Radio", "store_channels")
 
         try:
             if StrictVersion(Qt.qVersion()) < StrictVersion("5.0.0"):
@@ -75,27 +77,29 @@ class just_fft(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
-        self.tlen = tlen = 1/29.7
+        self.subchannels = subchannels = 2
         self.samp_rate = samp_rate = 32000
-        self.samples = samples = int(tlen*samp_rate)
-        self.samp_rate_0 = samp_rate_0 = 1000000
-        self.integration = integration = 10e3
-        self.channel_start = channel_start = 1653595200000000
-        self.channel_end = channel_end = 1653602399999999
 
         ##################################################
         # Blocks
         ##################################################
-        self.gr_digital_rf_digital_rf_source_0_0 = gr_digital_rf.digital_rf_source(
-            '/Volumes/NO NAME/pulsar/2022-05-26/rf_data',
+        self.pfb_channelizer_ccf_0 = pfb.channelizer_ccf(
+            10,
+            [],
+            1.0,
+            100)
+        self.pfb_channelizer_ccf_0.set_channel_map([])
+        self.pfb_channelizer_ccf_0.declare_sample_delay(0)
+        self.gr_digital_rf_digital_rf_source_0 = gr_digital_rf.digital_rf_source(
+            bounds.source_filepath,
             channels=[
                 'misa-l2',
             ],
             start=[
-                channel_start,
+                bounds.sindex(0),
             ],
             end=[
-                channel_end,
+                bounds.eindex(100),
             ],
             repeat=True,
             throttle=False,
@@ -103,24 +107,24 @@ class just_fft(gr.top_block, Qt.QWidget):
             min_chunksize=None,
         )
         self.gr_digital_rf_digital_rf_sink_0 = gr_digital_rf.digital_rf_sink(
-            '/Users/vivelpanel/Destkop/Downloads/testdrf',
+            bounds.sink_filepath,
             channels=[
                 'ch0',
             ],
-            dtype=np.int16,
+            dtype=np.complex64,
             subdir_cadence_secs=3600,
             file_cadence_millisecs=1000,
             sample_rate_numerator=int(samp_rate),
             sample_rate_denominator=1,
-            start=None,
+            start=bounds.sindex(1000),
             ignore_tags=False,
-            is_complex=False,
-            num_subchannels=1,
-            uuid_str=None,
+            is_complex=True,
+            num_subchannels=10,
+            uuid_str='hopethisfirsttryworks',
             center_frequencies=(
                 None
             ),
-            metadata={},
+            metadata={'grc_generated': True, 'input_type': 'vector length10 cf64'},
             is_continuous=True,
             compression_level=0,
             checksum=False,
@@ -130,77 +134,59 @@ class just_fft(gr.top_block, Qt.QWidget):
             debug=False,
             min_chunksize=None,
         )
-        self.blocks_vector_to_streams_0 = blocks.vector_to_streams(gr.sizeof_short*1, 2)
-        self.blocks_throttle_1 = blocks.throttle(gr.sizeof_short*1, samp_rate,True)
+        self.blocks_vector_to_streams_0 = blocks.vector_to_streams(gr.sizeof_short*1, subchannels)
+        self.blocks_throttle_0 = blocks.throttle(gr.sizeof_short*1, samp_rate,True)
+        self.blocks_streams_to_vector_0 = blocks.streams_to_vector(gr.sizeof_gr_complex*1, 10)
         self.blocks_null_sink_0 = blocks.null_sink(gr.sizeof_short*1)
+        self.blocks_interleaved_short_to_complex_0 = blocks.interleaved_short_to_complex(False, False,1.0)
 
 
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.blocks_throttle_1, 0), (self.gr_digital_rf_digital_rf_sink_0, 0))
+        self.connect((self.blocks_interleaved_short_to_complex_0, 0), (self.pfb_channelizer_ccf_0, 0))
+        self.connect((self.blocks_streams_to_vector_0, 0), (self.gr_digital_rf_digital_rf_sink_0, 0))
+        self.connect((self.blocks_throttle_0, 0), (self.blocks_interleaved_short_to_complex_0, 0))
         self.connect((self.blocks_vector_to_streams_0, 1), (self.blocks_null_sink_0, 0))
-        self.connect((self.blocks_vector_to_streams_0, 0), (self.blocks_throttle_1, 0))
-        self.connect((self.gr_digital_rf_digital_rf_source_0_0, 0), (self.blocks_vector_to_streams_0, 0))
+        self.connect((self.blocks_vector_to_streams_0, 0), (self.blocks_throttle_0, 0))
+        self.connect((self.gr_digital_rf_digital_rf_source_0, 0), (self.blocks_vector_to_streams_0, 0))
+        self.connect((self.pfb_channelizer_ccf_0, 7), (self.blocks_streams_to_vector_0, 7))
+        self.connect((self.pfb_channelizer_ccf_0, 2), (self.blocks_streams_to_vector_0, 2))
+        self.connect((self.pfb_channelizer_ccf_0, 8), (self.blocks_streams_to_vector_0, 8))
+        self.connect((self.pfb_channelizer_ccf_0, 5), (self.blocks_streams_to_vector_0, 5))
+        self.connect((self.pfb_channelizer_ccf_0, 9), (self.blocks_streams_to_vector_0, 9))
+        self.connect((self.pfb_channelizer_ccf_0, 6), (self.blocks_streams_to_vector_0, 6))
+        self.connect((self.pfb_channelizer_ccf_0, 0), (self.blocks_streams_to_vector_0, 0))
+        self.connect((self.pfb_channelizer_ccf_0, 4), (self.blocks_streams_to_vector_0, 4))
+        self.connect((self.pfb_channelizer_ccf_0, 3), (self.blocks_streams_to_vector_0, 3))
+        self.connect((self.pfb_channelizer_ccf_0, 1), (self.blocks_streams_to_vector_0, 1))
 
 
     def closeEvent(self, event):
-        self.settings = Qt.QSettings("GNU Radio", "just_fft")
+        self.settings = Qt.QSettings("GNU Radio", "store_channels")
         self.settings.setValue("geometry", self.saveGeometry())
         self.stop()
         self.wait()
 
         event.accept()
 
-    def get_tlen(self):
-        return self.tlen
+    def get_subchannels(self):
+        return self.subchannels
 
-    def set_tlen(self, tlen):
-        self.tlen = tlen
-        self.set_samples(int(self.tlen*self.samp_rate))
+    def set_subchannels(self, subchannels):
+        self.subchannels = subchannels
 
     def get_samp_rate(self):
         return self.samp_rate
 
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
-        self.set_samples(int(self.tlen*self.samp_rate))
-        self.blocks_throttle_1.set_sample_rate(self.samp_rate)
-
-    def get_samples(self):
-        return self.samples
-
-    def set_samples(self, samples):
-        self.samples = samples
-
-    def get_samp_rate_0(self):
-        return self.samp_rate_0
-
-    def set_samp_rate_0(self, samp_rate_0):
-        self.samp_rate_0 = samp_rate_0
-
-    def get_integration(self):
-        return self.integration
-
-    def set_integration(self, integration):
-        self.integration = integration
-
-    def get_channel_start(self):
-        return self.channel_start
-
-    def set_channel_start(self, channel_start):
-        self.channel_start = channel_start
-
-    def get_channel_end(self):
-        return self.channel_end
-
-    def set_channel_end(self, channel_end):
-        self.channel_end = channel_end
+        self.blocks_throttle_0.set_sample_rate(self.samp_rate)
 
 
 
 
-def main(top_block_cls=just_fft, options=None):
+def main(top_block_cls=store_channels, options=None):
 
     if StrictVersion("4.5.0") <= StrictVersion(Qt.qVersion()) < StrictVersion("5.0.0"):
         style = gr.prefs().get_string('qtgui', 'style', 'raster')
