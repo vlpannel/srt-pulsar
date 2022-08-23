@@ -1,0 +1,311 @@
+options:
+  parameters:
+    author: ''
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: hb
+    hier_block_src_path: '.:'
+    id: pulsar_hier
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Pulsar Processing Hier Block
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: points
+  id: variable
+  parameters:
+    comment: Points to fold
+    value: int(per * 5 * samp_rate)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [648, 80.0]
+    rotation: 0
+    state: true
+- name: bins
+  id: parameter
+  parameters:
+    alias: ''
+    comment: '# of bins for folding'
+    hide: none
+    label: Number of Folding Bins
+    short_id: ''
+    type: intx
+    value: '1024'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [408, 80.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: Convert signal to power
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [136, 236.0]
+    rotation: 0
+    state: enabled
+- name: blocks_stream_to_vector_0
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: points
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [424, 236.0]
+    rotation: 0
+    state: true
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    Nbins: bins
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport psrdynspec\nfrom psrdynspec import fold\n\n\
+      class blk(gr.sync_block):\n    \"\"\"\n    Pulsar folding block - takes in time\
+      \ series of a single channel and folds it over the pulsar period.\n\n    Outputs\
+      \ a vector of length Nbins which is the number of counts per phase bin (this\
+      \ can be used for plotting).\n\n    \n    Parameters\n    ----------\n\n   \
+      \ samps : int\n        Number of samples coming in; the length of the vector\
+      \ passed in\n\n    samp_rate : float\n        Sample rate of data (taken from\
+      \ metadata)\n\n    Nbins : int\n        Number of phase bins in which to sort\
+      \ samples\n\n    pfold : float\n        Folding period (should be same or similar\
+      \ to period of pulsar)\n    \"\"\"\n\n    def __init__(self, samp_rate=1000000,\
+      \ Nbins=1024, pfold=33.5028583*1e-3):\n\n        samps = 167514  # number of\
+      \ \"samples\" (resampled) that ultimately get processed\n        self.nsamps\
+      \ = samps\n\n        gr.sync_block.__init__(\n            self,\n          \
+      \  name='Folding',   # will show up in GRC\n            in_sig=[(np.float32,\
+      \ samps)],\n            out_sig=[(np.float32, Nbins)]\n        )\n        '''\n\
+      \        Initializes pulsar folding block\n\n        Parameters\n        ----------\n\
+      \n        samp_rate : float\n            Sample rate of data (taken from metadata)\n\
+      \n        Nbins : int\n            Number of phase bins in which to sort samples\n\
+      \n        pfold : float\n            Folding period (should be same or similar\
+      \ to period of pulsar)\n        '''\n        self.samp_rate = samp_rate\n  \
+      \      self.Nbins = Nbins\n        self.pfold = pfold\n        \n        self.times\
+      \ = np.arange(self.nsamps)/samp_rate\n\n        self.timeseries = np.array\n\
+      \n    def work(self, input_items, output_items):\n\n        # folding\n    \
+      \    self.profile, self.phibin_centers, self.counts = fold.fold_ts(np.abs(input_items[0])**2,\
+      \ self.times, self.pfold, self.Nbins, True)\n        \n        output_items[0]\
+      \ = np.nan_to_num(self.profile)\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: 'Note: embedded
+
+      Python blocks can''t
+
+      have variable input
+
+      length.
+
+
+      Always takes in
+
+      vector of length
+
+      30,000,000 (30
+
+      seconds at 1MHz
+
+      sample rate)'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    pfold: per
+    samp_rate: samp_rate
+  states:
+    _io_cache: '(''Folding'', ''blk'', [(''samp_rate'', ''1000000''), (''Nbins'',
+      ''1024''), (''pfold'', ''0.0335028583'')], [(''0'', ''float'', 167514)], [(''0'',
+      ''float'', 1024)], ''\n    Pulsar folding block - takes in time series of a
+      single channel and folds it over the pulsar period.\n\n    Outputs a vector
+      of length Nbins which is the number of counts per phase bin (this can be used
+      for plotting).\n\n    \n    Parameters\n    ----------\n\n    samps : int\n        Number
+      of samples coming in; the length of the vector passed in\n\n    samp_rate :
+      float\n        Sample rate of data (taken from metadata)\n\n    Nbins : int\n        Number
+      of phase bins in which to sort samples\n\n    pfold : float\n        Folding
+      period (should be same or similar to period of pulsar)\n    '', [''Nbins'',
+      ''pfold'', ''samp_rate''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [568, 228.0]
+    rotation: 0
+    state: enabled
+- name: pad_sink_0_0
+  id: pad_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: y-axis (power)
+    label: profile
+    num_streams: '1'
+    optional: 'False'
+    type: float
+    vlen: bins
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 232.0]
+    rotation: 0
+    state: enabled
+- name: pad_source_0
+  id: pad_source
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: 'Takes in the
+
+      single channel
+
+      of data from
+
+      PFB ("single"
+
+      frequency)'
+    label: in
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_streams: '1'
+    optional: 'False'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 236.0]
+    rotation: 0
+    state: enabled
+- name: per
+  id: parameter
+  parameters:
+    alias: ''
+    comment: 'Folding period (also
+
+      period of pulsar)'
+    hide: none
+    label: Period (s)
+    short_id: ''
+    type: eng_float
+    value: '0.0335028583'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [552, 80.0]
+    rotation: 0
+    state: true
+- name: rational_resampler_xxx_0
+  id: rational_resampler_xxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: 'Resamples to make
+
+      integration over any time
+
+      period (theoretically)
+
+      possible.'
+    decim: (time * samp_rate)
+    fbw: '0'
+    interp: points
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    taps: '[]'
+    type: fff
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [264, 224.0]
+    rotation: 0
+    state: true
+- name: samp_rate
+  id: parameter
+  parameters:
+    alias: ''
+    comment: Sample rate
+    hide: none
+    label: Sample Rate (sps)
+    short_id: ''
+    type: eng_float
+    value: '1000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [288, 80.0]
+    rotation: 0
+    state: true
+- name: time
+  id: parameter
+  parameters:
+    alias: ''
+    comment: 'Number of seconds
+
+      to fold over.'
+    hide: none
+    label: Integration Time (s)
+    short_id: ''
+    type: intx
+    value: '60'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [160, 80.0]
+    rotation: 0
+    state: true
+
+connections:
+- [blocks_complex_to_mag_squared_0, '0', rational_resampler_xxx_0, '0']
+- [blocks_stream_to_vector_0, '0', epy_block_0, '0']
+- [epy_block_0, '0', pad_sink_0_0, '0']
+- [pad_source_0, '0', blocks_complex_to_mag_squared_0, '0']
+- [rational_resampler_xxx_0, '0', blocks_stream_to_vector_0, '0']
+
+metadata:
+  file_format: 1

@@ -1,0 +1,738 @@
+options:
+  parameters:
+    author: vivelpanel
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: final_pfb
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: 'Prototype Flowgraph: PFB'
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: center_freq
+  id: variable
+  parameters:
+    comment: ''
+    value: 440e6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [608, 24.0]
+    rotation: 0
+    state: true
+- name: channel
+  id: variable
+  parameters:
+    comment: 'Channel
+
+      name'
+    value: '''ch0'''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [312, 40.0]
+    rotation: 0
+    state: true
+- name: data_dir
+  id: variable
+  parameters:
+    comment: 'Top level directory for stored
+
+      DRF data'
+    value: '"/Volumes/NO NAME/pulsar/rf_data"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [192, 40.0]
+    rotation: 0
+    state: true
+- name: num_subchannels
+  id: variable
+  parameters:
+    comment: 'Number of subchannels
+
+      in channel'
+    value: '2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [368, 40.0]
+    rotation: 0
+    state: true
+- name: pfb_channels
+  id: variable
+  parameters:
+    comment: 'This can probably
+
+      be a fixed value for
+
+      SRT (fixed
+
+      bandwidth and
+
+      setup).'
+    value: '31'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [720, 584.0]
+    rotation: 0
+    state: true
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: 1e6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [120, 8.0]
+    rotation: 0
+    state: enabled
+- name: sink_file
+  id: variable
+  parameters:
+    comment: ''
+    value: '"/Users/vivelpanel/pfbdata"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1096, 1072.0]
+    rotation: 0
+    state: true
+- name: blocks_interleaved_short_to_complex_0
+  id: blocks_interleaved_short_to_complex
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale_factor: '1.0'
+    swap: 'False'
+    vector_input: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [544, 272.0]
+    rotation: 0
+    state: true
+- name: blocks_msg_meta_to_pair_0
+  id: blocks_msg_meta_to_pair
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    keyin: key in
+    keyout: key out
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [600, 96.0]
+    rotation: 0
+    state: true
+- name: blocks_msgpair_to_var_0
+  id: blocks_msgpair_to_var
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    target: property
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [688, 180.0]
+    rotation: 0
+    state: true
+- name: blocks_null_sink_0
+  id: blocks_null_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_sink: '[[0,],]'
+    comment: ''
+    num_inputs: '1'
+    type: short
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [344, 236.0]
+    rotation: 0
+    state: true
+- name: blocks_null_sink_0_0
+  id: blocks_null_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_sink: '[[0,],]'
+    comment: ''
+    num_inputs: '1'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [304, 396.0]
+    rotation: 0
+    state: true
+- name: blocks_null_sink_1
+  id: blocks_null_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_sink: '[[0,],]'
+    comment: 'Remove
+
+      channels
+
+      at edge of
+
+      bandwidth'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [960, 540.0]
+    rotation: 0
+    state: true
+- name: blocks_null_source_0
+  id: blocks_null_source
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_source: '[[0,],]'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_outputs: '1'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [64, 396.0]
+    rotation: 0
+    state: true
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: Controlling flow (no hardware here)
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [176, 396.0]
+    rotation: 0
+    state: true
+- name: blocks_vector_to_streams_0
+  id: blocks_vector_to_streams
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_streams: num_subchannels
+    type: short
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [232, 132.0]
+    rotation: 0
+    state: true
+- name: gr_digital_rf_digital_rf_sink_0
+  id: gr_digital_rf_digital_rf_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    center_freqs: '[center_freq]'
+    channel0: ch0
+    channel1: ch1
+    channel10: ch10
+    channel11: ch11
+    channel12: ch12
+    channel13: ch13
+    channel14: ch14
+    channel15: ch15
+    channel16: ch16
+    channel17: ch17
+    channel18: ch18
+    channel19: ch19
+    channel2: ch2
+    channel20: ch20
+    channel21: ch21
+    channel22: ch22
+    channel23: ch23
+    channel24: ch24
+    channel25: ch25
+    channel26: ch26
+    channel27: ch27
+    channel28: ch28
+    channel29: ch29
+    channel3: ch3
+    channel30: ch30
+    channel31: ch31
+    channel4: ch4
+    channel5: ch5
+    channel6: ch6
+    channel7: ch7
+    channel8: ch8
+    channel9: ch9
+    checksum: 'False'
+    comment: 'Storing complex32s
+
+
+      Remember PFB
+
+      mapping!'
+    compression_level: '0'
+    debug: 'False'
+    file_cadence_ms: '1000'
+    ignore_tags: 'False'
+    input: fc32
+    is_continuous: 'False'
+    marching_periods: 'True'
+    metadata: '{property}'
+    min_chunksize: '0'
+    nchan: int(2 * (pfb_channels // 2) - 1)
+    sample_rate_denominator: '1'
+    sample_rate_numerator: int(samp_rate)
+    start: ''
+    stop_on_skipped: 'False'
+    stop_on_time_tag: 'False'
+    subdir_cadence_s: '3600'
+    top_level_dir: sink_file
+    uuid: ''
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1104, 92.0]
+    rotation: 0
+    state: true
+- name: gr_digital_rf_digital_rf_source_0
+  id: gr_digital_rf_digital_rf_source
+  parameters:
+    affinity: ''
+    alias: ''
+    channel0: channel
+    channel1: ch1
+    channel10: ch10
+    channel11: ch11
+    channel12: ch12
+    channel13: ch13
+    channel14: ch14
+    channel15: ch15
+    channel16: ch16
+    channel17: ch17
+    channel18: ch18
+    channel19: ch19
+    channel2: ch2
+    channel20: ch20
+    channel21: ch21
+    channel22: ch22
+    channel23: ch23
+    channel24: ch24
+    channel25: ch25
+    channel26: ch26
+    channel27: ch27
+    channel28: ch28
+    channel29: ch29
+    channel3: ch3
+    channel30: ch30
+    channel31: ch31
+    channel4: ch4
+    channel5: ch5
+    channel6: ch6
+    channel7: ch7
+    channel8: ch8
+    channel9: ch9
+    comment: ''
+    end0: ''
+    end1: ''
+    end10: ''
+    end11: ''
+    end12: ''
+    end13: ''
+    end14: ''
+    end15: ''
+    end16: ''
+    end17: ''
+    end18: ''
+    end19: ''
+    end2: ''
+    end20: ''
+    end21: ''
+    end22: ''
+    end23: ''
+    end24: ''
+    end25: ''
+    end26: ''
+    end27: ''
+    end28: ''
+    end29: ''
+    end3: ''
+    end30: ''
+    end31: ''
+    end4: ''
+    end5: ''
+    end6: ''
+    end7: ''
+    end8: ''
+    end9: ''
+    gapless: 'False'
+    hide_msg_port: 'True'
+    maxoutbuf: '0'
+    min_chunksize: '0'
+    minoutbuf: '0'
+    nchan: '1'
+    repeat: 'False'
+    start0: ''
+    start1: ''
+    start10: ''
+    start11: ''
+    start12: ''
+    start13: ''
+    start14: ''
+    start15: ''
+    start16: ''
+    start17: ''
+    start18: ''
+    start19: ''
+    start2: ''
+    start20: ''
+    start21: ''
+    start22: ''
+    start23: ''
+    start24: ''
+    start25: ''
+    start26: ''
+    start27: ''
+    start28: ''
+    start29: ''
+    start3: ''
+    start30: ''
+    start31: ''
+    start4: ''
+    start5: ''
+    start6: ''
+    start7: ''
+    start8: ''
+    start9: ''
+    throttle: 'False'
+    top_level_dir: data_dir
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 140.0]
+    rotation: 0
+    state: true
+- name: kaiser_taps
+  id: epy_module
+  parameters:
+    alias: ''
+    comment: 'Taps (coeffs) for
+
+      Kaiser windowing'
+    source_code: "import mitarspysigproc.filtertools as ft\nimport numpy as np\n\n\
+      x = 5 # FOR DEBUG\n\ndef taps(chans):\n    \"\"\"\n    Returns PFB taps for\
+      \ Kaiser windowing using filtertools.\n\n    Parameters\n    ----------\n  \
+      \  chans : int\n        Number of channels that PFB will yield\n\n    Returns\n\
+      \    -------\n    taps : vector\n        Filter taps for PFB as a real vector\n\
+      \    \"\"\"\n    taps = np.reshape(ft.kaiser_coeffs(chans), -1)\n    return\
+      \ taps\n"
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [720, 696.0]
+    rotation: 0
+    state: true
+- name: note_1
+  id: note
+  parameters:
+    alias: ''
+    comment: 'Remember to pay attention
+
+      to connections here if
+
+      subchannels change!'
+    note: Subchannels change
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [192, 216.0]
+    rotation: 0
+    state: true
+- name: note_2
+  id: note
+  parameters:
+    alias: ''
+    comment: ''
+    note: DRF Source related
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [288, 8.0]
+    rotation: 0
+    state: true
+- name: note_3
+  id: note
+  parameters:
+    alias: ''
+    comment: 'Remember to alter data types
+
+      if file outputs different type!'
+    note: Assumes IShort (c8)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [400, 128.0]
+    rotation: 0
+    state: true
+- name: pfb_channelizer_ccf_1
+  id: pfb_channelizer_ccf
+  parameters:
+    affinity: ''
+    alias: ''
+    atten: '100'
+    bus_conns: '[[0,],]'
+    ch_map: '[]'
+    comment: 'Channel 0 (out0) is at
+
+      center frequency'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nchans: pfb_channels
+    osr: '1.0'
+    samp_delay: '0'
+    taps: kaiser_taps.taps(pfb_channels)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [792, 60.0]
+    rotation: 0
+    state: true
+- name: qtgui_waterfall_sink_x_0
+  id: qtgui_waterfall_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    axislabels: 'True'
+    bw: samp_rate
+    color1: '0'
+    color10: '0'
+    color2: '0'
+    color3: '0'
+    color4: '0'
+    color5: '0'
+    color6: '0'
+    color7: '0'
+    color8: '0'
+    color9: '0'
+    comment: "For debug purposes.\n\nShould see high freqs\npeaking before low \n\
+      freqs (dispersion)."
+    fc: center_freq
+    fftsize: '1024'
+    freqhalf: 'True'
+    grid: 'False'
+    gui_hint: ''
+    int_max: '10'
+    int_min: '-140'
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    nconnections: '1'
+    showports: 'False'
+    type: complex
+    update_time: '0.10'
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [568, 460.0]
+    rotation: 0
+    state: true
+- name: snippet_0
+  id: snippet
+  parameters:
+    alias: ''
+    code: "# loop to connect PFB to DRF Sink\n# this cuts out edge of bandwidth channels\n\
+      for c in range(pfb_channels):  #FIX ME (if faster code needed)\n\t\n\t# initial\
+      \ half of channels\n\tif c < pfb_channels // 2:\n\t\tself.connect((self.pfb_channelizer_ccf_0,\
+      \ c), (self.gr_digital_rf_digital_rf_sink_0, c))\n\t\n\t# second half of channels\n\
+      \tif c > ((pfb_channels // 2) + (pfb_channels % 2)):\n\t\tself.connect((self.pfb_channelizer_ccf_0,\
+      \ c), (self.gr_digital_rf_digital_rf_sink_0, c - (pfb_channels % 2) - 1))"
+    comment: 'This code may come in handy when PFB
+
+      channels change; connects each PFB out
+
+      to a DRF in.'
+    priority: '1000'
+    section: main_after_init
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1016, 4.0]
+    rotation: 0
+    state: true
+- name: virtual_sink_0
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: metadata
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [176, 300.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: 'FIX ME: this is the beginning of transferring DRF
+
+      metadata from original file to next file. Save all
+
+      properties as variables with this chain (may use
+
+      embedded Python block to do this instead later).'
+    stream_id: metadata
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [520, 172.0]
+    rotation: 0
+    state: true
+
+connections:
+- [blocks_interleaved_short_to_complex_0, '0', pfb_channelizer_ccf_1, '0']
+- [blocks_interleaved_short_to_complex_0, '0', qtgui_waterfall_sink_x_0, '0']
+- [blocks_msg_meta_to_pair_0, outpair, blocks_msgpair_to_var_0, inpair]
+- [blocks_null_source_0, '0', blocks_throttle_0, '0']
+- [blocks_throttle_0, '0', blocks_null_sink_0_0, '0']
+- [blocks_vector_to_streams_0, '0', blocks_interleaved_short_to_complex_0, '0']
+- [blocks_vector_to_streams_0, '1', blocks_null_sink_0, '0']
+- [gr_digital_rf_digital_rf_source_0, '0', blocks_vector_to_streams_0, '0']
+- [gr_digital_rf_digital_rf_source_0, properties, virtual_sink_0, '0']
+- [pfb_channelizer_ccf_1, '0', gr_digital_rf_digital_rf_sink_0, '0']
+- [pfb_channelizer_ccf_1, '1', gr_digital_rf_digital_rf_sink_0, '1']
+- [pfb_channelizer_ccf_1, '10', gr_digital_rf_digital_rf_sink_0, '10']
+- [pfb_channelizer_ccf_1, '11', gr_digital_rf_digital_rf_sink_0, '11']
+- [pfb_channelizer_ccf_1, '12', gr_digital_rf_digital_rf_sink_0, '12']
+- [pfb_channelizer_ccf_1, '13', gr_digital_rf_digital_rf_sink_0, '13']
+- [pfb_channelizer_ccf_1, '14', gr_digital_rf_digital_rf_sink_0, '14']
+- [pfb_channelizer_ccf_1, '15', blocks_null_sink_1, '0']
+- [pfb_channelizer_ccf_1, '16', blocks_null_sink_1, '1']
+- [pfb_channelizer_ccf_1, '17', gr_digital_rf_digital_rf_sink_0, '15']
+- [pfb_channelizer_ccf_1, '18', gr_digital_rf_digital_rf_sink_0, '16']
+- [pfb_channelizer_ccf_1, '19', gr_digital_rf_digital_rf_sink_0, '17']
+- [pfb_channelizer_ccf_1, '2', gr_digital_rf_digital_rf_sink_0, '2']
+- [pfb_channelizer_ccf_1, '20', gr_digital_rf_digital_rf_sink_0, '18']
+- [pfb_channelizer_ccf_1, '21', gr_digital_rf_digital_rf_sink_0, '19']
+- [pfb_channelizer_ccf_1, '22', gr_digital_rf_digital_rf_sink_0, '20']
+- [pfb_channelizer_ccf_1, '23', gr_digital_rf_digital_rf_sink_0, '21']
+- [pfb_channelizer_ccf_1, '24', gr_digital_rf_digital_rf_sink_0, '22']
+- [pfb_channelizer_ccf_1, '25', gr_digital_rf_digital_rf_sink_0, '23']
+- [pfb_channelizer_ccf_1, '26', gr_digital_rf_digital_rf_sink_0, '24']
+- [pfb_channelizer_ccf_1, '27', gr_digital_rf_digital_rf_sink_0, '25']
+- [pfb_channelizer_ccf_1, '28', gr_digital_rf_digital_rf_sink_0, '26']
+- [pfb_channelizer_ccf_1, '29', gr_digital_rf_digital_rf_sink_0, '27']
+- [pfb_channelizer_ccf_1, '3', gr_digital_rf_digital_rf_sink_0, '3']
+- [pfb_channelizer_ccf_1, '30', gr_digital_rf_digital_rf_sink_0, '28']
+- [pfb_channelizer_ccf_1, '4', gr_digital_rf_digital_rf_sink_0, '4']
+- [pfb_channelizer_ccf_1, '5', gr_digital_rf_digital_rf_sink_0, '5']
+- [pfb_channelizer_ccf_1, '6', gr_digital_rf_digital_rf_sink_0, '6']
+- [pfb_channelizer_ccf_1, '7', gr_digital_rf_digital_rf_sink_0, '7']
+- [pfb_channelizer_ccf_1, '8', gr_digital_rf_digital_rf_sink_0, '8']
+- [pfb_channelizer_ccf_1, '9', gr_digital_rf_digital_rf_sink_0, '9']
+- [virtual_source_0, '0', blocks_msg_meta_to_pair_0, inmeta]
+
+metadata:
+  file_format: 1
