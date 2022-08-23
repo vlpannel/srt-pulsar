@@ -1,0 +1,5 @@
+1. Download miniforge from GNU Radio wiki
+2. Install mamba and create gnuradio environment with conda
+3. Install gnuradio, digital_rf, pip
+4. Download and then install with pip: psrdynspec and sigprocpython
+5. Edit digital_rf library so that there is not an error dividing int by np.longdouble

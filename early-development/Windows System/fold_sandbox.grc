@@ -1,0 +1,333 @@
+options:
+  parameters:
+    author: vlpannel
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: fold_sandbox
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Not titled yet
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '32000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: analog_fastnoise_source_x_0
+  id: analog_fastnoise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '10'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    samples: '8192'
+    seed: '0'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [320, 584.0]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    freq: '1000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [56, 240.0]
+    rotation: 0
+    state: enabled
+- name: blocks_add_xx_0
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [768, 432.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [872, 448.0]
+    rotation: 0
+    state: enabled
+- name: blocks_multiply_xx_0
+  id: blocks_multiply_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [608, 352.0]
+    rotation: 0
+    state: true
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate * 10
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [400, 288.0]
+    rotation: 0
+    state: enabled
+- name: blocks_vector_source_x_0
+  id: blocks_vector_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: Period is 100 samples
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    repeat: 'True'
+    tags: '[]'
+    type: complex
+    vector: np.array([1] * 69 + [3] + [1] * 30)
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [112, 440.0]
+    rotation: 0
+    state: true
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    Nbins: '1024'
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\nimport pandas as pd\nfrom astropy.stats import\
+      \ sigma_clip\nfrom psrdynspec.modules.filters1d import blockavg1d\n\nclass fold_stream_block(gr.sync_block):\n\
+      \    \"\"\"\n    Fold a timeseries of power over a period.\n\n    Parameters\n\
+      \    ----------\n    \n    per : float\n        Period of folding\n    \n  \
+      \  samp_rate : float, int\n        Sample rate of incoming samples.\n      \
+      \  \n    integration_time : int, float\n        Seconds over which to integrate/fold.\n\
+      \        \n    Nbins : int\n        Number of phase bins to use for folding.\n\
+      \        \n    folding : bool\n        Flag determining whether new profiles\
+      \ are still being calculated\n    \n    Notes\n    -----\n    \n    Outputs\
+      \ the profile resultant of the latest vector passed in.\n    \"\"\"\n\n    def\
+      \ __init__(self, per=.1, samp_rate=1000, integration_time=.5, Nbins=1024, folding=True):\n\
+      \        \n        '''\n        @staticmethod\n        def set_stuff(sr, it,\
+      \ bins):\n            self.samp_rate = samp_rate\n            self.integration_time\
+      \ = integration_time\n            self.Nbins = bins\n            \n        set_stuff(samp_rate,\
+      \ integration_time, Nbins)\n        '''\n        \n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Fold Stream',\n            in_sig=[np.float32],\n\
+      \            out_sig=[]\n        )\n        self.per = per\n        self.samp_rate\
+      \ = samp_rate\n        self.integration_time = integration_time\n        self.Nbins\
+      \ = Nbins\n        self.folding = folding\n        \n        #self.start_time\
+      \ = 0\n        self.data = []\n        #self.ts = np.array([], dtype=np.float32)\n\
+      \        #self.times = np.array([], dtype=np.float32)\n        #self.profile\
+      \ = np.zeros(self.Nbins, dtype=np.float32)\n\n    def work(self, input_items,\
+      \ output_items):\n        print(f'DEBUG: {input_items}\\n\\n\\n\\t{input_items[0]}')\n\
+      \        self.data += list(input_items[0])\n        if len(self.data) >= int(self.samp_rate\
+      \ * self.integration_time):\n            times = np.arange(len(self.data)) /\
+      \ float(self.samp_rate)\n            folded = fold.fold_ts(self.data, times,\
+      \ self.per, self.Nbins)[0]\n            print(folded)\n            self.data\
+      \ = []\n            \n        return 0\n        '''\n        for vindex in range(len(input_items[0])):\n\
+      \            times = np.arange(input_items[0][vindex].size) / float(self.samp_rate)\
+      \ + self.start_time\n            folded = fold.fold_ts(input_items[0][vindex],\
+      \ times, self.per, self.Nbins)[0]\n            output_items[0][vindex] = folded\n\
+      \            self.start_time = times[1] + times[-1]\n        self.start_time\
+      \ = 0\n        return len(output_items[0])\n        '''\n        '''\n     \
+      \   # if in folding mode and haven't yet collected enough data\n        input0\
+      \ = input_items[0]\n        output0 = output_items[0]\n        \n        print(f'{input0},\
+      \ {output0}')\n        print(f'{self.folding}')\n        print(f'{self.times\
+      \ >= self.integration_time}')\n        print(f'{(self.folding) and not (True\
+      \ in self.times >= self.integration_time)}')\n        \n        if (self.folding)\
+      \ and not (True in self.times >= self.integration_time):\n            print('DEBUG:\
+      \ folding...')\n            self.ts = np.append(self.ts, input0[:])\n      \
+      \      self.times = np.append(self.times, ( np.arange(len(input0))/float(self.samp_rate)\
+      \ ) + self.start_time)\n            self.start_time = self.times[-1] + (1 /\
+      \ self.samp_rate)\n            #print(f'\\tts: {self.ts}\\n\\ttimes: {self.times}\\\
+      n\\tstart time: {self.start_time}')\n        # reset if not folding or  enough\
+      \ data collected\n        else:\n            print('DEBUG: resetting...')\n\
+      \            self.start_time = 0\n            self.profile = np.nan_to_num(fold.fold_ts(self.ts,\
+      \ self.times, self.per, self.Nbins)[0])\n            self.ts = np.array([],\
+      \ dtype=np.float32)\n            self.times = np.array([], dtype=np.float32)\n\
+      \            print(f'\\tprofile: {self.profile}')\n        # output profile\
+      \ vector\n        for vecindex in range(len(output_items[0])):\n           \
+      \ output_items[0][vecindex][:] = self.profile\n        print(f'result shape:\
+      \ {output_items[0].shape}')\n        return len(output_items[0])\n        '''\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    folding: 'True'
+    integration_time: '.5'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    per: '.1'
+    samp_rate: '1000'
+  states:
+    _io_cache: '(''Fold Stream'', ''fold_stream_block'', [(''per'', ''0.1''), (''samp_rate'',
+      ''1000''), (''integration_time'', ''0.5''), (''Nbins'', ''1024''), (''folding'',
+      ''True'')], [(''0'', ''float'', 1)], [], ''\n    Fold a timeseries of power
+      over a period.\n\n    Parameters\n    ----------\n    \n    per : float\n        Period
+      of folding\n    \n    samp_rate : float, int\n        Sample rate of incoming
+      samples.\n        \n    integration_time : int, float\n        Seconds over
+      which to integrate/fold.\n        \n    Nbins : int\n        Number of phase
+      bins to use for folding.\n        \n    folding : bool\n        Flag determining
+      whether new profiles are still being calculated\n    \n    Notes\n    -----\n    \n    Outputs
+      the profile resultant of the latest vector passed in.\n    '', [''Nbins'', ''folding'',
+      ''integration_time'', ''per'', ''samp_rate''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1088, 408.0]
+    rotation: 0
+    state: enabled
+- name: import_0
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import numpy as np
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [288, 8.0]
+    rotation: 0
+    state: true
+- name: import_1
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import psrdynspec
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [432, 40.0]
+    rotation: 0
+    state: true
+- name: qtgui_sink_x_0
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: samp_rate
+    comment: ''
+    fc: '0'
+    fftsize: '1024'
+    gui_hint: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'False'
+    showrf: 'False'
+    type: complex
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [808, 96.0]
+    rotation: 0
+    state: true
+
+connections:
+- [analog_fastnoise_source_x_0, '0', blocks_add_xx_0, '1']
+- [analog_sig_source_x_0, '0', blocks_throttle_0, '0']
+- [blocks_add_xx_0, '0', blocks_complex_to_mag_squared_0, '0']
+- [blocks_add_xx_0, '0', qtgui_sink_x_0, '0']
+- [blocks_complex_to_mag_squared_0, '0', epy_block_0, '0']
+- [blocks_multiply_xx_0, '0', blocks_add_xx_0, '0']
+- [blocks_throttle_0, '0', blocks_multiply_xx_0, '0']
+- [blocks_vector_source_x_0, '0', blocks_multiply_xx_0, '1']
+
+metadata:
+  file_format: 1
+  grc_version: 3.10.3.0

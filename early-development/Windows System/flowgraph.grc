@@ -1,0 +1,1618 @@
+options:
+  parameters:
+    author: ''
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: flowgraph
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Not titled yet
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: chan
+  id: variable
+  parameters:
+    comment: ''
+    value: '"misa-l2"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [656, 64.0]
+    rotation: 0
+    state: true
+- name: drf_data
+  id: variable
+  parameters:
+    comment: ''
+    value: r"E:\pulsar\2022-05-26\usrp-rx0-r_20220526T200000_20220526T210800\rf_data"
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [304, 16.0]
+    rotation: 0
+    state: true
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '1000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: blocks_complex_to_mag_squared_1
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 56.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 1016.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_1
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 984.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_10
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 696.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_11
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 664.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_12
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 632.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_13
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 600.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_14
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 568.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_15
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 536.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_16
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 504.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_17
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 472.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_18
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 440.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_19
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 408.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_2
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 952.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_20
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 376.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_21
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 344.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_22
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 312.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_23
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 280.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_24
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 248.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_25
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 216.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_26
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 184.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_27
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 152.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_28
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 88.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_29
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 120.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_3
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 920.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_4
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 888.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_5
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 856.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_6
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 824.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_7
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 792.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_8
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 760.0]
+    rotation: 0
+    state: disabled
+- name: blocks_complex_to_mag_squared_1_9
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 728.0]
+    rotation: 0
+    state: disabled
+- name: blocks_file_sink_1
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch0
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1312, 1232.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_0
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch1
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1496, 1264.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_1
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch20
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1312, 1872.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_10
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch27
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1496, 2096.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_10_0
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch29
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1496, 2160.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_10_1
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch28
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1312, 2128.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_10_2
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch30
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1312, 2192.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_10_2_0
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch31
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1128, 1976.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_11
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch26
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1312, 2064.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_12
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch25
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1496, 2032.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_13
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch24
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1312, 2000.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_14
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch23
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1496, 1968.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_15
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch22
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1312, 1936.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_16
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch4
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1312, 1360.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_17
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch3
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1496, 1328.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_18
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch2
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1312, 1296.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_19
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch14
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1312, 1680.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_2
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch19
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1496, 1840.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_20
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch21
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1496, 1904.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_21
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch13
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1496, 1648.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_22
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch12
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1312, 1616.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_23
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch11
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1496, 1584.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_24
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch10
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1312, 1552.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_25
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch9
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1496, 1520.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_26
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch8
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1312, 1488.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_3
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch18
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1312, 1808.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_4
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch17
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1496, 1776.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_5
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch16
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1312, 1744.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_6
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch15
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1496, 1712.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_7
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch7
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1496, 1456.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_8
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch6
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1312, 1424.0]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_1_9
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: C:\Users\vlpannel\Desktop\newpfbdata\ch5
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1496, 1392.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [616, 160.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nfrom __future__ import\
+      \ absolute_import, division, print_function\n\nimport os\nimport traceback\n\
+      \nimport gnuradio.blocks\nimport h5py\nimport pmt\nimport six\n\n\nimport numpy\
+      \ as np\nfrom gnuradio import gr\nimport digital_rf as drf\nfrom digital_rf\
+      \ import DigitalRFReader, util\n\n\nclass blk(gr.sync_block):  # other base\
+      \ classes are basic_block, decim_block, interp_block\n    \"\"\"Modified version\
+      \ of DRF Source\"\"\"\n\n    def __init__(self, data_dir=r'E:\\pulsar\\2022-05-26\\\
+      usrp-rx0-r_20220526T200000_20220526T210800\\rf_data', chan='misa-l2', repeat=False):\
+      \  # only default arguments here\n        \"\"\"arguments to this function show\
+      \ up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n         \
+      \   self,\n            name='Modified DRF Source',\n            in_sig=[],\n\
+      \            out_sig=[np.complex64]\n        )\n        self.data_dir = data_dir\n\
+      \        self.chan = chan\n        self.repeat = repeat    # repeat flag: currently\
+      \ nonfunctional, but may be useful later\n        \n        self.do = drf.DigitalRFReader(self.data_dir)\n\
+      \        self.bounds = self.do.get_bounds(self.chan)\n        self.prop = self.do.get_properties(self.chan)\n\
+      \        \n        self.index = self.bounds[0]# + (16 * 1000000)     # start\
+      \ at first sample\n        self.result = 0\n        \n    def work(self, input_items,\
+      \ output_items):\n        out = output_items[0]\n        nsamples = len(out)\n\
+      \        data = self.do.read_vector(self.index, nsamples, self.chan)\n     \
+      \   self.index += nsamples\n        \n        output_items[0][:] = data\n  \
+      \      \n        return len(output_items[0])\n    '''\n    def work(self, input_items,\
+      \ output_items):\n        #ADDED CONTENT\n        self._start_sample = util.parse_identifier_to_sample(\n\
+      \            None, self.prop[\"samples_per_second\"], self.bounds[0]\n     \
+      \   )\n        self._end_sample = util.parse_identifier_to_sample(\n       \
+      \     None, self.prop[\"samples_per_second\"], self.bounds[0]\n        )\n \
+      \       self._gapless = True\n        if self._start_sample is None:\n     \
+      \       self._read_start_sample = self.bounds[0]\n        else:\n          \
+      \  self._read_start_sample = self._start_sample\n        \n        out = output_items[0]\n\
+      \        nsamples = len(out)\n        next_index = 0\n        # repeat reading\
+      \ until we succeed or return\n        while next_index < nsamples:\n       \
+      \     read_start = self._read_start_sample\n            # read_end is inclusive,\
+      \ hence the -1\n            read_end = self._read_start_sample + (nsamples -\
+      \ next_index) - 1\n            # creating a read function that has an output\
+      \ argument so data can\n            # be copied directly would be nice\n   \
+      \         # also should move EOFError checking into reader once watchdog\n \
+      \           # bounds functionality is implemented\n            try:\n      \
+      \          if self._end_sample is None:\n                    if read_end > self.bounds[1]:\n\
+      \                        self.bounds = self._Reader.get_bounds(self.chan)\n\
+      \                        read_end = min(read_end, self.bounds[1])\n        \
+      \        else:\n                    if read_end > self._end_sample:\n      \
+      \                  read_end = self._end_sample\n                if read_start\
+      \ > read_end:\n                    raise EOFError\n                # read data\n\
+      \                data_dict = self.do.read(read_start, read_end, self.chan)\n\
+      \                # handled all samples through read_end regardless of whether\n\
+      \                # they were written to the output vector\n                self._read_start_sample\
+      \ = read_end + 1\n                # early escape for no data\n             \
+      \   if not data_dict:\n                    if self._gapless:\n             \
+      \           # output empty samples if no data and gapless output\n         \
+      \               stop_index = next_index + read_end + 1 - read_start\n      \
+      \                  out[next_index:stop_index] = self._fillvalue\n          \
+      \              next_index = stop_index\n                    else:\n        \
+      \                # clear any existing tags\n                        self._tag_queue.clear()\n\
+      \                        # add tag at next potential sample to indicate skip\n\
+      \                        self._queue_tags(self._read_start_sample, {})\n   \
+      \                 continue\n                # read corresponding metadata\n\
+      \                if self._DMDReader is not None:\n                    meta_dict\
+      \ = self._DMDReader.read(read_start, read_end)\n                    for sample,\
+      \ meta in meta_dict.items():\n                        # add tags from Digital\
+      \ Metadata\n                        # (in addition to default time and rate\
+      \ tags)\n                        # eliminate sample_rate_* tags with duplicate\
+      \ info\n                        meta.pop(\"sample_rate_denominator\", None)\n\
+      \                        meta.pop(\"sample_rate_numerator\", None)\n       \
+      \                 # get center frequencies for rx_freq tag, squeeze()[()]\n\
+      \                        # to get single value if possible else pass as an array\n\
+      \                        cf = meta.pop(\"center_frequencies\", None)\n     \
+      \                   if cf is not None:\n                            cf = cf.ravel().squeeze()[()]\n\
+      \                        tags = dict(\n                            rx_freq=cf,\n\
+      \                            # all other metadata goes in metadata tag\n   \
+      \                         metadata=meta,\n                        )\n      \
+      \                  self._queue_tags(sample, tags)\n                # add data\
+      \ and tags to output\n                next_continuous_sample = read_start\n\
+      \                for sample, data in data_dict.items():\n                  \
+      \  # detect data skip\n                    if sample > next_continuous_sample:\n\
+      \                        if self._gapless:\n                            # advance\
+      \ output by skipped number of samples\n                            nskipped\
+      \ = sample - next_continuous_sample\n                            sample_index\
+      \ = next_index + nskipped\n                            out[next_index:sample_index]\
+      \ = self._fillvalue\n                            next_index = sample_index\n\
+      \                        else:\n                            # emit new time\
+      \ tag at sample to indicate skip\n                            self._queue_tags(sample,\
+      \ {})\n                    # output data\n                    n = data.shape[0]\n\
+      \                    stop_index = next_index + n\n                    end_sample\
+      \ = sample + n\n                    out_dest = out[next_index:stop_index]\n\
+      \                    data_arr = data.squeeze()\n                    out_dest[:]\
+      \ = data_arr\n                    # overwrite missing values with fill values\n\
+      \                    missing_val_idx = self._ismissing(data_arr)\n         \
+      \           out_dest[missing_val_idx] = self._fillvalue\n                  \
+      \  # output tags\n                    for tag_sample in sorted(self._tag_queue.keys()):\n\
+      \                        if tag_sample < sample:\n                         \
+      \   # drop tags from before current data block\n                           \
+      \ del self._tag_queue[tag_sample]\n                            continue\n  \
+      \                      elif tag_sample >= end_sample:\n                    \
+      \        # wait to output tags from after current data block\n             \
+      \               break\n                        offset = (\n                \
+      \            self.nitems_written(0)  # offset @ start of work\n            \
+      \                + next_index  # additional offset of data block\n         \
+      \                   + (tag_sample - sample)\n                        )\n   \
+      \                     tag_dict = self._tag_queue.pop(tag_sample)\n         \
+      \               for name, val in tag_dict.items():\n                       \
+      \     self.add_item_tag(\n                                0, offset, pmt.intern(name),\
+      \ val, self._id\n                            )\n                    # advance\
+      \ next output index and continuous sample\n                    next_index =\
+      \ stop_index  # <=== next_index += n\n                    next_continuous_sample\
+      \ = end_sample\n            except EOFError:\n                if self._repeat:\n\
+      \                    if self._start_sample is None:\n                      \
+      \  self._read_start_sample = self.bounds[0]\n                    else:\n   \
+      \                     self._read_start_sample = self._start_sample\n       \
+      \             self._queue_tags(self._read_start_sample, {})\n              \
+      \      continue\n                else:\n                    break\n        if\
+      \ next_index == 0:\n            # return WORK_DONE\n            return -1\n\
+      \        return next_index\n        '''\n"
+    affinity: ''
+    alias: ''
+    chan: '''misa-l2'''
+    comment: ''
+    data_dir: r"E:\pulsar\2022-05-26\usrp-rx0-r_20220526T200000_20220526T210800\rf_data"
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    repeat: 'False'
+  states:
+    _io_cache: ('Modified DRF Source', 'blk', [('data_dir', "'E:\\\\pulsar\\\\2022-05-26\\\\usrp-rx0-r_20220526T200000_20220526T210800\\\\rf_data'"),
+      ('chan', "'misa-l2'"), ('repeat', 'False')], [], [('0', 'complex', 1)], 'Modified
+      version of DRF Source', ['chan', 'data_dir', 'repeat'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [280, 168.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1
+  id: epy_block
+  parameters:
+    Nbins: ''
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport psrdynspec\nfrom psrdynspec import fold as fld\n\
+      \n\nclass blk(gr.sync_block):  # other base classes are basic_block, decim_block,\
+      \ interp_block\n    \"\"\"Embedded Python Block example - a simple multiply\
+      \ const\"\"\"\n\n    def __init__(self, nsamp=1000000, samp_rate=1000000., per=0.0335,\
+      \ Nbins=1024):  # only default arguments here     (change nsamp)\n        \"\
+      \"\"arguments to this function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Folding',   # will show up in GRC\n  \
+      \          in_sig=[np.float32],\n            out_sig=[(np.float32, Nbins)]\n\
+      \        )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.nsamp\
+      \ = nsamp\n        self.samp_rate = samp_rate\n        self.per = per\n    \
+      \    self.Nbins = Nbins\n        \n        self.time0 = 0.\n        \n\n   \
+      \ def work(self, input_items, output_items):\n        \"\"\"example: multiply\
+      \ with constant\"\"\"\n        output_items[0][:] = input_items[0] * self.example_param\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nsamp: ''
+    per: ''
+    samp_rate: ''
+  states:
+    _io_cache: ('Folding', 'blk', [('nsamp', '1000000'), ('samp_rate', '1000000.0'),
+      ('per', '0.0335'), ('Nbins', '1024')], [('0', 'float', 1)], [('0', 'float',
+      1024)], 'Embedded Python Block example - a simple multiply const', ['Nbins',
+      'nsamp', 'per', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [560, 344.0]
+    rotation: 0
+    state: disabled
+- name: import_0
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import numpy as np
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [512, 56.0]
+    rotation: 0
+    state: true
+- name: import_1
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import mitarspysigproc.filtertools as filtertools
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 448.0]
+    rotation: 0
+    state: true
+- name: pfb_channelizer_ccf_0
+  id: pfb_channelizer_ccf
+  parameters:
+    affinity: ''
+    alias: ''
+    atten: '100'
+    bus_structure_source: '[[0,],]'
+    ch_map: '[]'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nchans: '32'
+    osr: '1.0'
+    samp_delay: '0'
+    taps: filtertools.kaiser_coeffs(32)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1072, 56.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_time_sink_x_1
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: Signal 1
+    label10: Signal 10
+    label2: Signal 2
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '""'
+    nconnections: '1'
+    size: '1024'
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1312, 8.0]
+    rotation: 0
+    state: disabled
+- name: qtgui_waterfall_sink_x_0
+  id: qtgui_waterfall_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    axislabels: 'True'
+    bw: samp_rate
+    color1: '0'
+    color10: '0'
+    color2: '0'
+    color3: '0'
+    color4: '0'
+    color5: '0'
+    color6: '0'
+    color7: '0'
+    color8: '0'
+    color9: '0'
+    comment: ''
+    fc: '0'
+    fftsize: '1024'
+    freqhalf: 'True'
+    grid: 'False'
+    gui_hint: ''
+    int_max: '10'
+    int_min: '-140'
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    nconnections: '1'
+    showports: 'False'
+    type: complex
+    update_time: '0.10'
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [872, 96.0]
+    rotation: 0
+    state: enabled
+
+connections:
+- [blocks_throttle_0, '0', pfb_channelizer_ccf_0, '0']
+- [blocks_throttle_0, '0', qtgui_waterfall_sink_x_0, '0']
+- [epy_block_0, '0', blocks_throttle_0, '0']
+- [pfb_channelizer_ccf_0, '0', blocks_complex_to_mag_squared_1, '0']
+- [pfb_channelizer_ccf_0, '0', blocks_file_sink_1, '0']
+- [pfb_channelizer_ccf_0, '0', qtgui_time_sink_x_1, '0']
+- [pfb_channelizer_ccf_0, '1', blocks_complex_to_mag_squared_1_28, '0']
+- [pfb_channelizer_ccf_0, '1', blocks_file_sink_1_0, '0']
+- [pfb_channelizer_ccf_0, '10', blocks_complex_to_mag_squared_1_20, '0']
+- [pfb_channelizer_ccf_0, '10', blocks_file_sink_1_24, '0']
+- [pfb_channelizer_ccf_0, '11', blocks_complex_to_mag_squared_1_19, '0']
+- [pfb_channelizer_ccf_0, '11', blocks_file_sink_1_23, '0']
+- [pfb_channelizer_ccf_0, '12', blocks_complex_to_mag_squared_1_18, '0']
+- [pfb_channelizer_ccf_0, '12', blocks_file_sink_1_22, '0']
+- [pfb_channelizer_ccf_0, '13', blocks_complex_to_mag_squared_1_17, '0']
+- [pfb_channelizer_ccf_0, '13', blocks_file_sink_1_21, '0']
+- [pfb_channelizer_ccf_0, '14', blocks_complex_to_mag_squared_1_16, '0']
+- [pfb_channelizer_ccf_0, '14', blocks_file_sink_1_19, '0']
+- [pfb_channelizer_ccf_0, '15', blocks_complex_to_mag_squared_1_15, '0']
+- [pfb_channelizer_ccf_0, '15', blocks_file_sink_1_6, '0']
+- [pfb_channelizer_ccf_0, '16', blocks_complex_to_mag_squared_1_14, '0']
+- [pfb_channelizer_ccf_0, '16', blocks_file_sink_1_5, '0']
+- [pfb_channelizer_ccf_0, '17', blocks_complex_to_mag_squared_1_13, '0']
+- [pfb_channelizer_ccf_0, '17', blocks_file_sink_1_4, '0']
+- [pfb_channelizer_ccf_0, '18', blocks_complex_to_mag_squared_1_12, '0']
+- [pfb_channelizer_ccf_0, '18', blocks_file_sink_1_3, '0']
+- [pfb_channelizer_ccf_0, '19', blocks_complex_to_mag_squared_1_11, '0']
+- [pfb_channelizer_ccf_0, '19', blocks_file_sink_1_2, '0']
+- [pfb_channelizer_ccf_0, '2', blocks_complex_to_mag_squared_1_29, '0']
+- [pfb_channelizer_ccf_0, '2', blocks_file_sink_1_18, '0']
+- [pfb_channelizer_ccf_0, '20', blocks_complex_to_mag_squared_1_10, '0']
+- [pfb_channelizer_ccf_0, '20', blocks_file_sink_1_1, '0']
+- [pfb_channelizer_ccf_0, '21', blocks_complex_to_mag_squared_1_9, '0']
+- [pfb_channelizer_ccf_0, '21', blocks_file_sink_1_20, '0']
+- [pfb_channelizer_ccf_0, '22', blocks_complex_to_mag_squared_1_8, '0']
+- [pfb_channelizer_ccf_0, '22', blocks_file_sink_1_15, '0']
+- [pfb_channelizer_ccf_0, '23', blocks_complex_to_mag_squared_1_7, '0']
+- [pfb_channelizer_ccf_0, '23', blocks_file_sink_1_14, '0']
+- [pfb_channelizer_ccf_0, '24', blocks_complex_to_mag_squared_1_6, '0']
+- [pfb_channelizer_ccf_0, '24', blocks_file_sink_1_13, '0']
+- [pfb_channelizer_ccf_0, '25', blocks_complex_to_mag_squared_1_5, '0']
+- [pfb_channelizer_ccf_0, '25', blocks_file_sink_1_12, '0']
+- [pfb_channelizer_ccf_0, '26', blocks_complex_to_mag_squared_1_4, '0']
+- [pfb_channelizer_ccf_0, '26', blocks_file_sink_1_11, '0']
+- [pfb_channelizer_ccf_0, '27', blocks_complex_to_mag_squared_1_3, '0']
+- [pfb_channelizer_ccf_0, '27', blocks_file_sink_1_10, '0']
+- [pfb_channelizer_ccf_0, '28', blocks_complex_to_mag_squared_1_2, '0']
+- [pfb_channelizer_ccf_0, '28', blocks_file_sink_1_10_1, '0']
+- [pfb_channelizer_ccf_0, '29', blocks_complex_to_mag_squared_1_1, '0']
+- [pfb_channelizer_ccf_0, '29', blocks_file_sink_1_10_0, '0']
+- [pfb_channelizer_ccf_0, '3', blocks_complex_to_mag_squared_1_27, '0']
+- [pfb_channelizer_ccf_0, '3', blocks_file_sink_1_17, '0']
+- [pfb_channelizer_ccf_0, '30', blocks_complex_to_mag_squared_1_0, '0']
+- [pfb_channelizer_ccf_0, '30', blocks_file_sink_1_10_2, '0']
+- [pfb_channelizer_ccf_0, '31', blocks_file_sink_1_10_2_0, '0']
+- [pfb_channelizer_ccf_0, '4', blocks_complex_to_mag_squared_1_26, '0']
+- [pfb_channelizer_ccf_0, '4', blocks_file_sink_1_16, '0']
+- [pfb_channelizer_ccf_0, '5', blocks_complex_to_mag_squared_1_25, '0']
+- [pfb_channelizer_ccf_0, '5', blocks_file_sink_1_9, '0']
+- [pfb_channelizer_ccf_0, '6', blocks_complex_to_mag_squared_1_24, '0']
+- [pfb_channelizer_ccf_0, '6', blocks_file_sink_1_8, '0']
+- [pfb_channelizer_ccf_0, '7', blocks_complex_to_mag_squared_1_23, '0']
+- [pfb_channelizer_ccf_0, '7', blocks_file_sink_1_7, '0']
+- [pfb_channelizer_ccf_0, '8', blocks_complex_to_mag_squared_1_22, '0']
+- [pfb_channelizer_ccf_0, '8', blocks_file_sink_1_26, '0']
+- [pfb_channelizer_ccf_0, '9', blocks_complex_to_mag_squared_1_21, '0']
+- [pfb_channelizer_ccf_0, '9', blocks_file_sink_1_25, '0']
+
+metadata:
+  file_format: 1
+  grc_version: 3.10.3.0

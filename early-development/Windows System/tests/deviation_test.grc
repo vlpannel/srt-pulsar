@@ -1,0 +1,936 @@
+options:
+  parameters:
+    author: vivelpanel
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: testing_template
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Not titled yet
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: deviations
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '1'
+    stop: '1000'
+    value: '10'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 8.0]
+    rotation: 0
+    state: true
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '1000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: blocks_complex_to_mag_squared_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [520, 236.0]
+    rotation: 0
+    state: true
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate**2
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [208, 236.0]
+    rotation: 0
+    state: true
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nfrom __future__ import\
+      \ absolute_import, division, print_function\n\nimport os\nimport traceback\n\
+      \nimport gnuradio.blocks\nimport h5py\nimport pmt\nimport six\n\n\nimport numpy\
+      \ as np\nfrom gnuradio import gr\nimport digital_rf as drf\nfrom digital_rf\
+      \ import DigitalRFReader, util\n\n\nclass blk(gr.sync_block):  # other base\
+      \ classes are basic_block, decim_block, interp_block\n    \"\"\"Modified version\
+      \ of DRF Source\"\"\"\n\n    def __init__(self, data_dir=r'E:\\pulsar\\2022-05-26\\\
+      usrp-rx0-r_20220526T200000_20220526T210800\\rf_data', chan='misa-l2', repeat=False):\
+      \  # only default arguments here\n        \"\"\"arguments to this function show\
+      \ up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n         \
+      \   self,\n            name='Modified DRF Source',\n            in_sig=[],\n\
+      \            out_sig=[np.complex64]\n        )\n        self.data_dir = data_dir\n\
+      \        self.chan = chan\n        self.repeat = repeat    # repeat flag: currently\
+      \ nonfunctional, but may be useful later\n        \n        self.do = drf.DigitalRFReader(self.data_dir)\n\
+      \        self.bounds = self.do.get_bounds(self.chan)\n        self.prop = self.do.get_properties(self.chan)\n\
+      \        \n        self.index = self.bounds[0]# + (16 * 1000000)     # start\
+      \ at first sample\n        self.result = 0\n        \n    def work(self, input_items,\
+      \ output_items):\n        out = output_items[0]\n        nsamples = len(out)\n\
+      \        data = self.do.read_vector(self.index, nsamples, self.chan)\n     \
+      \   self.index += nsamples\n        \n        output_items[0][:] = data\n  \
+      \      \n        return len(output_items[0])\n    '''\n    def work(self, input_items,\
+      \ output_items):\n        #ADDED CONTENT\n        self._start_sample = util.parse_identifier_to_sample(\n\
+      \            None, self.prop[\"samples_per_second\"], self.bounds[0]\n     \
+      \   )\n        self._end_sample = util.parse_identifier_to_sample(\n       \
+      \     None, self.prop[\"samples_per_second\"], self.bounds[0]\n        )\n \
+      \       self._gapless = True\n        if self._start_sample is None:\n     \
+      \       self._read_start_sample = self.bounds[0]\n        else:\n          \
+      \  self._read_start_sample = self._start_sample\n        \n        out = output_items[0]\n\
+      \        nsamples = len(out)\n        next_index = 0\n        # repeat reading\
+      \ until we succeed or return\n        while next_index < nsamples:\n       \
+      \     read_start = self._read_start_sample\n            # read_end is inclusive,\
+      \ hence the -1\n            read_end = self._read_start_sample + (nsamples -\
+      \ next_index) - 1\n            # creating a read function that has an output\
+      \ argument so data can\n            # be copied directly would be nice\n   \
+      \         # also should move EOFError checking into reader once watchdog\n \
+      \           # bounds functionality is implemented\n            try:\n      \
+      \          if self._end_sample is None:\n                    if read_end > self.bounds[1]:\n\
+      \                        self.bounds = self._Reader.get_bounds(self.chan)\n\
+      \                        read_end = min(read_end, self.bounds[1])\n        \
+      \        else:\n                    if read_end > self._end_sample:\n      \
+      \                  read_end = self._end_sample\n                if read_start\
+      \ > read_end:\n                    raise EOFError\n                # read data\n\
+      \                data_dict = self.do.read(read_start, read_end, self.chan)\n\
+      \                # handled all samples through read_end regardless of whether\n\
+      \                # they were written to the output vector\n                self._read_start_sample\
+      \ = read_end + 1\n                # early escape for no data\n             \
+      \   if not data_dict:\n                    if self._gapless:\n             \
+      \           # output empty samples if no data and gapless output\n         \
+      \               stop_index = next_index + read_end + 1 - read_start\n      \
+      \                  out[next_index:stop_index] = self._fillvalue\n          \
+      \              next_index = stop_index\n                    else:\n        \
+      \                # clear any existing tags\n                        self._tag_queue.clear()\n\
+      \                        # add tag at next potential sample to indicate skip\n\
+      \                        self._queue_tags(self._read_start_sample, {})\n   \
+      \                 continue\n                # read corresponding metadata\n\
+      \                if self._DMDReader is not None:\n                    meta_dict\
+      \ = self._DMDReader.read(read_start, read_end)\n                    for sample,\
+      \ meta in meta_dict.items():\n                        # add tags from Digital\
+      \ Metadata\n                        # (in addition to default time and rate\
+      \ tags)\n                        # eliminate sample_rate_* tags with duplicate\
+      \ info\n                        meta.pop(\"sample_rate_denominator\", None)\n\
+      \                        meta.pop(\"sample_rate_numerator\", None)\n       \
+      \                 # get center frequencies for rx_freq tag, squeeze()[()]\n\
+      \                        # to get single value if possible else pass as an array\n\
+      \                        cf = meta.pop(\"center_frequencies\", None)\n     \
+      \                   if cf is not None:\n                            cf = cf.ravel().squeeze()[()]\n\
+      \                        tags = dict(\n                            rx_freq=cf,\n\
+      \                            # all other metadata goes in metadata tag\n   \
+      \                         metadata=meta,\n                        )\n      \
+      \                  self._queue_tags(sample, tags)\n                # add data\
+      \ and tags to output\n                next_continuous_sample = read_start\n\
+      \                for sample, data in data_dict.items():\n                  \
+      \  # detect data skip\n                    if sample > next_continuous_sample:\n\
+      \                        if self._gapless:\n                            # advance\
+      \ output by skipped number of samples\n                            nskipped\
+      \ = sample - next_continuous_sample\n                            sample_index\
+      \ = next_index + nskipped\n                            out[next_index:sample_index]\
+      \ = self._fillvalue\n                            next_index = sample_index\n\
+      \                        else:\n                            # emit new time\
+      \ tag at sample to indicate skip\n                            self._queue_tags(sample,\
+      \ {})\n                    # output data\n                    n = data.shape[0]\n\
+      \                    stop_index = next_index + n\n                    end_sample\
+      \ = sample + n\n                    out_dest = out[next_index:stop_index]\n\
+      \                    data_arr = data.squeeze()\n                    out_dest[:]\
+      \ = data_arr\n                    # overwrite missing values with fill values\n\
+      \                    missing_val_idx = self._ismissing(data_arr)\n         \
+      \           out_dest[missing_val_idx] = self._fillvalue\n                  \
+      \  # output tags\n                    for tag_sample in sorted(self._tag_queue.keys()):\n\
+      \                        if tag_sample < sample:\n                         \
+      \   # drop tags from before current data block\n                           \
+      \ del self._tag_queue[tag_sample]\n                            continue\n  \
+      \                      elif tag_sample >= end_sample:\n                    \
+      \        # wait to output tags from after current data block\n             \
+      \               break\n                        offset = (\n                \
+      \            self.nitems_written(0)  # offset @ start of work\n            \
+      \                + next_index  # additional offset of data block\n         \
+      \                   + (tag_sample - sample)\n                        )\n   \
+      \                     tag_dict = self._tag_queue.pop(tag_sample)\n         \
+      \               for name, val in tag_dict.items():\n                       \
+      \     self.add_item_tag(\n                                0, offset, pmt.intern(name),\
+      \ val, self._id\n                            )\n                    # advance\
+      \ next output index and continuous sample\n                    next_index =\
+      \ stop_index  # <=== next_index += n\n                    next_continuous_sample\
+      \ = end_sample\n            except EOFError:\n                if self._repeat:\n\
+      \                    if self._start_sample is None:\n                      \
+      \  self._read_start_sample = self.bounds[0]\n                    else:\n   \
+      \                     self._read_start_sample = self._start_sample\n       \
+      \             self._queue_tags(self._read_start_sample, {})\n              \
+      \      continue\n                else:\n                    break\n        if\
+      \ next_index == 0:\n            # return WORK_DONE\n            return -1\n\
+      \        return next_index\n        '''\n"
+    affinity: ''
+    alias: ''
+    chan: '''misa-l2'''
+    comment: ''
+    data_dir: r"E:\pulsar\2022-05-26\usrp-rx0-r_20220526T200000_20220526T210800\rf_data"
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    repeat: 'False'
+  states:
+    _io_cache: ('Modified DRF Source', 'blk', [('data_dir', "'E:\\\\pulsar\\\\2022-05-26\\\\usrp-rx0-r_20220526T200000_20220526T210800\\\\rf_data'"),
+      ('chan', "'misa-l2'"), ('repeat', 'False')], [], [('0', 'complex', 1)], 'Modified
+      version of DRF Source', ['chan', 'data_dir', 'repeat'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [40, 228.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport psrdynspec\nfrom psrdynspec import fold\nimport\
+      \ collections\n\nclass blk(gr.sync_block):  # other base classes are basic_block,\
+      \ decim_block, interp_block\n    \"\"\"Block to perform folding (without importing\
+      \ and using psrdynspec\"\"\"\n\n    def __init__(self, period=.0335, samp_rate=1000000/32,\
+      \ integration_time=10.):  # only default arguments here\n        \"\"\"arguments\
+      \ to this function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Fold',   # will show up in GRC\n     \
+      \       in_sig=[np.float32],\n            out_sig=[(np.float32, 1024)]\n   \
+      \     )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.period\
+      \ = float(period)\n        self.samp_rate = float(samp_rate)\n        self.integration_time\
+      \ = float(integration_time)\n        \n        self.bins = 1024\n        self.profile\
+      \ = np.zeros(self.bins)\n        self.data = collections.deque([])\n       \
+      \ \n        self.fold_ts = fold.fold_ts\n\n    def work(self, input_items, output_items):\n\
+      \        \"\"\"example: multiply with constant\"\"\"\n        \n        self.data.extend(input_items[0])\n\
+      \        \n        if len(self.data) >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(len(self.data)) / self.samp_rate \n         \
+      \   self.profile = np.nan_to_num(fold.fold_ts(np.array(self.data), times, self.period,\
+      \ self.bins, True))[0]\n            self.data.clear()\n            \n      \
+      \  output_items[0][:] = np.array([self.profile])#* output_items[0].shape[0])\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '0.0333924123 '
+    samp_rate: samp_rate/32
+  states:
+    _io_cache: ('Fold', 'blk', [('period', '0.0335'), ('samp_rate', '31250.0'), ('integration_time',
+      '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)], 'Block to perform folding
+      (without importing and using psrdynspec', ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [856, 92.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport psrdynspec\nfrom psrdynspec import fold\nimport\
+      \ collections\n\nclass blk(gr.sync_block):  # other base classes are basic_block,\
+      \ decim_block, interp_block\n    \"\"\"Block to perform folding (without importing\
+      \ and using psrdynspec\"\"\"\n\n    def __init__(self, period=.0335, samp_rate=1000000/32,\
+      \ integration_time=10.):  # only default arguments here\n        \"\"\"arguments\
+      \ to this function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Fold',   # will show up in GRC\n     \
+      \       in_sig=[np.float32],\n            out_sig=[(np.float32, 1024)]\n   \
+      \     )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.period\
+      \ = float(period)\n        self.samp_rate = float(samp_rate)\n        self.integration_time\
+      \ = float(integration_time)\n        \n        self.bins = 1024\n        self.profile\
+      \ = np.zeros(self.bins)\n        self.data = collections.deque([])\n       \
+      \ \n        self.fold_ts = fold.fold_ts\n\n    def work(self, input_items, output_items):\n\
+      \        \"\"\"example: multiply with constant\"\"\"\n        \n        self.data.extend(input_items[0])\n\
+      \        \n        if len(self.data) >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(len(self.data)) / self.samp_rate \n         \
+      \   self.profile = np.nan_to_num(fold.fold_ts(np.array(self.data), times, self.period,\
+      \ self.bins, True))[0]\n            self.data.clear()\n            \n      \
+      \  output_items[0][:] = np.array([self.profile])#* output_items[0].shape[0])\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '0.0333924123 '
+    samp_rate: samp_rate/32
+  states:
+    _io_cache: ('Fold', 'blk', [('period', '0.0335'), ('samp_rate', '31250.0'), ('integration_time',
+      '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)], 'Block to perform folding
+      (without importing and using psrdynspec', ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [856, 148.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_1
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport psrdynspec\nfrom psrdynspec import fold\nimport\
+      \ collections\n\nclass blk(gr.sync_block):  # other base classes are basic_block,\
+      \ decim_block, interp_block\n    \"\"\"Block to perform folding (without importing\
+      \ and using psrdynspec\"\"\"\n\n    def __init__(self, period=.0335, samp_rate=1000000/32,\
+      \ integration_time=10.):  # only default arguments here\n        \"\"\"arguments\
+      \ to this function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Fold',   # will show up in GRC\n     \
+      \       in_sig=[np.float32],\n            out_sig=[(np.float32, 1024)]\n   \
+      \     )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.period\
+      \ = float(period)\n        self.samp_rate = float(samp_rate)\n        self.integration_time\
+      \ = float(integration_time)\n        \n        self.bins = 1024\n        self.profile\
+      \ = np.zeros(self.bins)\n        self.data = collections.deque([])\n       \
+      \ \n        self.fold_ts = fold.fold_ts\n\n    def work(self, input_items, output_items):\n\
+      \        \"\"\"example: multiply with constant\"\"\"\n        \n        self.data.extend(input_items[0])\n\
+      \        \n        if len(self.data) >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(len(self.data)) / self.samp_rate \n         \
+      \   self.profile = np.nan_to_num(fold.fold_ts(np.array(self.data), times, self.period,\
+      \ self.bins, True))[0]\n            self.data.clear()\n            \n      \
+      \  output_items[0][:] = np.array([self.profile])#* output_items[0].shape[0])\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '0.0333924123 '
+    samp_rate: samp_rate/32
+  states:
+    _io_cache: ('Fold', 'blk', [('period', '0.0335'), ('samp_rate', '31250.0'), ('integration_time',
+      '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)], 'Block to perform folding
+      (without importing and using psrdynspec', ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [856, 204.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_2
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport psrdynspec\nfrom psrdynspec import fold\nimport\
+      \ collections\n\nclass blk(gr.sync_block):  # other base classes are basic_block,\
+      \ decim_block, interp_block\n    \"\"\"Block to perform folding (without importing\
+      \ and using psrdynspec\"\"\"\n\n    def __init__(self, period=.0335, samp_rate=1000000/32,\
+      \ integration_time=10.):  # only default arguments here\n        \"\"\"arguments\
+      \ to this function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Fold',   # will show up in GRC\n     \
+      \       in_sig=[np.float32],\n            out_sig=[(np.float32, 1024)]\n   \
+      \     )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.period\
+      \ = float(period)\n        self.samp_rate = float(samp_rate)\n        self.integration_time\
+      \ = float(integration_time)\n        \n        self.bins = 1024\n        self.profile\
+      \ = np.zeros(self.bins)\n        self.data = collections.deque([])\n       \
+      \ \n        self.fold_ts = fold.fold_ts\n\n    def work(self, input_items, output_items):\n\
+      \        \"\"\"example: multiply with constant\"\"\"\n        \n        self.data.extend(input_items[0])\n\
+      \        \n        if len(self.data) >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(len(self.data)) / self.samp_rate \n         \
+      \   self.profile = np.nan_to_num(fold.fold_ts(np.array(self.data), times, self.period,\
+      \ self.bins, True))[0]\n            self.data.clear()\n            \n      \
+      \  output_items[0][:] = np.array([self.profile])#* output_items[0].shape[0])\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '0.0333924123 '
+    samp_rate: samp_rate/32
+  states:
+    _io_cache: ('Fold', 'blk', [('period', '0.0335'), ('samp_rate', '31250.0'), ('integration_time',
+      '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)], 'Block to perform folding
+      (without importing and using psrdynspec', ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [856, 260.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_3
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport psrdynspec\nfrom psrdynspec import fold\nimport\
+      \ collections\n\nclass blk(gr.sync_block):  # other base classes are basic_block,\
+      \ decim_block, interp_block\n    \"\"\"Block to perform folding (without importing\
+      \ and using psrdynspec\"\"\"\n\n    def __init__(self, period=.0335, samp_rate=1000000/32,\
+      \ integration_time=10.):  # only default arguments here\n        \"\"\"arguments\
+      \ to this function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Fold',   # will show up in GRC\n     \
+      \       in_sig=[np.float32],\n            out_sig=[(np.float32, 1024)]\n   \
+      \     )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.period\
+      \ = float(period)\n        self.samp_rate = float(samp_rate)\n        self.integration_time\
+      \ = float(integration_time)\n        \n        self.bins = 1024\n        self.profile\
+      \ = np.zeros(self.bins)\n        self.data = collections.deque([])\n       \
+      \ \n        self.fold_ts = fold.fold_ts\n\n    def work(self, input_items, output_items):\n\
+      \        \"\"\"example: multiply with constant\"\"\"\n        \n        self.data.extend(input_items[0])\n\
+      \        \n        if len(self.data) >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(len(self.data)) / self.samp_rate \n         \
+      \   self.profile = np.nan_to_num(fold.fold_ts(np.array(self.data), times, self.period,\
+      \ self.bins, True))[0]\n            self.data.clear()\n            \n      \
+      \  output_items[0][:] = np.array([self.profile])#* output_items[0].shape[0])\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '0.0333924123 '
+    samp_rate: samp_rate/32
+  states:
+    _io_cache: ('Fold', 'blk', [('period', '0.0335'), ('samp_rate', '31250.0'), ('integration_time',
+      '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)], 'Block to perform folding
+      (without importing and using psrdynspec', ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [856, 316.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_4
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport psrdynspec\nfrom psrdynspec import fold\nimport\
+      \ collections\n\nclass blk(gr.sync_block):  # other base classes are basic_block,\
+      \ decim_block, interp_block\n    \"\"\"Block to perform folding (without importing\
+      \ and using psrdynspec\"\"\"\n\n    def __init__(self, period=.0335, samp_rate=1000000/32,\
+      \ integration_time=10.):  # only default arguments here\n        \"\"\"arguments\
+      \ to this function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Fold',   # will show up in GRC\n     \
+      \       in_sig=[np.float32],\n            out_sig=[(np.float32, 1024)]\n   \
+      \     )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.period\
+      \ = float(period)\n        self.samp_rate = float(samp_rate)\n        self.integration_time\
+      \ = float(integration_time)\n        \n        self.bins = 1024\n        self.profile\
+      \ = np.zeros(self.bins)\n        self.data = collections.deque([])\n       \
+      \ \n        self.fold_ts = fold.fold_ts\n\n    def work(self, input_items, output_items):\n\
+      \        \"\"\"example: multiply with constant\"\"\"\n        \n        self.data.extend(input_items[0])\n\
+      \        \n        if len(self.data) >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(len(self.data)) / self.samp_rate \n         \
+      \   self.profile = np.nan_to_num(fold.fold_ts(np.array(self.data), times, self.period,\
+      \ self.bins, True))[0]\n            self.data.clear()\n            \n      \
+      \  output_items[0][:] = np.array([self.profile])#* output_items[0].shape[0])\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '0.0333924123 '
+    samp_rate: samp_rate/32
+  states:
+    _io_cache: ('Fold', 'blk', [('period', '0.0335'), ('samp_rate', '31250.0'), ('integration_time',
+      '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)], 'Block to perform folding
+      (without importing and using psrdynspec', ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [856, 372.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_2_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport scipy\nfrom scipy import stats\nimport collections\n\
+      \n\nclass filter_outlier_blk(gr.sync_block):  # other base classes are basic_block,\
+      \ decim_block, interp_block\n    \"\"\"Embedded Python Block example - a simple\
+      \ multiply const\"\"\"\n\n    def __init__(self, samp_rate=1000000/32, time=30,\
+      \ deviations=10):  # only default arguments here\n        \"\"\"arguments to\
+      \ this function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.samp_rate\
+      \ = samp_rate\n        self.time = time\n        self.deviations = deviations\n\
+      \        \n        self.buffer = collections.deque([])\n        self.data =\
+      \ np.array([], dtype=np.float32)\n        self.median = 0.\n        self.mad\
+      \ = 0.\n\n    def work(self, input_items, output_items):\n        \"\"\"example:\
+      \ multiply with constant\"\"\"\n        nsamps = self.samp_rate * self.time\n\
+      \        self.buffer.extend(input_items[0])\n        while len(self.buffer)\
+      \ > nsamps:\n            self.buffer.popleft()\n            \n        self.data\
+      \ = input_items[0].copy()\n        \n        self.median = np.median(self.buffer)\n\
+      \        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n        \n\
+      \        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations/5
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/32
+    time: '10'
+  states:
+    _io_cache: ('Filter Outliers', 'filter_outlier_blk', [('samp_rate', '31250.0'),
+      ('time', '30'), ('deviations', '10')], [('0', 'float', 1)], [('0', 'float',
+      1)], 'Embedded Python Block example - a simple multiply const', ['deviations',
+      'samp_rate', 'time'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 92.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_2_0_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport scipy\nfrom scipy import stats\nimport collections\n\
+      \n\nclass filter_outlier_blk(gr.sync_block):  # other base classes are basic_block,\
+      \ decim_block, interp_block\n    \"\"\"Embedded Python Block example - a simple\
+      \ multiply const\"\"\"\n\n    def __init__(self, samp_rate=1000000/32, time=30,\
+      \ deviations=10):  # only default arguments here\n        \"\"\"arguments to\
+      \ this function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.samp_rate\
+      \ = samp_rate\n        self.time = time\n        self.deviations = deviations\n\
+      \        \n        self.buffer = collections.deque([])\n        self.data =\
+      \ np.array([], dtype=np.float32)\n        self.median = 0.\n        self.mad\
+      \ = 0.\n\n    def work(self, input_items, output_items):\n        \"\"\"example:\
+      \ multiply with constant\"\"\"\n        nsamps = self.samp_rate * self.time\n\
+      \        self.buffer.extend(input_items[0])\n        while len(self.buffer)\
+      \ > nsamps:\n            self.buffer.popleft()\n            \n        self.data\
+      \ = input_items[0].copy()\n        \n        self.median = np.median(self.buffer)\n\
+      \        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n        \n\
+      \        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations/2
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/32
+    time: '10'
+  states:
+    _io_cache: ('Filter Outliers', 'filter_outlier_blk', [('samp_rate', '31250.0'),
+      ('time', '30'), ('deviations', '10')], [('0', 'float', 1)], [('0', 'float',
+      1)], 'Embedded Python Block example - a simple multiply const', ['deviations',
+      'samp_rate', 'time'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 148.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_2_0_1
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport scipy\nfrom scipy import stats\nimport collections\n\
+      \n\nclass filter_outlier_blk(gr.sync_block):  # other base classes are basic_block,\
+      \ decim_block, interp_block\n    \"\"\"Embedded Python Block example - a simple\
+      \ multiply const\"\"\"\n\n    def __init__(self, samp_rate=1000000/32, time=30,\
+      \ deviations=10):  # only default arguments here\n        \"\"\"arguments to\
+      \ this function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.samp_rate\
+      \ = samp_rate\n        self.time = time\n        self.deviations = deviations\n\
+      \        \n        self.buffer = collections.deque([])\n        self.data =\
+      \ np.array([], dtype=np.float32)\n        self.median = 0.\n        self.mad\
+      \ = 0.\n\n    def work(self, input_items, output_items):\n        \"\"\"example:\
+      \ multiply with constant\"\"\"\n        nsamps = self.samp_rate * self.time\n\
+      \        self.buffer.extend(input_items[0])\n        while len(self.buffer)\
+      \ > nsamps:\n            self.buffer.popleft()\n            \n        self.data\
+      \ = input_items[0].copy()\n        \n        self.median = np.median(self.buffer)\n\
+      \        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n        \n\
+      \        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/32
+    time: '10'
+  states:
+    _io_cache: ('Filter Outliers', 'filter_outlier_blk', [('samp_rate', '31250.0'),
+      ('time', '30'), ('deviations', '10')], [('0', 'float', 1)], [('0', 'float',
+      1)], 'Embedded Python Block example - a simple multiply const', ['deviations',
+      'samp_rate', 'time'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 204.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_2_0_2
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport scipy\nfrom scipy import stats\nimport collections\n\
+      \n\nclass filter_outlier_blk(gr.sync_block):  # other base classes are basic_block,\
+      \ decim_block, interp_block\n    \"\"\"Embedded Python Block example - a simple\
+      \ multiply const\"\"\"\n\n    def __init__(self, samp_rate=1000000/32, time=30,\
+      \ deviations=10):  # only default arguments here\n        \"\"\"arguments to\
+      \ this function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.samp_rate\
+      \ = samp_rate\n        self.time = time\n        self.deviations = deviations\n\
+      \        \n        self.buffer = collections.deque([])\n        self.data =\
+      \ np.array([], dtype=np.float32)\n        self.median = 0.\n        self.mad\
+      \ = 0.\n\n    def work(self, input_items, output_items):\n        \"\"\"example:\
+      \ multiply with constant\"\"\"\n        nsamps = self.samp_rate * self.time\n\
+      \        self.buffer.extend(input_items[0])\n        while len(self.buffer)\
+      \ > nsamps:\n            self.buffer.popleft()\n            \n        self.data\
+      \ = input_items[0].copy()\n        \n        self.median = np.median(self.buffer)\n\
+      \        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n        \n\
+      \        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations * 2
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/32
+    time: '10'
+  states:
+    _io_cache: ('Filter Outliers', 'filter_outlier_blk', [('samp_rate', '31250.0'),
+      ('time', '30'), ('deviations', '10')], [('0', 'float', 1)], [('0', 'float',
+      1)], 'Embedded Python Block example - a simple multiply const', ['deviations',
+      'samp_rate', 'time'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 260.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_2_0_3
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport scipy\nfrom scipy import stats\nimport collections\n\
+      \n\nclass filter_outlier_blk(gr.sync_block):  # other base classes are basic_block,\
+      \ decim_block, interp_block\n    \"\"\"Embedded Python Block example - a simple\
+      \ multiply const\"\"\"\n\n    def __init__(self, samp_rate=1000000/32, time=30,\
+      \ deviations=10):  # only default arguments here\n        \"\"\"arguments to\
+      \ this function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.samp_rate\
+      \ = samp_rate\n        self.time = time\n        self.deviations = deviations\n\
+      \        \n        self.buffer = collections.deque([])\n        self.data =\
+      \ np.array([], dtype=np.float32)\n        self.median = 0.\n        self.mad\
+      \ = 0.\n\n    def work(self, input_items, output_items):\n        \"\"\"example:\
+      \ multiply with constant\"\"\"\n        nsamps = self.samp_rate * self.time\n\
+      \        self.buffer.extend(input_items[0])\n        while len(self.buffer)\
+      \ > nsamps:\n            self.buffer.popleft()\n            \n        self.data\
+      \ = input_items[0].copy()\n        \n        self.median = np.median(self.buffer)\n\
+      \        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n        \n\
+      \        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations * 5
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/32
+    time: '10'
+  states:
+    _io_cache: ('Filter Outliers', 'filter_outlier_blk', [('samp_rate', '31250.0'),
+      ('time', '30'), ('deviations', '10')], [('0', 'float', 1)], [('0', 'float',
+      1)], 'Embedded Python Block example - a simple multiply const', ['deviations',
+      'samp_rate', 'time'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 316.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_2_0_4
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\nimport scipy\nfrom scipy import stats\nimport collections\n\
+      \n\nclass filter_outlier_blk(gr.sync_block):  # other base classes are basic_block,\
+      \ decim_block, interp_block\n    \"\"\"Embedded Python Block example - a simple\
+      \ multiply const\"\"\"\n\n    def __init__(self, samp_rate=1000000/32, time=30,\
+      \ deviations=10):  # only default arguments here\n        \"\"\"arguments to\
+      \ this function show up as parameters in GRC\"\"\"\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n        self.samp_rate\
+      \ = samp_rate\n        self.time = time\n        self.deviations = deviations\n\
+      \        \n        self.buffer = collections.deque([])\n        self.data =\
+      \ np.array([], dtype=np.float32)\n        self.median = 0.\n        self.mad\
+      \ = 0.\n\n    def work(self, input_items, output_items):\n        \"\"\"example:\
+      \ multiply with constant\"\"\"\n        nsamps = self.samp_rate * self.time\n\
+      \        self.buffer.extend(input_items[0])\n        while len(self.buffer)\
+      \ > nsamps:\n            self.buffer.popleft()\n            \n        self.data\
+      \ = input_items[0].copy()\n        \n        self.median = np.median(self.buffer)\n\
+      \        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n        \n\
+      \        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations * 10
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/32
+    time: '10'
+  states:
+    _io_cache: ('Filter Outliers', 'filter_outlier_blk', [('samp_rate', '31250.0'),
+      ('time', '30'), ('deviations', '10')], [('0', 'float', 1)], [('0', 'float',
+      1)], 'Embedded Python Block example - a simple multiply const', ['deviations',
+      'samp_rate', 'time'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 372.0]
+    rotation: 0
+    state: enabled
+- name: import_0
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import mitarspysigproc.filtertools as ft
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [192, 72.0]
+    rotation: 0
+    state: true
+- name: pfb_decimator_ccf_0
+  id: pfb_decimator_ccf
+  parameters:
+    affinity: ''
+    alias: ''
+    atten: '100'
+    channel: '0'
+    comment: ''
+    decim: '32'
+    fft_filts: 'True'
+    fft_rot: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_delay: '0'
+    taps: ft.kaiser_coeffs(32)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [360, 224.0]
+    rotation: 0
+    state: true
+- name: qtgui_vector_sink_f_0
+  id: qtgui_vector_sink_f
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    average: '1.0'
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"dark blue"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    grid: 'True'
+    gui_hint: ''
+    label1: '.2'
+    label10: ''
+    label2: '.5'
+    label3: '1'
+    label4: '2'
+    label5: '5'
+    label6: '10'
+    label7: ''
+    label8: ''
+    label9: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '"Deviations Test"'
+    nconnections: '6'
+    ref_level: '0'
+    showports: 'False'
+    update_time: '0.10'
+    vlen: '1024'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    x_axis_label: '"x-Axis"'
+    x_start: '0'
+    x_step: '1.0'
+    x_units: '""'
+    y_axis_label: '"y-Axis"'
+    y_units: '""'
+    ymax: '10'
+    ymin: '-140'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1056, 156.0]
+    rotation: 0
+    state: true
+
+connections:
+- [blocks_complex_to_mag_squared_0, '0', epy_block_2_0, '0']
+- [blocks_complex_to_mag_squared_0, '0', epy_block_2_0_0, '0']
+- [blocks_complex_to_mag_squared_0, '0', epy_block_2_0_1, '0']
+- [blocks_complex_to_mag_squared_0, '0', epy_block_2_0_2, '0']
+- [blocks_complex_to_mag_squared_0, '0', epy_block_2_0_3, '0']
+- [blocks_complex_to_mag_squared_0, '0', epy_block_2_0_4, '0']
+- [blocks_throttle_0, '0', pfb_decimator_ccf_0, '0']
+- [epy_block_0, '0', blocks_throttle_0, '0']
+- [epy_block_1, '0', qtgui_vector_sink_f_0, '0']
+- [epy_block_1_0, '0', qtgui_vector_sink_f_0, '1']
+- [epy_block_1_1, '0', qtgui_vector_sink_f_0, '2']
+- [epy_block_1_2, '0', qtgui_vector_sink_f_0, '3']
+- [epy_block_1_3, '0', qtgui_vector_sink_f_0, '4']
+- [epy_block_1_4, '0', qtgui_vector_sink_f_0, '5']
+- [epy_block_2_0, '0', epy_block_1, '0']
+- [epy_block_2_0_0, '0', epy_block_1_0, '0']
+- [epy_block_2_0_1, '0', epy_block_1_1, '0']
+- [epy_block_2_0_2, '0', epy_block_1_2, '0']
+- [epy_block_2_0_3, '0', epy_block_1_3, '0']
+- [epy_block_2_0_4, '0', epy_block_1_4, '0']
+- [pfb_decimator_ccf_0, '0', blocks_complex_to_mag_squared_0, '0']
+
+metadata:
+  file_format: 1
