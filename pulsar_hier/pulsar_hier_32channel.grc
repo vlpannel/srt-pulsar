@@ -1,0 +1,3658 @@
+options:
+  parameters:
+    author: Viveca Pannell
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: hb
+    hier_block_src_path: '.:'
+    id: pulsar_hier_32channel
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: pulsar_hier_32channel
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: bandwidth
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: Bandwidth (MHz)
+    short_id: ''
+    type: eng_float
+    value: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [928, 128.0]
+    rotation: 0
+    state: true
+- name: baseline_time
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: FIR filter time
+    short_id: ''
+    type: eng_float
+    value: '30'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 80.0]
+    rotation: 0
+    state: true
+- name: blocks_add_xx_1
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '32'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1168, 572.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 524.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 572.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_1
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 604.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_10
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 972.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_11
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1004.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_12
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1052.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_13
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1084.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_14
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1132.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_15
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1164.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_16
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1212.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_17
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1244.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_18
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1292.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_19
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1324.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_2
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 652.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_20
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1372.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_21
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1404.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_22
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1452.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_23
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1484.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_24
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1532.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_25
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1564.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_26
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1612.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_27
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1644.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_28
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1692.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_29
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1724.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_3
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 684.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_30
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1772.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_4
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 732.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_5
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 764.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_6
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 812.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_7
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 844.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_8
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 892.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_9
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 924.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 0, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 236.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_0
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 1, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 284.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_1
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 2, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 348.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_10
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32,11, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 844.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_11
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 12, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 908.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_12
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 13, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 956.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_13
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 14, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 1020.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_14
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 15, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 1068.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_14_0
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 17, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 1180.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_14_1
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 18, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 1244.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_14_10
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 27, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 1740.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_14_11
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 28, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 1804.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_14_12
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 29, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 1852.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_14_13
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 30, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 1916.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_14_14
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 31, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 1964.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_14_2
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 19, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 1292.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_14_3
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 20, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 1356.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_14_4
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 21, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 1404.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_14_5
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 22, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 1468.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_14_6
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 23, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 1516.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_14_7
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 24, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 1580.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_14_8
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 25, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 1628.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_14_9
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 26, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 1692.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_15
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 16, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 1132.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_2
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 3, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 396.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_3
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 4, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 460.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_4
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 5, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 508.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_5
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 6, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 572.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_6
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 7, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 620.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_7
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 8, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 684.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_8
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 9, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 732.0]
+    rotation: 0
+    state: true
+- name: blocks_delay_0_9
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(440, 1, 32, 10, 56.77118, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 796.0]
+    rotation: 0
+    state: true
+- name: center_freq
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: Center frequency (MHz)
+    short_id: ''
+    type: eng_float
+    value: '440'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [928, 64.0]
+    rotation: 0
+    state: true
+- name: deviations
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: Deviations
+    short_id: ''
+    type: eng_float
+    value: '10'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 152.0]
+    rotation: 0
+    state: true
+- name: dm
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: Dispersion measure
+    short_id: ''
+    type: eng_float
+    value: '56.77118'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [928, 192.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 228.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 276.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_1
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 340.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_10
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 836.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_11
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 900.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_12
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 948.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_13
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 1012.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_14
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 1060.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_14_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 1172.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_14_1
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 1236.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_14_10
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 1732.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_14_11
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 1796.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_14_12
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 1844.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_14_13
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 1908.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_14_14
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 1956.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_14_2
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 1284.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_14_3
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 1348.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_14_4
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 1396.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_14_5
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 1460.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_14_6
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 1508.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_14_7
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 1572.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_14_8
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 1620.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_14_9
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 1684.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_15
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 1124.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_2
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 388.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_3
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 452.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_4
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 500.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_5
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 564.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_6
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 612.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_7
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 676.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_8
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 724.0]
+    rotation: 0
+    state: true
+- name: epy_block_0_0_9
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 788.0]
+    rotation: 0
+    state: true
+- name: epy_block_1_0
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=0.0333924123 , samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        Always outputs the last calculated phase vs. power profile.\n\
+      \n        After calculating, immediately begins collecting data for a new calculation.\n\
+      \        \n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enough\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: integration_time
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: period
+    samp_rate: samp_rate / 32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0333924123'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1328, 436.0]
+    rotation: 0
+    state: enabled
+- name: import_0
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import mitarspysigproc.filtertools as filtertools
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [272, 16.0]
+    rotation: 0
+    state: true
+- name: inco_dedisp
+  id: epy_module
+  parameters:
+    alias: ''
+    comment: ''
+    source_code: "# this module will be imported in the into your flowgraph\n\ndef\
+      \ dedisperse(center_freq, bandwidth, num_channels, channel, dm, samp_rate):\n\
+      \    '''\n    Delay channel be specified amount given frequencies and dispersion\
+      \ measure. Assumes standard channel mapping and even number of channels. Aligns\
+      \ all channels with lowest channel (for delay purposes).\n\n    Parameters\n\
+      \    ----------\n\n    center_freq : float\n        Center frequency in MHz\n\
+      \n    bandwidth : float\n        Total bandwidth of signal reception in MHz\n\
+      \n    num_channels : int\n        Number of channels into which bandwidth is\
+      \ divided (equally)\n\n    channel : int\n        Which channel is being dedispersed\
+      \ (0 is at center frequency)\n\n    dm : float\n        Dispersion measure of\
+      \ pulsar\n\n    samp_rate : float\n        Sample rate of incoming samples (samples\
+      \ per second)\n    '''\n\n    kdm = 4.149 * 1000    # dispersion measure constant\
+      \ (converted from GHz^2 to MHz^2 and ms to s)\n\n    # find frequencies of lowest\
+      \ channel and current channel\n    channel_width = bandwidth / num_channels\n\
+      \    v2 = center_freq - (bandwidth/2)     # lowest frequency\n    if channel\
+      \ <= num_channels/2:       # current channel\n        v1 = center_freq + (channel)*channel_width\n\
+      \    else:\n        v1 = center_freq - (num_channels - channel)*channel_width\n\
+      \n    # find amount of dispersion\n    time_delta = kdm * dm * ((1/(v2**2))\
+      \ - (1/(v1**2)))\n    return int(time_delta * samp_rate)\n    \n"
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [840, 64.0]
+    rotation: 0
+    state: true
+- name: integration_time
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: Integration time
+    short_id: ''
+    type: eng_float
+    value: '120'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1328, 360.0]
+    rotation: 0
+    state: true
+- name: note_0
+  id: note
+  parameters:
+    alias: ''
+    comment: ''
+    note: not all delays updated
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [896, 544.0]
+    rotation: 0
+    state: true
+- name: pad_sink_0
+  id: pad_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    label: out
+    num_streams: '1'
+    optional: 'False'
+    type: float
+    vlen: '1024'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1520, 256.0]
+    rotation: 0
+    state: true
+- name: pad_source_0
+  id: pad_source
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    label: in
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_streams: '1'
+    optional: 'False'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 268.0]
+    rotation: 0
+    state: true
+- name: period
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: Period
+    short_id: ''
+    type: eng_float
+    value: '.03339'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1328, 288.0]
+    rotation: 0
+    state: true
+- name: pfb_channelizer_ccf_0
+  id: pfb_channelizer_ccf
+  parameters:
+    affinity: ''
+    alias: ''
+    atten: '100'
+    bus_conns: '[[0,],]'
+    ch_map: '[]'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nchans: '32'
+    osr: '1.0'
+    samp_delay: '0'
+    taps: filtertools.kaiser_coeffs(32)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [176, 620.0]
+    rotation: 0
+    state: true
+- name: samp_rate
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: ''
+    short_id: ''
+    type: eng_float
+    value: '1000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 16.0]
+    rotation: 0
+    state: true
+
+connections:
+- [blocks_add_xx_1, '0', epy_block_1_0, '0']
+- [blocks_complex_to_mag_squared_0_0, '0', epy_block_0_0, '0']
+- [blocks_complex_to_mag_squared_0_0_0, '0', epy_block_0_0_0, '0']
+- [blocks_complex_to_mag_squared_0_0_1, '0', epy_block_0_0_1, '0']
+- [blocks_complex_to_mag_squared_0_0_10, '0', epy_block_0_0_10, '0']
+- [blocks_complex_to_mag_squared_0_0_11, '0', epy_block_0_0_11, '0']
+- [blocks_complex_to_mag_squared_0_0_12, '0', epy_block_0_0_12, '0']
+- [blocks_complex_to_mag_squared_0_0_13, '0', epy_block_0_0_13, '0']
+- [blocks_complex_to_mag_squared_0_0_14, '0', epy_block_0_0_14, '0']
+- [blocks_complex_to_mag_squared_0_0_15, '0', epy_block_0_0_15, '0']
+- [blocks_complex_to_mag_squared_0_0_16, '0', epy_block_0_0_14_0, '0']
+- [blocks_complex_to_mag_squared_0_0_17, '0', epy_block_0_0_14_1, '0']
+- [blocks_complex_to_mag_squared_0_0_18, '0', epy_block_0_0_14_2, '0']
+- [blocks_complex_to_mag_squared_0_0_19, '0', epy_block_0_0_14_3, '0']
+- [blocks_complex_to_mag_squared_0_0_2, '0', epy_block_0_0_2, '0']
+- [blocks_complex_to_mag_squared_0_0_20, '0', epy_block_0_0_14_4, '0']
+- [blocks_complex_to_mag_squared_0_0_21, '0', epy_block_0_0_14_5, '0']
+- [blocks_complex_to_mag_squared_0_0_22, '0', epy_block_0_0_14_6, '0']
+- [blocks_complex_to_mag_squared_0_0_23, '0', epy_block_0_0_14_7, '0']
+- [blocks_complex_to_mag_squared_0_0_24, '0', epy_block_0_0_14_8, '0']
+- [blocks_complex_to_mag_squared_0_0_25, '0', epy_block_0_0_14_9, '0']
+- [blocks_complex_to_mag_squared_0_0_26, '0', epy_block_0_0_14_10, '0']
+- [blocks_complex_to_mag_squared_0_0_27, '0', epy_block_0_0_14_11, '0']
+- [blocks_complex_to_mag_squared_0_0_28, '0', epy_block_0_0_14_12, '0']
+- [blocks_complex_to_mag_squared_0_0_29, '0', epy_block_0_0_14_13, '0']
+- [blocks_complex_to_mag_squared_0_0_3, '0', epy_block_0_0_3, '0']
+- [blocks_complex_to_mag_squared_0_0_30, '0', epy_block_0_0_14_14, '0']
+- [blocks_complex_to_mag_squared_0_0_4, '0', epy_block_0_0_4, '0']
+- [blocks_complex_to_mag_squared_0_0_5, '0', epy_block_0_0_5, '0']
+- [blocks_complex_to_mag_squared_0_0_6, '0', epy_block_0_0_6, '0']
+- [blocks_complex_to_mag_squared_0_0_7, '0', epy_block_0_0_7, '0']
+- [blocks_complex_to_mag_squared_0_0_8, '0', epy_block_0_0_8, '0']
+- [blocks_complex_to_mag_squared_0_0_9, '0', epy_block_0_0_9, '0']
+- [blocks_delay_0, '0', blocks_add_xx_1, '0']
+- [blocks_delay_0_0, '0', blocks_add_xx_1, '1']
+- [blocks_delay_0_1, '0', blocks_add_xx_1, '2']
+- [blocks_delay_0_10, '0', blocks_add_xx_1, '11']
+- [blocks_delay_0_11, '0', blocks_add_xx_1, '12']
+- [blocks_delay_0_12, '0', blocks_add_xx_1, '13']
+- [blocks_delay_0_13, '0', blocks_add_xx_1, '14']
+- [blocks_delay_0_14, '0', blocks_add_xx_1, '15']
+- [blocks_delay_0_14_0, '0', blocks_add_xx_1, '17']
+- [blocks_delay_0_14_1, '0', blocks_add_xx_1, '18']
+- [blocks_delay_0_14_10, '0', blocks_add_xx_1, '27']
+- [blocks_delay_0_14_11, '0', blocks_add_xx_1, '28']
+- [blocks_delay_0_14_12, '0', blocks_add_xx_1, '29']
+- [blocks_delay_0_14_13, '0', blocks_add_xx_1, '30']
+- [blocks_delay_0_14_14, '0', blocks_add_xx_1, '31']
+- [blocks_delay_0_14_2, '0', blocks_add_xx_1, '19']
+- [blocks_delay_0_14_3, '0', blocks_add_xx_1, '20']
+- [blocks_delay_0_14_4, '0', blocks_add_xx_1, '21']
+- [blocks_delay_0_14_5, '0', blocks_add_xx_1, '22']
+- [blocks_delay_0_14_6, '0', blocks_add_xx_1, '23']
+- [blocks_delay_0_14_7, '0', blocks_add_xx_1, '24']
+- [blocks_delay_0_14_8, '0', blocks_add_xx_1, '25']
+- [blocks_delay_0_14_9, '0', blocks_add_xx_1, '26']
+- [blocks_delay_0_15, '0', blocks_add_xx_1, '16']
+- [blocks_delay_0_2, '0', blocks_add_xx_1, '3']
+- [blocks_delay_0_3, '0', blocks_add_xx_1, '4']
+- [blocks_delay_0_4, '0', blocks_add_xx_1, '5']
+- [blocks_delay_0_5, '0', blocks_add_xx_1, '6']
+- [blocks_delay_0_6, '0', blocks_add_xx_1, '7']
+- [blocks_delay_0_7, '0', blocks_add_xx_1, '8']
+- [blocks_delay_0_8, '0', blocks_add_xx_1, '9']
+- [blocks_delay_0_9, '0', blocks_add_xx_1, '10']
+- [epy_block_0_0, '0', blocks_delay_0, '0']
+- [epy_block_0_0_0, '0', blocks_delay_0_0, '0']
+- [epy_block_0_0_1, '0', blocks_delay_0_1, '0']
+- [epy_block_0_0_10, '0', blocks_delay_0_10, '0']
+- [epy_block_0_0_11, '0', blocks_delay_0_11, '0']
+- [epy_block_0_0_12, '0', blocks_delay_0_12, '0']
+- [epy_block_0_0_13, '0', blocks_delay_0_13, '0']
+- [epy_block_0_0_14, '0', blocks_delay_0_14, '0']
+- [epy_block_0_0_14_0, '0', blocks_delay_0_14_0, '0']
+- [epy_block_0_0_14_1, '0', blocks_delay_0_14_1, '0']
+- [epy_block_0_0_14_10, '0', blocks_delay_0_14_10, '0']
+- [epy_block_0_0_14_11, '0', blocks_delay_0_14_11, '0']
+- [epy_block_0_0_14_12, '0', blocks_delay_0_14_12, '0']
+- [epy_block_0_0_14_13, '0', blocks_delay_0_14_13, '0']
+- [epy_block_0_0_14_14, '0', blocks_delay_0_14_14, '0']
+- [epy_block_0_0_14_2, '0', blocks_delay_0_14_2, '0']
+- [epy_block_0_0_14_3, '0', blocks_delay_0_14_3, '0']
+- [epy_block_0_0_14_4, '0', blocks_delay_0_14_4, '0']
+- [epy_block_0_0_14_5, '0', blocks_delay_0_14_5, '0']
+- [epy_block_0_0_14_6, '0', blocks_delay_0_14_6, '0']
+- [epy_block_0_0_14_7, '0', blocks_delay_0_14_7, '0']
+- [epy_block_0_0_14_8, '0', blocks_delay_0_14_8, '0']
+- [epy_block_0_0_14_9, '0', blocks_delay_0_14_9, '0']
+- [epy_block_0_0_15, '0', blocks_delay_0_15, '0']
+- [epy_block_0_0_2, '0', blocks_delay_0_2, '0']
+- [epy_block_0_0_3, '0', blocks_delay_0_3, '0']
+- [epy_block_0_0_4, '0', blocks_delay_0_4, '0']
+- [epy_block_0_0_5, '0', blocks_delay_0_5, '0']
+- [epy_block_0_0_6, '0', blocks_delay_0_6, '0']
+- [epy_block_0_0_7, '0', blocks_delay_0_7, '0']
+- [epy_block_0_0_8, '0', blocks_delay_0_8, '0']
+- [epy_block_0_0_9, '0', blocks_delay_0_9, '0']
+- [epy_block_1_0, '0', pad_sink_0, '0']
+- [pad_source_0, '0', pfb_channelizer_ccf_0, '0']
+- [pfb_channelizer_ccf_0, '0', blocks_complex_to_mag_squared_0_0, '0']
+- [pfb_channelizer_ccf_0, '1', blocks_complex_to_mag_squared_0_0_0, '0']
+- [pfb_channelizer_ccf_0, '10', blocks_complex_to_mag_squared_0_0_9, '0']
+- [pfb_channelizer_ccf_0, '11', blocks_complex_to_mag_squared_0_0_10, '0']
+- [pfb_channelizer_ccf_0, '12', blocks_complex_to_mag_squared_0_0_11, '0']
+- [pfb_channelizer_ccf_0, '13', blocks_complex_to_mag_squared_0_0_12, '0']
+- [pfb_channelizer_ccf_0, '14', blocks_complex_to_mag_squared_0_0_13, '0']
+- [pfb_channelizer_ccf_0, '15', blocks_complex_to_mag_squared_0_0_14, '0']
+- [pfb_channelizer_ccf_0, '16', blocks_complex_to_mag_squared_0_0_15, '0']
+- [pfb_channelizer_ccf_0, '17', blocks_complex_to_mag_squared_0_0_16, '0']
+- [pfb_channelizer_ccf_0, '18', blocks_complex_to_mag_squared_0_0_17, '0']
+- [pfb_channelizer_ccf_0, '19', blocks_complex_to_mag_squared_0_0_18, '0']
+- [pfb_channelizer_ccf_0, '2', blocks_complex_to_mag_squared_0_0_1, '0']
+- [pfb_channelizer_ccf_0, '20', blocks_complex_to_mag_squared_0_0_19, '0']
+- [pfb_channelizer_ccf_0, '21', blocks_complex_to_mag_squared_0_0_20, '0']
+- [pfb_channelizer_ccf_0, '22', blocks_complex_to_mag_squared_0_0_21, '0']
+- [pfb_channelizer_ccf_0, '23', blocks_complex_to_mag_squared_0_0_22, '0']
+- [pfb_channelizer_ccf_0, '24', blocks_complex_to_mag_squared_0_0_23, '0']
+- [pfb_channelizer_ccf_0, '25', blocks_complex_to_mag_squared_0_0_24, '0']
+- [pfb_channelizer_ccf_0, '26', blocks_complex_to_mag_squared_0_0_25, '0']
+- [pfb_channelizer_ccf_0, '27', blocks_complex_to_mag_squared_0_0_26, '0']
+- [pfb_channelizer_ccf_0, '28', blocks_complex_to_mag_squared_0_0_27, '0']
+- [pfb_channelizer_ccf_0, '29', blocks_complex_to_mag_squared_0_0_28, '0']
+- [pfb_channelizer_ccf_0, '3', blocks_complex_to_mag_squared_0_0_2, '0']
+- [pfb_channelizer_ccf_0, '30', blocks_complex_to_mag_squared_0_0_29, '0']
+- [pfb_channelizer_ccf_0, '31', blocks_complex_to_mag_squared_0_0_30, '0']
+- [pfb_channelizer_ccf_0, '4', blocks_complex_to_mag_squared_0_0_3, '0']
+- [pfb_channelizer_ccf_0, '5', blocks_complex_to_mag_squared_0_0_4, '0']
+- [pfb_channelizer_ccf_0, '6', blocks_complex_to_mag_squared_0_0_5, '0']
+- [pfb_channelizer_ccf_0, '7', blocks_complex_to_mag_squared_0_0_6, '0']
+- [pfb_channelizer_ccf_0, '8', blocks_complex_to_mag_squared_0_0_7, '0']
+- [pfb_channelizer_ccf_0, '9', blocks_complex_to_mag_squared_0_0_8, '0']
+
+metadata:
+  file_format: 1

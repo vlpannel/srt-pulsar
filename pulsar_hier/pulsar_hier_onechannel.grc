@@ -1,0 +1,365 @@
+options:
+  parameters:
+    author: Viveca Pannell
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: hb
+    hier_block_src_path: '.:'
+    id: pulsar_hier_onechannel
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: pulsar_hier_onechannel
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: baseline_time
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: FIR filter time
+    short_id: ''
+    type: eng_float
+    value: '30'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [568, 112.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [400, 268.0]
+    rotation: 0
+    state: true
+- name: channel
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: Channel
+    short_id: ''
+    type: intx
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [200, 112.0]
+    rotation: 0
+    state: true
+- name: deviations
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: Deviations
+    short_id: ''
+    type: eng_float
+    value: '10'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [568, 184.0]
+    rotation: 0
+    state: true
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\nimport scipy\nfrom scipy import stats\n\nclass filter_outlier_block(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"\n    Filter Outliers Block - passes data points through after replacing outliers\
+      \ with median value.\n\n    Parameters\n    ----------\n\n    samp_rate : float,\
+      \ int\n        Sample rate of incoming samples. Samples per second.\n\n    time\
+      \ : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations\
+      \ : int, float\n        Number of deviations of variation from median that determines\
+      \ outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate\
+      \ median and median absolute deviation. Outliers are points a number of deviations\
+      \ away from median (determined by parameter `deviation`). Size of buffer is\
+      \ numsamps where numsamps is the number of samples \n    \"\"\"\n\n    def __init__(self,\
+      \ samp_rate=(1000000/32), time=30, deviations=10):\n        gr.sync_block.__init__(\n\
+      \            self,\n            name='Filter Outliers',   # will show up in\
+      \ GRC\n            in_sig=[np.float32],\n            out_sig=[np.float32]\n\
+      \        )\n        self.samp_rate = samp_rate\n        self.time = time\n \
+      \       self.deviations = deviations\n\n        self.buffer = np.array([], dtype=np.float32)\
+      \   # buffer to contain data\n        self.data = np.array([], dtype=np.float32)\
+      \  # data to pass out\n        self.median = 0.    # median of data in buffer\n\
+      \        self.mad = 0.   # median absolute deviation of data in buffer\n   \
+      \     \n\n    def work(self, input_items, output_items):\n        numsamps =\
+      \ self.samp_rate * self.time   # number of samples to store in buffer\n    \
+      \    if self.buffer.size < numsamps:\n            self.buffer = np.append(self.buffer,\
+      \ input_items[0])\n        else:\n            self.buffer = np.append(np.delete(self.buffer,\
+      \ range(input_items[0].size)), input_items[0][:])\n        if self.buffer.size\
+      \ > numsamps:\n            self.buffer = np.delete(self.buffer, range(self.buffer.size\
+      \ - numsamps))\n\n        self.data = input_items[0].copy()\n\n        self.median\
+      \ = np.median(self.buffer)\n        self.mad = scipy.stats.median_abs_deviation(self.buffer)\n\
+      \n        self.data[np.where(np.absolute(self.data - self.median) > (self.deviations\
+      \ * self.mad))] = self.median\n        \n        output_items[0][:] = self.data[:]\n\
+      \        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '31250.0'
+    time: baseline_time
+  states:
+    _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
+      (''time'', ''30''), (''deviations'', ''10'')], [(''0'', ''float'', 1)], [(''0'',
+      ''float'', 1)], ''\n    Filter Outliers Block - passes data points through after
+      replacing outliers with median value.\n\n    Parameters\n    ----------\n\n    samp_rate
+      : float, int\n        Sample rate of incoming samples. Samples per second.\n\n    time
+      : float, int\n        Amount of time to consider data. Seconds.\n\n    deviations
+      : int, float\n        Number of deviations of variation from median that determines
+      outlier.\n\n\n    Notes\n    -----\n\n    Uses buffer of datapoints to calculate
+      median and median absolute deviation. Outliers are points a number of deviations
+      away from median (determined by parameter `deviation`). Size of buffer is numsamps
+      where numsamps is the number of samples \n    '', [''deviations'', ''samp_rate'',
+      ''time''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [568, 260.0]
+    rotation: 0
+    state: true
+- name: epy_block_1
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=0.0333924123 , samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        Always outputs the last calculated phase vs. power profile.\n\
+      \n        After calculating, immediately begins collecting data for a new calculation.\n\
+      \        \n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enough\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: integration_time
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: period
+    samp_rate: samp_rate / num_channels
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0333924123'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [744, 260.0]
+    rotation: 0
+    state: enabled
+- name: import_0
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import mitarspysigproc.filtertools as filtertools
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [272, 16.0]
+    rotation: 0
+    state: true
+- name: integration_time
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: Integration time
+    short_id: ''
+    type: eng_float
+    value: '120'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [744, 184.0]
+    rotation: 0
+    state: true
+- name: num_channels
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: Number of channels
+    short_id: ''
+    type: intx
+    value: '32'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [200, 184.0]
+    rotation: 0
+    state: true
+- name: pad_sink_0
+  id: pad_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    label: out
+    num_streams: '1'
+    optional: 'False'
+    type: float
+    vlen: '1024'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [968, 264.0]
+    rotation: 0
+    state: true
+- name: pad_source_0
+  id: pad_source
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    label: in
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_streams: '1'
+    optional: 'False'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [48, 268.0]
+    rotation: 0
+    state: true
+- name: period
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: Period
+    short_id: ''
+    type: eng_float
+    value: '.03339'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [744, 112.0]
+    rotation: 0
+    state: true
+- name: pfb_decimator_ccf_0
+  id: pfb_decimator_ccf
+  parameters:
+    affinity: ''
+    alias: ''
+    atten: '100'
+    channel: channel
+    comment: ''
+    decim: num_channels
+    fft_filts: 'True'
+    fft_rot: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_delay: '0'
+    taps: filtertools.kaiser_coeffs(num_channels)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [200, 256.0]
+    rotation: 0
+    state: true
+- name: samp_rate
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: ''
+    short_id: ''
+    type: eng_float
+    value: '1000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 16.0]
+    rotation: 0
+    state: true
+
+connections:
+- [blocks_complex_to_mag_squared_0, '0', epy_block_0, '0']
+- [epy_block_0, '0', epy_block_1, '0']
+- [epy_block_1, '0', pad_sink_0, '0']
+- [pad_source_0, '0', pfb_decimator_ccf_0, '0']
+- [pfb_decimator_ccf_0, '0', blocks_complex_to_mag_squared_0, '0']
+
+metadata:
+  file_format: 1
