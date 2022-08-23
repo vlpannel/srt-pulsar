@@ -1,0 +1,371 @@
+options:
+  parameters:
+    author: vivecapannell
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: test_foldingblock
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Not titled yet
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '1000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: source_file
+  id: variable
+  parameters:
+    comment: ''
+    value: '''/Users/vivecapannell/Desktop/pulsar_binary/misa-l2_pfb/ch21'''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [336, 40.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [632, 788.0]
+    rotation: 0
+    state: enabled
+- name: blocks_null_sink_0
+  id: blocks_null_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_sink: '[[0,],]'
+    comment: ''
+    num_inputs: '31'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1088, 116.0]
+    rotation: 0
+    state: true
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate **2
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [168, 180.0]
+    rotation: 0
+    state: true
+- name: blocks_vector_source_x_0
+  id: blocks_vector_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    repeat: 'True'
+    tags: '[]'
+    type: complex
+    vector: np.load('/Users/vivecapannell/Desktop/pulsar_binary/misa-l2.npy')
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 172.0]
+    rotation: 0
+    state: true
+- name: epy_block_1
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\n\n\nclass fold_blk(gr.sync_block):\n\
+      \    \"\"\"Block to perform folding (without importing but still [ab]using psrdynspec)\"\
+      \"\"\n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        def fold_ts(timeseries,\
+      \ times, pfold, Nbins, return_counts=False):  # hard encoded b/c this machine\
+      \ can't import psrdynspec\n            phi = times/pfold % 1.0\n           \
+      \ phibin_edges = np.linspace(0.,1.,Nbins+1) # Edges of phase bins\n        \
+      \    phibin_centers = 0.5*(phibin_edges[1:]+phibin_edges[:-1]) # Centers of\
+      \ phase bins\n            indbin_edges = np.digitize(phi,phibin_edges,right=True)\
+      \ # Place phase values in phase bins. Returns indices of placement in phase\
+      \ bins array.\n            # Given edges x < y, a phase bin is defined to be\
+      \ the range (x,y].\n\n            # Arrays to store profile and counts per phase\
+      \ bin.\n            profile = np.zeros(Nbins)\n            counts = np.zeros(Nbins)\n\
+      \            for n in range(1,Nbins+1):\n                profile[n-1] = np.sum(timeseries[np.where(indbin_edges==n)])\
+      \ # Sum up time series flux values that fall in one phase bin.\n           \
+      \     counts[n-1] = np.size(np.where(indbin_edges==n)) # No. of counts in bin.\n\
+      \            profile /= counts # Divide by the number of counts to generate\
+      \ an average profile.\n            if return_counts:\n                return\
+      \ profile, phibin_centers, counts\n            else:\n                return\
+      \ profile, phibin_centers\n        self.fold_ts = fold_ts\n\n    def work(self,\
+      \ input_items, output_items):\n\n        self.data = np.append(self.data, input_items[0])\n\
+      \        '''\n        if self.data.size % 100 == 0:\n            print(f'{self.data.size}\
+      \ samples collected')\n        '''\n\n        if self.data.size >= self.samp_rate\
+      \ * self.integration_time:\n            times = np.arange(self.data.size) /\
+      \ self.samp_rate\n            self.profile = np.nan_to_num(self.fold_ts(self.data,\
+      \ times, self.period, self.bins, True)[0])\n            self.data = np.array([],\
+      \ dtype=np.float32)\n        \n        output_items[0][:] = np.array([self.profile]\
+      \ * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: samp_rate/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [760, 780.0]
+    rotation: 0
+    state: enabled
+- name: import_0
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import numpy as np
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 72.0]
+    rotation: 0
+    state: true
+- name: pfb_channelizer_ccf_0
+  id: pfb_channelizer_ccf
+  parameters:
+    affinity: ''
+    alias: ''
+    atten: '100'
+    bus_conns: '[[0,],]'
+    ch_map: '[]'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nchans: '32'
+    osr: '1.0'
+    samp_delay: '0'
+    taps: np.load('/Users/vivecapannell/Desktop/pulsar_binary/kaiser_coeffs.npy')
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [424, 116.0]
+    rotation: 0
+    state: true
+- name: qtgui_sink_x_0
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: samp_rate
+    comment: ''
+    fc: '0'
+    fftsize: '1024'
+    gui_hint: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'False'
+    showrf: 'False'
+    type: complex
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [304, 112.0]
+    rotation: 0
+    state: true
+- name: qtgui_vector_sink_f_0
+  id: qtgui_vector_sink_f
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    average: '1.0'
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    grid: 'True'
+    gui_hint: ''
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    nconnections: '1'
+    ref_level: '0'
+    showports: 'False'
+    update_time: '0.10'
+    vlen: '1024'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    x_axis_label: '"x-Axis"'
+    x_start: '0'
+    x_step: '1.0'
+    x_units: '""'
+    y_axis_label: '"y-Axis"'
+    y_units: '""'
+    ymax: '10'
+    ymin: '-140'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [896, 776.0]
+    rotation: 0
+    state: enabled
+
+connections:
+- [blocks_complex_to_mag_squared_0, '0', epy_block_1, '0']
+- [blocks_throttle_0, '0', pfb_channelizer_ccf_0, '0']
+- [blocks_throttle_0, '0', qtgui_sink_x_0, '0']
+- [blocks_vector_source_x_0, '0', blocks_throttle_0, '0']
+- [epy_block_1, '0', qtgui_vector_sink_f_0, '0']
+- [pfb_channelizer_ccf_0, '0', blocks_null_sink_0, '0']
+- [pfb_channelizer_ccf_0, '1', blocks_null_sink_0, '1']
+- [pfb_channelizer_ccf_0, '10', blocks_null_sink_0, '10']
+- [pfb_channelizer_ccf_0, '11', blocks_null_sink_0, '11']
+- [pfb_channelizer_ccf_0, '12', blocks_null_sink_0, '12']
+- [pfb_channelizer_ccf_0, '13', blocks_null_sink_0, '13']
+- [pfb_channelizer_ccf_0, '14', blocks_null_sink_0, '14']
+- [pfb_channelizer_ccf_0, '15', blocks_null_sink_0, '15']
+- [pfb_channelizer_ccf_0, '16', blocks_null_sink_0, '16']
+- [pfb_channelizer_ccf_0, '17', blocks_null_sink_0, '17']
+- [pfb_channelizer_ccf_0, '18', blocks_null_sink_0, '18']
+- [pfb_channelizer_ccf_0, '19', blocks_null_sink_0, '19']
+- [pfb_channelizer_ccf_0, '2', blocks_null_sink_0, '2']
+- [pfb_channelizer_ccf_0, '20', blocks_null_sink_0, '20']
+- [pfb_channelizer_ccf_0, '21', blocks_complex_to_mag_squared_0, '0']
+- [pfb_channelizer_ccf_0, '22', blocks_null_sink_0, '22']
+- [pfb_channelizer_ccf_0, '23', blocks_null_sink_0, '23']
+- [pfb_channelizer_ccf_0, '24', blocks_null_sink_0, '24']
+- [pfb_channelizer_ccf_0, '25', blocks_null_sink_0, '25']
+- [pfb_channelizer_ccf_0, '26', blocks_null_sink_0, '26']
+- [pfb_channelizer_ccf_0, '27', blocks_null_sink_0, '27']
+- [pfb_channelizer_ccf_0, '28', blocks_null_sink_0, '28']
+- [pfb_channelizer_ccf_0, '29', blocks_null_sink_0, '29']
+- [pfb_channelizer_ccf_0, '3', blocks_null_sink_0, '3']
+- [pfb_channelizer_ccf_0, '30', blocks_null_sink_0, '30']
+- [pfb_channelizer_ccf_0, '31', blocks_null_sink_0, '21']
+- [pfb_channelizer_ccf_0, '4', blocks_null_sink_0, '4']
+- [pfb_channelizer_ccf_0, '5', blocks_null_sink_0, '5']
+- [pfb_channelizer_ccf_0, '6', blocks_null_sink_0, '6']
+- [pfb_channelizer_ccf_0, '7', blocks_null_sink_0, '7']
+- [pfb_channelizer_ccf_0, '8', blocks_null_sink_0, '8']
+- [pfb_channelizer_ccf_0, '9', blocks_null_sink_0, '9']
+
+metadata:
+  file_format: 1

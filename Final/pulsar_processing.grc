@@ -42,7 +42,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 12]
+    coordinate: [128, 8.0]
     rotation: 0
     state: enabled
 - name: blocks_complex_to_mag_squared_0
@@ -58,7 +58,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1072, 576.0]
+    coordinate: [1048, 604.0]
     rotation: 0
     state: true
 - name: blocks_msgpair_to_var_0
@@ -97,7 +97,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [800, 516.0]
+    coordinate: [808, 508.0]
     rotation: 0
     state: true
 - name: blocks_null_sink_1
@@ -115,550 +115,6 @@ blocks:
     bus_source: false
     bus_structure: null
     coordinate: [272, 508.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 108.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_10
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 908.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_11
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 868.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_12
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 828.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_13
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 788.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_14
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 748.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_15
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 708.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_16
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 668.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_17
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 628.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_18
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 588.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_19
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 548.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_2
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: 'Give folding block
-
-      chunks of data to
-
-      fold over'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 1228.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_20
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 508.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_21
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 468.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_22
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 436.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_23
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 396.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_24
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 364.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_25
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 324.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_26
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 292.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_27
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 252.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_28
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 220.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_29
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 180.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_3
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 1188.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_30
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 148.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_4
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 1148.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_5
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 1108.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_6
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 1068.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_7
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 1028.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_8
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 988.0]
-    rotation: 0
-    state: true
-- name: blocks_stream_to_vector_0_9
-  id: blocks_stream_to_vector
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_items: num_samples
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1424, 948.0]
     rotation: 0
     state: true
 - name: blocks_streams_to_vector_0
@@ -713,7 +169,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1208, 188.0]
+    coordinate: [1184, 36.0]
     rotation: 0
     state: true
 - name: channels
@@ -733,207 +189,1395 @@ blocks:
     coordinate: [528, 376.0]
     rotation: 0
     state: true
-- name: epy_block_0
+- name: epy_block_1
   id: epy_block
   parameters:
     _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
-      from psrdynspec import fold\n\nclass fold_block(gr.sync_block):\n    \"\"\"\n\
-      \    Fold a timeseries of power over a period.\n\n    Parameters\n    ----------\n\
-      \n    num_inputs : int\n        Number of channels of data to fold.\n    \n\
-      \    samp_rate : float\n        Original sample rate of data.\n        \n  \
-      \  num_channels : int\n        Number of channels that data is split into.\n\
-      \        \n    nsamps : int\n        Number of samples (length of vector) passed\
-      \ in.\n        \n    period : float\n        Period to fold over.\n        \n\
-      \    nbins : int\n        Number of bins to use when folding.\n        \n  \
-      \  save_external : bool\n        Flag stating whether or not to save overall\
-      \ profile. If true, overall profile (sum of all profiles generated) will be\
-      \ saved to savefile.\n        \n    savefile : list of str      # probably want\
-      \ to fix this to include filepath\n        Files to save all profiles to (if\
-      \ save_external is True). Must be of length greater than or equal to num_inputs.\n\
-      \n    \n    Outputs the profile resultant of the latest vector passed in.\n\
-      \    \"\"\"\n\n    def __init__(self, num_inputs=30, samp_rate=1000000., num_channels=32,\
-      \ nsamps=2048, period=.0335, nbins=1024, save_external=True, savefile=['']*1000):\
-      \  # only default arguments here\n        gr.sync_block.__init__(\n        \
-      \    self,\n            name='Folding',\n            in_sig=[(np.float32, nsamps)]\
-      \ * num_inputs,\n            out_sig=[(np.float32, nbins)] * num_inputs\n  \
-      \      )\n        self.samp_rate = samp_rate  # original sample rate\n     \
-      \   self.num_channels = num_channels    # number of channels in PFB\n      \
-      \  self.nsamps = nsamps    # length of vector passed in (number of samples)\n\
-      \        self.period = period\n        self.nbins = nbins\n        self.save_external\
-      \ = save_external  # flag for whether or not to save total profile in its own\
-      \ binary file\n        self.savefile = savefile\n        \n        self.ts =\
-      \ np.zeros(nsamps)\n        self.start_time = 0.\n        self.times = np.arange(nsamps)\
-      \ * (1 / (self.samp_rate/self.num_channels))\n        self.counting = True\n\
-      \n        self.profile = np.zeros(nbins)\n        self.phibin_centers = np.zeros(nbins\
-      \ + 1)\n        self.counts = np.zeros(nbins)\n        self.folded = None\n\n\
-      \    def work(self, input_items, output_items):\n        \"\"\"example: multiply\
-      \ with constant\"\"\"\n        for i in range(num_inputs):\n            # re-set\
-      \ time series and times\n            self.ts = np.array(input_items[i])\n  \
-      \          self.times += self.start_time\n            self.start_time += (self.times[1]\
-      \ + self.times[-1])\n\n            # fold and get results of folding\n     \
-      \       self.folded = fold.fold_ts(self.ts, self.times, self.period, self.nbins,\
-      \ return_counts=self.counting)\n            self.profile += self.folded[0]\n\
-      \            self.phibin_centers = self.folded[1]\n            if self.counting:\n\
-      \                self.counts += self.folded[2]\n\n            # save overall\
-      \ profile by overwriting save file\n            if self.save_external:\n   \
-      \             np.save(self.profile[i])   # read this by calling np.load(filename)\n\
-      \n            # output latest folding profile\n            output_items[i][:]\
-      \ = self.folded[0]\n        return len(output_items[0])\n"
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        Always outputs the last calculated phase vs. power profile.\n\
+      \n        After calculating, immediately begins collecting data for a new calculation.\n\
+      \        \n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enough\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
     affinity: ''
     alias: ''
-    comment: 'Fold
-
-
-      Takes in a vector
-
-      of samples and
-
-      uses that as a time
-
-      series, outputs
-
-      resulting profile
-
-      of folded time series
-
-
-      May save overall
-
-      profile (though this
-
-      still needs to be
-
-      fixed)'
+    comment: ''
+    integration_time: '30'
     maxoutbuf: '0'
     minoutbuf: '0'
-    nbins: '1024'
-    nsamps: num_samples
-    num_channels: channels
-    num_inputs: channels - 2
-    period: '0.0335'
-    samp_rate: '1000000.0'
-    save_external: 'True'
-    savefile: ''''''
+    period: '.0335028583'
+    samp_rate: 1000000/32
   states:
-    _io_cache: '(''Folding'', ''fold_block'', [(''num_inputs'', ''30''), (''samp_rate'',
-      ''1000000.0''), (''num_channels'', ''32''), (''nsamps'', ''2048''), (''period'',
-      ''0.0335''), (''nbins'', ''1024''), (''save_external'', ''True''), (''savefile'',
-      "['''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''',
-      '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''', '''']")],
-      [(''0'', ''float'', 2048), (''1'', ''float'', 2048), (''2'', ''float'', 2048),
-      (''3'', ''float'', 2048), (''4'', ''float'', 2048), (''5'', ''float'', 2048),
-      (''6'', ''float'', 2048), (''7'', ''float'', 2048), (''8'', ''float'', 2048),
-      (''9'', ''float'', 2048), (''10'', ''float'', 2048), (''11'', ''float'', 2048),
-      (''12'', ''float'', 2048), (''13'', ''float'', 2048), (''14'', ''float'', 2048),
-      (''15'', ''float'', 2048), (''16'', ''float'', 2048), (''17'', ''float'', 2048),
-      (''18'', ''float'', 2048), (''19'', ''float'', 2048), (''20'', ''float'', 2048),
-      (''21'', ''float'', 2048), (''22'', ''float'', 2048), (''23'', ''float'', 2048),
-      (''24'', ''float'', 2048), (''25'', ''float'', 2048), (''26'', ''float'', 2048),
-      (''27'', ''float'', 2048), (''28'', ''float'', 2048), (''29'', ''float'', 2048)],
-      [(''0'', ''float'', 1024), (''1'', ''float'', 1024), (''2'', ''float'', 1024),
-      (''3'', ''float'', 1024), (''4'', ''float'', 1024), (''5'', ''float'', 1024),
-      (''6'', ''float'', 1024), (''7'', ''float'', 1024), (''8'', ''float'', 1024),
-      (''9'', ''float'', 1024), (''10'', ''float'', 1024), (''11'', ''float'', 1024),
-      (''12'', ''float'', 1024), (''13'', ''float'', 1024), (''14'', ''float'', 1024),
-      (''15'', ''float'', 1024), (''16'', ''float'', 1024), (''17'', ''float'', 1024),
-      (''18'', ''float'', 1024), (''19'', ''float'', 1024), (''20'', ''float'', 1024),
-      (''21'', ''float'', 1024), (''22'', ''float'', 1024), (''23'', ''float'', 1024),
-      (''24'', ''float'', 1024), (''25'', ''float'', 1024), (''26'', ''float'', 1024),
-      (''27'', ''float'', 1024), (''28'', ''float'', 1024), (''29'', ''float'', 1024)],
-      ''\n    Fold a timeseries of power over a period.\n\n    Parameters\n    ----------\n\n    num_inputs
-      : int\n        Number of channels of data to fold.\n    \n    samp_rate : float\n        Original
-      sample rate of data.\n        \n    num_channels : int\n        Number of channels
-      that data is split into.\n        \n    nsamps : int\n        Number of samples
-      (length of vector) passed in.\n        \n    period : float\n        Period
-      to fold over.\n        \n    nbins : int\n        Number of bins to use when
-      folding.\n        \n    save_external : bool\n        Flag stating whether or
-      not to save overall profile. If true, overall profile (sum of all profiles generated)
-      will be saved to savefile.\n        \n    savefile : list of str      # probably
-      want to fix this to include filepath\n        Files to save all profiles to
-      (if save_external is True). Must be of length greater than or equal to num_inputs.\n\n    \n    Outputs
-      the profile resultant of the latest vector passed in.\n    '', [''nbins'', ''nsamps'',
-      ''num_channels'', ''period'', ''samp_rate'', ''save_external'', ''savefile''])'
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1600, 180.0]
+    coordinate: [1464, 12.0]
     rotation: 0
-    state: true
+    state: enabled
+- name: epy_block_1_0
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 1132.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_0_0
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 1524.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_0_1
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 1468.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_0_2
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 1412.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_0_3
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 1356.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_0_4
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 1300.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_0_5
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 1188.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_0_6
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 1244.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_0_7
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 1580.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_0_8
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: 'Fold power over time
+
+
+      Maybe make this
+
+      a block with variable
+
+      number of ports later.'
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 1636.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_1
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 460.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_10
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 684.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_11
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 628.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_12
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 572.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_13
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 404.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_14
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 348.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_15
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 292.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_16
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 236.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_17
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 180.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_18
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 68.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_19
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 124.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_2
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 1076.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_3
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 1020.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_4
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 964.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_5
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 908.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_6
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 852.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_7
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 516.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_8
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 796.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_9
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
+      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
+      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
+      \n\n    def __init__(self, period=.0335, samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
+      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
+      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
+      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
+      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
+      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
+      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
+      \        self.data = np.append(self.data, input_items[0])\n\n        # if enought\
+      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
+      \            times = np.arange(self.data.size) / self.samp_rate\n          \
+      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
+      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
+      \n        # always output the latest computed profile\n        output_items[0][:]\
+      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '.0335028583'
+    samp_rate: 1000000/32
+  states:
+    _io_cache: ('Fold', 'fold_blk', [('period', '0.0335'), ('samp_rate', '31250.0'),
+      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
+      'Block to perform folding (without importing but still [ab]using psrdynspec)',
+      ['integration_time', 'period', 'samp_rate'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1464, 740.0]
+    rotation: 0
+    state: enabled
 - name: gr_digital_rf_digital_rf_sink_1
   id: gr_digital_rf_digital_rf_sink
   parameters:
@@ -997,7 +1641,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1760, 180.0]
+    coordinate: [1728, 44.0]
     rotation: 0
     state: true
 - name: gr_digital_rf_digital_rf_source_0
@@ -1150,23 +1794,6 @@ blocks:
     coordinate: [88, 408.0]
     rotation: 0
     state: true
-- name: num_samples
-  id: parameter
-  parameters:
-    alias: ''
-    comment: ''
-    hide: none
-    label: ''
-    short_id: ''
-    type: intx
-    value: '2048'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1544, 80.0]
-    rotation: 0
-    state: true
 - name: pfb_channelizer_ccf_0
   id: pfb_channelizer_ccf
   parameters:
@@ -1203,7 +1830,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1888, 428.0]
+    coordinate: [1848, 100.0]
     rotation: 0
     state: true
 - name: source_dir
@@ -1230,98 +1857,68 @@ blocks:
 
 connections:
 - [blocks_complex_to_mag_squared_0, '0', blocks_vector_to_streams_0, '0']
-- [blocks_stream_to_vector_0, '0', epy_block_0, '0']
-- [blocks_stream_to_vector_0_10, '0', epy_block_0, '21']
-- [blocks_stream_to_vector_0_11, '0', epy_block_0, '20']
-- [blocks_stream_to_vector_0_12, '0', epy_block_0, '19']
-- [blocks_stream_to_vector_0_13, '0', epy_block_0, '18']
-- [blocks_stream_to_vector_0_14, '0', epy_block_0, '17']
-- [blocks_stream_to_vector_0_15, '0', epy_block_0, '16']
-- [blocks_stream_to_vector_0_16, '0', epy_block_0, '15']
-- [blocks_stream_to_vector_0_17, '0', epy_block_0, '14']
-- [blocks_stream_to_vector_0_18, '0', epy_block_0, '13']
-- [blocks_stream_to_vector_0_19, '0', epy_block_0, '12']
-- [blocks_stream_to_vector_0_2, '0', epy_block_0, '29']
-- [blocks_stream_to_vector_0_20, '0', epy_block_0, '11']
-- [blocks_stream_to_vector_0_21, '0', epy_block_0, '10']
-- [blocks_stream_to_vector_0_22, '0', epy_block_0, '9']
-- [blocks_stream_to_vector_0_23, '0', epy_block_0, '8']
-- [blocks_stream_to_vector_0_24, '0', epy_block_0, '7']
-- [blocks_stream_to_vector_0_25, '0', epy_block_0, '6']
-- [blocks_stream_to_vector_0_26, '0', epy_block_0, '5']
-- [blocks_stream_to_vector_0_27, '0', epy_block_0, '4']
-- [blocks_stream_to_vector_0_28, '0', epy_block_0, '3']
-- [blocks_stream_to_vector_0_29, '0', epy_block_0, '2']
-- [blocks_stream_to_vector_0_3, '0', epy_block_0, '28']
-- [blocks_stream_to_vector_0_30, '0', epy_block_0, '1']
-- [blocks_stream_to_vector_0_4, '0', epy_block_0, '27']
-- [blocks_stream_to_vector_0_5, '0', epy_block_0, '26']
-- [blocks_stream_to_vector_0_6, '0', epy_block_0, '25']
-- [blocks_stream_to_vector_0_7, '0', epy_block_0, '24']
-- [blocks_stream_to_vector_0_8, '0', epy_block_0, '23']
-- [blocks_stream_to_vector_0_9, '0', epy_block_0, '22']
 - [blocks_streams_to_vector_0, '0', blocks_complex_to_mag_squared_0, '0']
 - [blocks_throttle_0, '0', pfb_channelizer_ccf_0, '0']
-- [blocks_vector_to_streams_0, '0', blocks_stream_to_vector_0, '0']
-- [blocks_vector_to_streams_0, '1', blocks_stream_to_vector_0_30, '0']
-- [blocks_vector_to_streams_0, '10', blocks_stream_to_vector_0_21, '0']
-- [blocks_vector_to_streams_0, '11', blocks_stream_to_vector_0_20, '0']
-- [blocks_vector_to_streams_0, '12', blocks_stream_to_vector_0_19, '0']
-- [blocks_vector_to_streams_0, '13', blocks_stream_to_vector_0_18, '0']
-- [blocks_vector_to_streams_0, '14', blocks_stream_to_vector_0_17, '0']
-- [blocks_vector_to_streams_0, '15', blocks_stream_to_vector_0_16, '0']
-- [blocks_vector_to_streams_0, '16', blocks_stream_to_vector_0_15, '0']
-- [blocks_vector_to_streams_0, '17', blocks_stream_to_vector_0_14, '0']
-- [blocks_vector_to_streams_0, '18', blocks_stream_to_vector_0_13, '0']
-- [blocks_vector_to_streams_0, '19', blocks_stream_to_vector_0_12, '0']
-- [blocks_vector_to_streams_0, '2', blocks_stream_to_vector_0_29, '0']
-- [blocks_vector_to_streams_0, '20', blocks_stream_to_vector_0_11, '0']
-- [blocks_vector_to_streams_0, '21', blocks_stream_to_vector_0_10, '0']
-- [blocks_vector_to_streams_0, '22', blocks_stream_to_vector_0_9, '0']
-- [blocks_vector_to_streams_0, '23', blocks_stream_to_vector_0_8, '0']
-- [blocks_vector_to_streams_0, '24', blocks_stream_to_vector_0_7, '0']
-- [blocks_vector_to_streams_0, '25', blocks_stream_to_vector_0_6, '0']
-- [blocks_vector_to_streams_0, '26', blocks_stream_to_vector_0_5, '0']
-- [blocks_vector_to_streams_0, '27', blocks_stream_to_vector_0_4, '0']
-- [blocks_vector_to_streams_0, '28', blocks_stream_to_vector_0_3, '0']
-- [blocks_vector_to_streams_0, '29', blocks_stream_to_vector_0_2, '0']
-- [blocks_vector_to_streams_0, '3', blocks_stream_to_vector_0_28, '0']
-- [blocks_vector_to_streams_0, '4', blocks_stream_to_vector_0_27, '0']
-- [blocks_vector_to_streams_0, '5', blocks_stream_to_vector_0_26, '0']
-- [blocks_vector_to_streams_0, '6', blocks_stream_to_vector_0_25, '0']
-- [blocks_vector_to_streams_0, '7', blocks_stream_to_vector_0_24, '0']
-- [blocks_vector_to_streams_0, '8', blocks_stream_to_vector_0_23, '0']
-- [blocks_vector_to_streams_0, '9', blocks_stream_to_vector_0_22, '0']
-- [epy_block_0, '0', gr_digital_rf_digital_rf_sink_1, '0']
-- [epy_block_0, '1', gr_digital_rf_digital_rf_sink_1, '1']
-- [epy_block_0, '10', gr_digital_rf_digital_rf_sink_1, '10']
-- [epy_block_0, '11', gr_digital_rf_digital_rf_sink_1, '11']
-- [epy_block_0, '12', gr_digital_rf_digital_rf_sink_1, '12']
-- [epy_block_0, '13', gr_digital_rf_digital_rf_sink_1, '13']
-- [epy_block_0, '14', gr_digital_rf_digital_rf_sink_1, '14']
-- [epy_block_0, '15', gr_digital_rf_digital_rf_sink_1, '15']
-- [epy_block_0, '16', gr_digital_rf_digital_rf_sink_1, '16']
-- [epy_block_0, '17', gr_digital_rf_digital_rf_sink_1, '17']
-- [epy_block_0, '18', gr_digital_rf_digital_rf_sink_1, '18']
-- [epy_block_0, '19', gr_digital_rf_digital_rf_sink_1, '19']
-- [epy_block_0, '2', gr_digital_rf_digital_rf_sink_1, '2']
-- [epy_block_0, '20', gr_digital_rf_digital_rf_sink_1, '20']
-- [epy_block_0, '21', gr_digital_rf_digital_rf_sink_1, '21']
-- [epy_block_0, '22', gr_digital_rf_digital_rf_sink_1, '22']
-- [epy_block_0, '23', gr_digital_rf_digital_rf_sink_1, '23']
-- [epy_block_0, '24', gr_digital_rf_digital_rf_sink_1, '24']
-- [epy_block_0, '25', gr_digital_rf_digital_rf_sink_1, '25']
-- [epy_block_0, '26', gr_digital_rf_digital_rf_sink_1, '26']
-- [epy_block_0, '27', gr_digital_rf_digital_rf_sink_1, '27']
-- [epy_block_0, '28', gr_digital_rf_digital_rf_sink_1, '28']
-- [epy_block_0, '29', gr_digital_rf_digital_rf_sink_1, '29']
-- [epy_block_0, '3', gr_digital_rf_digital_rf_sink_1, '3']
-- [epy_block_0, '4', gr_digital_rf_digital_rf_sink_1, '4']
-- [epy_block_0, '5', gr_digital_rf_digital_rf_sink_1, '5']
-- [epy_block_0, '6', gr_digital_rf_digital_rf_sink_1, '6']
-- [epy_block_0, '7', gr_digital_rf_digital_rf_sink_1, '7']
-- [epy_block_0, '8', gr_digital_rf_digital_rf_sink_1, '8']
-- [epy_block_0, '9', gr_digital_rf_digital_rf_sink_1, '9']
+- [blocks_vector_to_streams_0, '0', epy_block_1, '0']
+- [blocks_vector_to_streams_0, '1', epy_block_1_18, '0']
+- [blocks_vector_to_streams_0, '10', epy_block_1_12, '0']
+- [blocks_vector_to_streams_0, '11', epy_block_1_11, '0']
+- [blocks_vector_to_streams_0, '12', epy_block_1_10, '0']
+- [blocks_vector_to_streams_0, '13', epy_block_1_9, '0']
+- [blocks_vector_to_streams_0, '14', epy_block_1_8, '0']
+- [blocks_vector_to_streams_0, '15', epy_block_1_6, '0']
+- [blocks_vector_to_streams_0, '16', epy_block_1_5, '0']
+- [blocks_vector_to_streams_0, '17', epy_block_1_4, '0']
+- [blocks_vector_to_streams_0, '18', epy_block_1_3, '0']
+- [blocks_vector_to_streams_0, '19', epy_block_1_2, '0']
+- [blocks_vector_to_streams_0, '2', epy_block_1_19, '0']
+- [blocks_vector_to_streams_0, '20', epy_block_1_0, '0']
+- [blocks_vector_to_streams_0, '21', epy_block_1_0_5, '0']
+- [blocks_vector_to_streams_0, '22', epy_block_1_0_6, '0']
+- [blocks_vector_to_streams_0, '23', epy_block_1_0_4, '0']
+- [blocks_vector_to_streams_0, '24', epy_block_1_0_3, '0']
+- [blocks_vector_to_streams_0, '25', epy_block_1_0_2, '0']
+- [blocks_vector_to_streams_0, '26', epy_block_1_0_1, '0']
+- [blocks_vector_to_streams_0, '27', epy_block_1_0_0, '0']
+- [blocks_vector_to_streams_0, '28', epy_block_1_0_7, '0']
+- [blocks_vector_to_streams_0, '29', epy_block_1_0_8, '0']
+- [blocks_vector_to_streams_0, '3', epy_block_1_17, '0']
+- [blocks_vector_to_streams_0, '4', epy_block_1_16, '0']
+- [blocks_vector_to_streams_0, '5', epy_block_1_15, '0']
+- [blocks_vector_to_streams_0, '6', epy_block_1_14, '0']
+- [blocks_vector_to_streams_0, '7', epy_block_1_13, '0']
+- [blocks_vector_to_streams_0, '8', epy_block_1_1, '0']
+- [blocks_vector_to_streams_0, '9', epy_block_1_7, '0']
+- [epy_block_1, '0', gr_digital_rf_digital_rf_sink_1, '0']
+- [epy_block_1_0, '0', gr_digital_rf_digital_rf_sink_1, '20']
+- [epy_block_1_0_0, '0', gr_digital_rf_digital_rf_sink_1, '27']
+- [epy_block_1_0_1, '0', gr_digital_rf_digital_rf_sink_1, '26']
+- [epy_block_1_0_2, '0', gr_digital_rf_digital_rf_sink_1, '25']
+- [epy_block_1_0_3, '0', gr_digital_rf_digital_rf_sink_1, '24']
+- [epy_block_1_0_4, '0', gr_digital_rf_digital_rf_sink_1, '23']
+- [epy_block_1_0_5, '0', gr_digital_rf_digital_rf_sink_1, '21']
+- [epy_block_1_0_6, '0', gr_digital_rf_digital_rf_sink_1, '22']
+- [epy_block_1_0_7, '0', gr_digital_rf_digital_rf_sink_1, '28']
+- [epy_block_1_0_8, '0', gr_digital_rf_digital_rf_sink_1, '29']
+- [epy_block_1_1, '0', gr_digital_rf_digital_rf_sink_1, '8']
+- [epy_block_1_10, '0', gr_digital_rf_digital_rf_sink_1, '12']
+- [epy_block_1_11, '0', gr_digital_rf_digital_rf_sink_1, '11']
+- [epy_block_1_12, '0', gr_digital_rf_digital_rf_sink_1, '10']
+- [epy_block_1_13, '0', gr_digital_rf_digital_rf_sink_1, '7']
+- [epy_block_1_14, '0', gr_digital_rf_digital_rf_sink_1, '6']
+- [epy_block_1_15, '0', gr_digital_rf_digital_rf_sink_1, '5']
+- [epy_block_1_16, '0', gr_digital_rf_digital_rf_sink_1, '4']
+- [epy_block_1_17, '0', gr_digital_rf_digital_rf_sink_1, '3']
+- [epy_block_1_18, '0', gr_digital_rf_digital_rf_sink_1, '1']
+- [epy_block_1_19, '0', gr_digital_rf_digital_rf_sink_1, '2']
+- [epy_block_1_2, '0', gr_digital_rf_digital_rf_sink_1, '19']
+- [epy_block_1_3, '0', gr_digital_rf_digital_rf_sink_1, '18']
+- [epy_block_1_4, '0', gr_digital_rf_digital_rf_sink_1, '17']
+- [epy_block_1_5, '0', gr_digital_rf_digital_rf_sink_1, '16']
+- [epy_block_1_6, '0', gr_digital_rf_digital_rf_sink_1, '15']
+- [epy_block_1_7, '0', gr_digital_rf_digital_rf_sink_1, '9']
+- [epy_block_1_8, '0', gr_digital_rf_digital_rf_sink_1, '14']
+- [epy_block_1_9, '0', gr_digital_rf_digital_rf_sink_1, '13']
 - [gr_digital_rf_digital_rf_source_0, '0', blocks_null_sink_1, '0']
 - [gr_digital_rf_digital_rf_source_0, '1', blocks_throttle_0, '0']
 - [gr_digital_rf_digital_rf_source_0, properties, blocks_msgpair_to_var_0, inpair]
