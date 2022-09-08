@@ -11,7 +11,7 @@ options:
     gen_linking: dynamic
     generate_options: hb
     hier_block_src_path: '.:'
-    id: pulsar_hier_onechannel
+    id: pulsar_medianfilter
     max_nouts: '0'
     output_language: python
     placement: (0,0)
@@ -22,7 +22,7 @@ options:
     run_options: prompt
     sizing_mode: fixed
     thread_safe_setters: ''
-    title: pulsar_hier_onechannel
+    title: Filter Outliers
     window_size: (1000,1000)
   states:
     bus_sink: false
@@ -39,7 +39,7 @@ blocks:
     alias: ''
     comment: ''
     hide: none
-    label: FIR filter time
+    label: ''
     short_id: ''
     type: eng_float
     value: '30'
@@ -47,40 +47,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [568, 112.0]
-    rotation: 0
-    state: true
-- name: blocks_complex_to_mag_squared_0
-  id: blocks_complex_to_mag_squared
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [400, 268.0]
-    rotation: 0
-    state: true
-- name: channel
-  id: parameter
-  parameters:
-    alias: ''
-    comment: ''
-    hide: none
-    label: Channel
-    short_id: ''
-    type: intx
-    value: '0'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [200, 112.0]
+    coordinate: [264, 12.0]
     rotation: 0
     state: true
 - name: deviations
@@ -89,7 +56,7 @@ blocks:
     alias: ''
     comment: ''
     hide: none
-    label: Deviations
+    label: ''
     short_id: ''
     type: eng_float
     value: '10'
@@ -97,7 +64,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [568, 184.0]
+    coordinate: [200, 12.0]
     rotation: 0
     state: true
 - name: epy_block_0
@@ -143,7 +110,7 @@ blocks:
     deviations: deviations
     maxoutbuf: '0'
     minoutbuf: '0'
-    samp_rate: '31250.0'
+    samp_rate: samp_rate
     time: baseline_time
   states:
     _io_cache: '(''Filter Outliers'', ''filter_outlier_block'', [(''samp_rate'', ''31250.0''),
@@ -161,102 +128,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [568, 260.0]
-    rotation: 0
-    state: true
-- name: epy_block_1
-  id: epy_block
-  parameters:
-    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
-      from psrdynspec import fold\n\nclass fold_blk(gr.sync_block):\n    \"\"\"Block\
-      \ to perform folding (without importing but still [ab]using psrdynspec)\"\"\"\
-      \n\n    def __init__(self, period=0.0333924123 , samp_rate=1000000/32, integration_time=10.):\n\
-      \        \"\"\"\n        Folding block - folds time series of power to find\
-      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
-      \            Folding period\n\n        samp_rate : float\n            Sample\
-      \ rate of incoming samples\n\n        integration_time : float\n           \
-      \ Number of seconds over which to integrate\n        \n        Notes\n     \
-      \   -----\n        Always outputs the last calculated phase vs. power profile.\n\
-      \n        After calculating, immediately begins collecting data for a new calculation.\n\
-      \        \n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
-      \            name='Fold',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
-      \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\
-      \ this\n        )\n        self.period = float(period)\n        self.samp_rate\
-      \ = float(samp_rate)\n        self.integration_time = float(integration_time)\n\
-      \n        self.bins = 1024\n        self.profile = np.zeros(self.bins)\n   \
-      \     self.data = np.array([], dtype=np.float32)\n\n        self.fold_ts = fold.fold_ts\n\
-      \n    def work(self, input_items, output_items):\n\n        # aggregate data\n\
-      \        self.data = np.append(self.data, input_items[0])\n\n        # if enough\
-      \ data collected\n        if self.data.size >= self.samp_rate * self.integration_time:\n\
-      \            times = np.arange(self.data.size) / self.samp_rate\n          \
-      \  self.profile = np.nan_to_num(self.fold_ts(self.data, times, self.period,\
-      \ self.bins, True)[0])\n            self.data = np.array([], dtype=np.float32)\n\
-      \n        # always output the latest computed profile\n        output_items[0][:]\
-      \ = np.array([self.profile] * output_items[0].shape[0])\n        return len(output_items[0])\n"
-    affinity: ''
-    alias: ''
-    comment: ''
-    integration_time: integration_time
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    period: period
-    samp_rate: samp_rate / num_channels
-  states:
-    _io_cache: ('Fold', 'fold_blk', [('period', '0.0333924123'), ('samp_rate', '31250.0'),
-      ('integration_time', '10.0')], [('0', 'float', 1)], [('0', 'float', 1024)],
-      'Block to perform folding (without importing but still [ab]using psrdynspec)',
-      ['integration_time', 'period', 'samp_rate'])
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [744, 260.0]
-    rotation: 0
-    state: enabled
-- name: import_0
-  id: import
-  parameters:
-    alias: ''
-    comment: ''
-    imports: import mitarspysigproc.filtertools as filtertools
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [208, 8.0]
-    rotation: 0
-    state: true
-- name: integration_time
-  id: parameter
-  parameters:
-    alias: ''
-    comment: ''
-    hide: none
-    label: Integration time
-    short_id: ''
-    type: eng_float
-    value: '120'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [744, 184.0]
-    rotation: 0
-    state: true
-- name: num_channels
-  id: parameter
-  parameters:
-    alias: ''
-    comment: ''
-    hide: none
-    label: Number of channels
-    short_id: ''
-    type: intx
-    value: '32'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [200, 184.0]
+    coordinate: [224, 132.0]
     rotation: 0
     state: true
 - name: pad_sink_0
@@ -269,12 +141,12 @@ blocks:
     num_streams: '1'
     optional: 'False'
     type: float
-    vlen: '1024'
+    vlen: '1'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [968, 264.0]
+    coordinate: [400, 140.0]
     rotation: 0
     state: true
 - name: pad_source_0
@@ -288,52 +160,13 @@ blocks:
     minoutbuf: '0'
     num_streams: '1'
     optional: 'False'
-    type: complex
+    type: float
     vlen: '1'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [48, 268.0]
-    rotation: 0
-    state: true
-- name: period
-  id: parameter
-  parameters:
-    alias: ''
-    comment: ''
-    hide: none
-    label: Period
-    short_id: ''
-    type: eng_float
-    value: '.03339'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [744, 112.0]
-    rotation: 0
-    state: true
-- name: pfb_decimator_ccf_0
-  id: pfb_decimator_ccf
-  parameters:
-    affinity: ''
-    alias: ''
-    atten: '100'
-    channel: channel
-    comment: ''
-    decim: num_channels
-    fft_filts: 'True'
-    fft_rot: 'True'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    samp_delay: '0'
-    taps: filtertools.kaiser_coeffs(num_channels)
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [200, 256.0]
+    coordinate: [80, 140.0]
     rotation: 0
     state: true
 - name: samp_rate
@@ -345,21 +178,18 @@ blocks:
     label: ''
     short_id: ''
     type: eng_float
-    value: '1000000'
+    value: 1000000/32
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [136, 12.0]
+    coordinate: [128, 12.0]
     rotation: 0
     state: true
 
 connections:
-- [blocks_complex_to_mag_squared_0, '0', epy_block_0, '0']
-- [epy_block_0, '0', epy_block_1, '0']
-- [epy_block_1, '0', pad_sink_0, '0']
-- [pad_source_0, '0', pfb_decimator_ccf_0, '0']
-- [pfb_decimator_ccf_0, '0', blocks_complex_to_mag_squared_0, '0']
+- [epy_block_0, '0', pad_sink_0, '0']
+- [pad_source_0, '0', epy_block_0, '0']
 
 metadata:
   file_format: 1

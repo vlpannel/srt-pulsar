@@ -8,7 +8,7 @@ This is a project to add the ability for the SRT software to process pulsar data
 
 This repository includes multiple GNU Radio flowgraphs and Python code to add pulsar processing capabilities to the SRT and similar SDR software setups that use GNU Radio.
 
-Pulsar processing entails reading in complex samples, putting the signal through a polyphase filterbank, finding the power of each channel (via Complex to Mag^2), filtering out time-variant interference (based on median absolute deviation), and then folding/integrating the timeseries over the pulsar's period to output a 1024-sample long vector of the power vs phase profile.
+Pulsar processing entails reading in complex samples, putting the signal through a polyphase filterbank, finding the power over time of each channel (via Complex to Mag^2), filtering out time-variant interference (based on median absolute deviation), and then folding/integrating the timeseries over the pulsar's period to output a 1024-sample long vector of the power vs phase profile.
 
 ## Environment
 
@@ -35,10 +35,12 @@ Steps to replicate original set up:
 
 In order to open and use flowgraphs, after downloading them, activate the applicable GNU Radio Conda environment and use command `gnuradio-companion` to open GNU Radio Companion (GRC), GNU Radio's GUI for running and manipulating flowgraphs. For more information on how to use GRC, see [GNU Radio Wiki](https://wiki.gnuradio.org/index.php?title=Main_Page).
 
+Additio
+
 ## Future Work
 
 There are many ways this work could be improved in the future, including:
-- Creating an OOT module to replace all custom Python blocks
+- Creating an OOT module to group together all te pulsar-processing tools
 - Filtering out frequency-specific interference by comparing variances of all channels and discarding noisy channels
 - Creating a method of coherent (within a channel) dedispersion for these flowgraphs
 
@@ -50,4 +52,4 @@ This work would not be possible without the help from advisors Prof. Kiyoshi Mas
 
 The flowgraphs were tested using data collected from the Millstone Hill Incoherent Scatter Antenna.
 
-The software developed in this program relies on GNU Radio developed by the GNU Radio Project, Digital RF created by the MIT Haystack Observatory, the Python signal processing tools (mitarspysigproc) created by John Swoboda, and the Python pulsar processing tools (psrdynspec) created by Akshay Suresh.
+The software developed in this program relies on GNU Radio developed by the GNU Radio Project, Digital RF created at the MIT Haystack Observatory, the Python signal processing tools (mitarspysigproc) created by John Swoboda, and the Python pulsar processing tools (psrdynspec) created by Akshay Suresh.

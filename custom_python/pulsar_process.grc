@@ -1,0 +1,284 @@
+options:
+  parameters:
+    author: Viveca Pannell
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: hb
+    hier_block_src_path: '.:'
+    id: pulsar_process
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Pulsar Processing
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: blocks_complex_to_mag_squared_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: num_channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [464, 164.0]
+    rotation: 0
+    state: true
+- name: blocks_streams_to_vector_0
+  id: blocks_streams_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_streams: num_channels
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: true
+    bus_source: false
+    bus_structure: null
+    coordinate: [320, 160.0]
+    rotation: 0
+    state: true
+- name: blocks_vector_to_streams_0
+  id: blocks_vector_to_streams
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_streams: num_channels
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: true
+    bus_structure: null
+    coordinate: [600, 160.0]
+    rotation: 0
+    state: true
+- name: num_channels
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: ''
+    short_id: ''
+    type: intx
+    value: '32'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [200, 8.0]
+    rotation: 0
+    state: true
+- name: pad_sink_0
+  id: pad_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    label: out
+    num_streams: '1'
+    optional: 'False'
+    type: float
+    vlen: '1024'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [760, 608.0]
+    rotation: 0
+    state: true
+- name: pad_source_0
+  id: pad_source
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    label: in
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_streams: '1'
+    optional: 'False'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 164.0]
+    rotation: 0
+    state: true
+- name: parameter_0
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: ''
+    short_id: ''
+    type: ''
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [336, 8.0]
+    rotation: 0
+    state: true
+- name: pfb_channelizer_ccf_0
+  id: pfb_channelizer_ccf
+  parameters:
+    affinity: ''
+    alias: ''
+    atten: '100'
+    bus_conns: '[[0,],]'
+    ch_map: '[]'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nchans: num_channels
+    osr: '1.0'
+    samp_delay: '0'
+    taps: taps
+  states:
+    bus_sink: false
+    bus_source: true
+    bus_structure: null
+    coordinate: [128, 152.0]
+    rotation: 0
+    state: true
+- name: pulsar_dedisp_incoherent_0
+  id: pulsar_dedisp_incoherent
+  parameters:
+    affinity: ''
+    alias: ''
+    bandwidth: '1'
+    center_freq: '440'
+    channels: '[]'
+    comment: ''
+    dm: '56.77118'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_channels: '32'
+    samp_rate: '1000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [44.0, 416]
+    rotation: 270
+    state: true
+- name: pulsar_fold_0
+  id: pulsar_fold
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '60'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '0.033397'
+    samp_rate: 1000000/32
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [608, 604.0]
+    rotation: 0
+    state: true
+- name: pulsar_medianfilter_0
+  id: pulsar_medianfilter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: '30'
+    comment: ''
+    deviations: '10'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: 1000000/32
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [732.0, 248]
+    rotation: 270
+    state: true
+- name: samp_rate
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: ''
+    short_id: ''
+    type: eng_float
+    value: '1000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [136, 8.0]
+    rotation: 0
+    state: true
+- name: taps
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: ''
+    short_id: ''
+    type: ''
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [280, 8.0]
+    rotation: 0
+    state: true
+
+connections:
+- [blocks_complex_to_mag_squared_0, '0', blocks_vector_to_streams_0, '0']
+- [blocks_streams_to_vector_0, '0', blocks_complex_to_mag_squared_0, '0']
+- [blocks_vector_to_streams_0, '32', pulsar_medianfilter_0, '0']
+- [pad_source_0, '0', pfb_channelizer_ccf_0, '0']
+- [pfb_channelizer_ccf_0, '32', blocks_streams_to_vector_0, '32']
+- [pulsar_dedisp_incoherent_0, '0', pulsar_fold_0, '0']
+- [pulsar_fold_0, '0', pad_sink_0, '0']
+
+metadata:
+  file_format: 1

@@ -22,7 +22,7 @@ options:
     run_options: prompt
     sizing_mode: fixed
     thread_safe_setters: ''
-    title: pulsar_hier_32channel
+    title: pulsar_hier_32channels
     window_size: (1000,1000)
   states:
     bus_sink: false
@@ -660,7 +660,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32,11, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 11, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -679,7 +679,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 12, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 12, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -698,7 +698,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 13, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 13, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -717,7 +717,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 14, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 14, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -736,7 +736,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 15, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 15, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -755,7 +755,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 17, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 17, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -774,7 +774,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 18, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 18, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -793,7 +793,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 27, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 27, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -812,7 +812,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 28, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 28, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -831,7 +831,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 29, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 29, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -850,7 +850,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 30, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 30, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -869,7 +869,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 31, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 31, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -888,7 +888,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 19, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 19, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -907,7 +907,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 20, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 20, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -926,7 +926,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 21, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 21, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -945,7 +945,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 22, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 22, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -964,7 +964,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 23, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 23, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -983,7 +983,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 24, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 24, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -1002,7 +1002,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 25, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 25, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -1021,7 +1021,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 26, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 26, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -1040,7 +1040,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 16, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 16, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -1116,7 +1116,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 6, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 6, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -1135,7 +1135,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 7, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 7, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -1154,7 +1154,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 8, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 8, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -1173,7 +1173,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 9, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 9, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -1192,7 +1192,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: inco_dedisp.dedisperse(440, 1, 32, 10, 56.77118, samp_rate/32)
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, 32, 10, dm, samp_rate/32)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -1238,7 +1238,7 @@ blocks:
     bus_structure: null
     coordinate: [712, 152.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: dm
   id: parameter
   parameters:
@@ -3362,7 +3362,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [272, 16.0]
+    coordinate: [200, 8.0]
     rotation: 0
     state: true
 - name: inco_dedisp
@@ -3411,19 +3411,6 @@ blocks:
     bus_source: false
     bus_structure: null
     coordinate: [1328, 360.0]
-    rotation: 0
-    state: true
-- name: note_0
-  id: note
-  parameters:
-    alias: ''
-    comment: ''
-    note: not all delays updated
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [896, 544.0]
     rotation: 0
     state: true
 - name: pad_sink_0
@@ -3517,9 +3504,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 16.0]
+    coordinate: [128, 12.0]
     rotation: 0
-    state: true
+    state: enabled
 
 connections:
 - [blocks_add_xx_1, '0', epy_block_1_0, '0']
