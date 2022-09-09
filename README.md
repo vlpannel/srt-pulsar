@@ -33,14 +33,20 @@ Steps to replicate original set up:
 
 ### Using These Flowgraphs
 
+If not an experienced user of GNU Radio, please see below directions on using GNU Radio Companion and GNU Radio hierarchical blocks.
+
 In order to open and use flowgraphs, after downloading them, activate the applicable GNU Radio Conda environment and use command `gnuradio-companion` to open GNU Radio Companion (GRC), GNU Radio's GUI for running and manipulating flowgraphs. For more information on how to use GRC, see [GNU Radio Wiki](https://wiki.gnuradio.org/index.php?title=Main_Page).
 
-Additio
+This repo includes GRC hierarchical blocks which can be incorporated into other flowgraphs and customized via parameters. To use a hierarchical block, simply click the "Reload Blocks" button in GRC and find the correct block in the list of blocks (should be under the category of "GRC Hier Blocks") and treat the hierarchical block just as any other normal block. To directly manipulate how all instances of a hierarchical block work internally, you can directly edit the blocks by opening their GRC flowgraph files and making changes. Every time the hierarchical block's GRC flowgraph is altered, you much refresh blocks before using again in another flowgraph.
+
+## Navigating This Repository
+
+This repository is not available for installation; it simply includes possibly useful files to download and use through GNU Radio. The repository is structured as follows
 
 ## Future Work
 
 There are many ways this work could be improved in the future, including:
-- Creating an OOT module to group together all te pulsar-processing tools
+- Creating an OOT module to group together all pulsar-processing tools
 - Filtering out frequency-specific interference by comparing variances of all channels and discarding noisy channels
 - Creating a method of coherent (within a channel) dedispersion for these flowgraphs
 
