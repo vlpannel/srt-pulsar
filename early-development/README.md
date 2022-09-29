@@ -1,3 +1,3 @@
-# SRT-UROP-2022
+# early-development
 
-This is my GitHub repository for all the work I do for my UROP (undergraduate research opportunities program) this summer. It is a joint MKI-Haystack UROP to improve on the system of the Small Radio Telescope (SRT) at Haystack.
+This is just a folder containing all of my sandbox and early development work for this project.
