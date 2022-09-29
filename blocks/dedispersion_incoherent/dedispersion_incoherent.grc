@@ -11,7 +11,7 @@ options:
     gen_linking: dynamic
     generate_options: hb
     hier_block_src_path: '.:'
-    id: variable_numports_handler
+    id: dedispersion_incoherent
     max_nouts: '0'
     output_language: python
     placement: (0,0)
@@ -22,7 +22,7 @@ options:
     run_options: prompt
     sizing_mode: fixed
     thread_safe_setters: ''
-    title: Variable Number of Ports (32 Max)
+    title: Incoherent Dedispersion
     window_size: (1000,1000)
   states:
     bus_sink: false
@@ -33,16 +33,647 @@ options:
     state: enabled
 
 blocks:
-- name: samp_rate
-  id: variable
+- name: bandwidth
+  id: parameter
   parameters:
+    alias: ''
     comment: ''
-    value: '32000'
+    hide: none
+    label: Bandwidth (MHz)
+    short_id: ''
+    type: eng_float
+    value: '1'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 12]
+    coordinate: [128, 72.0]
+    rotation: 0
+    state: enabled
+- name: blocks_add_xx_1
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '32'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1112, 912.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 0, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 384.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_0
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 1, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 448.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_1
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 2, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 528.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_10
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 11, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 1168.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_11
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 12, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 1248.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_12
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 13, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 1312.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_13
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 14, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 1392.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_14
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 15, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 1456.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_14_0
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 17, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 1600.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_14_1
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 18, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 1680.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_14_10
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 27, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 2320.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_14_11
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 28, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 2400.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_14_12
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 29, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 2464.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_14_13
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 30, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 2544.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_14_14
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 31, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 2608.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_14_2
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 19, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 1744.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_14_3
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 20, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 1824.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_14_4
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 21, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 1888.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_14_5
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 22, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 1968.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_14_6
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 23, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 2032.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_14_7
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 24, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 2112.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_14_8
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 25, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 2176.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_14_9
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 26, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 2256.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_15
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 16, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 1536.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_2
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 3, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 592.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_3
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 4, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 672.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_4
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 5, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 736.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_5
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 6, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 816.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_6
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 7, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 880.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_7
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 8, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 960.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_8
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 9, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 1024.0]
+    rotation: 0
+    state: enabled
+- name: blocks_delay_0_9
+  id: blocks_delay
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: inco_dedisp.dedisperse(center_freq, bandwidth, num_channels, 10, dm, samp_rate/32)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_ports: '1'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [776, 1104.0]
     rotation: 0
     state: enabled
 - name: blocks_null_source_0
@@ -61,7 +692,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 140.0]
+    coordinate: [16, 208.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0
@@ -71,7 +702,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(0)
+    input_index: int(0 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -84,7 +715,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 136.0]
+    coordinate: [392, 200.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_0
@@ -94,7 +725,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(1)
+    input_index: int(1 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -107,7 +738,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 216.0]
+    coordinate: [392, 280.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1
@@ -117,7 +748,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(2)
+    input_index: int(2 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -130,7 +761,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 296.0]
+    coordinate: [392, 360.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_0
@@ -140,7 +771,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(3)
+    input_index: int(3 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -153,7 +784,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 376.0]
+    coordinate: [392, 440.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_1
@@ -163,7 +794,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(4)
+    input_index: int(4 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -176,7 +807,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 456.0]
+    coordinate: [392, 520.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_10
@@ -186,7 +817,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(13)
+    input_index: int(13 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -199,7 +830,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 1176.0]
+    coordinate: [392, 1240.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_11
@@ -209,7 +840,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(14)
+    input_index: int(14 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -222,7 +853,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 1256.0]
+    coordinate: [392, 1320.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_12
@@ -232,7 +863,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(15)
+    input_index: int(15 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -245,7 +876,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 1336.0]
+    coordinate: [392, 1400.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_13
@@ -255,7 +886,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(16)
+    input_index: int(16 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -268,7 +899,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 1416.0]
+    coordinate: [392, 1480.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_14
@@ -278,7 +909,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(17)
+    input_index: int(17 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -291,7 +922,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 1496.0]
+    coordinate: [392, 1560.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_15
@@ -301,7 +932,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(18)
+    input_index: int(18 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -314,7 +945,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 1576.0]
+    coordinate: [392, 1640.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_15_0
@@ -324,7 +955,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(19)
+    input_index: int(19 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -337,7 +968,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 1656.0]
+    coordinate: [392, 1720.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_15_1
@@ -347,7 +978,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(20)
+    input_index: int(20 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -360,7 +991,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 1736.0]
+    coordinate: [392, 1800.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_15_10
@@ -370,7 +1001,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(29)
+    input_index: int(29 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -383,7 +1014,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 2456.0]
+    coordinate: [392, 2520.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_15_11
@@ -393,7 +1024,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(30)
+    input_index: int(30 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -406,7 +1037,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 2536.0]
+    coordinate: [392, 2600.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_15_12
@@ -416,7 +1047,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(31)
+    input_index: int(31 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -429,7 +1060,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 2616.0]
+    coordinate: [392, 2680.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_15_2
@@ -439,7 +1070,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(21)
+    input_index: int(21 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -452,7 +1083,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 1816.0]
+    coordinate: [392, 1880.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_15_3
@@ -462,7 +1093,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(22)
+    input_index: int(22 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -475,7 +1106,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 1896.0]
+    coordinate: [392, 1960.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_15_4
@@ -485,7 +1116,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(23)
+    input_index: int(23 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -498,7 +1129,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 1976.0]
+    coordinate: [392, 2040.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_15_5
@@ -508,7 +1139,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(24)
+    input_index: int(24 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -521,7 +1152,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 2056.0]
+    coordinate: [392, 2120.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_15_6
@@ -531,7 +1162,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(25)
+    input_index: int(25 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -544,7 +1175,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 2136.0]
+    coordinate: [392, 2200.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_15_7
@@ -554,7 +1185,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(26)
+    input_index: int(26 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -567,7 +1198,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 2216.0]
+    coordinate: [392, 2280.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_15_8
@@ -577,7 +1208,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(27)
+    input_index: int(27 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -590,7 +1221,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 2296.0]
+    coordinate: [392, 2360.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_15_9
@@ -600,7 +1231,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(28)
+    input_index: int(28 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -613,7 +1244,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 2376.0]
+    coordinate: [392, 2440.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_2
@@ -623,7 +1254,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(5)
+    input_index: int(5 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -636,7 +1267,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 536.0]
+    coordinate: [392, 600.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_3
@@ -646,7 +1277,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(6)
+    input_index: int(6 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -659,7 +1290,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 616.0]
+    coordinate: [392, 680.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_4
@@ -669,7 +1300,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(7)
+    input_index: int(7 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -682,7 +1313,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 696.0]
+    coordinate: [392, 760.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_5
@@ -692,7 +1323,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(8)
+    input_index: int(8 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -705,7 +1336,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 776.0]
+    coordinate: [392, 840.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_6
@@ -715,7 +1346,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(9)
+    input_index: int(9 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -728,7 +1359,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 856.0]
+    coordinate: [392, 920.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_7
@@ -738,7 +1369,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(10)
+    input_index: int(10 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -751,7 +1382,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 936.0]
+    coordinate: [392, 1000.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_8
@@ -761,7 +1392,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(11)
+    input_index: int(11 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -774,7 +1405,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 1016.0]
+    coordinate: [392, 1080.0]
     rotation: 0
     state: enabled
 - name: blocks_selector_0_1_9
@@ -784,7 +1415,7 @@ blocks:
     alias: ''
     comment: ''
     enabled: 'True'
-    input_index: criterion(12)
+    input_index: int(12 in channels)
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -797,33 +1428,33 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 1096.0]
+    coordinate: [392, 1160.0]
     rotation: 0
     state: enabled
-- name: criterion
+- name: center_freq
   id: parameter
   parameters:
     alias: ''
     comment: ''
     hide: none
-    label: ''
+    label: Center Frequency (MHz)
     short_id: ''
-    type: ''
-    value: 'lambda x: int(x in listed)'
+    type: eng_float
+    value: '440'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [448, 72.0]
+    coordinate: [128, 8.0]
     rotation: 0
-    state: true
-- name: listed
+    state: enabled
+- name: channels
   id: parameter
   parameters:
     alias: ''
     comment: ''
     hide: none
-    label: ''
+    label: Channels Connected
     short_id: ''
     type: ''
     value: '[]'
@@ -831,598 +1462,92 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [448, 24.0]
+    coordinate: [240, 80.0]
     rotation: 0
     state: true
-- name: note_0
-  id: note
+- name: dm
+  id: parameter
   parameters:
     alias: ''
-    comment: Still have to make this able to handle bus ports
-    note: work in progress
+    comment: ''
+    hide: none
+    label: Dispersion measure
+    short_id: ''
+    type: eng_float
+    value: '56.77118'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [272, 32.0]
+    coordinate: [128, 136.0]
     rotation: 0
-    state: true
+    state: enabled
+- name: inco_dedisp
+  id: epy_module
+  parameters:
+    alias: ''
+    comment: ''
+    source_code: "# this module will be imported in the into your flowgraph\n\ndef\
+      \ dedisperse(center_freq, bandwidth, num_channels, channel, dm, samp_rate):\n\
+      \    '''\n    Delay channel be specified amount given frequencies and dispersion\
+      \ measure. Assumes standard channel mapping and even number of channels. Aligns\
+      \ all channels with lowest channel (for delay purposes).\n\n    Parameters\n\
+      \    ----------\n\n    center_freq : float\n        Center frequency in MHz\n\
+      \n    bandwidth : float\n        Total bandwidth of signal reception in MHz\n\
+      \n    num_channels : int\n        Number of channels into which bandwidth is\
+      \ divided (equally)\n\n    channel : int\n        Which channel is being dedispersed\
+      \ (0 is at center frequency)\n\n    dm : float\n        Dispersion measure of\
+      \ pulsar (in pc cm^-3)\n\n    samp_rate : float\n        Sample rate of incoming\
+      \ samples (samples per second)\n    '''\n\n    kdm = 4149.    # dispersion measure\
+      \ constant (converted from GHz^2 to MHz^2 and ms to s)\n\n    # find frequencies\
+      \ of lowest channel and current channel\n    channel_width = bandwidth / num_channels\n\
+      \    v2 = center_freq - (bandwidth/2)     # lowest frequency\n    if channel\
+      \ <= num_channels/2:       # current channel\n        v1 = center_freq + (channel)*channel_width\n\
+      \    else:\n        v1 = center_freq - (num_channels - channel)*channel_width\n\
+      \n    # find amount of dispersion\n    time_delta = kdm * dm * ((1/(v2**2))\
+      \ - (1/(v1**2)))\n    return int(time_delta * samp_rate)\n    \n"
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [760, 336.0]
+    rotation: 0
+    state: enabled
+- name: num_channels
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: ''
+    short_id: ''
+    type: intx
+    value: '32'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [256, 8.0]
+    rotation: 0
+    state: enabled
 - name: pad_sink_0
   id: pad_sink
   parameters:
     affinity: ''
     alias: ''
     comment: ''
-    label: out0
+    label: out
     num_streams: '1'
-    optional: 'True'
+    optional: 'False'
     type: float
     vlen: '1'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [648, 156.0]
+    coordinate: [1216, 1408.0]
     rotation: 0
-    state: true
-- name: pad_sink_0_0
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out1
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 236.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_1
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out2
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 316.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_10
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out11
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 1036.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_11
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out12
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 1116.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_12
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out13
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 1196.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_13
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out14
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 1276.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_14
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out15
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 1356.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_15
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out16
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 1436.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_16
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out17
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 1516.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_17
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out18
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 1596.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_18
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out19
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 1676.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_19
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out20
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 1756.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_2
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out3
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 396.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_20
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out21
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 1836.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_21
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out22
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 1916.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_22
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out23
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 1996.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_23
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out24
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 2076.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_24
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out25
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 2156.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_25
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out26
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 2236.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_26
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out27
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 2316.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_27
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out28
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 2396.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_28
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out29
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 2476.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_29
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out30
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 2556.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_3
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out4
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 476.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_30
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out31
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 2636.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_4
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out5
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 556.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_5
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out6
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 636.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_6
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out7
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 716.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_7
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out8
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 796.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_8
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out9
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 876.0]
-    rotation: 0
-    state: true
-- name: pad_sink_0_9
-  id: pad_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    label: out10
-    num_streams: '1'
-    optional: 'True'
-    type: float
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 956.0]
-    rotation: 0
-    state: true
+    state: enabled
 - name: pad_source_0_0_9
   id: pad_source
   parameters:
@@ -1440,7 +1565,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 268.0]
+    coordinate: [16, 320.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_0
@@ -1460,7 +1585,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 332.0]
+    coordinate: [16, 400.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_1
@@ -1480,7 +1605,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 412.0]
+    coordinate: [16, 464.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_10
@@ -1500,7 +1625,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 1052.0]
+    coordinate: [16, 1120.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_11
@@ -1520,7 +1645,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 1132.0]
+    coordinate: [16, 1184.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_12
@@ -1540,7 +1665,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 1196.0]
+    coordinate: [16, 1264.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_13
@@ -1560,7 +1685,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 1276.0]
+    coordinate: [16, 1328.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_14
@@ -1580,7 +1705,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 1340.0]
+    coordinate: [16, 1408.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_15
@@ -1600,7 +1725,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 1420.0]
+    coordinate: [16, 1472.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_16
@@ -1620,7 +1745,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 1484.0]
+    coordinate: [16, 1552.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_17
@@ -1640,7 +1765,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 1564.0]
+    coordinate: [16, 1616.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_18
@@ -1660,7 +1785,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 1628.0]
+    coordinate: [16, 1696.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_19
@@ -1680,7 +1805,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 1708.0]
+    coordinate: [16, 1760.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_2
@@ -1700,7 +1825,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 476.0]
+    coordinate: [16, 544.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_20
@@ -1720,7 +1845,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 1772.0]
+    coordinate: [16, 1840.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_21
@@ -1740,7 +1865,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 1852.0]
+    coordinate: [16, 1904.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_22
@@ -1760,7 +1885,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 1916.0]
+    coordinate: [16, 1984.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_23
@@ -1780,7 +1905,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 1996.0]
+    coordinate: [16, 2048.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_24
@@ -1800,7 +1925,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 2060.0]
+    coordinate: [16, 2128.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_25
@@ -1820,7 +1945,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 2140.0]
+    coordinate: [16, 2192.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_26
@@ -1840,7 +1965,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 2204.0]
+    coordinate: [16, 2272.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_27
@@ -1860,7 +1985,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 2284.0]
+    coordinate: [16, 2336.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_28
@@ -1880,7 +2005,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 2348.0]
+    coordinate: [16, 2416.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_29
@@ -1900,7 +2025,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 2428.0]
+    coordinate: [16, 2480.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_3
@@ -1920,7 +2045,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 556.0]
+    coordinate: [16, 608.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_30
@@ -1940,7 +2065,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 2492.0]
+    coordinate: [16, 2560.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_4
@@ -1960,7 +2085,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 620.0]
+    coordinate: [16, 688.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_5
@@ -1980,7 +2105,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 700.0]
+    coordinate: [16, 752.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_6
@@ -2000,7 +2125,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 764.0]
+    coordinate: [16, 832.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_7
@@ -2020,7 +2145,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 844.0]
+    coordinate: [16, 896.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_8
@@ -2040,7 +2165,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 908.0]
+    coordinate: [16, 976.0]
     rotation: 0
     state: enabled
 - name: pad_source_0_0_9_9
@@ -2060,11 +2185,61 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 988.0]
+    coordinate: [16, 1040.0]
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: ''
+    short_id: ''
+    type: eng_float
+    value: '1000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [336, 16.0]
     rotation: 0
     state: enabled
 
 connections:
+- [blocks_add_xx_1, '0', pad_sink_0, '0']
+- [blocks_delay_0, '0', blocks_add_xx_1, '0']
+- [blocks_delay_0_0, '0', blocks_add_xx_1, '1']
+- [blocks_delay_0_1, '0', blocks_add_xx_1, '2']
+- [blocks_delay_0_10, '0', blocks_add_xx_1, '11']
+- [blocks_delay_0_11, '0', blocks_add_xx_1, '12']
+- [blocks_delay_0_12, '0', blocks_add_xx_1, '13']
+- [blocks_delay_0_13, '0', blocks_add_xx_1, '14']
+- [blocks_delay_0_14, '0', blocks_add_xx_1, '15']
+- [blocks_delay_0_14_0, '0', blocks_add_xx_1, '17']
+- [blocks_delay_0_14_1, '0', blocks_add_xx_1, '18']
+- [blocks_delay_0_14_10, '0', blocks_add_xx_1, '27']
+- [blocks_delay_0_14_11, '0', blocks_add_xx_1, '28']
+- [blocks_delay_0_14_12, '0', blocks_add_xx_1, '29']
+- [blocks_delay_0_14_13, '0', blocks_add_xx_1, '30']
+- [blocks_delay_0_14_14, '0', blocks_add_xx_1, '31']
+- [blocks_delay_0_14_2, '0', blocks_add_xx_1, '19']
+- [blocks_delay_0_14_3, '0', blocks_add_xx_1, '20']
+- [blocks_delay_0_14_4, '0', blocks_add_xx_1, '21']
+- [blocks_delay_0_14_5, '0', blocks_add_xx_1, '22']
+- [blocks_delay_0_14_6, '0', blocks_add_xx_1, '23']
+- [blocks_delay_0_14_7, '0', blocks_add_xx_1, '24']
+- [blocks_delay_0_14_8, '0', blocks_add_xx_1, '25']
+- [blocks_delay_0_14_9, '0', blocks_add_xx_1, '26']
+- [blocks_delay_0_15, '0', blocks_add_xx_1, '16']
+- [blocks_delay_0_2, '0', blocks_add_xx_1, '3']
+- [blocks_delay_0_3, '0', blocks_add_xx_1, '4']
+- [blocks_delay_0_4, '0', blocks_add_xx_1, '5']
+- [blocks_delay_0_5, '0', blocks_add_xx_1, '6']
+- [blocks_delay_0_6, '0', blocks_add_xx_1, '7']
+- [blocks_delay_0_7, '0', blocks_add_xx_1, '8']
+- [blocks_delay_0_8, '0', blocks_add_xx_1, '9']
+- [blocks_delay_0_9, '0', blocks_add_xx_1, '10']
 - [blocks_null_source_0, '0', blocks_selector_0, '0']
 - [blocks_null_source_0, '0', blocks_selector_0_0, '0']
 - [blocks_null_source_0, '0', blocks_selector_0_1, '0']
@@ -2097,38 +2272,38 @@ connections:
 - [blocks_null_source_0, '0', blocks_selector_0_1_7, '0']
 - [blocks_null_source_0, '0', blocks_selector_0_1_8, '0']
 - [blocks_null_source_0, '0', blocks_selector_0_1_9, '0']
-- [blocks_selector_0, '0', pad_sink_0, '0']
-- [blocks_selector_0_0, '0', pad_sink_0_0, '0']
-- [blocks_selector_0_1, '0', pad_sink_0_1, '0']
-- [blocks_selector_0_1_0, '0', pad_sink_0_2, '0']
-- [blocks_selector_0_1_1, '0', pad_sink_0_3, '0']
-- [blocks_selector_0_1_10, '0', pad_sink_0_12, '0']
-- [blocks_selector_0_1_11, '0', pad_sink_0_13, '0']
-- [blocks_selector_0_1_12, '0', pad_sink_0_14, '0']
-- [blocks_selector_0_1_13, '0', pad_sink_0_15, '0']
-- [blocks_selector_0_1_14, '0', pad_sink_0_16, '0']
-- [blocks_selector_0_1_15, '0', pad_sink_0_17, '0']
-- [blocks_selector_0_1_15_0, '0', pad_sink_0_18, '0']
-- [blocks_selector_0_1_15_1, '0', pad_sink_0_19, '0']
-- [blocks_selector_0_1_15_10, '0', pad_sink_0_28, '0']
-- [blocks_selector_0_1_15_11, '0', pad_sink_0_29, '0']
-- [blocks_selector_0_1_15_12, '0', pad_sink_0_30, '0']
-- [blocks_selector_0_1_15_2, '0', pad_sink_0_20, '0']
-- [blocks_selector_0_1_15_3, '0', pad_sink_0_21, '0']
-- [blocks_selector_0_1_15_4, '0', pad_sink_0_22, '0']
-- [blocks_selector_0_1_15_5, '0', pad_sink_0_23, '0']
-- [blocks_selector_0_1_15_6, '0', pad_sink_0_24, '0']
-- [blocks_selector_0_1_15_7, '0', pad_sink_0_25, '0']
-- [blocks_selector_0_1_15_8, '0', pad_sink_0_26, '0']
-- [blocks_selector_0_1_15_9, '0', pad_sink_0_27, '0']
-- [blocks_selector_0_1_2, '0', pad_sink_0_4, '0']
-- [blocks_selector_0_1_3, '0', pad_sink_0_5, '0']
-- [blocks_selector_0_1_4, '0', pad_sink_0_6, '0']
-- [blocks_selector_0_1_5, '0', pad_sink_0_7, '0']
-- [blocks_selector_0_1_6, '0', pad_sink_0_8, '0']
-- [blocks_selector_0_1_7, '0', pad_sink_0_9, '0']
-- [blocks_selector_0_1_8, '0', pad_sink_0_10, '0']
-- [blocks_selector_0_1_9, '0', pad_sink_0_11, '0']
+- [blocks_selector_0, '0', blocks_delay_0, '0']
+- [blocks_selector_0_0, '0', blocks_delay_0_0, '0']
+- [blocks_selector_0_1, '0', blocks_delay_0_1, '0']
+- [blocks_selector_0_1_0, '0', blocks_delay_0_2, '0']
+- [blocks_selector_0_1_1, '0', blocks_delay_0_3, '0']
+- [blocks_selector_0_1_10, '0', blocks_delay_0_12, '0']
+- [blocks_selector_0_1_11, '0', blocks_delay_0_13, '0']
+- [blocks_selector_0_1_12, '0', blocks_delay_0_14, '0']
+- [blocks_selector_0_1_13, '0', blocks_delay_0_15, '0']
+- [blocks_selector_0_1_14, '0', blocks_delay_0_14_0, '0']
+- [blocks_selector_0_1_15, '0', blocks_delay_0_14_1, '0']
+- [blocks_selector_0_1_15_0, '0', blocks_delay_0_14_2, '0']
+- [blocks_selector_0_1_15_1, '0', blocks_delay_0_14_3, '0']
+- [blocks_selector_0_1_15_10, '0', blocks_delay_0_14_12, '0']
+- [blocks_selector_0_1_15_11, '0', blocks_delay_0_14_13, '0']
+- [blocks_selector_0_1_15_12, '0', blocks_delay_0_14_14, '0']
+- [blocks_selector_0_1_15_2, '0', blocks_delay_0_14_4, '0']
+- [blocks_selector_0_1_15_3, '0', blocks_delay_0_14_5, '0']
+- [blocks_selector_0_1_15_4, '0', blocks_delay_0_14_6, '0']
+- [blocks_selector_0_1_15_5, '0', blocks_delay_0_14_7, '0']
+- [blocks_selector_0_1_15_6, '0', blocks_delay_0_14_8, '0']
+- [blocks_selector_0_1_15_7, '0', blocks_delay_0_14_9, '0']
+- [blocks_selector_0_1_15_8, '0', blocks_delay_0_14_10, '0']
+- [blocks_selector_0_1_15_9, '0', blocks_delay_0_14_11, '0']
+- [blocks_selector_0_1_2, '0', blocks_delay_0_4, '0']
+- [blocks_selector_0_1_3, '0', blocks_delay_0_5, '0']
+- [blocks_selector_0_1_4, '0', blocks_delay_0_6, '0']
+- [blocks_selector_0_1_5, '0', blocks_delay_0_7, '0']
+- [blocks_selector_0_1_6, '0', blocks_delay_0_8, '0']
+- [blocks_selector_0_1_7, '0', blocks_delay_0_9, '0']
+- [blocks_selector_0_1_8, '0', blocks_delay_0_10, '0']
+- [blocks_selector_0_1_9, '0', blocks_delay_0_11, '0']
 - [pad_source_0_0_9, '0', blocks_selector_0, '1']
 - [pad_source_0_0_9_0, '0', blocks_selector_0_0, '1']
 - [pad_source_0_0_9_1, '0', blocks_selector_0_1, '1']

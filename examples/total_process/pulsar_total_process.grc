@@ -1,0 +1,1489 @@
+options:
+  parameters:
+    author: Viveca Pannell
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: pulsar_total_process
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Pulsar Processing
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: blocks_complex_to_mag_squared_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '32'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [472, 316.0]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_1
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [472, 84.0]
+    rotation: 0
+    state: true
+- name: blocks_integrate_xx_0
+  id: blocks_integrate_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decim: int(integration_time/period)
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: int(samp_rate * period)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [936, 80.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_const_xx_0
+  id: blocks_multiply_const_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: period/integration_time
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: int(samp_rate * period)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1088, 80.0]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: int(samp_rate * period)
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [792, 84.0]
+    rotation: 0
+    state: true
+- name: blocks_streams_to_vector_0
+  id: blocks_streams_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_streams: channels
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: true
+    bus_source: false
+    bus_structure: null
+    coordinate: [336, 312.0]
+    rotation: 0
+    state: true
+- name: blocks_vector_to_stream_0
+  id: blocks_vector_to_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: int(samp_rate * period)
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1208, 236.0]
+    rotation: 0
+    state: true
+- name: blocks_vector_to_streams_0
+  id: blocks_vector_to_streams
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_streams: '32'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [444.0, 376]
+    rotation: 270
+    state: enabled
+- name: center_freq
+  id: parameter
+  parameters:
+    alias: ''
+    comment: 'Center frequency
+
+      in MHz'
+    hide: none
+    label: ''
+    short_id: ''
+    type: eng_float
+    value: '440'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 172.0]
+    rotation: 0
+    state: true
+- name: channels
+  id: parameter
+  parameters:
+    alias: ''
+    comment: 'Number of
+
+      channels'
+    hide: none
+    label: ''
+    short_id: ''
+    type: intx
+    value: '32'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [352, 172.0]
+    rotation: 0
+    state: true
+- name: dedispersion_incoherent_0
+  id: dedispersion_incoherent
+  parameters:
+    affinity: ''
+    alias: ''
+    bandwidth: '1'
+    center_freq: '440'
+    channels: '[]'
+    comment: ''
+    dm: '56.77118'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_channels: '32'
+    samp_rate: '1000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [452.0, 888]
+    rotation: 270
+    state: true
+- name: deviations
+  id: parameter
+  parameters:
+    alias: ''
+    comment: "For median filter:\nNumber of \ndeviations until\npoint is\nconsidered\n\
+      outlier and thrown\naway"
+    hide: none
+    label: ''
+    short_id: ''
+    type: eng_float
+    value: '10'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [920, 172.0]
+    rotation: 0
+    state: true
+- name: filter_baseline_time
+  id: parameter
+  parameters:
+    alias: ''
+    comment: 'For median filter:
+
+      amount of  time of
+
+      samples to
+
+      consider when
+
+      finding median in
+
+      seconds'
+    hide: none
+    label: ''
+    short_id: ''
+    type: eng_float
+    value: '10'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [816, 172.0]
+    rotation: 0
+    state: true
+- name: gr_digital_rf_digital_rf_sink_0
+  id: gr_digital_rf_digital_rf_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    center_freqs: '[]'
+    channel0: ch0
+    channel1: ch1
+    channel10: ch10
+    channel11: ch11
+    channel12: ch12
+    channel13: ch13
+    channel14: ch14
+    channel15: ch15
+    channel16: ch16
+    channel17: ch17
+    channel18: ch18
+    channel19: ch19
+    channel2: ch2
+    channel20: ch20
+    channel21: ch21
+    channel22: ch22
+    channel23: ch23
+    channel24: ch24
+    channel25: ch25
+    channel26: ch26
+    channel27: ch27
+    channel28: ch28
+    channel29: ch29
+    channel3: ch3
+    channel30: ch30
+    channel31: ch31
+    channel4: ch4
+    channel5: ch5
+    channel6: ch6
+    channel7: ch7
+    channel8: ch8
+    channel9: ch9
+    checksum: 'False'
+    comment: ''
+    compression_level: '0'
+    debug: 'False'
+    file_cadence_ms: '1000'
+    ignore_tags: 'False'
+    input: f32
+    is_continuous: 'True'
+    marching_periods: 'True'
+    metadata: '{}'
+    min_chunksize: '0'
+    nchan: '1'
+    sample_rate_denominator: '1'
+    sample_rate_numerator: int(samp_rate)
+    start: ''
+    stop_on_skipped: 'False'
+    stop_on_time_tag: 'False'
+    subdir_cadence_s: '3600'
+    top_level_dir: sink
+    uuid: ''
+    vlen: int(samp_rate * period)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1352, 8.0]
+    rotation: 0
+    state: enabled
+- name: import_0
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import mitarspysigproc.filtertools as filtertools
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [304, 32.0]
+    rotation: 0
+    state: true
+- name: integration_time
+  id: parameter
+  parameters:
+    alias: ''
+    comment: "Amount of time to \nconsider samples\nbefore folding in\nseconds"
+    hide: none
+    label: ''
+    short_id: ''
+    type: eng_float
+    value: '10'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [608, 172.0]
+    rotation: 0
+    state: true
+- name: median_filter_0_16
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [44.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_0
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [616, 76.0]
+    rotation: 0
+    state: true
+- name: median_filter_0_16_1
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [100.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_10
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [604.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_11
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [660.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_12
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [716.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_13
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [772.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_14
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [828.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_15
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [884.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_16
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [940.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_17
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [996.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_18
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1052.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_19
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1108.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_2
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [156.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_20
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1164.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_21
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1220.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_22
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1276.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_23
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1332.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_24
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1388.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_25
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1444.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_26
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1500.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_27
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1556.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_28
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1612.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_29
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1668.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_3
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [212.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_30
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1724.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_31
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1780.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_4
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [268.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_5
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [324.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_6
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [380.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_7
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [436.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_8
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [492.0, 600]
+    rotation: 270
+    state: true
+- name: median_filter_0_16_9
+  id: median_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    baseline_time: filter_baseline_time
+    comment: ''
+    deviations: deviations
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [548.0, 600]
+    rotation: 270
+    state: true
+- name: note_0
+  id: note
+  parameters:
+    alias: ''
+    comment: Can disable if not in use
+    note: one channel
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [152, 32.0]
+    rotation: 0
+    state: true
+- name: note_1
+  id: note
+  parameters:
+    alias: ''
+    comment: Disable if not in use
+    note: 32 channels using hier
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 256.0]
+    rotation: 0
+    state: true
+- name: period
+  id: parameter
+  parameters:
+    alias: ''
+    comment: 'Period of pulsar
+
+      in seconds'
+    hide: none
+    label: ''
+    short_id: ''
+    type: eng_float
+    value: '.335'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [696, 172.0]
+    rotation: 0
+    state: true
+- name: pfb_channelizer_ccf_0
+  id: pfb_channelizer_ccf
+  parameters:
+    affinity: ''
+    alias: ''
+    atten: '100'
+    bus_conns: '[[0,],]'
+    ch_map: '[]'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nchans: channels
+    osr: '1.0'
+    samp_delay: '0'
+    taps: filtertools.kaiser_coeffs(channels)
+  states:
+    bus_sink: false
+    bus_source: true
+    bus_structure: null
+    coordinate: [152, 304.0]
+    rotation: 0
+    state: true
+- name: pfb_decimator_ccf_0
+  id: pfb_decimator_ccf
+  parameters:
+    affinity: ''
+    alias: ''
+    atten: '100'
+    channel: '0'
+    comment: ''
+    decim: channels
+    fft_filts: 'True'
+    fft_rot: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_delay: '0'
+    taps: filtertools.kaiser_coeffs(channels)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [312, 72.0]
+    rotation: 0
+    state: true
+- name: pulsar_fold_0
+  id: pulsar_fold
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: '60'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: '0.033397'
+    samp_rate: 1000000/32
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1016, 1052.0]
+    rotation: 0
+    state: true
+- name: qtgui_time_sink_x_0
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: Signal 1
+    label10: Signal 10
+    label2: Signal 2
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '""'
+    nconnections: '1'
+    size: int(samp_rate * period)
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: float
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Power
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1352, 228.0]
+    rotation: 0
+    state: true
+- name: qtgui_vector_sink_f_0
+  id: qtgui_vector_sink_f
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    average: '1.0'
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    grid: 'False'
+    gui_hint: ''
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    nconnections: '1'
+    ref_level: '0'
+    showports: 'False'
+    update_time: '0.10'
+    vlen: int(samp_rate * period)
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    x_axis_label: '"x-Axis"'
+    x_start: '0'
+    x_step: '1.0'
+    x_units: '""'
+    y_axis_label: '"y-Axis"'
+    y_units: '""'
+    ymax: '10'
+    ymin: '-140'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1352, 152.0]
+    rotation: 0
+    state: true
+- name: samp_rate
+  id: parameter
+  parameters:
+    alias: ''
+    comment: 'Sample rate
+
+      of incoming
+
+      samples in
+
+      samples per
+
+      second'
+    hide: none
+    label: ''
+    short_id: ''
+    type: eng_float
+    value: '1000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [288, 172.0]
+    rotation: 0
+    state: true
+- name: sink
+  id: parameter
+  parameters:
+    alias: ''
+    comment: 'If storing data,
+
+      filepath to data
+
+      file'
+    hide: none
+    label: ''
+    short_id: ''
+    type: str
+    value: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [488, 172.0]
+    rotation: 0
+    state: true
+- name: source
+  id: parameter
+  parameters:
+    alias: ''
+    comment: 'Complex data
+
+      source filepath'
+    hide: none
+    label: ''
+    short_id: ''
+    type: str
+    value: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [224, 172.0]
+    rotation: 0
+    state: true
+- name: virtual_sink_0
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: 32chan
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1152, 1060.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: 32chan
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1080, 156.0]
+    rotation: 0
+    state: disabled
+- name: zeromq_pub_sink_0
+  id: zeromq_pub_sink
+  parameters:
+    address: sink
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: '-1'
+    key: ''
+    pass_tags: 'False'
+    timeout: '100'
+    type: float
+    vlen: int(samp_rate * period)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1352, 72.0]
+    rotation: 0
+    state: true
+- name: zeromq_pub_sink_0_0
+  id: zeromq_pub_sink
+  parameters:
+    address: sink
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: '-1'
+    key: ''
+    pass_tags: 'False'
+    timeout: '100'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1352, 288.0]
+    rotation: 0
+    state: true
+- name: zeromq_sub_source_0
+  id: zeromq_sub_source
+  parameters:
+    address: source
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: '-1'
+    key: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 136.0]
+    rotation: 0
+    state: true
+
+connections:
+- [blocks_complex_to_mag_squared_0, '0', blocks_vector_to_streams_0, '0']
+- [blocks_complex_to_mag_squared_1, '0', median_filter_0_16_0, '0']
+- [blocks_integrate_xx_0, '0', blocks_multiply_const_xx_0, '0']
+- [blocks_multiply_const_xx_0, '0', blocks_vector_to_stream_0, '0']
+- [blocks_multiply_const_xx_0, '0', gr_digital_rf_digital_rf_sink_0, '0']
+- [blocks_multiply_const_xx_0, '0', qtgui_vector_sink_f_0, '0']
+- [blocks_multiply_const_xx_0, '0', zeromq_pub_sink_0, '0']
+- [blocks_stream_to_vector_0, '0', blocks_integrate_xx_0, '0']
+- [blocks_streams_to_vector_0, '0', blocks_complex_to_mag_squared_0, '0']
+- [blocks_vector_to_stream_0, '0', qtgui_time_sink_x_0, '0']
+- [blocks_vector_to_stream_0, '0', zeromq_pub_sink_0_0, '0']
+- [blocks_vector_to_streams_0, '0', median_filter_0_16, '0']
+- [blocks_vector_to_streams_0, '1', median_filter_0_16_1, '0']
+- [blocks_vector_to_streams_0, '10', median_filter_0_16_10, '0']
+- [blocks_vector_to_streams_0, '11', median_filter_0_16_11, '0']
+- [blocks_vector_to_streams_0, '12', median_filter_0_16_12, '0']
+- [blocks_vector_to_streams_0, '13', median_filter_0_16_13, '0']
+- [blocks_vector_to_streams_0, '14', median_filter_0_16_14, '0']
+- [blocks_vector_to_streams_0, '15', median_filter_0_16_15, '0']
+- [blocks_vector_to_streams_0, '16', median_filter_0_16_16, '0']
+- [blocks_vector_to_streams_0, '17', median_filter_0_16_17, '0']
+- [blocks_vector_to_streams_0, '18', median_filter_0_16_18, '0']
+- [blocks_vector_to_streams_0, '19', median_filter_0_16_19, '0']
+- [blocks_vector_to_streams_0, '2', median_filter_0_16_2, '0']
+- [blocks_vector_to_streams_0, '20', median_filter_0_16_20, '0']
+- [blocks_vector_to_streams_0, '21', median_filter_0_16_21, '0']
+- [blocks_vector_to_streams_0, '22', median_filter_0_16_22, '0']
+- [blocks_vector_to_streams_0, '23', median_filter_0_16_23, '0']
+- [blocks_vector_to_streams_0, '24', median_filter_0_16_24, '0']
+- [blocks_vector_to_streams_0, '25', median_filter_0_16_25, '0']
+- [blocks_vector_to_streams_0, '26', median_filter_0_16_26, '0']
+- [blocks_vector_to_streams_0, '27', median_filter_0_16_27, '0']
+- [blocks_vector_to_streams_0, '28', median_filter_0_16_28, '0']
+- [blocks_vector_to_streams_0, '29', median_filter_0_16_29, '0']
+- [blocks_vector_to_streams_0, '3', median_filter_0_16_3, '0']
+- [blocks_vector_to_streams_0, '30', median_filter_0_16_30, '0']
+- [blocks_vector_to_streams_0, '31', median_filter_0_16_31, '0']
+- [blocks_vector_to_streams_0, '4', median_filter_0_16_4, '0']
+- [blocks_vector_to_streams_0, '5', median_filter_0_16_5, '0']
+- [blocks_vector_to_streams_0, '6', median_filter_0_16_6, '0']
+- [blocks_vector_to_streams_0, '7', median_filter_0_16_7, '0']
+- [blocks_vector_to_streams_0, '8', median_filter_0_16_8, '0']
+- [blocks_vector_to_streams_0, '9', median_filter_0_16_9, '0']
+- [dedispersion_incoherent_0, '0', pulsar_fold_0, '0']
+- [median_filter_0_16, '0', dedispersion_incoherent_0, '0']
+- [median_filter_0_16_0, '0', blocks_stream_to_vector_0, '0']
+- [median_filter_0_16_1, '0', dedispersion_incoherent_0, '1']
+- [median_filter_0_16_10, '0', dedispersion_incoherent_0, '10']
+- [median_filter_0_16_11, '0', dedispersion_incoherent_0, '11']
+- [median_filter_0_16_12, '0', dedispersion_incoherent_0, '12']
+- [median_filter_0_16_13, '0', dedispersion_incoherent_0, '13']
+- [median_filter_0_16_14, '0', dedispersion_incoherent_0, '14']
+- [median_filter_0_16_15, '0', dedispersion_incoherent_0, '15']
+- [median_filter_0_16_16, '0', dedispersion_incoherent_0, '16']
+- [median_filter_0_16_17, '0', dedispersion_incoherent_0, '17']
+- [median_filter_0_16_18, '0', dedispersion_incoherent_0, '18']
+- [median_filter_0_16_19, '0', dedispersion_incoherent_0, '19']
+- [median_filter_0_16_2, '0', dedispersion_incoherent_0, '2']
+- [median_filter_0_16_20, '0', dedispersion_incoherent_0, '20']
+- [median_filter_0_16_21, '0', dedispersion_incoherent_0, '21']
+- [median_filter_0_16_22, '0', dedispersion_incoherent_0, '22']
+- [median_filter_0_16_23, '0', dedispersion_incoherent_0, '23']
+- [median_filter_0_16_24, '0', dedispersion_incoherent_0, '24']
+- [median_filter_0_16_25, '0', dedispersion_incoherent_0, '25']
+- [median_filter_0_16_26, '0', dedispersion_incoherent_0, '26']
+- [median_filter_0_16_27, '0', dedispersion_incoherent_0, '27']
+- [median_filter_0_16_28, '0', dedispersion_incoherent_0, '28']
+- [median_filter_0_16_29, '0', dedispersion_incoherent_0, '29']
+- [median_filter_0_16_3, '0', dedispersion_incoherent_0, '3']
+- [median_filter_0_16_30, '0', dedispersion_incoherent_0, '30']
+- [median_filter_0_16_31, '0', dedispersion_incoherent_0, '31']
+- [median_filter_0_16_4, '0', dedispersion_incoherent_0, '4']
+- [median_filter_0_16_5, '0', dedispersion_incoherent_0, '5']
+- [median_filter_0_16_6, '0', dedispersion_incoherent_0, '6']
+- [median_filter_0_16_7, '0', dedispersion_incoherent_0, '7']
+- [median_filter_0_16_8, '0', dedispersion_incoherent_0, '8']
+- [median_filter_0_16_9, '0', dedispersion_incoherent_0, '9']
+- [pfb_channelizer_ccf_0, '32', blocks_streams_to_vector_0, '32']
+- [pfb_decimator_ccf_0, '0', blocks_complex_to_mag_squared_1, '0']
+- [pulsar_fold_0, '0', virtual_sink_0, '0']
+- [virtual_source_0, '0', gr_digital_rf_digital_rf_sink_0, '0']
+- [virtual_source_0, '0', qtgui_vector_sink_f_0, '0']
+- [virtual_source_0, '0', zeromq_pub_sink_0, '0']
+- [zeromq_sub_source_0, '0', pfb_channelizer_ccf_0, '0']
+- [zeromq_sub_source_0, '0', pfb_decimator_ccf_0, '0']
+
+metadata:
+  file_format: 1

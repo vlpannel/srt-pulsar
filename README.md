@@ -42,6 +42,10 @@ This repo includes GRC hierarchical blocks which can be incorporated into other 
 ## Navigating This Repository
 
 This repository is not available for installation; it simply includes possibly useful files to download and use through GNU Radio. The repository is structured as follows
+	- **blocks**: holds specially designed GRC blocks from pulsar processing
+	- **docs**: documentation detailing how to use pulsar processing blocks
+	- **examples**: examples of pulsar processing
+	- **environment**: files regarding conda and Python environment
 
 ## Future Work
 
@@ -49,6 +53,8 @@ There are many ways this work could be improved in the future, including:
 - Creating an OOT module to group together all pulsar-processing tools
 - Filtering out frequency-specific interference by comparing variances of all channels and discarding noisy channels
 - Creating a method of coherent (within a channel) dedispersion for these flowgraphs
+
+See 'suggested\_improvements' under 'docs' to see a more up-to-date list on suggested future work.
 
 ## Acknowledgments
 
