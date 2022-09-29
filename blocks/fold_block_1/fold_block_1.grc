@@ -37,17 +37,16 @@ blocks:
   id: epy_block
   parameters:
     _source_code: "import numpy as np\nfrom gnuradio import gr\nimport psrdynspec\n\
-      from psrdynspec import fold\nfrom collections import deque\n\n###CHANGE MEEEEEEEEEEE\n\
-      \nclass fold_blk(gr.sync_block):\n    \"\"\"Block to perform folding (without\
-      \ importing but still [ab]using psrdynspec)\"\"\"\n\n    def __init__(self,\
-      \ period=0.0333924123 , samp_rate=1000000/32, integration_time=10.):\n     \
-      \   \"\"\"\n        Folding block - folds time series of power to find pulsars.\n\
-      \n        Parameters\n        ----------\n\n        period : float\n       \
-      \     Folding period\n\n        samp_rate : float\n            Sample rate of\
-      \ incoming samples\n\n        integration_time : float\n            Number of\
-      \ seconds over which to integrate\n        \n        Notes\n        -----\n\
-      \        Always outputs the last calculated phase vs. power profile.\n\n   \
-      \     After calculating, immediately begins collecting data for a new calculation.\n\
+      from psrdynspec import fold\nfrom collections import deque\n\nclass fold_blk(gr.sync_block):\n\
+      \    \"\"\"Block to perform folding (without importing but still [ab]using psrdynspec)\"\
+      \"\"\n\n    def __init__(self, period=0.0333924123 , samp_rate=1000000/32, integration_time=10.):\n\
+      \        \"\"\"\n        Folding block - folds time series of power to find\
+      \ pulsars.\n\n        Parameters\n        ----------\n\n        period : float\n\
+      \            Folding period\n\n        samp_rate : float\n            Sample\
+      \ rate of incoming samples\n\n        integration_time : float\n           \
+      \ Number of seconds over which to integrate\n        \n        Notes\n     \
+      \   -----\n        Always outputs the last calculated phase vs. power profile.\n\
+      \n        After calculating, immediately begins collecting data for a new calculation.\n\
       \        \n        \"\"\"\n        gr.sync_block.__init__(\n            self,\n\
       \            name='Fold 1',\n            in_sig=[np.float32],\n            out_sig=[(np.float32,\
       \ 1024)]    # 1024 bins; if needing more/fewer bins, must also manually change\

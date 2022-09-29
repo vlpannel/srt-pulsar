@@ -189,7 +189,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [416, 172.0]
+    coordinate: [352, 172.0]
     rotation: 0
     state: true
 - name: channels
@@ -208,7 +208,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [352, 172.0]
+    coordinate: [288, 172.0]
     rotation: 0
     state: true
 - name: dedispersion_incoherent_0
@@ -247,7 +247,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [920, 172.0]
+    coordinate: [1000, 172.0]
     rotation: 0
     state: true
 - name: filter_baseline_time
@@ -274,7 +274,25 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [816, 172.0]
+    coordinate: [904, 172.0]
+    rotation: 0
+    state: true
+- name: fold_block_1_0
+  id: fold_block_1
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    integration_time: integration_time
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    period: period
+    samp_rate: samp_rate/channels
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1016, 1052.0]
     rotation: 0
     state: true
 - name: gr_digital_rf_digital_rf_sink_0
@@ -370,7 +388,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [608, 172.0]
+    coordinate: [696, 172.0]
     rotation: 0
     state: true
 - name: median_filter_0_16
@@ -1009,7 +1027,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [696, 172.0]
+    coordinate: [784, 172.0]
     rotation: 0
     state: true
 - name: pfb_channelizer_ccf_0
@@ -1026,7 +1044,7 @@ blocks:
     nchans: channels
     osr: '1.0'
     samp_delay: '0'
-    taps: filtertools.kaiser_coeffs(channels)
+    taps: taps
   states:
     bus_sink: false
     bus_source: true
@@ -1048,30 +1066,12 @@ blocks:
     maxoutbuf: '0'
     minoutbuf: '0'
     samp_delay: '0'
-    taps: filtertools.kaiser_coeffs(channels)
+    taps: taps
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
     coordinate: [312, 72.0]
-    rotation: 0
-    state: true
-- name: pulsar_fold_0
-  id: pulsar_fold
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    integration_time: '60'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    period: '0.033397'
-    samp_rate: 1000000/32
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1016, 1052.0]
     rotation: 0
     state: true
 - name: qtgui_time_sink_x_0
@@ -1266,7 +1266,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [288, 172.0]
+    coordinate: [224, 172.0]
     rotation: 0
     state: true
 - name: sink
@@ -1287,7 +1287,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [488, 172.0]
+    coordinate: [544, 172.0]
     rotation: 0
     state: true
 - name: source
@@ -1306,7 +1306,24 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [224, 172.0]
+    coordinate: [160, 172.0]
+    rotation: 0
+    state: true
+- name: taps
+  id: parameter
+  parameters:
+    alias: ''
+    comment: Filter taps for PFB
+    hide: none
+    label: ''
+    short_id: ''
+    type: ''
+    value: filtertools.kaiser_coeffs(channels)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [424, 176.0]
     rotation: 0
     state: true
 - name: virtual_sink_0
@@ -1442,7 +1459,8 @@ connections:
 - [blocks_vector_to_streams_0, '7', median_filter_0_16_7, '0']
 - [blocks_vector_to_streams_0, '8', median_filter_0_16_8, '0']
 - [blocks_vector_to_streams_0, '9', median_filter_0_16_9, '0']
-- [dedispersion_incoherent_0, '0', pulsar_fold_0, '0']
+- [dedispersion_incoherent_0, '0', fold_block_1_0, '0']
+- [fold_block_1_0, '0', virtual_sink_0, '0']
 - [median_filter_0_16, '0', dedispersion_incoherent_0, '0']
 - [median_filter_0_16_0, '0', blocks_stream_to_vector_0, '0']
 - [median_filter_0_16_1, '0', dedispersion_incoherent_0, '1']
@@ -1478,7 +1496,6 @@ connections:
 - [median_filter_0_16_9, '0', dedispersion_incoherent_0, '9']
 - [pfb_channelizer_ccf_0, '32', blocks_streams_to_vector_0, '32']
 - [pfb_decimator_ccf_0, '0', blocks_complex_to_mag_squared_1, '0']
-- [pulsar_fold_0, '0', virtual_sink_0, '0']
 - [virtual_source_0, '0', gr_digital_rf_digital_rf_sink_0, '0']
 - [virtual_source_0, '0', qtgui_vector_sink_f_0, '0']
 - [virtual_source_0, '0', zeromq_pub_sink_0, '0']
